@@ -55,12 +55,16 @@ async function main() {
   const { category: currencyCategory, currencyPricesEntries } = await import(
     "./entries/currency-prices"
   );
+  const { category: welfareCategory, welfareEntries } = await import(
+    "./entries/welfare"
+  );
   const contentPacks = [
     { category: economyCategory, entries: phase1Entries },
     { category: spaceCategory, entries: spaceEntries },
     { category: foreignPolicyCategory, entries: foreignPolicyEntries },
     { category: defenseCategory, entries: defenseEntries },
     { category: currencyCategory, entries: currencyPricesEntries },
+    { category: welfareCategory, entries: welfareEntries },
   ];
 
   for (const { category, entries: packEntries } of contentPacks) {

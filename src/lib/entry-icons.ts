@@ -16,6 +16,10 @@ import {
   Factory,
   Gauge,
   Coins,
+  HeartPulse,
+  Sparkles,
+  Home,
+  Droplets,
   FileText,
   type LucideIcon,
 } from "lucide-react";
@@ -46,6 +50,10 @@ const ENTRY_ICONS: Record<string, LucideIcon> = {
   "indigenous-defense-production-growth": Factory,
   "inflation-targeting-framework-success": Gauge,
   "forex-gold-reserves-record-rupee-context": Coins,
+  "ayushman-bharat-health-insurance": HeartPulse,
+  "swachh-bharat-sanitation-coverage": Sparkles,
+  "pm-awas-yojana-housing": Home,
+  "jal-jeevan-mission-tap-water": Droplets,
 };
 
 export function getEntryIcon(slug: string): LucideIcon {

@@ -38,6 +38,10 @@ const CATEGORY_CLASSES: Record<string, CategoryClasses> = {
     text: "text-[#e87ba4] dark:text-[#d55181]", // slot 5: magenta
     border: "border-[#e87ba4] dark:border-[#d55181]",
   },
+  "welfare-social-schemes": {
+    text: "text-[#008300] dark:text-[#008300]", // slot 6: green (same value both modes per the skill's theme)
+    border: "border-[#008300] dark:border-[#008300]",
+  },
 };
 
 const FALLBACK: CategoryClasses = CATEGORY_CLASSES["economy-infra-digital"];
