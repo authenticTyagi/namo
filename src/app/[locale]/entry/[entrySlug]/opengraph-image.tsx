@@ -11,8 +11,8 @@ export default async function OgImage({
   params: Promise<{ locale: Locale; entrySlug: string }>;
 }) {
   const { locale, entrySlug } = await params;
-  const entry = await getPublishedEntryBySlug(entrySlug);
-  const title = entry ? (locale === "hi" ? entry.titleHi : entry.titleEn) : "Modi Ne Kiya Kya Hai";
+  const entry = await getPublishedEntryBySlug(entrySlug, locale);
+  const title = entry?.title ?? "Modi Ne Kiya Kya Hai";
 
   return new ImageResponse(
     (

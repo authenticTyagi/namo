@@ -70,6 +70,17 @@ export const categories = pgTable("categories", {
   nameEn: text("name_en").notNull(),
   descriptionHi: text("description_hi"),
   descriptionEn: text("description_en"),
+  // Additional-locale name/description (Bengali/Telugu/Marathi). Nullable —
+  // a category renders fine before these are hand-translated, falling back
+  // to English (see src/lib/localized.ts). Wide columns rather than a
+  // translations table here since categories/tags only carry 1-2 fields
+  // each, unlike entries — a join would cost more than it saves.
+  nameBn: text("name_bn"),
+  nameTe: text("name_te"),
+  nameMr: text("name_mr"),
+  descriptionBn: text("description_bn"),
+  descriptionTe: text("description_te"),
+  descriptionMr: text("description_mr"),
   sortOrder: integer("sort_order").notNull().default(0),
   isActive: boolean("is_active").notNull().default(true),
   createdAt: timestamp("created_at").notNull().defaultNow(),
@@ -80,6 +91,9 @@ export const tags = pgTable("tags", {
   slug: text("slug").notNull().unique(),
   labelHi: text("label_hi").notNull(),
   labelEn: text("label_en").notNull(),
+  labelBn: text("label_bn"),
+  labelTe: text("label_te"),
+  labelMr: text("label_mr"),
 });
 
 export const users = pgTable("users", {
@@ -217,6 +231,55 @@ export const entryStats = pgTable("entry_stats", {
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
+
+/**
+ * Hand-authored translations for additional locales (Bengali/Telugu/
+ * Marathi — not Hindi/English, which stay on entries' own titleHi/titleEn
+ * etc. columns). One row per (entry, locale), added by a future content
+ * pass — this table is empty at launch, and every reader falls back to
+ * English until a row exists (src/lib/localized.ts). A side table rather
+ * than more wide columns because entries carry 5 translatable fields each;
+ * 3 more languages x 5 fields would be 15 extra nullable columns on the hot
+ * `entries` row for content that doesn't exist yet.
+ */
+export const entryTranslations = pgTable(
+  "entry_translations",
+  {
+    entryId: uuid("entry_id")
+      .notNull()
+      .references(() => entries.id, { onDelete: "cascade" }),
+    locale: text("locale").notNull(), // 'bn' | 'te' | 'mr'
+    title: text("title").notNull(),
+    summary: text("summary").notNull(),
+    body: text("body").notNull(),
+    quickTake: text("quick_take"),
+    bodySections: jsonb("body_sections").$type<
+      { heading: string; body: string }[]
+    >(),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    updatedAt: timestamp("updated_at").notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.entryId, t.locale] })],
+);
+
+/** Same pattern as entryTranslations, for entryStats' 7 translatable fields. */
+export const entryStatTranslations = pgTable(
+  "entry_stat_translations",
+  {
+    entryStatId: uuid("entry_stat_id")
+      .notNull()
+      .references(() => entryStats.id, { onDelete: "cascade" }),
+    locale: text("locale").notNull(),
+    metricLabel: text("metric_label").notNull(),
+    beforeLabel: text("before_label").notNull(),
+    beforeValue: text("before_value").notNull(),
+    afterLabel: text("after_label").notNull(),
+    afterValue: text("after_value").notNull(),
+    extraLabel: text("extra_label"),
+    extraValue: text("extra_value"),
+  },
+  (t) => [primaryKey({ columns: [t.entryStatId, t.locale] })],
+);
 
 // ---------------------------------------------------------------------------
 // Auth.js adapter tables (NextAuth v5 / @auth/drizzle-adapter shape)
@@ -388,6 +451,7 @@ export const entriesRelations = relations(entries, ({ one, many }) => ({
   sources: many(sources),
   stats: many(entryStats),
   comments: many(comments),
+  translations: many(entryTranslations),
 }));
 
 export const tagsRelations = relations(tags, ({ many }) => ({
@@ -412,12 +476,33 @@ export const sourcesRelations = relations(sources, ({ one }) => ({
   }),
 }));
 
-export const entryStatsRelations = relations(entryStats, ({ one }) => ({
+export const entryStatsRelations = relations(entryStats, ({ one, many }) => ({
   entry: one(entries, {
     fields: [entryStats.entryId],
     references: [entries.id],
   }),
+  translations: many(entryStatTranslations),
 }));
+
+export const entryTranslationsRelations = relations(
+  entryTranslations,
+  ({ one }) => ({
+    entry: one(entries, {
+      fields: [entryTranslations.entryId],
+      references: [entries.id],
+    }),
+  }),
+);
+
+export const entryStatTranslationsRelations = relations(
+  entryStatTranslations,
+  ({ one }) => ({
+    entryStat: one(entryStats, {
+      fields: [entryStatTranslations.entryStatId],
+      references: [entryStats.id],
+    }),
+  }),
+);
 
 export const usersRelations = relations(users, ({ many }) => ({
   comments: many(comments),

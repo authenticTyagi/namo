@@ -19,7 +19,7 @@
     "readFullEntry": "Read full entry"
   },
   "language": {
-    "switchTo": "हिंदी"
+    "label": "Choose language"
   },
   "home": {
     "heroTitle": "Every claim sourced. Every source checked.",

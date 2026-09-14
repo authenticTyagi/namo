@@ -1,16 +1,13 @@
 import { useTranslations } from "next-intl";
 import { StatComparison } from "./StatComparison";
 import type { EntryStat } from "@/lib/types";
-import type { Locale } from "@/i18n/routing";
 import type { LucideIcon } from "lucide-react";
 
 export function EntryStatsSection({
   stats,
-  locale,
   icon,
 }: {
   stats: EntryStat[];
-  locale: Locale;
   icon: LucideIcon;
 }) {
   const t = useTranslations("entry");
@@ -28,7 +25,7 @@ export function EntryStatsSection({
       </h2>
       <div className="grid gap-3 sm:grid-cols-2">
         {sorted.map((s) => (
-          <StatComparison key={s.id} stat={s} locale={locale} icon={icon} />
+          <StatComparison key={s.id} stat={s} icon={icon} />
         ))}
       </div>
     </section>

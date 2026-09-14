@@ -13,19 +13,17 @@ export default async function CategoryPage({
   const { locale, categorySlug } = await params;
   setRequestLocale(locale);
 
-  const category = await getCategoryBySlug(categorySlug);
+  const category = await getCategoryBySlug(categorySlug, locale);
   if (!category) notFound();
 
-  const entries = await getPublishedEntriesByCategory(categorySlug);
-  const name = locale === "hi" ? category.nameHi : category.nameEn;
-  const description = locale === "hi" ? category.descriptionHi : category.descriptionEn;
+  const entries = await getPublishedEntriesByCategory(categorySlug, locale);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10">
-      <h1 className="text-2xl font-bold">{name}</h1>
-      {description && (
+      <h1 className="text-2xl font-bold">{category.name}</h1>
+      {category.description && (
         <p className="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-400">
-          {description}
+          {category.description}
         </p>
       )}
 

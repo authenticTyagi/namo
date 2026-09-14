@@ -1,5 +1,4 @@
 import type { EntryStat } from "@/lib/types";
-import type { Locale } from "@/i18n/routing";
 import type { LucideIcon } from "lucide-react";
 import { StatBarRow } from "./StatBarRow";
 
@@ -14,16 +13,12 @@ import { StatBarRow } from "./StatBarRow";
  */
 export function StatComparison({
   stat,
-  locale,
   icon: Icon,
 }: {
   stat: EntryStat;
-  locale: Locale;
   icon: LucideIcon;
 }) {
-  const hi = locale === "hi";
-  const hasExtra = Boolean(hi ? stat.extraValueHi : stat.extraValueEn);
-  if (hasExtra) return <StatBarRow stat={stat} locale={locale} icon={Icon} />;
+  if (stat.extraValue) return <StatBarRow stat={stat} icon={Icon} />;
 
   return (
     <div className="relative overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800">
@@ -32,23 +27,23 @@ export function StatComparison({
         className="pointer-events-none absolute -top-4 -right-4 h-28 w-28 text-neutral-100 dark:text-neutral-800/60"
       />
       <p className="relative px-4 pt-4 text-xs font-semibold uppercase tracking-wide text-neutral-500">
-        {hi ? stat.metricLabelHi : stat.metricLabelEn}
+        {stat.metricLabel}
       </p>
       <div className="relative mt-3 grid grid-cols-2">
         <div className="bg-neutral-50 p-4 dark:bg-neutral-900/60">
           <p className="text-xs font-medium text-neutral-400 dark:text-neutral-500">
-            {hi ? stat.beforeLabelHi : stat.beforeLabelEn}
+            {stat.beforeLabel}
           </p>
           <p className="mt-1 text-3xl font-extrabold tabular-nums text-neutral-400 dark:text-neutral-500">
-            {hi ? stat.beforeValueHi : stat.beforeValueEn}
+            {stat.beforeValue}
           </p>
         </div>
         <div className="bg-[#184f95]/[0.06] p-4 dark:bg-[#3987e5]/[0.12]">
           <p className="text-xs font-medium text-[#184f95]/80 dark:text-[#3987e5]/90">
-            {hi ? stat.afterLabelHi : stat.afterLabelEn}
+            {stat.afterLabel}
           </p>
           <p className="mt-1 text-3xl font-extrabold tabular-nums text-[#184f95] dark:text-[#3987e5]">
-            {hi ? stat.afterValueHi : stat.afterValueEn}
+            {stat.afterValue}
           </p>
         </div>
       </div>

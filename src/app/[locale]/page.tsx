@@ -14,10 +14,10 @@ export default async function HomePage({
   setRequestLocale(locale);
 
   const t = await getTranslations("home");
-  const categories = await getActiveCategories();
+  const categories = await getActiveCategories(locale);
 
   const recentByCategory = await Promise.all(
-    categories.map((c) => getPublishedEntriesByCategory(c.slug)),
+    categories.map((c) => getPublishedEntriesByCategory(c.slug, locale)),
   );
   const recentEntries = recentByCategory.flat().slice(0, 6);
 
@@ -53,12 +53,10 @@ export default async function HomePage({
                 href={`/category/${category.slug}`}
                 className="rounded-lg border border-neutral-200 p-4 transition hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
               >
-                <h3 className="font-semibold">
-                  {locale === "hi" ? category.nameHi : category.nameEn}
-                </h3>
-                {(locale === "hi" ? category.descriptionHi : category.descriptionEn) && (
+                <h3 className="font-semibold">{category.name}</h3>
+                {category.description && (
                   <p className="mt-1 text-sm text-neutral-500">
-                    {locale === "hi" ? category.descriptionHi : category.descriptionEn}
+                    {category.description}
                   </p>
                 )}
               </Link>

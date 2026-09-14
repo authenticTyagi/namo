@@ -9,6 +9,7 @@ import { CitationList } from "@/components/entry/CitationList";
 import { ShareButtons } from "@/components/entry/ShareButtons";
 import { SITE_URL } from "@/lib/constants";
 import { getEntryIcon } from "@/lib/entry-icons";
+import { LOCALE_INTL_TAG } from "@/lib/localized";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 
@@ -20,16 +21,13 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { locale, entrySlug } = await params;
-  const entry = await getPublishedEntryBySlug(entrySlug);
+  const entry = await getPublishedEntryBySlug(entrySlug, locale);
   if (!entry) return {};
 
-  const title = locale === "hi" ? entry.titleHi : entry.titleEn;
-  const description = locale === "hi" ? entry.summaryHi : entry.summaryEn;
-
   return {
-    title,
-    description,
-    openGraph: { title, description },
+    title: entry.title,
+    description: entry.summary,
+    openGraph: { title: entry.title, description: entry.summary },
   };
 }
 
@@ -41,14 +39,10 @@ export default async function EntryPage({
   const { locale, entrySlug } = await params;
   setRequestLocale(locale);
 
-  const entry = await getPublishedEntryBySlug(entrySlug);
+  const entry = await getPublishedEntryBySlug(entrySlug, locale);
   if (!entry) notFound();
 
   const t = await getTranslations("entry");
-  const title = locale === "hi" ? entry.titleHi : entry.titleEn;
-  const quickTake = locale === "hi" ? entry.quickTakeHi : entry.quickTakeEn;
-  const sections = locale === "hi" ? entry.bodySectionsHi : entry.bodySectionsEn;
-  const legacyBody = locale === "hi" ? entry.bodyHi : entry.bodyEn;
   const Icon = getEntryIcon(entry.slug);
 
   return (
@@ -59,7 +53,7 @@ export default async function EntryPage({
         </span>
         <ImpactBadge impactType={entry.impactType} />
       </div>
-      <h1 className="mt-3 text-3xl font-bold tracking-tight">{title}</h1>
+      <h1 className="mt-3 text-3xl font-bold tracking-tight">{entry.title}</h1>
 
       <Timeline
         startDate={entry.timelineStartDate}
@@ -67,17 +61,17 @@ export default async function EntryPage({
         locale={locale}
       />
 
-      <EntryStatsSection stats={entry.stats} locale={locale} icon={Icon} />
+      <EntryStatsSection stats={entry.stats} icon={Icon} />
 
-      {quickTake && (
+      {entry.quickTake && (
         <p className="text-lg font-medium text-neutral-700 dark:text-neutral-300">
-          {quickTake}
+          {entry.quickTake}
         </p>
       )}
 
-      {sections && sections.length > 0 ? (
+      {entry.bodySections && entry.bodySections.length > 0 ? (
         <div className="prose prose-neutral dark:prose-invert mt-6 max-w-none">
-          {sections.map((s, i) => (
+          {entry.bodySections.map((s, i) => (
             <section key={i}>
               <h2 className="text-lg font-semibold">{s.heading}</h2>
               <p className="whitespace-pre-wrap">{s.body}</p>
@@ -86,7 +80,7 @@ export default async function EntryPage({
         </div>
       ) : (
         <div className="prose prose-neutral dark:prose-invert mt-6 max-w-none whitespace-pre-wrap">
-          {legacyBody}
+          {entry.body}
         </div>
       )}
 
@@ -97,7 +91,7 @@ export default async function EntryPage({
               key={tag.id}
               className="rounded-full bg-neutral-100 px-2.5 py-0.5 text-xs text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"
             >
-              {locale === "hi" ? tag.labelHi : tag.labelEn}
+              {tag.label}
             </span>
           ))}
         </div>
@@ -105,12 +99,12 @@ export default async function EntryPage({
 
       <CitationList sources={entry.sources} />
 
-      <ShareButtons url={`${SITE_URL}/${locale}/entry/${entry.slug}`} title={title} />
+      <ShareButtons url={`${SITE_URL}/${locale}/entry/${entry.slug}`} title={entry.title} />
 
       {entry.lastVerifiedDate && (
         <p className="mt-6 text-xs text-neutral-400">
           {t("lastVerified")}:{" "}
-          {new Intl.DateTimeFormat(locale === "hi" ? "hi-IN" : "en-IN", {
+          {new Intl.DateTimeFormat(LOCALE_INTL_TAG[locale], {
             dateStyle: "medium",
           }).format(entry.lastVerifiedDate)}
         </p>

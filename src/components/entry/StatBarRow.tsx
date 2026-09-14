@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import type { EntryStat } from "@/lib/types";
-import type { Locale } from "@/i18n/routing";
 import type { LucideIcon } from "lucide-react";
 
 /**
@@ -16,30 +15,15 @@ const BAR_COLORS = ["bg-[#6da7ec]", "bg-[#2a78d6]", "bg-[#184f95]"];
 
 export function StatBarRow({
   stat,
-  locale,
   icon: Icon,
 }: {
   stat: EntryStat;
-  locale: Locale;
   icon: LucideIcon;
 }) {
-  const hi = locale === "hi";
   const points = [
-    {
-      label: hi ? stat.beforeLabelHi : stat.beforeLabelEn,
-      value: hi ? stat.beforeValueHi : stat.beforeValueEn,
-      n: Number(stat.beforeValueNumeric ?? 0),
-    },
-    {
-      label: hi ? stat.afterLabelHi : stat.afterLabelEn,
-      value: hi ? stat.afterValueHi : stat.afterValueEn,
-      n: Number(stat.afterValueNumeric ?? 0),
-    },
-    {
-      label: hi ? stat.extraLabelHi : stat.extraLabelEn,
-      value: hi ? stat.extraValueHi : stat.extraValueEn,
-      n: Number(stat.extraValueNumeric ?? 0),
-    },
+    { label: stat.beforeLabel, value: stat.beforeValue, n: Number(stat.beforeValueNumeric ?? 0) },
+    { label: stat.afterLabel, value: stat.afterValue, n: Number(stat.afterValueNumeric ?? 0) },
+    { label: stat.extraLabel, value: stat.extraValue, n: Number(stat.extraValueNumeric ?? 0) },
   ].filter((p) => p.label && p.value);
   const max = Math.max(...points.map((p) => p.n), 1);
 
@@ -50,7 +34,7 @@ export function StatBarRow({
         className="pointer-events-none absolute -top-4 -right-4 h-28 w-28 text-neutral-100 dark:text-neutral-800/60"
       />
       <p className="relative text-xs font-semibold uppercase tracking-wide text-neutral-500">
-        {hi ? stat.metricLabelHi : stat.metricLabelEn}
+        {stat.metricLabel}
       </p>
       <div className="relative mt-4 space-y-3">
         {points.map((p, i) => (

@@ -18,7 +18,7 @@ export default async function OverviewPage({
   setRequestLocale(locale);
 
   const t = await getTranslations("overview");
-  const groups = await getAllStatsGroupedByCategory();
+  const groups = await getAllStatsGroupedByCategory(locale);
   const totalStats = groups.reduce(
     (n, g) => n + g.entries.reduce((m, e) => m + e.stats.length, 0),
     0,
@@ -48,8 +48,7 @@ export default async function OverviewPage({
         {groups.map((group) => {
           const accent = getCategoryClasses(group.category.slug);
           const CategoryIcon = getCategoryIcon(group.category.slug);
-          const name =
-            locale === "hi" ? group.category.nameHi : group.category.nameEn;
+          const name = group.category.name;
 
           return (
             <ScrollReveal key={group.category.id}>
@@ -70,21 +69,15 @@ export default async function OverviewPage({
                 <div className="space-y-8">
                   {group.entries.map((entry) => {
                     const EntryIcon = getEntryIcon(entry.slug);
-                    const title = locale === "hi" ? entry.titleHi : entry.titleEn;
                     return (
                       <div key={entry.id}>
                         <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-neutral-600 dark:text-neutral-400">
                           <EntryIcon aria-hidden className="h-4 w-4 shrink-0" />
-                          {title}
+                          {entry.title}
                         </h3>
                         <div className="grid gap-3 sm:grid-cols-2">
                           {entry.stats.map((stat) => (
-                            <StatComparison
-                              key={stat.id}
-                              stat={stat}
-                              locale={locale}
-                              icon={EntryIcon}
-                            />
+                            <StatComparison key={stat.id} stat={stat} icon={EntryIcon} />
                           ))}
                         </div>
                         <Link

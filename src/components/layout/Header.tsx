@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { LanguageToggle } from "./LanguageToggle";
+import { LanguagePicker } from "./LanguagePicker";
 import { MobileMenu } from "./MobileMenu";
 
 export function Header() {
@@ -23,7 +23,7 @@ export function Header() {
           <Link href="/methodology">{t("methodology")}</Link>
         </nav>
         <div className="flex items-center gap-2">
-          <LanguageToggle />
+          <LanguagePicker />
           <MobileMenu />
         </div>
       </div>

@@ -16,7 +16,7 @@ export default async function SearchPage({
 
   const t = await getTranslations("search");
   const nav = await getTranslations("nav");
-  const results = q ? await searchPublishedEntries(q) : [];
+  const results = q ? await searchPublishedEntries(q, locale) : [];
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10">

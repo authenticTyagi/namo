@@ -2,14 +2,18 @@ export type ImpactType = "tangible" | "intangible" | "mixed";
 
 export type CredibilityTier = "official_primary" | "reputable_media" | "secondary";
 
-/** Shape returned by getPublishedEntriesByCategory — enough for a card. */
+/**
+ * Shape returned by getPublishedEntriesByCategory / searchPublishedEntries
+ * — enough for a card. `title`/`summary` are already resolved for the
+ * requested locale by the query layer (hi/en columns, or an
+ * entryTranslations row for bn/te/mr, falling back to English/Hindi) —
+ * see src/lib/localized.ts. Components never branch on locale for text.
+ */
 export interface EntrySummary {
   id: string;
   slug: string;
-  titleHi: string;
-  titleEn: string;
-  summaryHi: string;
-  summaryEn: string;
+  title: string;
+  summary: string;
   impactType: ImpactType;
   publishDate: Date | null;
 }
@@ -29,8 +33,7 @@ export interface EntrySource {
 export interface EntryTag {
   id: string;
   slug: string;
-  labelHi: string;
-  labelEn: string;
+  label: string;
 }
 
 export interface BodySection {
@@ -38,38 +41,28 @@ export interface BodySection {
   body: string;
 }
 
-/** A before/after (and optionally a 3rd "extra" point) comparison row. */
+/** A before/after (and optionally a 3rd "extra" point) comparison row, already locale-resolved. */
 export interface EntryStat {
   id: string;
   sortOrder: number;
   statKey: string;
-  metricLabelHi: string;
-  metricLabelEn: string;
-  beforeLabelHi: string;
-  beforeLabelEn: string;
-  beforeValueHi: string;
-  beforeValueEn: string;
+  metricLabel: string;
+  beforeLabel: string;
+  beforeValue: string;
   beforeValueNumeric: string | null;
-  afterLabelHi: string;
-  afterLabelEn: string;
-  afterValueHi: string;
-  afterValueEn: string;
+  afterLabel: string;
+  afterValue: string;
   afterValueNumeric: string | null;
-  extraLabelHi: string | null;
-  extraLabelEn: string | null;
-  extraValueHi: string | null;
-  extraValueEn: string | null;
+  extraLabel: string | null;
+  extraValue: string | null;
   extraValueNumeric: string | null;
 }
 
-/** Shape returned by getPublishedEntryBySlug — full detail page. */
+/** Shape returned by getPublishedEntryBySlug — full detail page, locale-resolved. */
 export interface EntryDetail extends EntrySummary {
-  bodyHi: string;
-  bodyEn: string;
-  quickTakeHi: string | null;
-  quickTakeEn: string | null;
-  bodySectionsHi: BodySection[] | null;
-  bodySectionsEn: BodySection[] | null;
+  body: string;
+  quickTake: string | null;
+  bodySections: BodySection[] | null;
   timelineStartDate: Date | null;
   timelineEndDate: Date | null;
   lastVerifiedDate: Date | null;

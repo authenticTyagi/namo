@@ -1,3 +1,5 @@
+import { LOCALE_INTL_TAG, type Locale } from "@/lib/localized";
+
 /**
  * A plain chronological strip above the entry body. Kept deliberately simple
  * (a horizontal line of dated milestones) so it reads clearly regardless of
@@ -10,12 +12,12 @@ export function Timeline({
 }: {
   startDate: Date | null;
   endDate: Date | null;
-  locale: string;
+  locale: Locale;
 }) {
   if (!startDate) return null;
 
   const format = (d: Date) =>
-    new Intl.DateTimeFormat(locale === "hi" ? "hi-IN" : "en-IN", {
+    new Intl.DateTimeFormat(LOCALE_INTL_TAG[locale], {
       year: "numeric",
       month: "short",
     }).format(d);

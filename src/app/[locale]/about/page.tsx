@@ -1,6 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { staticPages } from "@/content/static-pages";
-import type { Locale } from "@/i18n/routing";
+import { resolveStaticPageContent, type Locale } from "@/lib/localized";
 
 export default async function AboutPage({
   params,
@@ -12,7 +12,7 @@ export default async function AboutPage({
 
   return (
     <div className="mx-auto max-w-2xl whitespace-pre-wrap px-4 py-10 leading-relaxed">
-      {staticPages.about[locale]}
+      {resolveStaticPageContent(locale, staticPages.about)}
     </div>
   );
 }
