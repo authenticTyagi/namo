@@ -1,0 +1,55 @@
+# Project Log — Modi Ne Kiya Kya Hai
+
+**Read this file first in any new session on this project.** It's the persistent memory the user explicitly asked for — what's done, what's broken, what's next — so context survives across sessions instead of resetting every time.
+
+Live site: https://modinekiyakyahai.com (also .vercel.app, www.). Repo: https://github.com/authenticTyagi/namo. Admin: https://modinekiyakyahai.com/admin (Google sign-in, `ADMIN_EMAILS` env var gates access).
+
+## What this project is
+
+A sourced, fact-checked, bilingual (Hindi/English) reference site documenting verifiable government work under PM Modi's leadership. Core commitment, non-negotiable: **every claim is cited, nothing is published without a source, mixed/negative data is reported honestly (not spun)**. Explicitly NOT a propaganda site, NOT affiliated with any government body or political party — see `/methodology` and `/about`. No individual is named anywhere on the site (deliberate privacy choice by the owner).
+
+## Stack
+
+Next.js 15.5.25 (pinned stable — npm's `latest` tag currently resolves to a 16 canary, don't let create-next-app grab it again), Tailwind v4, next-intl (hi default, en toggle), Drizzle ORM + Neon Postgres, NextAuth v5 + Google OAuth, Vercel hosting with GitHub auto-deploy connected (push to `master` → deploys automatically, no manual `vercel --prod` needed anymore).
+
+## Current state (as of 2026-09-15)
+
+- **5 categories, 26 entries**, all cited, all with before/after stat comparisons: Economy-Infra-Digital (8), Space & Science (3), Foreign Policy & Diplomacy (3), Defense & Security (2), Currency/Prices/Inflation (2)
+- **Admin panel** (`/admin`): dashboard, entries list (publish/unpublish), review queue (empty, ready for pipeline output), sources intake, feedback inbox — all working, Google-auth-gated
+- **Public feedback form** (`/feedback`): replaces the old broken mailto link
+- **Automation pipeline API** (`/api/pipeline/ingest`, `/api/pipeline/existing-slugs`): built, tested, verified working end-to-end against production. Server-enforced sourcing bar (≥1 official_primary source OR ≥2 total), server-owned confidence scoring, always lands as `pending_review`
+- **Overview page** (`/overview`): every stat from every entry in one place, category-colored accents, scroll-reveal
+- Mobile nav (hamburger menu), Facebook share button, cookie-consent banner (for future AdSense) all shipped
+
+## Known issues / open items
+
+1. **Admin login blocked on the custom domain** (reported by user, diagnosed not yet confirmed-fixed): Google OAuth Client only has `localhost` and `.vercel.app` registered as authorized redirect URIs — the custom domain was added to Vercel after the OAuth client was created. **Fix needs the user**: add `https://modinekiyakyahai.com/api/auth/callback/google` and the `www.` variant in Google Cloud Console → Credentials → OAuth Client. Unconfirmed until user reports back.
+2. **Cloud drafting routine is blocked and disabled.** Created (`trig_01NoDrHQv29wBh3ssQQRZ2to`) but its cloud sandbox's network egress proxy blocks `modinekiyakyahai.com` entirely (org policy allowlist — only Anthropic's own API + npm/PyPI registries by default). User tried adding the domain via claude.ai portal capabilities/network-egress settings twice; identical failure both times (byte-identical proxy allowlist response), so whatever was changed isn't reaching this routine's environment (`env_01LGzWqzQV4cPUXF4hnadmfe`). **Routine is currently disabled** to avoid silent daily failures. Re-enable via `RemoteTrigger action:update, body:{enabled:true}` once the egress issue is actually confirmed fixed (retest with `action:run` + `get_run_log` before trusting it).
+3. **Local cron bridge active as a stopgap**: job `a102b420`, fires daily ~9:07am IST, but is SESSION-ONLY (dies if this Claude Code session/terminal closes) and auto-expires after 7 days regardless (created 2026-09-14). Not a real long-term solution — don't assume it's still running in a future session without checking `CronList`.
+4. **`pipelineConfig`-driven auto-publish threshold**: intentionally unwired. Every pipeline-drafted entry lands as `pending_review` regardless of confidence score, until there's real calibration data from actual runs.
+5. **Freshness re-verification of existing entries**: not built. Same pattern as the drafting pipeline would apply (a scheduled check on `lastVerifiedDate` age), just not done yet.
+6. **AdSense**: consent banner shipped, but no publisher ID yet — user needs to get an approved AdSense account first.
+7. **GitHub Actions/CI**: none set up; relying on Vercel's own build-time type-check+lint as the only gate.
+
+## Explicitly out of scope so far (deferred, not forgotten)
+
+- Public comments on entries (schema exists — `comments`, `moderationFlags` tables — UI never built)
+- Rich in-admin content editor (new/edited entries still go through `scripts/entries/*.ts` content-pack files + `npm run db:seed`, not a web form)
+- `/admin/pipeline` page showing `pipelineRuns` history (visible via `npm run db:studio` for now)
+
+## Content authoring pattern (for adding new categories/entries)
+
+One file per category under `scripts/entries/` (e.g. `phase1.ts`, `space.ts`, `foreign-policy.ts`, `defense.ts`, `currency-prices.ts`), each exporting `category` + an entries array, sharing types from `scripts/entries/types.ts`. Every entry: `quickTakeHi/En` (one-line hook) + `bodySectionsHi/En` (2-4 `{heading, body}` sections, NOT a single paragraph) + `stats[]` (before/after comparisons, `2014-or-launch` baseline vs now — research the real pre-2014 figure, don't guess) + `sources[]` (real URLs, tiered `official_primary`/`reputable_media`/`secondary`) + `tags[]`. Add the new pack to the `contentPacks` array in `scripts/seed.ts`. Add an icon per entry in `src/lib/entry-icons.ts` (verify the lucide-react icon name actually exists first — `node -e "console.log(typeof require('lucide-react').IconName)"`). Run `npm run db:seed` then deploy.
+
+Research pattern that's worked well: WebSearch for current figures, cross-check across ≥2 independent sources, explicitly search for the pre-2014 baseline separately (don't derive/estimate it silently), flag any figure that varies across sources rather than picking the most flattering one.
+
+## Categories not yet covered (candidates for next expansion)
+
+Welfare & social schemes (Ayushman Bharat, Swachh Bharat, PMAY housing, Jal Jeevan Mission), Education (NEP 2020, digital literacy), Agriculture (PM-KISAN, MSP), Environment & renewable energy (solar capacity, EV push), Women & child development, Health infrastructure (AIIMS expansion, generic medicine stores). Pick based on: (a) strong official/primary sourcing available, (b) not yet duplicating an existing entry's topic (check `getAllEntrySlugsForDedupe` output or just the 5 existing category pages).
+
+## Session infra notes
+
+- `npx vercel@latest` works but is NOT on PATH directly — always prefix with `npx --yes vercel`. Frequent harmless `Error: Failed to get package info: Error: Failed to fetch dist-tags from npm` noise on every invocation — ignore it, it doesn't affect the actual command.
+- `npx auth secret` hangs (interactive prompt issue) — generate secrets via `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"` instead.
+- Neon CLI (`npx neon@latest`) works; `neonctl`'s OAuth flow has a strict 60s window, retry fast if it times out.
+- All secrets live in `.env.local` (gitignored) and Vercel's Production env vars — both need updating when adding a new one (`vercel env add NAME production`).
