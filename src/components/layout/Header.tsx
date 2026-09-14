@@ -14,6 +14,9 @@ export function Header() {
         </Link>
         <nav className="hidden items-center gap-6 text-sm sm:flex">
           <Link href="/">{t("home")}</Link>
+          <Link href="/overview" className="font-semibold">
+            {t("overview")}
+          </Link>
           <Link href="/search">{t("search")}</Link>
           <Link href="/about">{t("about")}</Link>
           <Link href="/methodology">{t("methodology")}</Link>

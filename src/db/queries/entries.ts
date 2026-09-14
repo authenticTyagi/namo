@@ -1,6 +1,13 @@
 import { db, isDbConfigured } from "@/db";
-import { entries, sources, categories, tags, entryTags } from "@/db/schema";
-import { and, desc, eq, ilike, or } from "drizzle-orm";
+import {
+  entries,
+  sources,
+  categories,
+  tags,
+  entryTags,
+  entryStats,
+} from "@/db/schema";
+import { and, asc, desc, eq, ilike, or } from "drizzle-orm";
 
 /** Published entries for a category, newest first (card-list use). */
 export async function getPublishedEntriesByCategory(categorySlug: string) {
@@ -45,11 +52,67 @@ export async function getPublishedEntryBySlug(slug: string) {
     .innerJoin(tags, eq(entryTags.tagId, tags.id))
     .where(eq(entryTags.entryId, entry.id));
 
+  const entryStatRows = await db
+    .select()
+    .from(entryStats)
+    .where(eq(entryStats.entryId, entry.id))
+    .orderBy(asc(entryStats.sortOrder));
+
   return {
     ...entry,
     sources: entrySources,
     tags: entryTagRows.map((r) => r.tag),
+    stats: entryStatRows,
   };
+}
+
+/**
+ * Every published entry's stats, grouped by category, for the "2014 → Now"
+ * overview page. One query per entry's stats is fine at this scale (a few
+ * dozen entries); revisit with a join if this grows into the hundreds.
+ */
+export async function getAllStatsGroupedByCategory() {
+  if (!isDbConfigured) return [];
+
+  const categoryRows = await db
+    .select()
+    .from(categories)
+    .where(eq(categories.isActive, true))
+    .orderBy(asc(categories.sortOrder));
+
+  const result = [];
+  for (const category of categoryRows) {
+    const categoryEntries = await db
+      .select({
+        id: entries.id,
+        slug: entries.slug,
+        titleHi: entries.titleHi,
+        titleEn: entries.titleEn,
+      })
+      .from(entries)
+      .where(
+        and(eq(entries.categoryId, category.id), eq(entries.status, "published")),
+      )
+      .orderBy(desc(entries.publishDate));
+
+    const entriesWithStats = [];
+    for (const entry of categoryEntries) {
+      const stats = await db
+        .select()
+        .from(entryStats)
+        .where(eq(entryStats.entryId, entry.id))
+        .orderBy(asc(entryStats.sortOrder));
+      if (stats.length > 0) {
+        entriesWithStats.push({ ...entry, stats });
+      }
+    }
+
+    if (entriesWithStats.length > 0) {
+      result.push({ category, entries: entriesWithStats });
+    }
+  }
+
+  return result;
 }
 
 /**

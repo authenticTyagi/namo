@@ -1,0 +1,13 @@
+import { TrendingUp, Rocket, Globe, Shield, Coins, type LucideIcon } from "lucide-react";
+
+const CATEGORY_ICONS: Record<string, LucideIcon> = {
+  "economy-infra-digital": TrendingUp,
+  "space-science": Rocket,
+  "foreign-policy-diplomacy": Globe,
+  "defense-security": Shield,
+  "currency-prices-inflation": Coins,
+};
+
+export function getCategoryIcon(slug: string): LucideIcon {
+  return CATEGORY_ICONS[slug] ?? TrendingUp;
+}

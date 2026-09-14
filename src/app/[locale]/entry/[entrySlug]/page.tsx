@@ -3,9 +3,11 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getPublishedEntryBySlug } from "@/db/queries/entries";
 import { ImpactBadge } from "@/components/entry/ImpactBadge";
 import { Timeline } from "@/components/entry/Timeline";
+import { EntryStatsSection } from "@/components/entry/EntryStatsSection";
 import { CitationList } from "@/components/entry/CitationList";
 import { ShareButtons } from "@/components/entry/ShareButtons";
 import { SITE_URL } from "@/lib/constants";
+import { getEntryIcon } from "@/lib/entry-icons";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 
@@ -43,11 +45,19 @@ export default async function EntryPage({
 
   const t = await getTranslations("entry");
   const title = locale === "hi" ? entry.titleHi : entry.titleEn;
-  const body = locale === "hi" ? entry.bodyHi : entry.bodyEn;
+  const quickTake = locale === "hi" ? entry.quickTakeHi : entry.quickTakeEn;
+  const sections = locale === "hi" ? entry.bodySectionsHi : entry.bodySectionsEn;
+  const legacyBody = locale === "hi" ? entry.bodyHi : entry.bodyEn;
+  const Icon = getEntryIcon(entry.slug);
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-10">
-      <ImpactBadge impactType={entry.impactType} />
+      <div className="flex items-center gap-3">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
+          <Icon aria-hidden className="h-5 w-5" />
+        </span>
+        <ImpactBadge impactType={entry.impactType} />
+      </div>
       <h1 className="mt-3 text-3xl font-bold tracking-tight">{title}</h1>
 
       <Timeline
@@ -56,9 +66,28 @@ export default async function EntryPage({
         locale={locale}
       />
 
-      <div className="prose prose-neutral dark:prose-invert max-w-none whitespace-pre-wrap">
-        {body}
-      </div>
+      <EntryStatsSection stats={entry.stats} locale={locale} icon={Icon} />
+
+      {quickTake && (
+        <p className="text-lg font-medium text-neutral-700 dark:text-neutral-300">
+          {quickTake}
+        </p>
+      )}
+
+      {sections && sections.length > 0 ? (
+        <div className="prose prose-neutral dark:prose-invert mt-6 max-w-none">
+          {sections.map((s, i) => (
+            <section key={i}>
+              <h2 className="text-lg font-semibold">{s.heading}</h2>
+              <p className="whitespace-pre-wrap">{s.body}</p>
+            </section>
+          ))}
+        </div>
+      ) : (
+        <div className="prose prose-neutral dark:prose-invert mt-6 max-w-none whitespace-pre-wrap">
+          {legacyBody}
+        </div>
+      )}
 
       {entry.tags.length > 0 && (
         <div className="mt-6 flex flex-wrap gap-2">

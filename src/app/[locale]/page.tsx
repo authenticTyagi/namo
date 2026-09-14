@@ -30,6 +30,12 @@ export default async function HomePage({
         <p className="mt-3 max-w-2xl text-neutral-600 dark:text-neutral-400">
           {t("heroSubtitle")}
         </p>
+        <Link
+          href="/overview"
+          className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#184f95] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#123c73] dark:bg-[#123c73] dark:hover:bg-[#0d2b54]"
+        >
+          {t("overviewCta")} →
+        </Link>
       </section>
 
       <section className="mb-12">

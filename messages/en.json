@@ -5,10 +5,18 @@
   },
   "nav": {
     "home": "Home",
+    "overview": "2014 to Now",
     "categories": "Categories",
     "about": "About",
     "methodology": "Methodology",
     "search": "Search"
+  },
+  "overview": {
+    "title": "India: 2014 to Now",
+    "subtitle": "Every sector, every change — in one place, with sources.",
+    "counter": "{stats} verified changes across {categories} sectors",
+    "empty": "No data available yet.",
+    "readFullEntry": "Read full entry"
   },
   "language": {
     "switchTo": "हिंदी"
@@ -16,10 +24,12 @@
   "home": {
     "heroTitle": "Every claim sourced. Every source checked.",
     "heroSubtitle": "This site documents government schemes, data, and progress in one place, in Hindi and English, fully cited.",
+    "overviewCta": "See the full 2014-to-now journey",
     "categoriesHeading": "Browse by category",
     "recentHeading": "Recently added"
   },
   "entry": {
+    "beforeAfter": "Before vs. Now",
     "sources": "Sources",
     "tags": "Tags",
     "share": "Share",
@@ -34,6 +44,11 @@
   "search": {
     "placeholder": "Search...",
     "noResults": "No results found"
+  },
+  "consent": {
+    "message": "We may use cookies for advertising and analytics. You can accept or decline.",
+    "accept": "Accept",
+    "decline": "Decline"
   },
   "footer": {
     "methodologyLink": "How we verify sources",

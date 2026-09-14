@@ -8,6 +8,7 @@ import {
   primaryKey,
   pgEnum,
   uuid,
+  jsonb,
 } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 
@@ -86,6 +87,11 @@ export const users = pgTable("users", {
   email: text("email").notNull().unique(),
   name: text("name"),
   image: text("image"),
+  // Required by @auth/drizzle-adapter's Postgres users-table shape — the
+  // OAuth login handler always writes emailVerified (null for a fresh
+  // account) on createUser, so this must exist even though we don't use
+  // email/password verification ourselves.
+  emailVerified: timestamp("email_verified"),
   role: userRoleEnum("role").notNull().default("viewer"),
   createdAt: timestamp("created_at").notNull().defaultNow(),
 });
@@ -119,6 +125,20 @@ export const entries = pgTable("entries", {
     .default("manual"),
   createdBy: uuid("created_by").references(() => users.id),
 
+  // Readable-body rework: nullable, additive. When present, the entry page
+  // renders quickTake + bodySections instead of the plain bodyHi/bodyEn
+  // block; bodyHi/bodyEn stay NOT NULL and are auto-derived from these by
+  // scripts/seed.ts, so there's no double-authoring and old rows/consumers
+  // are unaffected.
+  quickTakeHi: text("quick_take_hi"),
+  quickTakeEn: text("quick_take_en"),
+  bodySectionsHi: jsonb("body_sections_hi").$type<
+    { heading: string; body: string }[]
+  >(),
+  bodySectionsEn: jsonb("body_sections_en").$type<
+    { heading: string; body: string }[]
+  >(),
+
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
@@ -149,6 +169,53 @@ export const sources = pgTable("sources", {
   credibilityTier: credibilityTierEnum("credibility_tier").notNull(),
   credibilityNotes: text("credibility_notes"),
   language: text("language"),
+});
+
+/**
+ * Before/after (and occasionally a 3rd "extra" point, e.g. a peak figure)
+ * comparison rows shown on an entry page. Backed by the same `sources`
+ * already attached to that entry — no separate stats-to-sources join table,
+ * since for hand-curated content the citations covering a stat are just the
+ * entry's existing citations (add a new `sources` row on the entry itself
+ * when a stat needs a citation the entry didn't already have, e.g. a
+ * pre-2014 baseline figure).
+ */
+export const entryStats = pgTable("entry_stats", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  entryId: uuid("entry_id")
+    .notNull()
+    .references(() => entries.id, { onDelete: "cascade" }),
+  sortOrder: integer("sort_order").notNull().default(0),
+  statKey: text("stat_key").notNull(), // stable id, useful once the Phase 3 pipeline drafts stats too
+
+  metricLabelHi: text("metric_label_hi").notNull(),
+  metricLabelEn: text("metric_label_en").notNull(),
+
+  // Label is per-entry, never hardcoded "2014" — many entries didn't exist
+  // before 2014/2016, so the label says e.g. "Launched, Aug 2014" instead.
+  beforeLabelHi: text("before_label_hi").notNull(),
+  beforeLabelEn: text("before_label_en").notNull(),
+  beforeValueHi: text("before_value_hi").notNull(), // display string, e.g. "0" / "₹0" / "12 किमी/दिन"
+  beforeValueEn: text("before_value_en").notNull(),
+  beforeValueNumeric: numeric("before_value_numeric"), // only used by the 3-point bar-chart case
+
+  afterLabelHi: text("after_label_hi").notNull(),
+  afterLabelEn: text("after_label_en").notNull(),
+  afterValueHi: text("after_value_hi").notNull(),
+  afterValueEn: text("after_value_en").notNull(),
+  afterValueNumeric: numeric("after_value_numeric"),
+
+  // Optional 3rd point (currently only the highways entry uses this, for its
+  // single-day peak figure) — kept on this row rather than a generic child
+  // "points" table since this shape appears once.
+  extraLabelHi: text("extra_label_hi"),
+  extraLabelEn: text("extra_label_en"),
+  extraValueHi: text("extra_value_hi"),
+  extraValueEn: text("extra_value_en"),
+  extraValueNumeric: numeric("extra_value_numeric"),
+
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
 });
 
 // ---------------------------------------------------------------------------
@@ -250,6 +317,28 @@ export const pipelineConfig = pgTable("pipeline_config", {
 });
 
 // ---------------------------------------------------------------------------
+// Source submissions — the admin's way of handing the site trustworthy
+// sources/topics directly (via /admin/sources) instead of only in chat.
+// ---------------------------------------------------------------------------
+
+export const sourceSubmissionStatusEnum = pgEnum("source_submission_status", [
+  "new",
+  "reviewed",
+  "used",
+  "dismissed",
+]);
+
+export const sourceSubmissions = pgTable("source_submissions", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  url: text("url").notNull(),
+  note: text("note").notNull(),
+  topicHint: text("topic_hint"),
+  status: sourceSubmissionStatusEnum("status").notNull().default("new"),
+  createdBy: uuid("created_by").references(() => users.id),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
+// ---------------------------------------------------------------------------
 // Relations
 // ---------------------------------------------------------------------------
 
@@ -268,6 +357,7 @@ export const entriesRelations = relations(entries, ({ one, many }) => ({
   }),
   entryTags: many(entryTags),
   sources: many(sources),
+  stats: many(entryStats),
   comments: many(comments),
 }));
 
@@ -289,6 +379,13 @@ export const entryTagsRelations = relations(entryTags, ({ one }) => ({
 export const sourcesRelations = relations(sources, ({ one }) => ({
   entry: one(entries, {
     fields: [sources.entryId],
+    references: [entries.id],
+  }),
+}));
+
+export const entryStatsRelations = relations(entryStats, ({ one }) => ({
+  entry: one(entries, {
+    fields: [entryStats.entryId],
     references: [entries.id],
   }),
 }));
