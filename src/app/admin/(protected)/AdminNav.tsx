@@ -6,6 +6,7 @@ const LINKS = [
   { href: "/admin/entries", label: "Entries" },
   { href: "/admin/review", label: "Review queue" },
   { href: "/admin/sources", label: "Sources" },
+  { href: "/admin/feedback", label: "Feedback" },
 ];
 
 export function AdminNav({ userEmail }: { userEmail: string }) {

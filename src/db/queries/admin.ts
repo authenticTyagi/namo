@@ -3,15 +3,16 @@ import {
   entries,
   categories,
   sourceSubmissions,
+  feedbackSubmissions,
 } from "@/db/schema";
 import { count, desc, eq } from "drizzle-orm";
 
 export async function getDashboardCounts() {
   if (!isDbConfigured) {
-    return { pendingReview: 0, newSourceSubmissions: 0, published: 0 };
+    return { pendingReview: 0, newSourceSubmissions: 0, newFeedback: 0, published: 0 };
   }
 
-  const [[pending], [newSubmissions], [publishedCount]] = await Promise.all([
+  const [[pending], [newSubmissions], [newFeedback], [publishedCount]] = await Promise.all([
     db
       .select({ value: count() })
       .from(entries)
@@ -22,6 +23,10 @@ export async function getDashboardCounts() {
       .where(eq(sourceSubmissions.status, "new")),
     db
       .select({ value: count() })
+      .from(feedbackSubmissions)
+      .where(eq(feedbackSubmissions.status, "new")),
+    db
+      .select({ value: count() })
       .from(entries)
       .where(eq(entries.status, "published")),
   ]);
@@ -29,6 +34,7 @@ export async function getDashboardCounts() {
   return {
     pendingReview: pending?.value ?? 0,
     newSourceSubmissions: newSubmissions?.value ?? 0,
+    newFeedback: newFeedback?.value ?? 0,
     published: publishedCount?.value ?? 0,
   };
 }
@@ -78,4 +84,23 @@ export async function getSourceSubmissions() {
     .select()
     .from(sourceSubmissions)
     .orderBy(desc(sourceSubmissions.createdAt));
+}
+
+/**
+ * Every entry's slug/title/category regardless of status — used by the
+ * pipeline's dedup check (/api/pipeline/existing-slugs) so the drafting
+ * agent avoids re-covering a topic that's already published, still
+ * pending review, or was previously rejected.
+ */
+export async function getAllEntrySlugsForDedupe() {
+  if (!isDbConfigured) return [];
+
+  return db
+    .select({
+      slug: entries.slug,
+      titleEn: entries.titleEn,
+      categorySlug: categories.slug,
+    })
+    .from(entries)
+    .innerJoin(categories, eq(entries.categoryId, categories.id));
 }

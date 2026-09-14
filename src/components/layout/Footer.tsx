@@ -12,6 +12,7 @@ export function Footer() {
           <Link href="/methodology">{t("methodologyLink")}</Link>
           <Link href="/terms">{t("termsLink")}</Link>
           <Link href="/privacy">{t("privacyLink")}</Link>
+          <Link href="/feedback">{t("feedbackLink")}</Link>
         </div>
       </div>
     </footer>

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { getPublishedEntryBySlug } from "@/db/queries/entries";
 import { ImpactBadge } from "@/components/entry/ImpactBadge";
 import { Timeline } from "@/components/entry/Timeline";
@@ -115,12 +116,12 @@ export default async function EntryPage({
         </p>
       )}
 
-      <a
-        href={`mailto:report@modinekiyakyahai.com?subject=${encodeURIComponent(`Issue with: ${title}`)}`}
+      <Link
+        href={`/feedback?entry=${entry.slug}`}
         className="mt-2 inline-block text-xs text-neutral-400 underline"
       >
         {t("reportIssue")}
-      </a>
+      </Link>
 
       {/* Comments section is added in Phase 2, once auth + moderation ship. */}
     </article>

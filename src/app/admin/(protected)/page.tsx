@@ -7,13 +7,14 @@ export default async function AdminDashboardPage() {
   const tiles = [
     { label: "Pending review", value: counts.pendingReview, href: "/admin/review" },
     { label: "New source submissions", value: counts.newSourceSubmissions, href: "/admin/sources" },
+    { label: "New feedback", value: counts.newFeedback, href: "/admin/feedback" },
     { label: "Published entries", value: counts.published, href: "/admin/entries" },
   ];
 
   return (
     <div>
       <h1 className="text-2xl font-bold">Dashboard</h1>
-      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {tiles.map((tile) => (
           <Link
             key={tile.label}

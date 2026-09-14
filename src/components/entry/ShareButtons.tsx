@@ -9,6 +9,11 @@ export function ShareButtons({ url, title }: { url: string; title: string }) {
 
   const whatsappHref = `https://wa.me/?text=${encodeURIComponent(`${title} — ${url}`)}`;
   const xHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
+  const facebookHref = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+  // Instagram has no web share-intent URL that accepts an arbitrary link —
+  // its app only accepts a native share sheet or an image asset for
+  // Stories, so there's no working "share to Instagram" link to offer here.
+  // Copy Link covers the realistic workaround (paste into a bio/story).
 
   async function copyLink() {
     try {
@@ -38,6 +43,14 @@ export function ShareButtons({ url, title }: { url: string; title: string }) {
         className="rounded-md border border-neutral-300 px-3 py-1.5 text-sm hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-800"
       >
         X
+      </a>
+      <a
+        href={facebookHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-md border border-neutral-300 px-3 py-1.5 text-sm hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-800"
+      >
+        Facebook
       </a>
       <button
         type="button"

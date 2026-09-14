@@ -45,6 +45,22 @@
     "placeholder": "Search...",
     "noResults": "No results found"
   },
+  "feedback": {
+    "title": "Send feedback or a report",
+    "subtitle": "Spotted an error, want to suggest a source, or something else on your mind — let us know here.",
+    "aboutEntry": "About this entry",
+    "categoryLabel": "Type",
+    "categoryReportIssue": "Report an issue",
+    "categorySuggestSource": "Suggest a source",
+    "categoryOther": "Other",
+    "messageLabel": "Your message",
+    "nameLabel": "Name (optional)",
+    "emailLabel": "Email (optional)",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "thanks": "Thanks! Your message has been received.",
+    "error": "Something went wrong, please try again."
+  },
   "consent": {
     "message": "We may use cookies for advertising and analytics. You can accept or decline.",
     "accept": "Accept",
@@ -53,6 +69,7 @@
   "footer": {
     "methodologyLink": "How we verify sources",
     "termsLink": "Terms",
-    "privacyLink": "Privacy"
+    "privacyLink": "Privacy",
+    "feedbackLink": "Feedback"
   }
 }

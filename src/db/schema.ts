@@ -339,6 +339,35 @@ export const sourceSubmissions = pgTable("source_submissions", {
 });
 
 // ---------------------------------------------------------------------------
+// Public feedback — visitor-submitted issue reports / source suggestions /
+// general feedback, via /[locale]/feedback. No auth required to submit
+// (that's the point — anyone can flag an issue), reviewed in /admin/feedback.
+// ---------------------------------------------------------------------------
+
+export const feedbackCategoryEnum = pgEnum("feedback_category", [
+  "report_issue",
+  "suggest_source",
+  "other",
+]);
+
+export const feedbackStatusEnum = pgEnum("feedback_status", [
+  "new",
+  "read",
+  "resolved",
+]);
+
+export const feedbackSubmissions = pgTable("feedback_submissions", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  category: feedbackCategoryEnum("category").notNull(),
+  message: text("message").notNull(),
+  name: text("name"),
+  email: text("email"),
+  relatedEntrySlug: text("related_entry_slug"),
+  status: feedbackStatusEnum("status").notNull().default("new"),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
+// ---------------------------------------------------------------------------
 // Relations
 // ---------------------------------------------------------------------------
 
