@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: "Modi Ne Kiya Kya Hai",
   description:
     "A sourced, structured record of work done under PM Modi's leadership.",
+  other: {
+    "google-adsense-account": "ca-pub-6506096146746148",
+  },
 };
 
 export function generateStaticParams() {
