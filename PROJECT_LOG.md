@@ -10,7 +10,7 @@ A sourced, fact-checked, bilingual (Hindi/English) reference site documenting ve
 
 ## Stack
 
-Next.js 15.5.25 (pinned stable — npm's `latest` tag currently resolves to a 16 canary, don't let create-next-app grab it again), Tailwind v4, next-intl (hi default, en toggle), Drizzle ORM + Neon Postgres, NextAuth v5 + Google OAuth, Vercel hosting with GitHub auto-deploy connected (push to `master` → deploys automatically, no manual `vercel --prod` needed anymore).
+Next.js 15.5.25 (pinned stable — npm's `latest` tag currently resolves to a 16 canary, don't let create-next-app grab it again), Tailwind v4, next-intl (5 locales: hi default, en, bn, te, mr), Drizzle ORM + Neon Postgres, NextAuth v5 + Google OAuth, Vercel hosting with GitHub auto-deploy connected (push to `master` → deploys automatically, no manual `vercel --prod` needed anymore).
 
 ## Current state (as of 2026-09-15)
 
@@ -20,6 +20,8 @@ Next.js 15.5.25 (pinned stable — npm's `latest` tag currently resolves to a 16
 - **Automation pipeline API** (`/api/pipeline/ingest`, `/api/pipeline/existing-slugs`): built, tested, verified working end-to-end against production. Server-enforced sourcing bar (≥1 official_primary source OR ≥2 total), server-owned confidence scoring, always lands as `pending_review`
 - **Overview page** (`/overview`): every stat from every entry in one place, category-colored accents, scroll-reveal
 - Mobile nav (hamburger menu), Facebook share button, cookie-consent banner (for future AdSense) all shipped
+- **5-locale architecture** (2026-09-15): site now routes `/hi /en /bn /te /mr`. bn/te/mr fall back to English (then Hindi) for entry/category content until hand-authored — that's a deliberate separate follow-up pass, not done yet. UI chrome (nav, buttons, form labels) IS hand-translated into all 3 new languages already (`messages/{bn,te,mr}.json`). `LanguagePicker.tsx` (replaced the old hi/en `LanguageToggle`) shows all 5 in a dropdown, native names, so the picker itself doesn't gate on content being ready. Legal/policy pages (About/Methodology/Terms/Privacy) stay hi/en-only by design — need owner review before another language. See `src/lib/localized.ts` for the resolution/fallback logic and `src/db/schema.ts`'s `entryTranslations`/`entryStatTranslations` tables (empty, additive, ready for the future content pass) plus `categories`/`tags`' new `nameBn/Te/Mr` etc. columns.
+- **AdSense verification meta tag** (2026-09-15): `ca-pub-6506096146746148` added via the `[locale]` layout's `metadata.other` — publisher ID provided, but ad units/slots themselves aren't built yet (waiting on account approval).
 
 ## Known issues / open items
 
@@ -36,6 +38,8 @@ Next.js 15.5.25 (pinned stable — npm's `latest` tag currently resolves to a 16
 - Public comments on entries (schema exists — `comments`, `moderationFlags` tables — UI never built)
 - Rich in-admin content editor (new/edited entries still go through `scripts/entries/*.ts` content-pack files + `npm run db:seed`, not a web form)
 - `/admin/pipeline` page showing `pipelineRuns` history (visible via `npm run db:studio` for now)
+- **Hand-authored Bengali/Telugu/Marathi content for the 22 existing entries** — the architecture landed 2026-09-15 (`entryTranslations`/`entryStatTranslations` tables, empty) but writing the actual translated content is a separate future pass. Until then every bn/te/mr entry page correctly falls back to English. Same content-authoring discipline should apply when this happens — no machine translation for factual claims, cross-check numbers, etc.
+- Translating the legal/policy static pages (About/Methodology/Terms/Privacy) into bn/te/mr — needs owner review, not auto-generated.
 
 ## Content authoring pattern (for adding new categories/entries)
 
