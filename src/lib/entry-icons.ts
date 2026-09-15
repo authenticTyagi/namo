@@ -27,6 +27,8 @@ import {
   Sun,
   Globe2,
   Trees,
+  Boxes,
+  Ship,
   type LucideIcon,
 } from "lucide-react";
 
@@ -66,6 +68,8 @@ const ENTRY_ICONS: Record<string, LucideIcon> = {
   "renewable-energy-capacity-growth": Sun,
   "international-solar-alliance": Globe2,
   "forest-cover-isfr": Trees,
+  "pli-scheme-manufacturing-growth": Boxes,
+  "ins-vikrant-indigenous-aircraft-carrier": Ship,
 };
 
 export function getEntryIcon(slug: string): LucideIcon {
