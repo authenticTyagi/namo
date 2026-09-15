@@ -78,6 +78,37 @@ this lens. When applying the macro/sovereignty angle:
   again, only where that connection is real and can be stated honestly,
   not manufactured.
 
+## Aggregate numbers need their per-capita partner
+
+A specific, mandatory case of the micro lens, added 2026-09-15 after user
+feedback on the "Fourth Largest Economy" editorial: **any time a post
+states a big aggregate number — total GDP, total forex reserves, total
+defense budget, total exports — it must also state the per-capita or
+population-normalized equivalent, with its own source**, not just a vague
+gesture at "of course this doesn't mean everyone is rich." "4th-largest
+economy" without its per-capita rank in the same paragraph is technically
+true and misleading by omission — normalizing by 1.4 billion people is
+exactly the arithmetic that turns a macro number into a micro one.
+
+This extends to related base-rate context where it changes what the
+aggregate number means for an ordinary person — for example, a narrow
+direct-tax base (India: ~6.68% of population filed an income tax return in
+FY 2023-24, per the Ministry of Finance's reply to the Lok Sabha) is a
+citable fact worth including alongside a GDP-size story, because it's the
+same per-capita reality seen from the tax rolls instead of the GDP tables.
+
+**State the fact, not a verdict on the people behind it.** "A narrow tax
+base" is a fact. "That portion of the population isn't contributing to the
+economy and is just taking subsidies" is a step past what the fact
+supports — most people below the tax-free threshold are there because
+average income is genuinely low (which the per-capita numbers already
+establish), not because they're opting out; they still pay indirect tax
+(GST) on nearly everything they buy and are the labor behind the aggregate
+number being reported. Cite the base-rate fact plainly; don't editorialize
+a moral judgment about the people in it. This is the same discipline as
+`EDITORIAL_VOICE.md`'s honesty rule — richer context, not a license to
+frame.
+
 ## Retrofit note
 
 This requirement is being applied going forward, starting 2026-09-15.
