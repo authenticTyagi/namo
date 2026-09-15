@@ -1,15 +1,13 @@
 import { Link } from "@/i18n/navigation";
 import { ImpactBadge } from "./ImpactBadge";
 import { LOCALE_INTL_TAG } from "@/lib/localized";
+import { CARD_CLASS } from "@/lib/utils";
 import type { EntrySummary } from "@/lib/types";
 import type { Locale } from "@/i18n/routing";
 
 export function EntryCard({ entry, locale }: { entry: EntrySummary; locale: Locale }) {
   return (
-    <Link
-      href={`/entry/${entry.slug}`}
-      className="block rounded-lg border border-neutral-200 p-4 transition hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
-    >
+    <Link href={`/entry/${entry.slug}`} className={`block ${CARD_CLASS}`}>
       <div className="flex items-center justify-between gap-2">
         <ImpactBadge impactType={entry.impactType} />
         {entry.publishDate && (

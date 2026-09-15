@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description:
     "A sourced, structured record of work done under PM Modi's leadership.",
   other: {
-    "google-adsense-account": "ca-pub-6506096146746148",
+    "google-adsense-account": "ca-pub-1804566337195012",
   },
 };
 

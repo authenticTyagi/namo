@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getPublishedComparisons } from "@/db/queries/comparisons";
 import { getCategoryIcon } from "@/lib/category-icons";
+import { CARD_CLASS } from "@/lib/utils";
 import type { Locale } from "@/i18n/routing";
 
 export default async function IndiaInTheWorldPage({
@@ -30,7 +31,7 @@ export default async function IndiaInTheWorldPage({
               <Link
                 key={c.id}
                 href={`/india-in-the-world/${c.slug}`}
-                className="flex items-start gap-3 rounded-lg border border-neutral-200 p-4 transition hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
+                className={`flex items-start gap-3 ${CARD_CLASS}`}
               >
                 <Icon aria-hidden className="mt-0.5 h-5 w-5 shrink-0 text-neutral-400" />
                 <div>

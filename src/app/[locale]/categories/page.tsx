@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { getActiveCategories } from "@/db/queries/categories";
 import { getCategoryIcon } from "@/lib/category-icons";
 import { getCategoryClasses } from "@/lib/category-colors";
+import { CARD_CLASS } from "@/lib/utils";
 import type { Locale } from "@/i18n/routing";
 
 // A dedicated, standalone index — separate from the homepage's own
@@ -35,11 +36,7 @@ export default async function CategoriesPage({
             const Icon = getCategoryIcon(category.slug);
             const classes = getCategoryClasses(category.slug);
             return (
-              <Link
-                key={category.id}
-                href={`/category/${category.slug}`}
-                className={`rounded-lg border border-neutral-200 p-4 transition hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600`}
-              >
+              <Link key={category.id} href={`/category/${category.slug}`} className={CARD_CLASS}>
                 <div className="flex items-center justify-between gap-2">
                   <span
                     className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border ${classes.border} ${classes.text}`}

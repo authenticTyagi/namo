@@ -6,9 +6,9 @@ import { Link } from "@/i18n/navigation";
 import { Menu, X } from "lucide-react";
 
 /**
- * Hamburger menu shown only below the `sm` breakpoint — the desktop <nav>
- * in Header.tsx is `hidden` there with no other way to reach Overview/
- * Search/About/Methodology on a phone, which is where most visitors land.
+ * Hamburger menu shown below the `lg` breakpoint — the desktop <nav> in
+ * Header.tsx only appears at `lg` and up (8 links need the room), so this
+ * covers both phone and the tablet/narrow-desktop gap in between.
  */
 export function MobileMenu() {
   const t = useTranslations("nav");
@@ -26,7 +26,7 @@ export function MobileMenu() {
   ];
 
   return (
-    <div className="sm:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}

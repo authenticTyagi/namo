@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { getPublishedEditorials } from "@/db/queries/editorials";
 import { ToneBadge } from "@/components/editorial/ToneBadge";
 import { LOCALE_INTL_TAG } from "@/lib/localized";
+import { CARD_CLASS } from "@/lib/utils";
 import type { Locale } from "@/i18n/routing";
 
 export default async function EditorialsPage({
@@ -29,7 +30,7 @@ export default async function EditorialsPage({
             <Link
               key={editorial.id}
               href={`/editorial/${editorial.slug}`}
-              className="block rounded-lg border border-neutral-200 p-4 transition hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
+              className={`block ${CARD_CLASS}`}
             >
               <div className="mb-2 flex items-center justify-between gap-2">
                 <ToneBadge tone={editorial.tone} />
