@@ -45,6 +45,9 @@ import {
   Receipt,
   Activity,
   Fuel,
+  ShoppingBasket,
+  Percent,
+  SatelliteDish,
   type LucideIcon,
 } from "lucide-react";
 
@@ -103,6 +106,9 @@ const ENTRY_ICONS: Record<string, LucideIcon> = {
   "direct-tax-base-and-collection-growth": Receipt,
   "covid19-domestic-vaccination-pandemic-response": Activity,
   "e20-ethanol-blending": Fuel,
+  "onion-tomato-price-volatility": ShoppingBasket,
+  "petrol-diesel-excise-duty-trends": Percent,
+  "navic-satellite-navigation-reliability": SatelliteDish,
 };
 
 export function getEntryIcon(slug: string): LucideIcon {

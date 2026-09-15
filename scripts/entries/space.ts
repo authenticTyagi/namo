@@ -5,6 +5,7 @@
  * 2026-09-14.
  */
 import type { ContentPack, EntryInput } from "./types";
+import { navicSatelliteNavigationEntry } from "./currency-space-batch";
 
 export const category: ContentPack["category"] = {
   slug: "space-science",
@@ -278,4 +279,5 @@ export const spaceEntries: EntryInput[] = [
       },
     ],
   },
+  navicSatelliteNavigationEntry,
 ];

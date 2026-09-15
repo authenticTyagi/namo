@@ -7,6 +7,7 @@
  * plus independent reputable media. Retrieved/verified 2026-09-14.
  */
 import type { ContentPack, EntryInput } from "./types";
+import { essentialCommodityPriceVolatilityEntry, fuelExciseDutyPricingEntry } from "./currency-space-batch";
 
 export const category: ContentPack["category"] = {
   slug: "currency-prices-inflation",
@@ -218,4 +219,6 @@ export const currencyPricesEntries: EntryInput[] = [
       },
     ],
   },
+  essentialCommodityPriceVolatilityEntry,
+  fuelExciseDutyPricingEntry,
 ];
