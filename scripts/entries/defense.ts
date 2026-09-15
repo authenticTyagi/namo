@@ -1,11 +1,14 @@
 /**
- * "Defense & Security" category. Trade/production/budget figures only —
- * not military outcomes or specific conflicts, and not comparative framing
- * against any adversary. Every figure cross-checked against at least one
- * official/primary source (PIB, News on Air) plus independent reputable
- * media where available. Retrieved/verified 2026-09-14.
+ * "Defense & Security" category. Trade/production/budget figures, plus
+ * narrow internal-security administrative statistics (e.g. Left-Wing
+ * Extremism-affected-district trends) — not military outcomes in an
+ * active conflict, not comparative/adversarial framing against any
+ * country, and no individual named. Every figure cross-checked against at
+ * least one official/primary source (PIB, News on Air) plus independent
+ * reputable media where available. Retrieved/verified 2026-09-14/15.
  */
 import type { ContentPack, EntryInput } from "./types";
+import { naxalEntry } from "./security-diplomacy-batch";
 
 export const category: ContentPack["category"] = {
   slug: "defense-security",
@@ -195,4 +198,5 @@ export const defenseEntries: EntryInput[] = [
       },
     ],
   },
+  naxalEntry,
 ];

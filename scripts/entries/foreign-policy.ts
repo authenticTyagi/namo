@@ -9,6 +9,7 @@
  * domestic political opposition — see this site's methodology page.
  */
 import type { ContentPack, EntryInput } from "./types";
+import { bricsEntry } from "./security-diplomacy-batch";
 
 export const category: ContentPack["category"] = {
   slug: "foreign-policy-diplomacy",
@@ -289,4 +290,5 @@ export const foreignPolicyEntries: EntryInput[] = [
       },
     ],
   },
+  bricsEntry,
 ];

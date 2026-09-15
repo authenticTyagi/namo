@@ -70,6 +70,9 @@ async function main() {
   const { category: healthInfrastructureCategory, healthInfrastructureEntries } = await import(
     "./entries/health-infrastructure"
   );
+  const { category: womenChildDevelopmentCategory, womenChildDevelopmentEntries } = await import(
+    "./entries/women-child-development"
+  );
   const contentPacks = [
     { category: economyCategory, entries: phase1Entries },
     { category: spaceCategory, entries: spaceEntries },
@@ -81,6 +84,7 @@ async function main() {
     { category: environmentCategory, entries: environmentEntries },
     { category: educationCategory, entries: educationEntries },
     { category: healthInfrastructureCategory, entries: healthInfrastructureEntries },
+    { category: womenChildDevelopmentCategory, entries: womenChildDevelopmentEntries },
   ];
 
   for (const { category, entries: packEntries } of contentPacks) {
@@ -125,10 +129,16 @@ async function main() {
           bodySectionsHi: entryInput.bodySectionsHi,
           bodySectionsEn: entryInput.bodySectionsEn,
           impactType: entryInput.impactType,
-          status: "published",
+          // pending_review, not published — this script inserts NEW rows
+          // only (the onConflictDoUpdate below never touches status), so a
+          // brand-new entry always needs the same admin approval as an
+          // editorial/comparison/pipeline submission before it's public.
+          // Previously this inserted straight to "published", which was an
+          // inconsistency with the rest of the site's review discipline —
+          // fixed 2026-09-15.
+          status: "pending_review",
           timelineStartDate: new Date(entryInput.timelineStartDate),
           timelineEndDate: new Date(entryInput.timelineEndDate),
-          publishDate: new Date(),
           lastVerifiedDate: new Date(),
           sourceOfCreation: "manual",
         })

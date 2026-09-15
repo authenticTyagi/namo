@@ -35,6 +35,10 @@ import {
   Hospital,
   Pill,
   ClipboardPlus,
+  Baby,
+  Utensils,
+  Briefcase,
+  MapPin,
   type LucideIcon,
 } from "lucide-react";
 
@@ -82,6 +86,11 @@ const ENTRY_ICONS: Record<string, LucideIcon> = {
   "aiims-network-expansion": Hospital,
   "jan-aushadhi-generic-medicine-stores": Pill,
   "medical-college-mbbs-pg-seats-expansion": ClipboardPlus,
+  "beti-bachao-beti-padhao-sex-ratio": Baby,
+  "poshan-abhiyaan-child-stunting": Utensils,
+  "female-labour-force-participation": Briefcase,
+  "lwe-affected-districts-decline": MapPin,
+  "brics-2026-chairship-ndb-lending": Landmark,
 };
 
 export function getEntryIcon(slug: string): LucideIcon {

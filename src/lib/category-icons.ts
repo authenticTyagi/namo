@@ -9,6 +9,7 @@ import {
   Leaf,
   BookOpen,
   Stethoscope,
+  Users,
   type LucideIcon,
 } from "lucide-react";
 
@@ -23,6 +24,7 @@ const CATEGORY_ICONS: Record<string, LucideIcon> = {
   "environment-renewable-energy": Leaf,
   "education-skill-development": BookOpen,
   "health-infrastructure": Stethoscope,
+  "women-child-development": Users,
 };
 
 export function getCategoryIcon(slug: string): LucideIcon {
