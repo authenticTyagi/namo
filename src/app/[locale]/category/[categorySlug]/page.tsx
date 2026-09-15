@@ -3,6 +3,8 @@ import { setRequestLocale } from "next-intl/server";
 import { getCategoryBySlug } from "@/db/queries/categories";
 import { getPublishedEntriesByCategory } from "@/db/queries/entries";
 import { EntryCard } from "@/components/entry/EntryCard";
+import { ShareButtons } from "@/components/entry/ShareButtons";
+import { SITE_URL } from "@/lib/constants";
 import type { Locale } from "@/i18n/routing";
 
 export default async function CategoryPage({
@@ -26,6 +28,11 @@ export default async function CategoryPage({
           {category.description}
         </p>
       )}
+
+      <ShareButtons
+        url={`${SITE_URL}/${locale}/category/${category.slug}`}
+        title={category.name}
+      />
 
       <div className="mt-8">
         {entries.length === 0 ? (

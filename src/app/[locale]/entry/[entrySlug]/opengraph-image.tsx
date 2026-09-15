@@ -12,7 +12,7 @@ export default async function OgImage({
 }) {
   const { locale, entrySlug } = await params;
   const entry = await getPublishedEntryBySlug(entrySlug, locale);
-  const title = entry?.title ?? "Modi Ne Kiya Kya Hai";
+  const title = entry?.title ?? "Modi Ne Kiya Kya Hai?";
 
   return new ImageResponse(
     (
@@ -31,7 +31,7 @@ export default async function OgImage({
         }}
       >
         <div style={{ fontSize: 28, color: "#a3a3a3", marginBottom: 24 }}>
-          Modi Ne Kiya Kya Hai
+          Modi Ne Kiya Kya Hai?
         </div>
         <div>{title}</div>
       </div>

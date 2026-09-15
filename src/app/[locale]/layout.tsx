@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Modi Ne Kiya Kya Hai",
+  title: "Modi Ne Kiya Kya Hai?",
   description:
     "A sourced, structured record of work done under PM Modi's leadership.",
   other: {

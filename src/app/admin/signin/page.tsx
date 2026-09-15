@@ -11,7 +11,7 @@ export default async function AdminSignInPage({
     <main className="mx-auto flex min-h-screen max-w-sm flex-col items-center justify-center px-4 text-center">
       <h1 className="text-xl font-semibold">Admin sign-in</h1>
       <p className="mt-2 text-sm text-neutral-500">
-        Modi Ne Kiya Kya Hai — content administration
+        Modi Ne Kiya Kya Hai? — content administration
       </p>
 
       {error === "forbidden" && (

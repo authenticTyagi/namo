@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getPublishedEntryBySlug } from "@/db/queries/entries";
 import { getPublishedEditorialsForEntry } from "@/db/queries/editorials";
+import { CommentSection } from "@/components/comments/CommentSection";
 import { ImpactBadge } from "@/components/entry/ImpactBadge";
 import { Timeline } from "@/components/entry/Timeline";
 import { EntryStatsSection } from "@/components/entry/EntryStatsSection";
@@ -137,7 +138,11 @@ export default async function EntryPage({
         {t("reportIssue")}
       </Link>
 
-      {/* Comments section is added in Phase 2, once auth + moderation ship. */}
+      <CommentSection
+        target={{ entryId: entry.id }}
+        locale={locale}
+        returnTo={`${SITE_URL}/${locale}/entry/${entry.slug}`}
+      />
     </article>
   );
 }

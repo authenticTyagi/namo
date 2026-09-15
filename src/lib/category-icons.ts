@@ -1,4 +1,14 @@
-import { TrendingUp, Rocket, Globe, Shield, Coins, HeartHandshake, type LucideIcon } from "lucide-react";
+import {
+  TrendingUp,
+  Rocket,
+  Globe,
+  Shield,
+  Coins,
+  HeartHandshake,
+  Wheat,
+  Leaf,
+  type LucideIcon,
+} from "lucide-react";
 
 const CATEGORY_ICONS: Record<string, LucideIcon> = {
   "economy-infra-digital": TrendingUp,
@@ -7,6 +17,8 @@ const CATEGORY_ICONS: Record<string, LucideIcon> = {
   "defense-security": Shield,
   "currency-prices-inflation": Coins,
   "welfare-social-schemes": HeartHandshake,
+  "agriculture-farmer-welfare": Wheat,
+  "environment-renewable-energy": Leaf,
 };
 
 export function getCategoryIcon(slug: string): LucideIcon {

@@ -21,6 +21,12 @@ import {
   Home,
   Droplets,
   FileText,
+  Wallet,
+  Umbrella,
+  Warehouse,
+  Sun,
+  Globe2,
+  Trees,
   type LucideIcon,
 } from "lucide-react";
 
@@ -54,6 +60,12 @@ const ENTRY_ICONS: Record<string, LucideIcon> = {
   "swachh-bharat-sanitation-coverage": Sparkles,
   "pm-awas-yojana-housing": Home,
   "jal-jeevan-mission-tap-water": Droplets,
+  "pm-kisan-samman-nidhi": Wallet,
+  "pmfby-crop-insurance": Umbrella,
+  "msp-procurement-growth": Warehouse,
+  "renewable-energy-capacity-growth": Sun,
+  "international-solar-alliance": Globe2,
+  "forest-cover-isfr": Trees,
 };
 
 export function getEntryIcon(slug: string): LucideIcon {

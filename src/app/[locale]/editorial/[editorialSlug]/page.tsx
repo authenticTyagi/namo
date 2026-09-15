@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { getPublishedEditorialBySlug } from "@/db/queries/editorials";
 import { ToneBadge } from "@/components/editorial/ToneBadge";
 import { CommentSection } from "@/components/comments/CommentSection";
+import { ShareButtons } from "@/components/entry/ShareButtons";
 import { SITE_URL } from "@/lib/constants";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
@@ -62,6 +63,11 @@ export default async function EditorialPage({
       <div className="prose prose-neutral dark:prose-invert mt-6 max-w-none whitespace-pre-wrap">
         {editorial.body}
       </div>
+
+      <ShareButtons
+        url={`${SITE_URL}/${locale}/editorial/${editorial.slug}`}
+        title={editorial.headline}
+      />
 
       <CommentSection
         target={{ editorialId: editorial.id }}

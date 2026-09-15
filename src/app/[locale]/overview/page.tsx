@@ -6,6 +6,8 @@ import { Link } from "@/i18n/navigation";
 import { getCategoryClasses } from "@/lib/category-colors";
 import { getCategoryIcon } from "@/lib/category-icons";
 import { getEntryIcon } from "@/lib/entry-icons";
+import { ShareButtons } from "@/components/entry/ShareButtons";
+import { SITE_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/i18n/routing";
 
@@ -38,6 +40,9 @@ export default async function OverviewPage({
             {t("counter", { stats: totalStats, categories: groups.length })}
           </p>
         )}
+        <div className="mt-4 flex justify-center">
+          <ShareButtons url={`${SITE_URL}/${locale}/overview`} title={t("title")} />
+        </div>
       </div>
 
       {groups.length === 0 && (

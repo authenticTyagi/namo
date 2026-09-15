@@ -42,6 +42,14 @@ const CATEGORY_CLASSES: Record<string, CategoryClasses> = {
     text: "text-[#008300] dark:text-[#008300]", // slot 6: green (same value both modes per the skill's theme)
     border: "border-[#008300] dark:border-[#008300]",
   },
+  "agriculture-farmer-welfare": {
+    text: "text-[#4a3aa7] dark:text-[#9085e9]", // slot 7: violet
+    border: "border-[#4a3aa7] dark:border-[#9085e9]",
+  },
+  "environment-renewable-energy": {
+    text: "text-[#e34948] dark:text-[#e66767]", // slot 8: red
+    border: "border-[#e34948] dark:border-[#e66767]",
+  },
 };
 
 const FALLBACK: CategoryClasses = CATEGORY_CLASSES["economy-infra-digital"];

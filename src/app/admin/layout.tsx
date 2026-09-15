@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "Admin — Modi Ne Kiya Kya Hai",
+  title: "Admin — Modi Ne Kiya Kya Hai?",
   robots: { index: false, follow: false },
 };
 
