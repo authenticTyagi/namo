@@ -17,6 +17,7 @@
     "title": "India: 2014 to Now",
     "subtitle": "Every sector, every change — in one place, with sources.",
     "counter": "{stats} verified changes across {categories} sectors",
+    "jumpToCategory": "Jump to category",
     "empty": "No data available yet.",
     "readFullEntry": "Read full entry"
   },
@@ -25,11 +26,15 @@
   },
   "home": {
     "heroTitle": "Every claim sourced. Every source checked.",
-    "heroSubtitle": "This site documents government schemes, data, and progress in one place, in Hindi and English, fully cited.",
+    "heroSubtitle": "This site documents government schemes, data, and progress in one place — in Hindi, English, Bengali, Telugu, and Marathi — fully cited.",
     "overviewCta": "See the full 2014-to-now journey",
     "categoriesHeading": "Browse by category",
     "seeAllCategories": "See all categories",
-    "recentHeading": "Recently added"
+    "recentHeading": "Recently added",
+    "statEntries": "Entries",
+    "statCategories": "Categories",
+    "statEditorials": "Editorials",
+    "statSources": "Sources cited"
   },
   "categoriesPage": {
     "heading": "All categories",

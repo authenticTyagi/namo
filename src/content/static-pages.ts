@@ -12,14 +12,14 @@ export const staticPages = {
   about: {
     hi: `यह वेबसाइट क्यों बनाई गई?
 
-जब भी कोई पूछता है "मोदी सरकार ने क्या किया है", जवाब देने के लिए बहुत सारी जगह खोजनी पड़ती है, आँकड़े जुटाने पड़ते हैं, और उन्हें जाँचना पड़ता है। यह साइट उस पूरी जानकारी को एक जगह, स्रोत के साथ, हिंदी और अंग्रेज़ी दोनों में इकट्ठा करने की कोशिश है।
+जब भी कोई पूछता है "मोदी सरकार ने क्या किया है", जवाब देने के लिए बहुत सारी जगह खोजनी पड़ती है, आँकड़े जुटाने पड़ते हैं, और उन्हें जाँचना पड़ता है। यह साइट उस पूरी जानकारी को एक जगह, स्रोत के साथ, हिंदी, अंग्रेज़ी, बंगाली, तेलुगु और मराठी में इकट्ठा करने की कोशिश है।
 
 हर एंट्री के पीछे असली स्रोत (सरकारी दस्तावेज़, आधिकारिक आँकड़े, प्रतिष्ठित मीडिया) होते हैं, जिन्हें आप खुद जाँच सकते हैं। बिना स्रोत के कुछ भी पब्लिश नहीं होता।
 
 यह साइट किसी सरकारी संस्था, राजनीतिक दल या चुनाव अभियान से जुड़ी नहीं है, न ही उससे वित्तपोषित है। यह एक स्वतंत्र, सोर्स्ड दस्तावेज़ीकरण प्रयास है।`,
     en: `Why this site exists
 
-Every time someone asks "what has the Modi government actually done", answering means searching multiple places, gathering data, and fact-checking it from scratch. This site tries to consolidate that into one place — sourced, structured, in both Hindi and English.
+Every time someone asks "what has the Modi government actually done", answering means searching multiple places, gathering data, and fact-checking it from scratch. This site tries to consolidate that into one place — sourced, structured, in Hindi, English, Bengali, Telugu, and Marathi.
 
 Every entry carries real citations (government documents, official data, reputable media) that you can verify yourself. Nothing gets published without a source.
 
@@ -38,9 +38,17 @@ This site is not affiliated with, endorsed by, or funded by any government body,
 
 यह साइट केवल "जीत" दिखाने के लिए नहीं बनी है। जहाँ असली आंकड़े मिश्रित या नकारात्मक हों — जैसे रुपये का डॉलर के मुक़ाबले कमज़ोर होना — वहाँ हम वही दिखाते हैं जो डेटा कहता है, भले ही वह पूरी तरह सकारात्मक न हो। "मिश्रित प्रभाव" टैग इसी उद्देश्य के लिए है।
 
+संपादकीय अलग से लेबल किए जाते हैं
+
+"संपादकीय" एंट्री से अलग हैं — ये किसी पहले से सोर्स्ड एंट्री पर साइट की अपनी ईमानदार राय हैं (सकारात्मक, नकारात्मक, तटस्थ या मिश्रित, कभी भी जबरदस्ती सकारात्मक नहीं), और हमेशा "राय" के तौर पर साफ़ लेबल किए जाते हैं। इनका सोर्सिंग मानक एंट्री से ढीला है क्योंकि ये नई जानकारी नहीं जोड़ते — सिर्फ़ पहले से सोर्स्ड तथ्य पर टिप्पणी करते हैं।
+
+तुलना केवल तटस्थ अंतरराष्ट्रीय आंकड़ों से
+
+"भारत बनाम दुनिया" सेक्शन में भारत के आँकड़े दूसरे देशों के साथ रखे जाते हैं — लेकिन केवल विश्व बैंक, IMF, संयुक्त राष्ट्र जैसी तटस्थ अंतरराष्ट्रीय संस्थाओं के आँकड़ों से, कभी भी भारत सरकार के अपने आँकड़ों से नहीं। जहाँ भारत किसी तुलना में पीछे हो, वहाँ भी वही दिखाया जाता है जो डेटा कहता है।
+
 हम क्या नहीं करते
 
-यह साइट किसी विपक्षी दल, आलोचक या किसी और देश पर टिप्पणी या हमला नहीं करती। इसका दायरा सिर्फ़ भारत सरकार के सोर्स्ड, सत्यापित काम तक सीमित है — तुलना या राजनीतिक बहस तक नहीं।`,
+यह साइट किसी विपक्षी दल या आलोचक पर टिप्पणी या हमला नहीं करती, और न ही किसी देश को प्रतिद्वंद्वी के तौर पर पेश करती है। यह क्षेत्रीय विवाद, सक्रिय संघर्ष, या हिंसा की घटनाओं को किसी देश/समूह से जोड़कर कवर नहीं करती — इनमें एक ऐसा पक्ष लेना ज़रूरी हो जाता है जिसे यह साइट की सोर्सिंग पद्धति तटस्थता से तय नहीं कर सकती।`,
     en: `How we verify sources
 
 1. Every claim requires at least one official/primary source (e.g. PIB, RBI, TRAI, ministry data) or two independent reputable sources. Every source is labeled by tier — "official/primary", "reputable media", or "secondary" — so you can judge how much weight to give it yourself.
@@ -53,9 +61,17 @@ We don't hide mixed or negative data
 
 This site isn't built to show only "wins." Where the real data is mixed or negative — such as the rupee weakening against the dollar — we report what the data actually shows, even when it isn't entirely positive. The "mixed impact" tag exists specifically for this.
 
+Editorials are labeled separately
+
+"Editorials" are distinct from entries — they're the site's own honest take on an already-sourced entry (positive, negative, neutral, or mixed, never forced to be flattering), always clearly labeled "Opinion." Their sourcing bar is looser than entries' because they don't introduce new uncited claims — they comment on facts already established in the entry they're about.
+
+Comparisons use only neutral international data
+
+The "India in the World" section places India's own figure on a metric beside other countries — but sourced only to neutral international bodies (World Bank, IMF, UN agencies, and similar), never to Indian government data. Where India trails a peer on a comparison, that's what gets shown too.
+
 What we don't do
 
-This site doesn't comment on or target any opposition party, critic, or other country. Its scope is limited to sourced, verified work by the Government of India — not comparison or political debate.`,
+This site doesn't comment on or target any opposition party or critic, and doesn't frame any country as an adversary. It doesn't cover territorial disputes, active conflicts, or attribute acts of violence to a specific country or group — these require taking a position this site's sourcing method can't settle neutrally.`,
   },
   terms: {
     hi: `नियम
@@ -64,9 +80,9 @@ This site doesn't comment on or target any opposition party, critic, or other co
 
 यह साइट सूचना के उद्देश्य से है। हालाँकि हर दावे को स्रोत के साथ सत्यापित किया जाता है, फिर भी कोई भी महत्वपूर्ण निर्णय लेने से पहले कृपया मूल स्रोतों की स्वयं जाँच करें। साइट पर मौजूद जानकारी में त्रुटि की स्थिति में हम कोई ज़िम्मेदारी नहीं लेते — लेकिन हर गलती को ठीक करने की पूरी कोशिश करते हैं (देखें: तरीका पेज)।
 
-टिप्पणी (भविष्य में)
+टिप्पणियाँ
 
-टिप्पणी करने के लिए साइन-इन ज़रूरी होगा। कृपया गाली-गलौज, निजी हमले या स्पैम से बचें। साइट प्रशासक बिना बताए कोई भी टिप्पणी हटा सकता है और ज़रूरत पड़ने पर किसी उपयोगकर्ता की टिप्पणी करने की सुविधा रोक सकता है। टिप्पणियाँ साइट की सोर्स्ड जानकारी पर चर्चा के लिए हैं, व्यक्तिगत हमलों या राजनीतिक विवाद के लिए नहीं।
+टिप्पणी करने के लिए साइन-इन ज़रूरी है। कृपया गाली-गलौज, निजी हमले या स्पैम से बचें। साइट प्रशासक बिना बताए कोई भी टिप्पणी हटा सकता है और ज़रूरत पड़ने पर किसी उपयोगकर्ता की टिप्पणी करने की सुविधा रोक सकता है। टिप्पणियाँ साइट की सोर्स्ड जानकारी पर चर्चा के लिए हैं, व्यक्तिगत हमलों या राजनीतिक विवाद के लिए नहीं।
 
 सामग्री का उपयोग
 
@@ -83,9 +99,9 @@ Terms of use
 
 This site is for informational purposes. While every claim is verified against a source, please check the original sources yourself before making any significant decision based on this content. We take no liability for errors in the information presented — but we make a genuine effort to correct every error found (see the methodology page).
 
-Comments (future)
+Comments
 
-Signing in will be required to comment. Please avoid hate speech, personal attacks, or spam. The site admin may remove any comment and may revoke a user's ability to comment when necessary. Comments are meant for discussing the sourced information on this site — not personal attacks or political debate.
+Signing in is required to comment. Please avoid hate speech, personal attacks, or spam. The site admin may remove any comment and may revoke a user's ability to comment when necessary. Comments are meant for discussing the sourced information on this site — not personal attacks or political debate.
 
 Use of content
 
@@ -104,7 +120,7 @@ This site operates under the laws of India.`,
 
 एडमिन साइन-इन: साइट प्रशासक के Google साइन-इन से केवल ईमेल, नाम और प्रोफ़ाइल फ़ोटो सेव किया जाता है — सिर्फ़ पहचान और एक्सेस नियंत्रण के लिए।
 
-सामान्य विज़िटर: सामान्य रूप से ब्राउज़ करने पर हम कोई व्यक्तिगत जानकारी नहीं इकट्ठा करते। भाषा प्राथमिकता (हिंदी/अंग्रेज़ी) एक ज़रूरी कुकी में सेव होती है।
+सामान्य विज़िटर: सामान्य रूप से ब्राउज़ करने पर हम कोई व्यक्तिगत जानकारी नहीं इकट्ठा करते। भाषा प्राथमिकता (हिंदी, अंग्रेज़ी, बंगाली, तेलुगु या मराठी) एक ज़रूरी कुकी में सेव होती है।
 
 विज्ञापन कुकीज़: यदि साइट पर विज्ञापन (जैसे Google AdSense) सक्रिय हैं, तो वे विज्ञापन दिखाने के लिए कुकीज़ का उपयोग कर सकते हैं, जिसमें व्यक्तिगत (personalized) विज्ञापन भी शामिल हो सकते हैं — जब तक आप हमारे कुकी बैनर से मना न करें। आप कभी भी अपनी पसंद बदल सकते हैं।
 
@@ -133,7 +149,7 @@ What we collect
 
 Admin sign-in: the site admin's Google sign-in stores only email, name, and profile photo — used solely for identity and access control.
 
-General visitors: browsing the site normally, we collect no personal information. A language preference (Hindi/English) is stored in an essential cookie.
+General visitors: browsing the site normally, we collect no personal information. A language preference (Hindi, English, Bengali, Telugu, or Marathi) is stored in an essential cookie.
 
 Advertising cookies: if advertising (e.g. Google AdSense) is active on the site, it may use cookies to serve ads, including personalized ads — unless you decline via our cookie banner. You can change your choice at any time.
 

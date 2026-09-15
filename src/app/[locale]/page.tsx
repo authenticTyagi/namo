@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getActiveCategories } from "@/db/queries/categories";
 import { getPublishedEntriesByCategory } from "@/db/queries/entries";
+import { getPublicSiteStats } from "@/db/queries/site-stats";
 import { EntryCard } from "@/components/entry/EntryCard";
 import { getCategoryIcon } from "@/lib/category-icons";
 import { getCategoryClasses } from "@/lib/category-colors";
@@ -17,6 +18,7 @@ export default async function HomePage({
 
   const t = await getTranslations("home");
   const categories = await getActiveCategories(locale);
+  const stats = await getPublicSiteStats();
 
   const recentByCategory = await Promise.all(
     categories.map((c) => getPublishedEntriesByCategory(c.slug, locale)),
@@ -38,6 +40,24 @@ export default async function HomePage({
         >
           {t("overviewCta")} →
         </Link>
+
+        {(stats.entryCount > 0 || stats.categoryCount > 0) && (
+          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 border-t border-neutral-200 pt-6 dark:border-neutral-800">
+            {[
+              { value: stats.entryCount, label: t("statEntries") },
+              { value: stats.categoryCount, label: t("statCategories") },
+              { value: stats.editorialCount, label: t("statEditorials") },
+              { value: stats.sourceCount, label: t("statSources") },
+            ]
+              .filter((s) => s.value > 0)
+              .map((s) => (
+                <div key={s.label}>
+                  <span className="text-xl font-bold">{s.value}</span>{" "}
+                  <span className="text-sm text-neutral-500">{s.label}</span>
+                </div>
+              ))}
+          </div>
+        )}
       </section>
 
       <section className="mb-12">

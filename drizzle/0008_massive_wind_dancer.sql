@@ -1,0 +1,1 @@
+ALTER TYPE "public"."editorial_status" ADD VALUE 'draft' BEFORE 'pending_review';

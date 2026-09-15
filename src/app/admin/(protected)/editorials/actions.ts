@@ -35,6 +35,29 @@ export async function rejectEditorial(editorialId: string) {
   revalidatePath("/admin", "layout");
 }
 
+/**
+ * Pull an already-published editorial off the public site without deleting
+ * it or marking it "rejected" (which reads as "this was reviewed and found
+ * unfit" — wrong signal for "pulling this while we reconsider"). Mirrors
+ * entries' own draft/published toggle (PublishToggleButton.tsx) exactly.
+ */
+export async function toggleEditorialPublishStatus(
+  editorialId: string,
+  nextStatus: "published" | "draft",
+) {
+  await requireAdmin();
+  await db
+    .update(editorials)
+    .set({
+      status: nextStatus,
+      publishDate: nextStatus === "published" ? new Date() : null,
+      updatedAt: new Date(),
+    })
+    .where(eq(editorials.id, editorialId));
+  revalidatePath("/admin/editorials");
+  revalidatePath("/[locale]", "layout");
+}
+
 const TONES = ["positive", "negative", "neutral", "mixed"] as const;
 
 function slugify(input: string): string {

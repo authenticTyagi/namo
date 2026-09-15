@@ -35,6 +35,29 @@ export async function rejectComparison(comparisonId: string) {
   revalidatePath("/admin", "layout");
 }
 
+/**
+ * Pull an already-published comparison off the public site without
+ * deleting it or marking it "rejected". Mirrors entries' draft/published
+ * toggle (PublishToggleButton.tsx) and editorials' own version of the
+ * same thing.
+ */
+export async function toggleComparisonPublishStatus(
+  comparisonId: string,
+  nextStatus: "published" | "draft",
+) {
+  await requireAdmin();
+  await db
+    .update(comparisons)
+    .set({
+      status: nextStatus,
+      publishDate: nextStatus === "published" ? new Date() : null,
+      updatedAt: new Date(),
+    })
+    .where(eq(comparisons.id, comparisonId));
+  revalidatePath("/admin/comparisons");
+  revalidatePath("/[locale]", "layout");
+}
+
 function slugify(input: string): string {
   return input
     .toLowerCase()

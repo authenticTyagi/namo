@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { getAllEditorialsForAdmin } from "@/db/queries/admin";
+import { EditorialPublishToggleButton } from "./EditorialPublishToggleButton";
 
 const STATUS_STYLES: Record<string, string> = {
   published: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
   pending_review: "bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-300",
   rejected: "bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300",
+  draft: "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400",
 };
 
 export default async function AdminEditorialsPage() {
@@ -22,14 +24,15 @@ export default async function AdminEditorialsPage() {
         </Link>
       </div>
       <p className="mt-1 text-sm text-neutral-500">
-        The automated drafting agent for editorials isn&apos;t running yet (same
-        cloud network-egress block as the entries pipeline — see
-        PROJECT_LOG.md). Use &quot;New editorial&quot; to write one by hand in
-        the meantime. Pending items to approve/reject live in the unified{" "}
+        A scheduled GitHub Actions agent drafts editorials daily once its
+        API key secret is set (see PROJECT_LOG.md) — &quot;New
+        editorial&quot; is still here for writing one by hand anytime.
+        Pending items to approve/reject live in the unified{" "}
         <Link href="/admin/review" className="underline">
           Review queue
         </Link>{" "}
-        — this page is the full list.
+        — this page is the full list, and where you can unpublish something
+        already live if it needs pulling.
       </p>
 
       <div className="mt-8 overflow-x-auto">
@@ -40,6 +43,7 @@ export default async function AdminEditorialsPage() {
               <th className="py-2 pr-4 font-medium">About</th>
               <th className="py-2 pr-4 font-medium">Tone</th>
               <th className="py-2 pr-4 font-medium">Status</th>
+              <th className="py-2 pr-4 font-medium"></th>
             </tr>
           </thead>
           <tbody>
@@ -54,6 +58,14 @@ export default async function AdminEditorialsPage() {
                   >
                     {editorial.status}
                   </span>
+                </td>
+                <td className="py-3 pr-4">
+                  {(editorial.status === "published" || editorial.status === "draft") && (
+                    <EditorialPublishToggleButton
+                      editorialId={editorial.id}
+                      isPublished={editorial.status === "published"}
+                    />
+                  )}
                 </td>
               </tr>
             ))}

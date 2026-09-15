@@ -75,6 +75,7 @@ export const editorialToneEnum = pgEnum("editorial_tone", [
 ]);
 
 export const editorialStatusEnum = pgEnum("editorial_status", [
+  "draft",
   "pending_review",
   "published",
   "rejected",

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getAllComparisonsForAdmin } from "@/db/queries/admin";
+import { ComparisonPublishToggleButton } from "./ComparisonPublishToggleButton";
 
 const STATUS_STYLES: Record<string, string> = {
   published: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
@@ -31,7 +32,8 @@ export default async function AdminComparisonsPage() {
         <Link href="/admin/review" className="underline">
           Review queue
         </Link>{" "}
-        — this page is the full list.
+        — this page is the full list, and where you can unpublish something
+        already live if it needs pulling.
       </p>
 
       <div className="mt-8 overflow-x-auto">
@@ -41,6 +43,7 @@ export default async function AdminComparisonsPage() {
               <th className="py-2 pr-4 font-medium">Title</th>
               <th className="py-2 pr-4 font-medium">Category</th>
               <th className="py-2 pr-4 font-medium">Status</th>
+              <th className="py-2 pr-4 font-medium"></th>
             </tr>
           </thead>
           <tbody>
@@ -52,6 +55,14 @@ export default async function AdminComparisonsPage() {
                   <span className={`rounded-full px-2 py-0.5 text-xs ${STATUS_STYLES[c.status] ?? ""}`}>
                     {c.status}
                   </span>
+                </td>
+                <td className="py-3 pr-4">
+                  {(c.status === "published" || c.status === "draft") && (
+                    <ComparisonPublishToggleButton
+                      comparisonId={c.id}
+                      isPublished={c.status === "published"}
+                    />
+                  )}
                 </td>
               </tr>
             ))}

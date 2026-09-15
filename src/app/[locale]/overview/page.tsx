@@ -49,6 +49,30 @@ export default async function OverviewPage({
         <p className="text-center text-sm text-neutral-500">{t("empty")}</p>
       )}
 
+      {groups.length > 3 && (
+        <nav
+          aria-label={t("jumpToCategory")}
+          className="mb-10 flex flex-wrap justify-center gap-2 border-b border-neutral-200 pb-8 dark:border-neutral-800"
+        >
+          {groups.map((group) => {
+            const accent = getCategoryClasses(group.category.slug);
+            return (
+              <a
+                key={group.category.id}
+                href={`#cat-${group.category.slug}`}
+                className={cn(
+                  "rounded-full border px-3 py-1 text-xs font-medium transition hover:bg-neutral-100 dark:hover:bg-neutral-900",
+                  accent.border,
+                  accent.text,
+                )}
+              >
+                {group.category.name}
+              </a>
+            );
+          })}
+        </nav>
+      )}
+
       <div className="space-y-16">
         {groups.map((group) => {
           const accent = getCategoryClasses(group.category.slug);

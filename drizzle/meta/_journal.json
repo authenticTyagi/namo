@@ -57,6 +57,13 @@
       "when": 1789463329187,
       "tag": "0007_big_naoko",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1789467388725,
+      "tag": "0008_massive_wind_dancer",
+      "breakpoints": true
     }
   ]
 }
