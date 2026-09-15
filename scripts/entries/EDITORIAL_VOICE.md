@@ -91,3 +91,17 @@ If a candidate editorial would only work by taking a side on a contested
 communal/religious historical narrative, or by naming a party/era as a
 villain, that's the signal to rewrite it in this register instead — not to
 soften the loaded version, rewrite it from this starting point.
+
+## Micro/macro lens (required, see `MICRO_MACRO_LENS.md`)
+
+Every editorial should explicitly hit two levels, not just imply them: the
+**micro** angle (what changed in an ordinary person's actual day-to-day
+life — this voice already reaches for this instinctively, e.g. the ration-
+card queue above; make sure it's explicit, not just atmospheric) and,
+where a genuine one exists, the **macro** angle (what changed for India's
+self-reliance, agenda-setting capacity, or reputation in the world). See
+`MICRO_MACRO_LENS.md` for the full spec and its boundary — "macro" means
+capability and autonomy, never a territorial or adversarial claim, so the
+same topics declined elsewhere (Kashmir, POK, wars, terrorism) stay
+declined here too. Don't force a macro angle onto an editorial that
+doesn't genuinely have one.
