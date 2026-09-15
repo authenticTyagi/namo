@@ -4,15 +4,31 @@ import {
   categories,
   sourceSubmissions,
   feedbackSubmissions,
+  editorials,
+  comments,
 } from "@/db/schema";
-import { count, desc, eq } from "drizzle-orm";
+import { count, desc, eq, or } from "drizzle-orm";
 
 export async function getDashboardCounts() {
   if (!isDbConfigured) {
-    return { pendingReview: 0, newSourceSubmissions: 0, newFeedback: 0, published: 0 };
+    return {
+      pendingReview: 0,
+      newSourceSubmissions: 0,
+      newFeedback: 0,
+      published: 0,
+      pendingReviewEditorials: 0,
+      flaggedComments: 0,
+    };
   }
 
-  const [[pending], [newSubmissions], [newFeedback], [publishedCount]] = await Promise.all([
+  const [
+    [pending],
+    [newSubmissions],
+    [newFeedback],
+    [publishedCount],
+    [pendingEditorials],
+    [flagged],
+  ] = await Promise.all([
     db
       .select({ value: count() })
       .from(entries)
@@ -29,6 +45,14 @@ export async function getDashboardCounts() {
       .select({ value: count() })
       .from(entries)
       .where(eq(entries.status, "published")),
+    db
+      .select({ value: count() })
+      .from(editorials)
+      .where(eq(editorials.status, "pending_review")),
+    db
+      .select({ value: count() })
+      .from(comments)
+      .where(eq(comments.status, "flagged")),
   ]);
 
   return {
@@ -36,6 +60,8 @@ export async function getDashboardCounts() {
     newSourceSubmissions: newSubmissions?.value ?? 0,
     newFeedback: newFeedback?.value ?? 0,
     published: publishedCount?.value ?? 0,
+    pendingReviewEditorials: pendingEditorials?.value ?? 0,
+    flaggedComments: flagged?.value ?? 0,
   };
 }
 
@@ -103,4 +129,69 @@ export async function getAllEntrySlugsForDedupe() {
     })
     .from(entries)
     .innerJoin(categories, eq(entries.categoryId, categories.id));
+}
+
+export async function getPendingReviewEditorials() {
+  if (!isDbConfigured) return [];
+
+  return db
+    .select({
+      id: editorials.id,
+      slug: editorials.slug,
+      headlineEn: editorials.headlineEn,
+      bodyEn: editorials.bodyEn,
+      tone: editorials.tone,
+      relatedEntryTitleEn: entries.titleEn,
+      relatedEntrySlug: entries.slug,
+      createdAt: editorials.createdAt,
+    })
+    .from(editorials)
+    .innerJoin(entries, eq(editorials.relatedEntryId, entries.id))
+    .where(eq(editorials.status, "pending_review"))
+    .orderBy(desc(editorials.createdAt));
+}
+
+export async function getAllEditorialsForAdmin() {
+  if (!isDbConfigured) return [];
+
+  return db
+    .select({
+      id: editorials.id,
+      slug: editorials.slug,
+      headlineEn: editorials.headlineEn,
+      status: editorials.status,
+      tone: editorials.tone,
+      relatedEntrySlug: entries.slug,
+      publishDate: editorials.publishDate,
+    })
+    .from(editorials)
+    .innerJoin(entries, eq(editorials.relatedEntryId, entries.id))
+    .orderBy(desc(editorials.createdAt));
+}
+
+/**
+ * Published entries that don't already have a published or pending-review
+ * editorial about them — used both by the admin's "New editorial" form
+ * (as the relatedEntry choices) and by the pipeline's editorial-candidates
+ * endpoint, so an agent (or the admin) doesn't write a 2nd editorial about
+ * the same entry while one is still live or awaiting review. A rejected
+ * editorial doesn't block a fresh attempt at the same entry.
+ */
+export async function getEntriesEligibleForEditorial() {
+  if (!isDbConfigured) return [];
+
+  const allPublished = await db
+    .select({ id: entries.id, slug: entries.slug, titleEn: entries.titleEn })
+    .from(entries)
+    .where(eq(entries.status, "published"))
+    .orderBy(desc(entries.publishDate));
+
+  // Not rejected — a rejected editorial doesn't block a fresh attempt.
+  const covered = await db
+    .select({ relatedEntryId: editorials.relatedEntryId })
+    .from(editorials)
+    .where(or(eq(editorials.status, "pending_review"), eq(editorials.status, "published")));
+
+  const coveredIds = new Set(covered.map((c) => c.relatedEntryId));
+  return allPublished.filter((e) => !coveredIds.has(e.id));
 }

@@ -17,6 +17,7 @@ export function MobileMenu() {
   const links = [
     { href: "/", label: t("home") },
     { href: "/overview", label: t("overview") },
+    { href: "/editorials", label: t("editorials") },
     { href: "/search", label: t("search") },
     { href: "/about", label: t("about") },
     { href: "/methodology", label: t("methodology") },

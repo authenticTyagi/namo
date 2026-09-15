@@ -18,6 +18,7 @@ export function Header() {
           <Link href="/overview" className="font-semibold">
             {t("overview")}
           </Link>
+          <Link href="/editorials">{t("editorials")}</Link>
           <Link href="/search">{t("search")}</Link>
           <Link href="/about">{t("about")}</Link>
           <Link href="/methodology">{t("methodology")}</Link>

@@ -36,6 +36,13 @@
       "when": 1789423831700,
       "tag": "0004_add_multi_locale_translations",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1789438183909,
+      "tag": "0005_add_editorials_and_comments",
+      "breakpoints": true
     }
   ]
 }

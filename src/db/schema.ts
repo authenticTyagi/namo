@@ -59,6 +59,27 @@ export const pipelineRunStatusEnum = pgEnum("pipeline_run_status", [
   "failed",
 ]);
 
+// Which pipeline wrote a given pipelineRuns row — nullable (old rows predate
+// this column and were all drafting runs) so every writer just starts
+// setting it going forward; no backfill needed.
+export const pipelineRunTypeEnum = pgEnum("pipeline_run_type", [
+  "drafting",
+  "editorial",
+]);
+
+export const editorialToneEnum = pgEnum("editorial_tone", [
+  "positive",
+  "negative",
+  "neutral",
+  "mixed",
+]);
+
+export const editorialStatusEnum = pgEnum("editorial_status", [
+  "pending_review",
+  "published",
+  "rejected",
+]);
+
 // ---------------------------------------------------------------------------
 // Content model
 // ---------------------------------------------------------------------------
@@ -282,6 +303,45 @@ export const entryStatTranslations = pgTable(
 );
 
 // ---------------------------------------------------------------------------
+// Editorials — an opinion/reflection column written about an already-
+// published, already-cited entry (never standalone). Deliberately a
+// looser sourcing bar than entries: the underlying facts are anchored by
+// relatedEntryId (whose own claims are already cited), but the editorial
+// voice itself isn't required to cite per-sentence the way an entry is —
+// it's framed and labeled as commentary, not as a new sourced record.
+// hi/en only for now, same as entries at launch — bn/te/mr editorial
+// translations are future work, not this round.
+// ---------------------------------------------------------------------------
+
+export const editorials = pgTable("editorials", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  slug: text("slug").notNull().unique(),
+  relatedEntryId: uuid("related_entry_id")
+    .notNull()
+    .references(() => entries.id),
+
+  headlineHi: text("headline_hi").notNull(),
+  headlineEn: text("headline_en").notNull(),
+  bodyHi: text("body_hi").notNull(),
+  bodyEn: text("body_en").notNull(),
+
+  // The editorial's own honest take on the entry it's about — positive,
+  // negative, neutral or mixed — never forced to be flattering (same
+  // "report it honestly" commitment as entries' impactType).
+  tone: editorialToneEnum("tone").notNull(),
+
+  status: editorialStatusEnum("status").notNull().default("pending_review"),
+  sourceOfCreation: sourceOfCreationEnum("source_of_creation")
+    .notNull()
+    .default("manual"),
+  publishDate: timestamp("publish_date"),
+  createdBy: uuid("created_by").references(() => users.id),
+
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+});
+
+// ---------------------------------------------------------------------------
 // Auth.js adapter tables (NextAuth v5 / @auth/drizzle-adapter shape)
 // ---------------------------------------------------------------------------
 
@@ -327,11 +387,19 @@ export const verificationTokens = pgTable(
 // Comments & moderation
 // ---------------------------------------------------------------------------
 
+/**
+ * Comments target either an entry or an editorial, never both — enforced in
+ * the createComment server action (src/db/queries/comments.ts), not a DB
+ * CHECK constraint, matching this codebase's existing preference for
+ * app-level invariants over cross-column SQL constraints. entryId was
+ * NOT NULL until editorials shipped; relaxing a NOT NULL is the safe
+ * direction (widens what's allowed, never breaks existing rows), unlike
+ * adding one.
+ */
 export const comments = pgTable("comments", {
   id: uuid("id").primaryKey().defaultRandom(),
-  entryId: uuid("entry_id")
-    .notNull()
-    .references(() => entries.id, { onDelete: "cascade" }),
+  entryId: uuid("entry_id").references(() => entries.id, { onDelete: "cascade" }),
+  editorialId: uuid("editorial_id").references(() => editorials.id, { onDelete: "cascade" }),
   userId: uuid("user_id")
     .notNull()
     .references(() => users.id),
@@ -363,6 +431,7 @@ export const pipelineRuns = pgTable("pipeline_runs", {
   startedAt: timestamp("started_at").notNull().defaultNow(),
   finishedAt: timestamp("finished_at"),
   status: pipelineRunStatusEnum("status").notNull(),
+  runType: pipelineRunTypeEnum("run_type"),
   entriesCreated: integer("entries_created").notNull().default(0),
   entriesAutoPublished: integer("entries_auto_published").notNull().default(0),
   entriesFlaggedForReview: integer("entries_flagged_for_review")
@@ -507,6 +576,7 @@ export const entryStatTranslationsRelations = relations(
 export const usersRelations = relations(users, ({ many }) => ({
   comments: many(comments),
   entries: many(entries),
+  editorials: many(editorials),
 }));
 
 export const commentsRelations = relations(comments, ({ one, many }) => ({
@@ -514,11 +584,27 @@ export const commentsRelations = relations(comments, ({ one, many }) => ({
     fields: [comments.entryId],
     references: [entries.id],
   }),
+  editorial: one(editorials, {
+    fields: [comments.editorialId],
+    references: [editorials.id],
+  }),
   user: one(users, {
     fields: [comments.userId],
     references: [users.id],
   }),
   flags: many(moderationFlags),
+}));
+
+export const editorialsRelations = relations(editorials, ({ one, many }) => ({
+  relatedEntry: one(entries, {
+    fields: [editorials.relatedEntryId],
+    references: [entries.id],
+  }),
+  createdByUser: one(users, {
+    fields: [editorials.createdBy],
+    references: [users.id],
+  }),
+  comments: many(comments),
 }));
 
 export const moderationFlagsRelations = relations(

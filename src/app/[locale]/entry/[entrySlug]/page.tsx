@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getPublishedEntryBySlug } from "@/db/queries/entries";
+import { getPublishedEditorialsForEntry } from "@/db/queries/editorials";
 import { ImpactBadge } from "@/components/entry/ImpactBadge";
 import { Timeline } from "@/components/entry/Timeline";
 import { EntryStatsSection } from "@/components/entry/EntryStatsSection";
@@ -43,7 +44,9 @@ export default async function EntryPage({
   if (!entry) notFound();
 
   const t = await getTranslations("entry");
+  const te = await getTranslations("editorial");
   const Icon = getEntryIcon(entry.slug);
+  const editorials = await getPublishedEditorialsForEntry(entry.id, locale);
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-10">
@@ -93,6 +96,23 @@ export default async function EntryPage({
             >
               {tag.label}
             </span>
+          ))}
+        </div>
+      )}
+
+      {editorials.length > 0 && (
+        <div className="mt-6 space-y-2">
+          {editorials.map((editorial) => (
+            <Link
+              key={editorial.id}
+              href={`/editorial/${editorial.slug}`}
+              className="block rounded-lg border border-neutral-200 p-3 text-sm transition hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
+            >
+              <span className="font-medium text-[#184f95] dark:text-[#3987e5]">
+                {te("readEditorial")} →
+              </span>
+              <p className="mt-0.5 text-neutral-600 dark:text-neutral-400">{editorial.headline}</p>
+            </Link>
           ))}
         </div>
       )}

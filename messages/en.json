@@ -7,6 +7,7 @@
     "home": "Home",
     "overview": "2014 to Now",
     "categories": "Categories",
+    "editorials": "Editorials",
     "about": "About",
     "methodology": "Methodology",
     "search": "Search"
@@ -71,5 +72,33 @@
     "termsLink": "Terms",
     "privacyLink": "Privacy",
     "feedbackLink": "Feedback"
+  },
+  "editorial": {
+    "opinionLabel": "Opinion",
+    "basedOn": "An editorial reflection on:",
+    "readEditorial": "Read the editorial on this",
+    "tone": {
+      "positive": "Positive take",
+      "negative": "Critical take",
+      "neutral": "Neutral take",
+      "mixed": "Mixed take"
+    }
+  },
+  "editorials": {
+    "heading": "Editorials",
+    "subtitle": "Opinion and reflection on what's changed — written after an entry is published, with the same commitment to honesty: good, bad, or mixed.",
+    "empty": "No editorials published yet."
+  },
+  "comments": {
+    "heading": "Discussion",
+    "empty": "No comments yet. Be the first to share your thoughts.",
+    "placeholder": "Share your thoughts...",
+    "submit": "Post comment",
+    "submitting": "Posting...",
+    "error": "Something went wrong, please try again.",
+    "signInPrompt": "Sign in with Google to join the discussion.",
+    "signInButton": "Sign in with Google",
+    "report": "Report",
+    "reported": "Reported"
   }
 }

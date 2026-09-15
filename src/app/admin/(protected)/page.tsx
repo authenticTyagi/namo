@@ -9,6 +9,8 @@ export default async function AdminDashboardPage() {
     { label: "New source submissions", value: counts.newSourceSubmissions, href: "/admin/sources" },
     { label: "New feedback", value: counts.newFeedback, href: "/admin/feedback" },
     { label: "Published entries", value: counts.published, href: "/admin/entries" },
+    { label: "Pending editorials", value: counts.pendingReviewEditorials, href: "/admin/editorials" },
+    { label: "Flagged comments", value: counts.flaggedComments, href: "/admin/comments" },
   ];
 
   return (
