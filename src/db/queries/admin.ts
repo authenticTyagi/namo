@@ -7,6 +7,7 @@ import {
   editorials,
   comments,
   comparisons,
+  trustedSources,
 } from "@/db/schema";
 import { count, desc, eq, or } from "drizzle-orm";
 
@@ -118,6 +119,35 @@ export async function getSourceSubmissions() {
     .select()
     .from(sourceSubmissions)
     .orderBy(desc(sourceSubmissions.createdAt));
+}
+
+export async function getTrustedSources() {
+  if (!isDbConfigured) return [];
+
+  return db
+    .select()
+    .from(trustedSources)
+    .orderBy(desc(trustedSources.createdAt));
+}
+
+/**
+ * Every trusted handle/URL, keyed for the pipeline's own lookup
+ * (/api/pipeline/trusted-sources) — the research agent checks a candidate
+ * citation's publisher against this before assigning a credibility tier,
+ * rather than guessing.
+ */
+export async function getAllTrustedSourcesForPipeline() {
+  if (!isDbConfigured) return [];
+
+  return db
+    .select({
+      label: trustedSources.label,
+      handleOrUrl: trustedSources.handleOrUrl,
+      platform: trustedSources.platform,
+      credibilityTier: trustedSources.credibilityTier,
+      isVideoSource: trustedSources.isVideoSource,
+    })
+    .from(trustedSources);
 }
 
 /**

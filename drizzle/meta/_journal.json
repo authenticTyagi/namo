@@ -50,6 +50,13 @@
       "when": 1789450506300,
       "tag": "0006_add_comparisons",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1789463329187,
+      "tag": "0007_big_naoko",
+      "breakpoints": true
     }
   ]
 }

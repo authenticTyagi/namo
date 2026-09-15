@@ -9,6 +9,7 @@ const LINKS = [
   { href: "/admin/comparisons", label: "Comparisons" },
   { href: "/admin/comments", label: "Comments", countKey: "flaggedCommentsCount" as const },
   { href: "/admin/sources", label: "Sources" },
+  { href: "/admin/trusted-sources", label: "Trusted sources" },
   { href: "/admin/feedback", label: "Feedback" },
 ];
 

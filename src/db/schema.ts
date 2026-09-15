@@ -543,6 +543,39 @@ export const sourceSubmissions = pgTable("source_submissions", {
 });
 
 // ---------------------------------------------------------------------------
+// Trusted sources — a standing, admin-curated whitelist of handles/channels
+// the site treats as pre-vetted, distinct from `source_submissions` above
+// (which is a one-off "here's a URL for this specific entry" inbox). This
+// is the living, DB-backed successor to the static scripts/entries/
+// OFFICIAL_SOURCES.md list: entries/editorials/comparisons still cite an
+// individual URL per claim, but the pipeline and research agents check the
+// *publisher* of that URL against this table to confirm its credibility
+// tier rather than guessing. Video sources (isVideoSource) get flagged so
+// reviewers know a citation needs a timestamp, not just a link.
+// ---------------------------------------------------------------------------
+
+export const trustedSourcePlatformEnum = pgEnum("trusted_source_platform", [
+  "website",
+  "twitter_x",
+  "youtube",
+  "instagram",
+  "facebook",
+  "other",
+]);
+
+export const trustedSources = pgTable("trusted_sources", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  label: text("label").notNull(), // display name, e.g. "PIB India"
+  handleOrUrl: text("handle_or_url").notNull().unique(),
+  platform: trustedSourcePlatformEnum("platform").notNull(),
+  credibilityTier: credibilityTierEnum("credibility_tier").notNull(),
+  isVideoSource: boolean("is_video_source").notNull().default(false),
+  notes: text("notes"),
+  addedBy: uuid("added_by").references(() => users.id),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
+// ---------------------------------------------------------------------------
 // Public feedback — visitor-submitted issue reports / source suggestions /
 // general feedback, via /[locale]/feedback. No auth required to submit
 // (that's the point — anyone can flag an issue), reviewed in /admin/feedback.
