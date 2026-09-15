@@ -61,6 +61,14 @@ export default async function EntryPage({
         <ImpactBadge impactType={entry.impactType} />
       </div>
       <h1 className="mt-3 text-3xl font-bold tracking-tight">{entry.title}</h1>
+      {entry.publishDate && (
+        <p className="mt-1 text-xs text-neutral-400">
+          {t("published")}:{" "}
+          {new Intl.DateTimeFormat(LOCALE_INTL_TAG[locale], { dateStyle: "medium" }).format(
+            entry.publishDate,
+          )}
+        </p>
+      )}
 
       <Timeline
         startDate={entry.timelineStartDate}

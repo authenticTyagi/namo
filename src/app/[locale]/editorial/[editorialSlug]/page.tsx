@@ -6,6 +6,7 @@ import { ToneBadge } from "@/components/editorial/ToneBadge";
 import { CommentSection } from "@/components/comments/CommentSection";
 import { ShareButtons } from "@/components/entry/ShareButtons";
 import { SITE_URL } from "@/lib/constants";
+import { LOCALE_INTL_TAG } from "@/lib/localized";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 
@@ -49,6 +50,14 @@ export default async function EditorialPage({
       </div>
 
       <h1 className="mt-3 text-3xl font-bold tracking-tight">{editorial.headline}</h1>
+      {editorial.publishDate && (
+        <p className="mt-1 text-xs text-neutral-400">
+          {t("published")}:{" "}
+          {new Intl.DateTimeFormat(LOCALE_INTL_TAG[locale], { dateStyle: "medium" }).format(
+            editorial.publishDate,
+          )}
+        </p>
+      )}
 
       <p className="mt-3 text-sm text-neutral-500">
         {t("basedOn")}{" "}

@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getPublishedEditorials } from "@/db/queries/editorials";
 import { ToneBadge } from "@/components/editorial/ToneBadge";
+import { LOCALE_INTL_TAG } from "@/lib/localized";
 import type { Locale } from "@/i18n/routing";
 
 export default async function EditorialsPage({
@@ -30,8 +31,15 @@ export default async function EditorialsPage({
               href={`/editorial/${editorial.slug}`}
               className="block rounded-lg border border-neutral-200 p-4 transition hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
             >
-              <div className="mb-2">
+              <div className="mb-2 flex items-center justify-between gap-2">
                 <ToneBadge tone={editorial.tone} />
+                {editorial.publishDate && (
+                  <span className="shrink-0 text-xs text-neutral-400">
+                    {new Intl.DateTimeFormat(LOCALE_INTL_TAG[locale], { dateStyle: "medium" }).format(
+                      editorial.publishDate,
+                    )}
+                  </span>
+                )}
               </div>
               <h2 className="font-semibold">{editorial.headline}</h2>
               <p className="mt-1 text-sm text-neutral-500">{editorial.relatedEntryTitle}</p>

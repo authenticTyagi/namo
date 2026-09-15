@@ -1,6 +1,6 @@
 import { db, isDbConfigured } from "@/db";
-import { categories } from "@/db/schema";
-import { asc, eq } from "drizzle-orm";
+import { categories, entries } from "@/db/schema";
+import { and, asc, count, eq } from "drizzle-orm";
 import type { Locale } from "@/i18n/routing";
 import { resolveLocalizedText, resolveLocalizedTextNullable } from "@/lib/localized";
 
@@ -9,11 +9,12 @@ export interface CategorySummary {
   slug: string;
   name: string;
   description: string | null;
+  entryCount: number;
 }
 
 type CategoryRow = typeof categories.$inferSelect;
 
-function toCategorySummary(row: CategoryRow, locale: Locale): CategorySummary {
+function toCategorySummary(row: CategoryRow, locale: Locale, entryCount = 0): CategorySummary {
   return {
     id: row.id,
     slug: row.slug,
@@ -27,6 +28,7 @@ function toCategorySummary(row: CategoryRow, locale: Locale): CategorySummary {
       en: row.descriptionEn,
       translated: pickTranslated(row, locale, "description"),
     }),
+    entryCount,
   };
 }
 
@@ -41,14 +43,17 @@ function pickTranslated(
   return null;
 }
 
+/** Active categories with their published-entry count, for the homepage/nav — a left join so a category with zero published entries still appears (count 0), not just categories that already have content. */
 export async function getActiveCategories(locale: Locale): Promise<CategorySummary[]> {
   if (!isDbConfigured) return [];
   const rows = await db
-    .select()
+    .select({ category: categories, entryCount: count(entries.id) })
     .from(categories)
+    .leftJoin(entries, and(eq(entries.categoryId, categories.id), eq(entries.status, "published")))
     .where(eq(categories.isActive, true))
+    .groupBy(categories.id)
     .orderBy(asc(categories.sortOrder));
-  return rows.map((r) => toCategorySummary(r, locale));
+  return rows.map((r) => toCategorySummary(r.category, locale, r.entryCount));
 }
 
 export async function getCategoryBySlug(slug: string, locale: Locale): Promise<CategorySummary | null> {

@@ -38,7 +38,7 @@ export default async function SearchPage({
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         {results.map((entry) => (
-          <EntryCard key={entry.id} entry={entry} />
+          <EntryCard key={entry.id} entry={entry} locale={locale} />
         ))}
       </div>
     </div>

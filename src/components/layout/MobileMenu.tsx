@@ -17,6 +17,7 @@ export function MobileMenu() {
   const links = [
     { href: "/", label: t("home") },
     { href: "/overview", label: t("overview") },
+    { href: "/categories", label: t("categories") },
     { href: "/editorials", label: t("editorials") },
     { href: "/india-in-the-world", label: t("compare") },
     { href: "/search", label: t("search") },

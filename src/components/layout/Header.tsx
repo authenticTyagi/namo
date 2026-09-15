@@ -18,6 +18,7 @@ export function Header() {
           <Link href="/overview" className="font-semibold">
             {t("overview")}
           </Link>
+          <Link href="/categories">{t("categories")}</Link>
           <Link href="/editorials">{t("editorials")}</Link>
           <Link href="/india-in-the-world">{t("compare")}</Link>
           <Link href="/search">{t("search")}</Link>
