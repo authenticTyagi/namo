@@ -1,0 +1,93 @@
+{
+  "categorySlug": "economy-infra-digital",
+  "relatedEntrySlug": null,
+  "titleHi": "2020 की वैश्विक मंदी में भारत की GDP: सबसे हल्की चोट नहीं, पर सबसे तेज़ वापसी",
+  "titleEn": "India's GDP in the 2020 Global Recession: Not the Softest Hit, But the Sharpest Rebound",
+  "metricLabelHi": "वास्तविक GDP वृद्धि दर, 2020 (कोविड-19 वैश्विक मंदी का पहला वर्ष)",
+  "metricLabelEn": "Real GDP growth rate, 2020 (first year of the COVID-19 global recession)",
+  "unitHi": "%",
+  "unitEn": "%",
+  "narrativeHi": "जब कोविड-19 महामारी ने दूसरे विश्व युद्ध के बाद की सबसे गहरी वैश्विक मंदी को जन्म दिया, तो भारत की अर्थव्यवस्था इससे बची नहीं रही। विश्व बैंक के आंकड़े दिखाते हैं कि 2020 में भारत की वास्तविक GDP 5.8% सिकुड़ गई — यह अमेरिका (-2.1%), जर्मनी (-4.1%), जापान (-4.3%) और ब्राज़ील (-3.3%) से ज़्यादा गहरी गिरावट थी, हालांकि ब्रिटेन की 10.0% की गिरावट से कम। इस समूह में चीन इकलौती बड़ी अर्थव्यवस्था थी जो उस साल भी 2.3% की दर से बढ़ती रही। एक सामान्य भारतीय परिवार के लिए यह सिकुड़न सिर्फ़ राष्ट्रीय लेखा-जोखा की एक लाइन नहीं थी — यह दुनिया के सबसे सख्त लॉकडाउन के दौरान गई मज़दूरी और आय के रूप में सामने आई। लेकिन तस्वीर रिकवरी में पूरी तरह पलट गई: भारत 2021 में 9.7% और 2022 में 7.6% की दर से बढ़ा, जो इस समूह की किसी भी बड़ी अर्थव्यवस्था के मुकाबले सबसे तेज़ वापसी में से एक थी। ईमानदार शुरुआती बिंदु यही है कि संकट के असल साल में भारत की गिरावट इस समूह के भीतर सबसे हल्के सिरे पर नहीं, बल्कि ज़्यादा गहरे सिरे पर थी — 'सबसे तेज़ी से बढ़ती बड़ी अर्थव्यवस्था' वाली छवि 2020 के इस विशेष कट पर लागू नहीं होती, भले ही रिकवरी के सालों में यह सच साबित हुई। एक सामान्य कामगार परिवार के लिए, यह फ़र्क बताता है कि आर्थिक झटके और उनसे उबरने की रफ़्तार दोनों ही असल जिंदगी पर असर डालते हैं — और दोनों को साथ देखना ज़रूरी है, न कि सिर्फ़ रिकवरी के आंकड़े को।",
+  "narrativeEn": "When the COVID-19 pandemic triggered the deepest global downturn since World War II, India's economy did not escape it lightly. World Bank data show India's real GDP contracted 5.8% in 2020 — a steeper fall than the United States (-2.1%), Germany (-4.1%), Japan (-4.3%) or Brazil (-3.3%), though smaller than the United Kingdom's 10.0% collapse. China was the only major economy in this group to keep growing that year, expanding 2.3%. For an ordinary Indian household, that contraction wasn't just a line in a national accounts table — it showed up as lost wages and income during the world's strictest lockdown. The picture flipped entirely in the recovery: India grew 9.7% in 2021 and 7.6% in 2022, among the fastest rebounds of any large economy in this group. The honest starting point is that in the crisis year itself, India's contraction sat on the harder end of this group, not the softer one — the 'fastest-growing major economy' framing doesn't hold for this specific 2020 cut, even though it held up in the recovery years that followed. For an ordinary working family, that gap is the real lesson: both the depth of a shock and the speed of the recovery from it show up in day-to-day life, and an honest picture needs both, not just the recovery number.",
+  "countries": [
+    {
+      "countryNameHi": "ब्रिटेन",
+      "countryNameEn": "United Kingdom",
+      "valueHi": "-10.0%",
+      "valueEn": "-10.0%",
+      "valueNumeric": -10.05,
+      "isIndia": false,
+      "sortOrder": 0
+    },
+    {
+      "countryNameHi": "भारत",
+      "countryNameEn": "India",
+      "valueHi": "-5.8%",
+      "valueEn": "-5.8%",
+      "valueNumeric": -5.78,
+      "isIndia": true,
+      "sortOrder": 1
+    },
+    {
+      "countryNameHi": "जापान",
+      "countryNameEn": "Japan",
+      "valueHi": "-4.3%",
+      "valueEn": "-4.3%",
+      "valueNumeric": -4.28,
+      "isIndia": false,
+      "sortOrder": 2
+    },
+    {
+      "countryNameHi": "जर्मनी",
+      "countryNameEn": "Germany",
+      "valueHi": "-4.1%",
+      "valueEn": "-4.1%",
+      "valueNumeric": -4.13,
+      "isIndia": false,
+      "sortOrder": 3
+    },
+    {
+      "countryNameHi": "ब्राज़ील",
+      "countryNameEn": "Brazil",
+      "valueHi": "-3.3%",
+      "valueEn": "-3.3%",
+      "valueNumeric": -3.28,
+      "isIndia": false,
+      "sortOrder": 4
+    },
+    {
+      "countryNameHi": "अमेरिका",
+      "countryNameEn": "United States",
+      "valueHi": "-2.1%",
+      "valueEn": "-2.1%",
+      "valueNumeric": -2.08,
+      "isIndia": false,
+      "sortOrder": 5
+    },
+    {
+      "countryNameHi": "चीन",
+      "countryNameEn": "China",
+      "valueHi": "+2.3%",
+      "valueEn": "+2.3%",
+      "valueNumeric": 2.34,
+      "isIndia": false,
+      "sortOrder": 6
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=IN-US-GB-DE-JP-CN-BR",
+      "publisher": "World Bank",
+      "title": "GDP growth (annual %) — World Development Indicators",
+      "credibilityTier": "official_primary",
+      "language": "en"
+    },
+    {
+      "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/IND/USA/GBR/DEU/JPN/CHN/BRA",
+      "publisher": "International Monetary Fund",
+      "title": "Real GDP growth (NGDP_RPCH) — World Economic Outlook Database",
+      "credibilityTier": "official_primary",
+      "language": "en"
+    }
+  ]
+}

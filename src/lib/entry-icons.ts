@@ -43,6 +43,8 @@ import {
   Cpu,
   Wallet2,
   Receipt,
+  Activity,
+  Fuel,
   type LucideIcon,
 } from "lucide-react";
 
@@ -99,6 +101,8 @@ const ENTRY_ICONS: Record<string, LucideIcon> = {
   "it-services-growth-and-ai-compute-push": Cpu,
   "per-capita-income-real-growth-global-rank": Wallet2,
   "direct-tax-base-and-collection-growth": Receipt,
+  "covid19-domestic-vaccination-pandemic-response": Activity,
+  "e20-ethanol-blending": Fuel,
 };
 
 export function getEntryIcon(slug: string): LucideIcon {

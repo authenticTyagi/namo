@@ -7,6 +7,7 @@
  * deliberately, not omitted. Retrieved/verified 2026-09-15.
  */
 import type { ContentPack, EntryInput } from "./types";
+import { e20Entry } from "./e20-ethanol-blending";
 
 export const category: ContentPack["category"] = {
   slug: "environment-renewable-energy",
@@ -410,4 +411,5 @@ export const environmentEntries: EntryInput[] = [
       },
     ],
   },
+  e20Entry,
 ];

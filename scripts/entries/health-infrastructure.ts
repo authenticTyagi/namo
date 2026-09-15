@@ -11,6 +11,7 @@
  * Retrieved/verified 2026-09-15.
  */
 import type { ContentPack, EntryInput } from "./types";
+import { covid19Entry } from "./covid19-domestic-response";
 
 export const category: ContentPack["category"] = {
   slug: "health-infrastructure",
@@ -343,4 +344,5 @@ export const healthInfrastructureEntries: EntryInput[] = [
       },
     ],
   },
+  covid19Entry,
 ];
