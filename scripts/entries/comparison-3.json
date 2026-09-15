@@ -1,0 +1,86 @@
+{
+  "categorySlug": "environment-renewable-energy",
+  "relatedEntrySlug": null,
+  "titleHi": "भारत का प्रति व्यक्ति कार्बन उत्सर्जन इस समूह में सबसे कम — पर यह उपलब्धि से ज़्यादा कम खपत की कहानी है",
+  "titleEn": "India's Per-Capita Carbon Emissions Are the Lowest in This Group — More a Story of Low Consumption Than a Clean-Energy Win",
+  "metricLabelHi": "CO2 उत्सर्जन प्रति व्यक्ति (LULUCF को छोड़कर), 2023",
+  "metricLabelEn": "CO2 emissions per capita (excluding LULUCF), 2023",
+  "unitHi": "टन CO2e प्रति व्यक्ति",
+  "unitEn": "tonnes CO2e per capita",
+  "narrativeHi": "विश्व बैंक के आंकड़ों के अनुसार, 2023 में भारत का प्रति व्यक्ति कार्बन उत्सर्जन इस समूह में सबसे कम था — लगभग 2.10 टन CO2e प्रति व्यक्ति, जो अमेरिका (13.71 टन) और रूस (13.55 टन) के छठे हिस्से से भी कम और चीन (9.23 टन) के चौथाई से भी कम है। ब्राज़ील (2.27 टन) भारत के सबसे करीब है, जबकि ब्रिटेन (4.45 टन) और दक्षिण अफ्रीका (6.76 टन) बीच में आते हैं। लेकिन इसे शुद्ध पर्यावरणीय उपलब्धि मानना ईमानदार नहीं होगा: यह आंकड़ा मुख्यतः भारत के अब भी कम औसत ऊर्जा खपत और आय स्तर को दिखाता है, न कि किसी कहीं ज़्यादा स्वच्छ ऊर्जा प्रणाली को — इसी साइट की एक अन्य तुलना दिखाती है कि नवीकरणीय ऊर्जा से बिजली उत्पादन की हिस्सेदारी में भारत छह देशों के समूह में सबसे नीचे है। एक सामान्य भारतीय परिवार के लिए कम प्रति व्यक्ति उत्सर्जन का मतलब अक्सर कम बिजली खपत, सीमित एयर-कंडीशनिंग या गाड़ी का सीमित इस्तेमाल भी है — यानी यह आंकड़ा जितना पर्यावरणीय संयम की कहानी है, उतना ही ऊर्जा तक सीमित पहुंच की भी। वैश्विक मंच पर भारत की स्थिति ज़्यादा जटिल है: अपनी विशाल आबादी की वजह से भारत कुल उत्सर्जन में दुनिया का तीसरा सबसे बड़ा उत्सर्जक है, भले ही प्रति व्यक्ति आंकड़ा सबसे कम हो — और अर्थव्यवस्था तथा बिजली की मांग बढ़ने के साथ यह प्रति व्यक्ति आंकड़ा भी बढ़ने की राह पर है। यही अंतर — कम प्रति व्यक्ति पर ऊंचा कुल उत्सर्जन — जलवायु वार्ताओं में भारत को 'ऐतिहासिक ज़िम्मेदारी' और 'समान प्रति व्यक्ति हिस्सेदारी' के तर्क पर खड़े होने की गुंजाइश देता है, जो उसे बातचीत की मेज़ पर एक वास्तविक स्थिति देता है।",
+  "narrativeEn": "World Bank data show India's per-capita carbon emissions were the lowest in this group in 2023 — about 2.10 tonnes CO2e per person, less than a sixth of the United States (13.71 tonnes) or Russia (13.55 tonnes), and less than a quarter of China (9.23 tonnes). Brazil (2.27 tonnes) sits closest to India, with the United Kingdom (4.45 tonnes) and South Africa (6.76 tonnes) in between. But it would not be honest to read this purely as an environmental achievement: the figure mostly reflects India's still-low average energy consumption and income levels rather than a demonstrably cleaner energy system — a separate comparison on this site shows India ranking last of six countries on the share of electricity generated from renewables. For an ordinary Indian household, lower per-capita emissions often also means less electricity use, limited air-conditioning, or limited vehicle use — so this number is as much a story of constrained energy access as of environmental restraint. India's position globally is more complicated: because of its sheer population, India is already the world's third-largest emitter in absolute terms even as its per-person figure is the lowest here, and that per-capita number is on a rising path as the economy grows and electricity demand expands. That gap — low per capita, high in total — is exactly what gives India real standing in climate negotiations to argue on the basis of historical responsibility and equal per-capita shares, a genuine seat at the table rather than just a talking point.",
+  "countries": [
+    {
+      "countryNameHi": "भारत",
+      "countryNameEn": "India",
+      "valueHi": "2.10",
+      "valueEn": "2.10",
+      "valueNumeric": 2.10,
+      "isIndia": true,
+      "sortOrder": 0
+    },
+    {
+      "countryNameHi": "ब्राज़ील",
+      "countryNameEn": "Brazil",
+      "valueHi": "2.27",
+      "valueEn": "2.27",
+      "valueNumeric": 2.27,
+      "isIndia": false,
+      "sortOrder": 1
+    },
+    {
+      "countryNameHi": "ब्रिटेन",
+      "countryNameEn": "United Kingdom",
+      "valueHi": "4.45",
+      "valueEn": "4.45",
+      "valueNumeric": 4.45,
+      "isIndia": false,
+      "sortOrder": 2
+    },
+    {
+      "countryNameHi": "दक्षिण अफ्रीका",
+      "countryNameEn": "South Africa",
+      "valueHi": "6.76",
+      "valueEn": "6.76",
+      "valueNumeric": 6.76,
+      "isIndia": false,
+      "sortOrder": 3
+    },
+    {
+      "countryNameHi": "चीन",
+      "countryNameEn": "China",
+      "valueHi": "9.23",
+      "valueEn": "9.23",
+      "valueNumeric": 9.23,
+      "isIndia": false,
+      "sortOrder": 4
+    },
+    {
+      "countryNameHi": "रूस",
+      "countryNameEn": "Russia",
+      "valueHi": "13.55",
+      "valueEn": "13.55",
+      "valueNumeric": 13.55,
+      "isIndia": false,
+      "sortOrder": 5
+    },
+    {
+      "countryNameHi": "अमेरिका",
+      "countryNameEn": "United States",
+      "valueHi": "13.71",
+      "valueEn": "13.71",
+      "valueNumeric": 13.71,
+      "isIndia": false,
+      "sortOrder": 6
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5?locations=IN-BR-GB-ZA-CN-RU-US",
+      "publisher": "World Bank",
+      "title": "Carbon dioxide (CO2) emissions excluding LULUCF per capita (t CO2e/capita) — World Development Indicators",
+      "credibilityTier": "official_primary",
+      "language": "en"
+    }
+  ]
+}

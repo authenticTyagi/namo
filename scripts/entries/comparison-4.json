@@ -1,0 +1,93 @@
+{
+  "categorySlug": "health-infrastructure",
+  "relatedEntrySlug": null,
+  "titleHi": "मातृ मृत्यु दर: भारत ने बड़ी कमी की, पर चीन और ब्राज़ील से अब भी पीछे",
+  "titleEn": "Maternal Mortality Ratio: India Has Cut It Sharply, But Still Trails China and Brazil",
+  "metricLabelHi": "मातृ मृत्यु दर (प्रति 1,00,000 जीवित जन्म), 2023",
+  "metricLabelEn": "Maternal mortality ratio (per 100,000 live births), 2023",
+  "unitHi": "प्रति 1,00,000 जीवित जन्म",
+  "unitEn": "per 100,000 live births",
+  "narrativeHi": "WHO, यूनिसेफ़, UNFPA, विश्व बैंक और संयुक्त राष्ट्र जनसंख्या प्रभाग के संयुक्त अनुमान (Maternal Mortality Estimation Inter-Agency Group) के अनुसार, भारत की मातृ मृत्यु दर 2000 में प्रति 1,00,000 जीवित जन्मों पर 362 से घटकर 2023 में 80 रह गई — यानी 23 साल में लगभग 78% की गिरावट, जो सार्वजनिक स्वास्थ्य के लिहाज़ से एक वास्तविक और बड़ी उपलब्धि है। लेकिन इसी तुलना समूह में भारत अब भी चीन (16) और अमेरिका (17) से कहीं पीछे है, और ब्राज़ील (67) से भी थोड़ा पीछे। भारत आगे है सिर्फ़ अपने दक्षिण एशियाई पड़ोसियों — बांग्लादेश (115) और पाकिस्तान (155) — तथा नाइजीरिया (993) से, जहां का आंकड़ा इस समूह में सबसे ज़्यादा है। ईमानदार तस्वीर यह भी है कि यह गिरावट सीधी रेखा में नहीं आई: वैश्विक आंकड़े 2021 में एक अस्थायी उछाल दिखाते हैं (155 तक), जो कोविड-19 महामारी के दौरान मातृ स्वास्थ्य सेवाओं में हुए व्यवधान से जुड़ा माना जाता है, इससे पहले 2022-23 में यह फिर तेज़ी से घटा। एक सामान्य भारतीय परिवार के लिए इसका सीधा मतलब है कि प्रसव अब पहले से कहीं ज़्यादा सुरक्षित है, पर फिर भी लगभग हर 1,250 प्रसवों में से एक में मां की जान का खतरा बना रहता है — जो चीन या अमेरिका की किसी मां के मुकाबले लगभग पांच गुना ज़्यादा जोखिम है। यह आंकड़ा भारत के स्वास्थ्य ढांचे के विस्तार (जैसे इसी साइट पर दर्ज एम्स नेटवर्क और मेडिकल कॉलेज सीटों में बढ़ोतरी) की असल कसौटी है — प्रगति वास्तविक है, पर लक्ष्य से दूरी भी उतनी ही वास्तविक।",
+  "narrativeEn": "According to the joint estimates of WHO, UNICEF, UNFPA, the World Bank, and the UN Population Division (the Maternal Mortality Estimation Inter-Agency Group), India's maternal mortality ratio fell from 362 per 100,000 live births in 2000 to 80 in 2023 — a roughly 78% decline over 23 years, a genuine and substantial public-health achievement. But within this same comparison set, India still trails China (16) and the United States (17) by a wide margin, and sits a little behind Brazil (67) too. India leads only its South Asian neighbors — Bangladesh (115) and Pakistan (155) — and Nigeria (993), which has by far the highest ratio in this group. The honest picture also includes the fact that the decline was not a straight line: the global data show a temporary spike in 2021 (to 155), widely attributed to disruption of maternal health services during the COVID-19 pandemic, before the figure resumed its sharp fall in 2022-23. For an ordinary Indian family, this translates directly into childbirth being far safer than a generation ago, but a mother's life is still at risk in roughly 1 of every 1,250 births — about five times the risk faced by a mother in China or the United States. This number is a real test of India's expanding health infrastructure (such as the AIIMS network and medical college seat expansion already documented on this site) — the progress is real, and so is the remaining distance to the leaders in this comparison.",
+  "countries": [
+    {
+      "countryNameHi": "चीन",
+      "countryNameEn": "China",
+      "valueHi": "16",
+      "valueEn": "16",
+      "valueNumeric": 16,
+      "isIndia": false,
+      "sortOrder": 0
+    },
+    {
+      "countryNameHi": "अमेरिका",
+      "countryNameEn": "United States",
+      "valueHi": "17",
+      "valueEn": "17",
+      "valueNumeric": 17,
+      "isIndia": false,
+      "sortOrder": 1
+    },
+    {
+      "countryNameHi": "ब्राज़ील",
+      "countryNameEn": "Brazil",
+      "valueHi": "67",
+      "valueEn": "67",
+      "valueNumeric": 67,
+      "isIndia": false,
+      "sortOrder": 2
+    },
+    {
+      "countryNameHi": "भारत",
+      "countryNameEn": "India",
+      "valueHi": "80",
+      "valueEn": "80",
+      "valueNumeric": 80,
+      "isIndia": true,
+      "sortOrder": 3
+    },
+    {
+      "countryNameHi": "बांग्लादेश",
+      "countryNameEn": "Bangladesh",
+      "valueHi": "115",
+      "valueEn": "115",
+      "valueNumeric": 115,
+      "isIndia": false,
+      "sortOrder": 4
+    },
+    {
+      "countryNameHi": "पाकिस्तान",
+      "countryNameEn": "Pakistan",
+      "valueHi": "155",
+      "valueEn": "155",
+      "valueNumeric": 155,
+      "isIndia": false,
+      "sortOrder": 5
+    },
+    {
+      "countryNameHi": "नाइजीरिया",
+      "countryNameEn": "Nigeria",
+      "valueHi": "993",
+      "valueEn": "993",
+      "valueNumeric": 993,
+      "isIndia": false,
+      "sortOrder": 6
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://data.worldbank.org/indicator/SH.STA.MMRT?locations=IN-CN-US-BR-PK-BD-NG",
+      "publisher": "World Bank",
+      "title": "Maternal mortality ratio (modeled estimate, per 100,000 live births) — World Development Indicators",
+      "credibilityTier": "official_primary",
+      "language": "en"
+    },
+    {
+      "url": "https://www.who.int/news-room/fact-sheets/detail/maternal-mortality",
+      "publisher": "World Health Organization",
+      "title": "Maternal mortality (fact sheet, MMEIG estimates)",
+      "credibilityTier": "official_primary",
+      "language": "en"
+    }
+  ]
+}

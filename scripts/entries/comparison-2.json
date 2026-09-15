@@ -1,0 +1,93 @@
+{
+  "categorySlug": "economy-infra-digital",
+  "relatedEntrySlug": "per-capita-income-real-growth-global-rank",
+  "titleHi": "भारत की प्रति व्यक्ति आय: BRICS समूह में सबसे पीछे, बांग्लादेश से मुश्किल से आगे",
+  "titleEn": "India's Per-Capita Income: Last Among These BRICS Peers, Barely Ahead of Bangladesh",
+  "metricLabelHi": "प्रति व्यक्ति सकल घरेलू उत्पाद, क्रय शक्ति समता (PPP), 2024",
+  "metricLabelEn": "GDP per capita, purchasing power parity (PPP), 2024",
+  "unitHi": "अंतरराष्ट्रीय $",
+  "unitEn": "international $",
+  "narrativeHi": "भारत अक्सर अपनी कुल GDP के आकार पर गर्व करता है — दुनिया की चौथी सबसे बड़ी अर्थव्यवस्था — लेकिन इसे 1.4 अरब लोगों में बांटने पर तस्वीर बदल जाती है। विश्व बैंक के आंकड़ों के अनुसार, क्रय शक्ति समता (PPP) पर भारत की प्रति व्यक्ति GDP 2024 में लगभग $10,719 थी — इस समूह के अपने BRICS साथी देशों में सबसे कम: दक्षिण अफ्रीका ($15,479), ब्राज़ील ($22,371), चीन ($27,140) और रूस ($47,686) — सभी भारत से काफी आगे हैं। ज़्यादा चौंकाने वाली बात यह है कि भारत अपने पड़ोसी बांग्लादेश ($9,661) से सिर्फ़ लगभग 11% ही आगे है, जबकि बांग्लादेश को आमतौर पर एक कहीं गरीब अर्थव्यवस्था समझा जाता है। एक सामान्य भारतीय परिवार के लिए इसका मतलब है कि औसत क्रय शक्ति अब भी रूस के औसत परिवार की लगभग चौथाई और अमेरिका के औसत परिवार की लगभग आठवां हिस्सा है — टिकाऊ उपभोक्ता सामान, निजी स्वास्थ्य देखभाल या बेहतर आवास जैसी चीज़ें औसत भारतीय परिवार के लिए इन साथी देशों के औसत परिवार की तुलना में अब भी कहीं ज़्यादा दूर हैं। वैश्विक मंच पर यह अंतर भी मायने रखता है: एक बड़ी कुल अर्थव्यवस्था भारत को G20 और BRICS जैसे मंचों पर सीट देती है, पर प्रति व्यक्ति आय में पिछड़ापन यह याद दिलाता है कि आर्थिक आकार और आम नागरिक की वास्तविक समृद्धि अभी भी दो अलग कहानियां हैं। भारत की प्रति व्यक्ति आय बीते दशक में तेज़ी से बढ़ी है, पर यह तुलना ईमानदारी से दिखाती है कि यह बढ़त अभी भी ज़्यादातर साथी अर्थव्यवस्थाओं के मुकाबले पीछे से शुरू हो रही है।",
+  "narrativeEn": "India takes pride in the size of its overall economy — the world's fourth-largest — but the picture changes once that output is divided across 1.4 billion people. World Bank data put India's GDP per capita at purchasing power parity (PPP) at roughly $10,719 in 2024 — the lowest in this set among its own BRICS peers: South Africa ($15,479), Brazil ($22,371), China ($27,140), and Russia ($47,686) are all well ahead. More striking, India is only about 11% ahead of neighboring Bangladesh ($9,661), a country widely assumed to be considerably poorer. For an ordinary Indian household, this means average purchasing power is still roughly a quarter of an average Russian household's and about an eighth of an average American household's — durable goods, private healthcare, or better housing remain considerably further out of reach for the median Indian family than for the median family in most of these peer countries. On the global stage, the gap matters too: a large aggregate economy earns India a seat at tables like the G20 and BRICS, but trailing on per-capita income is a reminder that economic scale and the everyday prosperity of the average citizen are still two different stories. India's per-capita income has grown rapidly over the past decade, but this comparison shows honestly that the growth is still starting from behind most of its peer economies.",
+  "countries": [
+    {
+      "countryNameHi": "बांग्लादेश",
+      "countryNameEn": "Bangladesh",
+      "valueHi": "$9,661",
+      "valueEn": "$9,661",
+      "valueNumeric": 9660.78,
+      "isIndia": false,
+      "sortOrder": 0
+    },
+    {
+      "countryNameHi": "भारत",
+      "countryNameEn": "India",
+      "valueHi": "$10,719",
+      "valueEn": "$10,719",
+      "valueNumeric": 10718.59,
+      "isIndia": true,
+      "sortOrder": 1
+    },
+    {
+      "countryNameHi": "दक्षिण अफ्रीका",
+      "countryNameEn": "South Africa",
+      "valueHi": "$15,479",
+      "valueEn": "$15,479",
+      "valueNumeric": 15478.65,
+      "isIndia": false,
+      "sortOrder": 2
+    },
+    {
+      "countryNameHi": "ब्राज़ील",
+      "countryNameEn": "Brazil",
+      "valueHi": "$22,371",
+      "valueEn": "$22,371",
+      "valueNumeric": 22370.92,
+      "isIndia": false,
+      "sortOrder": 3
+    },
+    {
+      "countryNameHi": "चीन",
+      "countryNameEn": "China",
+      "valueHi": "$27,140",
+      "valueEn": "$27,140",
+      "valueNumeric": 27139.52,
+      "isIndia": false,
+      "sortOrder": 4
+    },
+    {
+      "countryNameHi": "रूस",
+      "countryNameEn": "Russia",
+      "valueHi": "$47,686",
+      "valueEn": "$47,686",
+      "valueNumeric": 47686.07,
+      "isIndia": false,
+      "sortOrder": 5
+    },
+    {
+      "countryNameHi": "अमेरिका",
+      "countryNameEn": "United States",
+      "valueHi": "$86,170",
+      "valueEn": "$86,170",
+      "valueNumeric": 86169.66,
+      "isIndia": false,
+      "sortOrder": 6
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD?locations=IN-CN-RU-BR-ZA-BD-US",
+      "publisher": "World Bank",
+      "title": "GDP per capita, PPP (current international $) — World Development Indicators",
+      "credibilityTier": "official_primary",
+      "language": "en"
+    },
+    {
+      "url": "https://www.imf.org/external/datamapper/PPPPC@WEO/IND/CHN/RUS/BRA/ZAF/BGD/USA",
+      "publisher": "International Monetary Fund",
+      "title": "GDP per capita, current prices (PPPPC) — World Economic Outlook Database",
+      "credibilityTier": "official_primary",
+      "language": "en"
+    }
+  ]
+}
