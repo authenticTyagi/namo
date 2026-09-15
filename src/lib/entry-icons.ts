@@ -39,6 +39,10 @@ import {
   Utensils,
   Briefcase,
   MapPin,
+  Banknote,
+  Cpu,
+  Wallet2,
+  Receipt,
   type LucideIcon,
 } from "lucide-react";
 
@@ -91,6 +95,10 @@ const ENTRY_ICONS: Record<string, LucideIcon> = {
   "female-labour-force-participation": Briefcase,
   "lwe-affected-districts-decline": MapPin,
   "brics-2026-chairship-ndb-lending": Landmark,
+  "fdi-record-inflows-net-fdi-decline": Banknote,
+  "it-services-growth-and-ai-compute-push": Cpu,
+  "per-capita-income-real-growth-global-rank": Wallet2,
+  "direct-tax-base-and-collection-growth": Receipt,
 };
 
 export function getEntryIcon(slug: string): LucideIcon {

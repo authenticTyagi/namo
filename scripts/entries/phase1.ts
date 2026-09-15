@@ -9,6 +9,8 @@
  * fields from these automatically, so there's no double-authoring.
  */
 import type { ContentPack, EntryInput } from "./types";
+import { fdiEntry, itAiEntry } from "./fdi-it-ai-batch";
+import { perCapitaIncomeEntry, taxBaseEntry } from "./percapita-taxbase-batch";
 
 export const category: ContentPack["category"] = {
   slug: "economy-infra-digital",
@@ -763,4 +765,8 @@ export const phase1Entries: EntryInput[] = [
       },
     ],
   },
+  fdiEntry,
+  itAiEntry,
+  perCapitaIncomeEntry,
+  taxBaseEntry,
 ];
