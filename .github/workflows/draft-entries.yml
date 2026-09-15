@@ -1,0 +1,30 @@
+name: Draft entries
+
+# Scheduled entries-research agent — the durable replacement for the
+# Claude Code cloud routine, which is blocked by that environment's
+# network-egress policy (see PROJECT_LOG.md). Runs on GitHub's own
+# runners, calls the Anthropic API directly, submits via this site's own
+# pipeline API. Everything it produces lands as pending_review.
+
+on:
+  schedule:
+    # 3:37 UTC = ~9:07am IST
+    - cron: "37 3 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  draft-entries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Run drafting agent
+        env:
+          MODE: entries
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          SITE_BASE_URL: ${{ vars.SITE_BASE_URL }}
+        run: node scripts/pipeline/run-agent.mjs

@@ -1,0 +1,28 @@
+name: Draft editorials
+
+# Scheduled editorial-drafting agent — companion to draft-entries.yml, see
+# that file's header comment for why this runs on GitHub Actions instead
+# of a Claude Code cloud routine.
+
+on:
+  schedule:
+    # 3:45 UTC = ~9:15am IST
+    - cron: "45 3 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  draft-editorials:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Run drafting agent
+        env:
+          MODE: editorials
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          SITE_BASE_URL: ${{ vars.SITE_BASE_URL }}
+        run: node scripts/pipeline/run-agent.mjs
