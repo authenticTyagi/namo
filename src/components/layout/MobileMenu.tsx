@@ -18,6 +18,7 @@ export function MobileMenu() {
     { href: "/", label: t("home") },
     { href: "/overview", label: t("overview") },
     { href: "/editorials", label: t("editorials") },
+    { href: "/india-in-the-world", label: t("compare") },
     { href: "/search", label: t("search") },
     { href: "/about", label: t("about") },
     { href: "/methodology", label: t("methodology") },

@@ -1,6 +1,19 @@
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
-import type { EntrySource, CredibilityTier } from "@/lib/types";
+import type { CredibilityTier } from "@/lib/types";
+
+/**
+ * Only the fields this component actually renders — a structural subset of
+ * EntrySource, so it also accepts ComparisonSource (src/db/queries/comparisons)
+ * without either type needing to carry fields it doesn't have/use.
+ */
+export interface CitableSource {
+  id: string;
+  url: string;
+  publisher: string;
+  title: string | null;
+  credibilityTier: CredibilityTier;
+}
 
 const TIER_LABEL: Record<CredibilityTier, string> = {
   official_primary: "Official / primary source",
@@ -17,7 +30,7 @@ const TIER_STYLES: Record<CredibilityTier, string> = {
     "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300",
 };
 
-export function CitationList({ sources }: { sources: EntrySource[] }) {
+export function CitationList({ sources }: { sources: CitableSource[] }) {
   const t = useTranslations("entry");
 
   if (sources.length === 0) return null;

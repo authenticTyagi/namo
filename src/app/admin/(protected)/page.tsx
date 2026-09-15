@@ -11,6 +11,7 @@ export default async function AdminDashboardPage() {
     { label: "Published entries", value: counts.published, href: "/admin/entries" },
     { label: "Pending editorials", value: counts.pendingReviewEditorials, href: "/admin/editorials" },
     { label: "Flagged comments", value: counts.flaggedComments, href: "/admin/comments" },
+    { label: "Pending comparisons", value: counts.pendingReviewComparisons, href: "/admin/comparisons" },
   ];
 
   return (

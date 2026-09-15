@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getPublishedEntryBySlug } from "@/db/queries/entries";
 import { getPublishedEditorialsForEntry } from "@/db/queries/editorials";
+import { getPublishedComparisonsForEntry } from "@/db/queries/comparisons";
 import { CommentSection } from "@/components/comments/CommentSection";
 import { ImpactBadge } from "@/components/entry/ImpactBadge";
 import { Timeline } from "@/components/entry/Timeline";
@@ -46,8 +47,10 @@ export default async function EntryPage({
 
   const t = await getTranslations("entry");
   const te = await getTranslations("editorial");
+  const tc = await getTranslations("comparisons");
   const Icon = getEntryIcon(entry.slug);
   const editorials = await getPublishedEditorialsForEntry(entry.id, locale);
+  const comparisons = await getPublishedComparisonsForEntry(entry.id, locale);
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-10">
@@ -113,6 +116,23 @@ export default async function EntryPage({
                 {te("readEditorial")} →
               </span>
               <p className="mt-0.5 text-neutral-600 dark:text-neutral-400">{editorial.headline}</p>
+            </Link>
+          ))}
+        </div>
+      )}
+
+      {comparisons.length > 0 && (
+        <div className="mt-6 space-y-2">
+          {comparisons.map((c) => (
+            <Link
+              key={c.id}
+              href={`/india-in-the-world/${c.slug}`}
+              className="block rounded-lg border border-neutral-200 p-3 text-sm transition hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
+            >
+              <span className="font-medium text-[#184f95] dark:text-[#3987e5]">
+                {tc("seeComparison")} →
+              </span>
+              <p className="mt-0.5 text-neutral-600 dark:text-neutral-400">{c.title}</p>
             </Link>
           ))}
         </div>

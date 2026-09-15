@@ -6,6 +6,7 @@ const LINKS = [
   { href: "/admin/entries", label: "Entries" },
   { href: "/admin/review", label: "Review queue" },
   { href: "/admin/editorials", label: "Editorials" },
+  { href: "/admin/comparisons", label: "Comparisons" },
   { href: "/admin/comments", label: "Comments" },
   { href: "/admin/sources", label: "Sources" },
   { href: "/admin/feedback", label: "Feedback" },

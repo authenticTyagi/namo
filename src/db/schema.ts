@@ -342,6 +342,78 @@ export const editorials = pgTable("editorials", {
 });
 
 // ---------------------------------------------------------------------------
+// Comparisons — "India in the World": India's own figure on a metric set
+// beside a handful of other countries/the world, sourced to neutral
+// international bodies (World Bank, IMF, UN agencies, IRENA, ITU, etc.)
+// rather than Indian government sources — the whole point is a comparison
+// nobody can wave off as self-reported. Same honesty rule as everywhere
+// else on this site: report it when India trails a peer too, not just when
+// it leads. Optionally anchored to an existing entry (relatedEntryId,
+// nullable — unlike editorials this can stand alone) so a comparison can
+// link back to the fuller India-specific writeup where one exists.
+// hi/en only for now, same launch scope as entries/editorials.
+// ---------------------------------------------------------------------------
+
+export const comparisons = pgTable("comparisons", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  slug: text("slug").notNull().unique(),
+  categoryId: uuid("category_id")
+    .notNull()
+    .references(() => categories.id),
+  relatedEntryId: uuid("related_entry_id").references(() => entries.id),
+
+  titleHi: text("title_hi").notNull(),
+  titleEn: text("title_en").notNull(),
+  metricLabelHi: text("metric_label_hi").notNull(),
+  metricLabelEn: text("metric_label_en").notNull(),
+  unitHi: text("unit_hi"), // e.g. "%", "GW", "प्रति व्यक्ति $" — shown beside each value
+  unitEn: text("unit_en"),
+  narrativeHi: text("narrative_hi").notNull(), // the honest write-up: what the comparison shows, caveats included
+  narrativeEn: text("narrative_en").notNull(),
+
+  status: entryStatusEnum("status").notNull().default("pending_review"),
+  sourceOfCreation: sourceOfCreationEnum("source_of_creation")
+    .notNull()
+    .default("manual"),
+  publishDate: timestamp("publish_date"),
+  createdBy: uuid("created_by").references(() => users.id),
+
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+});
+
+/** One row per country shown in a comparison's bar chart. India is flagged, not just another row, so the chart can highlight it distinctly. */
+export const comparisonPoints = pgTable("comparison_points", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  comparisonId: uuid("comparison_id")
+    .notNull()
+    .references(() => comparisons.id, { onDelete: "cascade" }),
+  sortOrder: integer("sort_order").notNull().default(0),
+  isIndia: boolean("is_india").notNull().default(false),
+  countryNameHi: text("country_name_hi").notNull(),
+  countryNameEn: text("country_name_en").notNull(),
+  valueHi: text("value_hi").notNull(), // display string, e.g. "52%" / "155 GW"
+  valueEn: text("value_en").notNull(),
+  valueNumeric: numeric("value_numeric").notNull(), // required here (unlike entryStats) — the bar chart needs every point to be plottable
+});
+
+/** Same shape/role as `sources`, kept separate since a comparison isn't an entry. */
+export const comparisonSources = pgTable("comparison_sources", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  comparisonId: uuid("comparison_id")
+    .notNull()
+    .references(() => comparisons.id, { onDelete: "cascade" }),
+  url: text("url").notNull(),
+  publisher: text("publisher").notNull(),
+  title: text("title"),
+  retrievedDate: timestamp("retrieved_date").notNull().defaultNow(),
+  publishedDate: timestamp("published_date"),
+  credibilityTier: credibilityTierEnum("credibility_tier").notNull(),
+  credibilityNotes: text("credibility_notes"),
+  language: text("language"),
+});
+
+// ---------------------------------------------------------------------------
 // Auth.js adapter tables (NextAuth v5 / @auth/drizzle-adapter shape)
 // ---------------------------------------------------------------------------
 
@@ -505,6 +577,7 @@ export const feedbackSubmissions = pgTable("feedback_submissions", {
 
 export const categoriesRelations = relations(categories, ({ many }) => ({
   entries: many(entries),
+  comparisons: many(comparisons),
 }));
 
 export const entriesRelations = relations(entries, ({ one, many }) => ({
@@ -521,6 +594,7 @@ export const entriesRelations = relations(entries, ({ one, many }) => ({
   stats: many(entryStats),
   comments: many(comments),
   translations: many(entryTranslations),
+  comparisons: many(comparisons),
 }));
 
 export const tagsRelations = relations(tags, ({ many }) => ({
@@ -577,6 +651,7 @@ export const usersRelations = relations(users, ({ many }) => ({
   comments: many(comments),
   entries: many(entries),
   editorials: many(editorials),
+  comparisons: many(comparisons),
 }));
 
 export const commentsRelations = relations(comments, ({ one, many }) => ({
@@ -605,6 +680,37 @@ export const editorialsRelations = relations(editorials, ({ one, many }) => ({
     references: [users.id],
   }),
   comments: many(comments),
+}));
+
+export const comparisonsRelations = relations(comparisons, ({ one, many }) => ({
+  category: one(categories, {
+    fields: [comparisons.categoryId],
+    references: [categories.id],
+  }),
+  relatedEntry: one(entries, {
+    fields: [comparisons.relatedEntryId],
+    references: [entries.id],
+  }),
+  createdByUser: one(users, {
+    fields: [comparisons.createdBy],
+    references: [users.id],
+  }),
+  points: many(comparisonPoints),
+  sources: many(comparisonSources),
+}));
+
+export const comparisonPointsRelations = relations(comparisonPoints, ({ one }) => ({
+  comparison: one(comparisons, {
+    fields: [comparisonPoints.comparisonId],
+    references: [comparisons.id],
+  }),
+}));
+
+export const comparisonSourcesRelations = relations(comparisonSources, ({ one }) => ({
+  comparison: one(comparisons, {
+    fields: [comparisonSources.comparisonId],
+    references: [comparisons.id],
+  }),
 }));
 
 export const moderationFlagsRelations = relations(

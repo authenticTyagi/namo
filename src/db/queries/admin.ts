@@ -6,6 +6,7 @@ import {
   feedbackSubmissions,
   editorials,
   comments,
+  comparisons,
 } from "@/db/schema";
 import { count, desc, eq, or } from "drizzle-orm";
 
@@ -18,6 +19,7 @@ export async function getDashboardCounts() {
       published: 0,
       pendingReviewEditorials: 0,
       flaggedComments: 0,
+      pendingReviewComparisons: 0,
     };
   }
 
@@ -28,6 +30,7 @@ export async function getDashboardCounts() {
     [publishedCount],
     [pendingEditorials],
     [flagged],
+    [pendingComparisons],
   ] = await Promise.all([
     db
       .select({ value: count() })
@@ -53,6 +56,10 @@ export async function getDashboardCounts() {
       .select({ value: count() })
       .from(comments)
       .where(eq(comments.status, "flagged")),
+    db
+      .select({ value: count() })
+      .from(comparisons)
+      .where(eq(comparisons.status, "pending_review")),
   ]);
 
   return {
@@ -62,6 +69,7 @@ export async function getDashboardCounts() {
     published: publishedCount?.value ?? 0,
     pendingReviewEditorials: pendingEditorials?.value ?? 0,
     flaggedComments: flagged?.value ?? 0,
+    pendingReviewComparisons: pendingComparisons?.value ?? 0,
   };
 }
 
@@ -177,6 +185,42 @@ export async function getAllEditorialsForAdmin() {
  * the same entry while one is still live or awaiting review. A rejected
  * editorial doesn't block a fresh attempt at the same entry.
  */
+export async function getPendingReviewComparisons() {
+  if (!isDbConfigured) return [];
+
+  return db
+    .select({
+      id: comparisons.id,
+      slug: comparisons.slug,
+      titleEn: comparisons.titleEn,
+      metricLabelEn: comparisons.metricLabelEn,
+      narrativeEn: comparisons.narrativeEn,
+      categoryNameEn: categories.nameEn,
+      createdAt: comparisons.createdAt,
+    })
+    .from(comparisons)
+    .innerJoin(categories, eq(comparisons.categoryId, categories.id))
+    .where(eq(comparisons.status, "pending_review"))
+    .orderBy(desc(comparisons.createdAt));
+}
+
+export async function getAllComparisonsForAdmin() {
+  if (!isDbConfigured) return [];
+
+  return db
+    .select({
+      id: comparisons.id,
+      slug: comparisons.slug,
+      titleEn: comparisons.titleEn,
+      status: comparisons.status,
+      categoryNameEn: categories.nameEn,
+      publishDate: comparisons.publishDate,
+    })
+    .from(comparisons)
+    .innerJoin(categories, eq(comparisons.categoryId, categories.id))
+    .orderBy(desc(comparisons.createdAt));
+}
+
 export async function getEntriesEligibleForEditorial() {
   if (!isDbConfigured) return [];
 

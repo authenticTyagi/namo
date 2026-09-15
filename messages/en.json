@@ -8,6 +8,7 @@
     "overview": "2014 to Now",
     "categories": "Categories",
     "editorials": "Editorials",
+    "compare": "India vs World",
     "about": "About",
     "methodology": "Methodology",
     "search": "Search"
@@ -88,6 +89,14 @@
     "heading": "Editorials",
     "subtitle": "Opinion and reflection on what's changed — written after an entry is published, with the same commitment to honesty: good, bad, or mixed.",
     "empty": "No editorials published yet."
+  },
+  "comparisons": {
+    "heading": "India in the World",
+    "subtitle": "The same figures documented elsewhere on this site, set beside other countries — sourced to neutral international bodies (World Bank, IMF, UN agencies), not Indian government data. Reported honestly whether India leads or trails.",
+    "empty": "No comparisons published yet.",
+    "badge": "Comparison",
+    "relatedEntry": "Read the full entry",
+    "seeComparison": "See how India compares globally"
   },
   "comments": {
     "heading": "Discussion",
