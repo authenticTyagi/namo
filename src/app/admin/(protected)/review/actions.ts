@@ -18,6 +18,7 @@ export async function approveEntry(entryId: string) {
     .set({ status: "published", publishDate: new Date(), updatedAt: new Date() })
     .where(eq(entries.id, entryId));
   revalidatePath("/admin/review");
+  revalidatePath("/admin", "layout"); // refreshes AdminNav's sidebar badge count too
   revalidatePath("/[locale]", "layout");
 }
 
@@ -28,4 +29,5 @@ export async function rejectEntry(entryId: string) {
     .set({ status: "rejected", updatedAt: new Date() })
     .where(eq(entries.id, entryId));
   revalidatePath("/admin/review");
+  revalidatePath("/admin", "layout");
 }

@@ -13,6 +13,7 @@ export async function dismissCommentFlag(commentId: string) {
   await requireAdmin();
   await dismissFlag(commentId);
   revalidatePath("/admin/comments");
+  revalidatePath("/admin", "layout");
   revalidatePath("/[locale]", "layout");
 }
 
@@ -20,5 +21,6 @@ export async function removeComment(commentId: string) {
   await requireAdmin();
   await removeFlaggedComment(commentId);
   revalidatePath("/admin/comments");
+  revalidatePath("/admin", "layout");
   revalidatePath("/[locale]", "layout");
 }

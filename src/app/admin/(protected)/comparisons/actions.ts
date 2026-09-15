@@ -19,6 +19,8 @@ export async function approveComparison(comparisonId: string) {
     .set({ status: "published", publishDate: new Date(), updatedAt: new Date() })
     .where(eq(comparisons.id, comparisonId));
   revalidatePath("/admin/comparisons");
+  revalidatePath("/admin/review");
+  revalidatePath("/admin", "layout");
   revalidatePath("/[locale]", "layout");
 }
 
@@ -29,6 +31,8 @@ export async function rejectComparison(comparisonId: string) {
     .set({ status: "rejected", updatedAt: new Date() })
     .where(eq(comparisons.id, comparisonId));
   revalidatePath("/admin/comparisons");
+  revalidatePath("/admin/review");
+  revalidatePath("/admin", "layout");
 }
 
 function slugify(input: string): string {

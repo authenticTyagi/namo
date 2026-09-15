@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { getAllComparisonsForAdmin, getPendingReviewComparisons } from "@/db/queries/admin";
-import { ComparisonReviewActions } from "./ComparisonReviewActions";
+import { getAllComparisonsForAdmin } from "@/db/queries/admin";
 
 const STATUS_STYLES: Record<string, string> = {
   published: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
@@ -10,10 +9,7 @@ const STATUS_STYLES: Record<string, string> = {
 };
 
 export default async function AdminComparisonsPage() {
-  const [pending, all] = await Promise.all([
-    getPendingReviewComparisons(),
-    getAllComparisonsForAdmin(),
-  ]);
+  const all = await getAllComparisonsForAdmin();
 
   return (
     <div>
@@ -30,37 +26,15 @@ export default async function AdminComparisonsPage() {
         Cross-country comparisons, sourced to neutral international bodies
         (World Bank, IMF, UN agencies) rather than Indian government data.
         No drafting pipeline exists for this yet — everything is hand-authored
-        via &quot;New comparison&quot; and still lands here as pending review.
+        via &quot;New comparison.&quot; Pending items to approve/reject live in
+        the unified{" "}
+        <Link href="/admin/review" className="underline">
+          Review queue
+        </Link>{" "}
+        — this page is the full list.
       </p>
 
-      <h2 className="mt-8 text-sm font-semibold uppercase tracking-wide text-neutral-500">
-        Pending review ({pending.length})
-      </h2>
-      {pending.length === 0 ? (
-        <p className="mt-3 text-sm text-neutral-400">Nothing to review right now.</p>
-      ) : (
-        <div className="mt-3 space-y-4">
-          {pending.map((c) => (
-            <div key={c.id} className="rounded-lg border border-neutral-200 p-4 dark:border-neutral-800">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-xs text-neutral-500">
-                    {c.categoryNameEn} · {c.metricLabelEn}
-                  </p>
-                  <h3 className="font-semibold">{c.titleEn}</h3>
-                  <p className="mt-1 text-sm text-neutral-500 line-clamp-3">{c.narrativeEn}</p>
-                </div>
-                <ComparisonReviewActions comparisonId={c.id} />
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-
-      <h2 className="mt-10 text-sm font-semibold uppercase tracking-wide text-neutral-500">
-        All comparisons ({all.length})
-      </h2>
-      <div className="mt-3 overflow-x-auto">
+      <div className="mt-8 overflow-x-auto">
         <table className="w-full min-w-[560px] text-sm">
           <thead>
             <tr className="border-b border-neutral-200 text-left text-neutral-500 dark:border-neutral-800">

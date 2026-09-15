@@ -19,6 +19,8 @@ export async function approveEditorial(editorialId: string) {
     .set({ status: "published", publishDate: new Date(), updatedAt: new Date() })
     .where(eq(editorials.id, editorialId));
   revalidatePath("/admin/editorials");
+  revalidatePath("/admin/review");
+  revalidatePath("/admin", "layout");
   revalidatePath("/[locale]", "layout");
 }
 
@@ -29,6 +31,8 @@ export async function rejectEditorial(editorialId: string) {
     .set({ status: "rejected", updatedAt: new Date() })
     .where(eq(editorials.id, editorialId));
   revalidatePath("/admin/editorials");
+  revalidatePath("/admin/review");
+  revalidatePath("/admin", "layout");
 }
 
 const TONES = ["positive", "negative", "neutral", "mixed"] as const;

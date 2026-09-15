@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { getAllEditorialsForAdmin, getPendingReviewEditorials } from "@/db/queries/admin";
-import { EditorialReviewActions } from "./EditorialReviewActions";
+import { getAllEditorialsForAdmin } from "@/db/queries/admin";
 
 const STATUS_STYLES: Record<string, string> = {
   published: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
@@ -9,10 +8,7 @@ const STATUS_STYLES: Record<string, string> = {
 };
 
 export default async function AdminEditorialsPage() {
-  const [pending, all] = await Promise.all([
-    getPendingReviewEditorials(),
-    getAllEditorialsForAdmin(),
-  ]);
+  const all = await getAllEditorialsForAdmin();
 
   return (
     <div>
@@ -29,41 +25,14 @@ export default async function AdminEditorialsPage() {
         The automated drafting agent for editorials isn&apos;t running yet (same
         cloud network-egress block as the entries pipeline — see
         PROJECT_LOG.md). Use &quot;New editorial&quot; to write one by hand in
-        the meantime; it still lands here as pending review, same as a
-        pipeline submission would.
+        the meantime. Pending items to approve/reject live in the unified{" "}
+        <Link href="/admin/review" className="underline">
+          Review queue
+        </Link>{" "}
+        — this page is the full list.
       </p>
 
-      <h2 className="mt-8 text-sm font-semibold uppercase tracking-wide text-neutral-500">
-        Pending review ({pending.length})
-      </h2>
-      {pending.length === 0 ? (
-        <p className="mt-3 text-sm text-neutral-400">Nothing to review right now.</p>
-      ) : (
-        <div className="mt-3 space-y-4">
-          {pending.map((editorial) => (
-            <div
-              key={editorial.id}
-              className="rounded-lg border border-neutral-200 p-4 dark:border-neutral-800"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-xs text-neutral-500">
-                    About: {editorial.relatedEntryTitleEn} · Tone: {editorial.tone}
-                  </p>
-                  <h3 className="font-semibold">{editorial.headlineEn}</h3>
-                  <p className="mt-1 text-sm text-neutral-500 line-clamp-3">{editorial.bodyEn}</p>
-                </div>
-                <EditorialReviewActions editorialId={editorial.id} />
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-
-      <h2 className="mt-10 text-sm font-semibold uppercase tracking-wide text-neutral-500">
-        All editorials ({all.length})
-      </h2>
-      <div className="mt-3 overflow-x-auto">
+      <div className="mt-8 overflow-x-auto">
         <table className="w-full min-w-[560px] text-sm">
           <thead>
             <tr className="border-b border-neutral-200 text-left text-neutral-500 dark:border-neutral-800">
