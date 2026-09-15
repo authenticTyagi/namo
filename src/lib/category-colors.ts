@@ -50,6 +50,21 @@ const CATEGORY_CLASSES: Record<string, CategoryClasses> = {
     text: "text-[#e34948] dark:text-[#e66767]", // slot 8: red
     border: "border-[#e34948] dark:border-[#e66767]",
   },
+  // The validated 8-hue theme has exactly 8 slots, all used above. Per the
+  // dataviz skill's own rule ("a 9th series is never a generated hue"), a
+  // 9th+ category does NOT get an invented hue — it gets this shared,
+  // intentionally neutral treatment instead. Distinct from FALLBACK (which
+  // exists only as a safety net for a genuinely unmapped slug, not as "we
+  // ran out of colors, reuse slot 1") — this is a deliberate, documented
+  // design choice, not an accident.
+  "education-skill-development": {
+    text: "text-neutral-500 dark:text-neutral-400",
+    border: "border-neutral-400 dark:border-neutral-600",
+  },
+  "health-infrastructure": {
+    text: "text-neutral-500 dark:text-neutral-400",
+    border: "border-neutral-400 dark:border-neutral-600",
+  },
 };
 
 const FALLBACK: CategoryClasses = CATEGORY_CLASSES["economy-infra-digital"];

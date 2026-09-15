@@ -29,6 +29,12 @@ import {
   Trees,
   Boxes,
   Ship,
+  Hammer,
+  Laptop,
+  GraduationCap,
+  Hospital,
+  Pill,
+  ClipboardPlus,
   type LucideIcon,
 } from "lucide-react";
 
@@ -70,6 +76,12 @@ const ENTRY_ICONS: Record<string, LucideIcon> = {
   "forest-cover-isfr": Trees,
   "pli-scheme-manufacturing-growth": Boxes,
   "ins-vikrant-indigenous-aircraft-carrier": Ship,
+  "pmkvy-skill-india-training": Hammer,
+  "pm-evidya-diksha-digital-education": Laptop,
+  "higher-education-gross-enrolment-ratio": GraduationCap,
+  "aiims-network-expansion": Hospital,
+  "jan-aushadhi-generic-medicine-stores": Pill,
+  "medical-college-mbbs-pg-seats-expansion": ClipboardPlus,
 };
 
 export function getEntryIcon(slug: string): LucideIcon {

@@ -7,6 +7,8 @@ import {
   HeartHandshake,
   Wheat,
   Leaf,
+  BookOpen,
+  Stethoscope,
   type LucideIcon,
 } from "lucide-react";
 
@@ -19,6 +21,8 @@ const CATEGORY_ICONS: Record<string, LucideIcon> = {
   "welfare-social-schemes": HeartHandshake,
   "agriculture-farmer-welfare": Wheat,
   "environment-renewable-energy": Leaf,
+  "education-skill-development": BookOpen,
+  "health-infrastructure": Stethoscope,
 };
 
 export function getCategoryIcon(slug: string): LucideIcon {

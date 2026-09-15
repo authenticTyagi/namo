@@ -64,6 +64,12 @@ async function main() {
   const { category: environmentCategory, environmentEntries } = await import(
     "./entries/environment"
   );
+  const { category: educationCategory, educationEntries } = await import(
+    "./entries/education"
+  );
+  const { category: healthInfrastructureCategory, healthInfrastructureEntries } = await import(
+    "./entries/health-infrastructure"
+  );
   const contentPacks = [
     { category: economyCategory, entries: phase1Entries },
     { category: spaceCategory, entries: spaceEntries },
@@ -73,6 +79,8 @@ async function main() {
     { category: welfareCategory, entries: welfareEntries },
     { category: agricultureCategory, entries: agricultureEntries },
     { category: environmentCategory, entries: environmentEntries },
+    { category: educationCategory, entries: educationEntries },
+    { category: healthInfrastructureCategory, entries: healthInfrastructureEntries },
   ];
 
   for (const { category, entries: packEntries } of contentPacks) {
