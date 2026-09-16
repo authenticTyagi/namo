@@ -11,6 +11,8 @@
 import type { ContentPack, EntryInput } from "./types";
 import { fdiEntry, itAiEntry } from "./fdi-it-ai-batch";
 import { perCapitaIncomeEntry, taxBaseEntry } from "./percapita-taxbase-batch";
+import { aadhaarSupremeCourtVerdictEntry } from "./sc-judgment-entry";
+import { smartCitiesMissionAuditEntry, gstCompensationCessShortfallEntry } from "./cag-audit-batch";
 
 export const category: ContentPack["category"] = {
   slug: "economy-infra-digital",
@@ -769,4 +771,7 @@ export const phase1Entries: EntryInput[] = [
   itAiEntry,
   perCapitaIncomeEntry,
   taxBaseEntry,
+  aadhaarSupremeCourtVerdictEntry,
+  smartCitiesMissionAuditEntry,
+  gstCompensationCessShortfallEntry,
 ];

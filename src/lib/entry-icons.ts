@@ -52,6 +52,9 @@ import {
   School,
   CalendarClock,
   Camera,
+  Scale,
+  Building2,
+  ClipboardCheck,
   type LucideIcon,
 } from "lucide-react";
 
@@ -117,6 +120,9 @@ const ENTRY_ICONS: Record<string, LucideIcon> = {
   "school-dropout-secondary-retention": School,
   "child-marriage-rate-nfhs-trend": CalendarClock,
   "eos-05-first-geosynchronous-imaging-satellite": Camera,
+  "aadhaar-act-supreme-court-verdict": Scale,
+  "smart-cities-mission-tamil-nadu-cag-audit": Building2,
+  "gst-compensation-cess-shortfall-cag-audit": ClipboardCheck,
 };
 
 export function getEntryIcon(slug: string): LucideIcon {
