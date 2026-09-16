@@ -1,5 +1,10 @@
 # Official government social media handles (verified)
 
+For CAG audit reports and Supreme Court/High Court judgments as
+`official_primary` sources — a different, institutionally-independent
+source type — see `scripts/entries/AUDIT_AND_JUDICIAL_SOURCES.md`
+instead of this file.
+
 A "safe list" of Government of India social media accounts that may be cited
 as `credibilityTier: "official_primary"` sources — the same tier as a PIB
 press release or a ministry's own website — when a post from one of these
