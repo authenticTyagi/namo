@@ -9,6 +9,7 @@
  * 2026-09-15.
  */
 import type { ContentPack, EntryInput } from "./types";
+import { childMarriageRateEntry } from "./agri-edu-women-batch";
 
 export const category: ContentPack["category"] = {
   slug: "women-child-development",
@@ -406,4 +407,5 @@ export const womenChildDevelopmentEntries: EntryInput[] = [
       },
     ],
   },
+  childMarriageRateEntry,
 ];

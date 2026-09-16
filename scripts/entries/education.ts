@@ -7,6 +7,7 @@
  * Retrieved/verified 2026-09-15.
  */
 import type { ContentPack, EntryInput } from "./types";
+import { schoolDropoutRetentionEntry } from "./agri-edu-women-batch";
 
 export const category: ContentPack["category"] = {
   slug: "education-skill-development",
@@ -315,4 +316,5 @@ export const educationEntries: EntryInput[] = [
       },
     ],
   },
+  schoolDropoutRetentionEntry,
 ];

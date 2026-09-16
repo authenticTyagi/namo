@@ -48,6 +48,10 @@ import {
   ShoppingBasket,
   Percent,
   SatelliteDish,
+  CreditCard,
+  School,
+  CalendarClock,
+  Camera,
   type LucideIcon,
 } from "lucide-react";
 
@@ -109,6 +113,10 @@ const ENTRY_ICONS: Record<string, LucideIcon> = {
   "onion-tomato-price-volatility": ShoppingBasket,
   "petrol-diesel-excise-duty-trends": Percent,
   "navic-satellite-navigation-reliability": SatelliteDish,
+  "kisan-credit-card-reach": CreditCard,
+  "school-dropout-secondary-retention": School,
+  "child-marriage-rate-nfhs-trend": CalendarClock,
+  "eos-05-first-geosynchronous-imaging-satellite": Camera,
 };
 
 export function getEntryIcon(slug: string): LucideIcon {
