@@ -7,9 +7,15 @@ import {
   editorials,
   comments,
   comparisons,
+  comparisonPoints,
+  comparisonSources,
+  sources,
+  entryTags,
+  tags,
+  entryStats,
   trustedSources,
 } from "@/db/schema";
-import { count, desc, eq, or } from "drizzle-orm";
+import { asc, count, desc, eq, or } from "drizzle-orm";
 
 export async function getDashboardCounts() {
   if (!isDbConfigured) {
@@ -268,4 +274,60 @@ export async function getEntriesEligibleForEditorial() {
 
   const coveredIds = new Set(covered.map((c) => c.relatedEntryId));
   return allPublished.filter((e) => !coveredIds.has(e.id));
+}
+
+// ---------------------------------------------------------------------------
+// Single-record fetches for the admin edit forms — raw hi/en fields only,
+// no locale resolution (unlike the public queries in src/db/queries/*.ts),
+// since an edit form needs both languages side by side, not one resolved
+// string.
+// ---------------------------------------------------------------------------
+
+export async function getEditorialByIdForAdmin(id: string) {
+  if (!isDbConfigured) return null;
+  const [row] = await db.select().from(editorials).where(eq(editorials.id, id)).limit(1);
+  return row ?? null;
+}
+
+export async function getComparisonByIdForAdmin(id: string) {
+  if (!isDbConfigured) return null;
+  const [comparison] = await db.select().from(comparisons).where(eq(comparisons.id, id)).limit(1);
+  if (!comparison) return null;
+
+  const points = await db
+    .select()
+    .from(comparisonPoints)
+    .where(eq(comparisonPoints.comparisonId, id))
+    .orderBy(asc(comparisonPoints.sortOrder));
+  const comparisonSourceRows = await db
+    .select()
+    .from(comparisonSources)
+    .where(eq(comparisonSources.comparisonId, id));
+
+  return { comparison, points, sources: comparisonSourceRows };
+}
+
+export async function getEntryByIdForAdmin(id: string) {
+  if (!isDbConfigured) return null;
+  const [entry] = await db.select().from(entries).where(eq(entries.id, id)).limit(1);
+  if (!entry) return null;
+
+  const entrySourceRows = await db.select().from(sources).where(eq(sources.entryId, id));
+  const entryTagRows = await db
+    .select({ tag: tags })
+    .from(entryTags)
+    .innerJoin(tags, eq(entryTags.tagId, tags.id))
+    .where(eq(entryTags.entryId, id));
+  const entryStatRows = await db
+    .select()
+    .from(entryStats)
+    .where(eq(entryStats.entryId, id))
+    .orderBy(asc(entryStats.sortOrder));
+
+  return {
+    entry,
+    sources: entrySourceRows,
+    tags: entryTagRows.map((r) => r.tag),
+    stats: entryStatRows,
+  };
 }

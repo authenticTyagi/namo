@@ -174,3 +174,88 @@ export async function createComparison(input: {
   revalidatePath("/admin/comparisons");
   return comparison;
 }
+
+/**
+ * Edit an existing comparison. Always resets status to pending_review,
+ * even if it was already published — same discipline as editorials'
+ * updateEditorial: a content change needs fresh approval before it's
+ * public again. Countries/sources are re-synced (delete + insert),
+ * simplest for the row count involved, matching scripts/seed.ts's own
+ * pattern for entries' sources/tags/stats.
+ */
+export async function updateComparison(
+  comparisonId: string,
+  input: {
+    categoryId: string;
+    relatedEntryId: string | null;
+    titleHi: string;
+    titleEn: string;
+    metricLabelHi: string;
+    metricLabelEn: string;
+    unitHi: string;
+    unitEn: string;
+    narrativeHi: string;
+    narrativeEn: string;
+    countries: CountryRow[];
+    sources: SourceRow[];
+  },
+) {
+  await requireAdmin();
+
+  if (!input.categoryId) throw new Error("Category is required");
+  if (!input.titleHi || !input.titleEn) throw new Error("Title (both languages) is required");
+  if (!input.metricLabelHi || !input.metricLabelEn) throw new Error("Metric label is required");
+  if (!input.narrativeHi || !input.narrativeEn) throw new Error("Narrative (both languages) is required");
+  if (input.countries.length < 2) throw new Error("At least 2 countries are required for a comparison");
+  if (!input.countries.some((c) => c.isIndia)) throw new Error("One country must be marked as India");
+  if (input.sources.length === 0) throw new Error("At least 1 source is required");
+
+  await db
+    .update(comparisons)
+    .set({
+      categoryId: input.categoryId,
+      relatedEntryId: input.relatedEntryId || null,
+      titleHi: input.titleHi,
+      titleEn: input.titleEn,
+      metricLabelHi: input.metricLabelHi,
+      metricLabelEn: input.metricLabelEn,
+      unitHi: input.unitHi || null,
+      unitEn: input.unitEn || null,
+      narrativeHi: input.narrativeHi,
+      narrativeEn: input.narrativeEn,
+      status: "pending_review",
+      publishDate: null,
+      updatedAt: new Date(),
+    })
+    .where(eq(comparisons.id, comparisonId));
+
+  await db.delete(comparisonPoints).where(eq(comparisonPoints.comparisonId, comparisonId));
+  await db.insert(comparisonPoints).values(
+    input.countries.map((c, i) => ({
+      comparisonId,
+      sortOrder: i,
+      isIndia: c.isIndia,
+      countryNameHi: c.nameHi,
+      countryNameEn: c.nameEn,
+      valueHi: c.valueHi,
+      valueEn: c.valueEn,
+      valueNumeric: c.valueNumeric,
+    })),
+  );
+
+  await db.delete(comparisonSources).where(eq(comparisonSources.comparisonId, comparisonId));
+  await db.insert(comparisonSources).values(
+    input.sources.map((s) => ({
+      comparisonId,
+      url: s.url,
+      publisher: s.publisher,
+      title: s.title || null,
+      credibilityTier: s.credibilityTier,
+    })),
+  );
+
+  revalidatePath("/admin/comparisons");
+  revalidatePath("/admin/review");
+  revalidatePath("/admin", "layout");
+  revalidatePath("/[locale]", "layout");
+}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getAllComparisonsForAdmin } from "@/db/queries/admin";
 import { ComparisonPublishToggleButton } from "./ComparisonPublishToggleButton";
+import { SearchFilterTable, type FilterableRow } from "@/components/admin/SearchFilterTable";
 
 const STATUS_STYLES: Record<string, string> = {
   published: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
@@ -11,6 +12,35 @@ const STATUS_STYLES: Record<string, string> = {
 
 export default async function AdminComparisonsPage() {
   const all = await getAllComparisonsForAdmin();
+
+  const rows: FilterableRow[] = all.map((c) => ({
+    key: c.id,
+    searchText: `${c.titleEn} ${c.categoryNameEn} ${c.status}`.toLowerCase(),
+    node: (
+      <tr key={c.id} className="border-b border-neutral-100 dark:border-neutral-900">
+        <td className="py-3 pr-4">{c.titleEn}</td>
+        <td className="py-3 pr-4 text-neutral-500">{c.categoryNameEn}</td>
+        <td className="py-3 pr-4">
+          <span className={`rounded-full px-2 py-0.5 text-xs ${STATUS_STYLES[c.status] ?? ""}`}>
+            {c.status}
+          </span>
+        </td>
+        <td className="py-3 pr-4">
+          <div className="flex items-center gap-2">
+            <Link
+              href={`/admin/comparisons/${c.id}/edit`}
+              className="rounded-md border border-neutral-300 px-2.5 py-1 text-xs hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-800"
+            >
+              Edit
+            </Link>
+            {(c.status === "published" || c.status === "draft") && (
+              <ComparisonPublishToggleButton comparisonId={c.id} isPublished={c.status === "published"} />
+            )}
+          </div>
+        </td>
+      </tr>
+    ),
+  }));
 
   return (
     <div>
@@ -32,42 +62,24 @@ export default async function AdminComparisonsPage() {
         <Link href="/admin/review" className="underline">
           Review queue
         </Link>{" "}
-        — this page is the full list, and where you can unpublish something
-        already live if it needs pulling.
+        — this page is the full list, with edit and unpublish for anything
+        already live.
       </p>
 
-      <div className="mt-8 overflow-x-auto">
-        <table className="w-full min-w-[560px] text-sm">
-          <thead>
+      <div className="mt-8">
+        <SearchFilterTable
+          minWidthClass="min-w-[560px]"
+          placeholder="Search by title, category, or status…"
+          rows={rows}
+          theadRow={
             <tr className="border-b border-neutral-200 text-left text-neutral-500 dark:border-neutral-800">
               <th className="py-2 pr-4 font-medium">Title</th>
               <th className="py-2 pr-4 font-medium">Category</th>
               <th className="py-2 pr-4 font-medium">Status</th>
               <th className="py-2 pr-4 font-medium"></th>
             </tr>
-          </thead>
-          <tbody>
-            {all.map((c) => (
-              <tr key={c.id} className="border-b border-neutral-100 dark:border-neutral-900">
-                <td className="py-3 pr-4">{c.titleEn}</td>
-                <td className="py-3 pr-4 text-neutral-500">{c.categoryNameEn}</td>
-                <td className="py-3 pr-4">
-                  <span className={`rounded-full px-2 py-0.5 text-xs ${STATUS_STYLES[c.status] ?? ""}`}>
-                    {c.status}
-                  </span>
-                </td>
-                <td className="py-3 pr-4">
-                  {(c.status === "published" || c.status === "draft") && (
-                    <ComparisonPublishToggleButton
-                      comparisonId={c.id}
-                      isPublished={c.status === "published"}
-                    />
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+          }
+        />
       </div>
     </div>
   );

@@ -124,3 +124,44 @@ export async function createEditorial(formData: FormData) {
 
   revalidatePath("/admin/editorials");
 }
+
+/**
+ * Edit an existing editorial's content/tone. Always resets status to
+ * pending_review, even if it was already published — same discipline as
+ * /api/pipeline/editorial-update: a content change means it needs fresh
+ * eyes before it's public again, regardless of what it was before the
+ * edit. See the UPI-editorial incident in PROJECT_LOG.md for why this
+ * isn't optional.
+ */
+export async function updateEditorial(editorialId: string, formData: FormData) {
+  await requireAdmin();
+
+  const headlineHi = String(formData.get("headlineHi") ?? "").trim();
+  const headlineEn = String(formData.get("headlineEn") ?? "").trim();
+  const bodyHi = String(formData.get("bodyHi") ?? "").trim();
+  const bodyEn = String(formData.get("bodyEn") ?? "").trim();
+  const tone = String(formData.get("tone") ?? "");
+
+  if (!headlineHi || !headlineEn) throw new Error("Headline (both languages) is required");
+  if (!bodyHi || !bodyEn) throw new Error("Body (both languages) is required");
+  if (!TONES.includes(tone as (typeof TONES)[number])) throw new Error("Invalid tone");
+
+  await db
+    .update(editorials)
+    .set({
+      headlineHi,
+      headlineEn,
+      bodyHi,
+      bodyEn,
+      tone: tone as (typeof TONES)[number],
+      status: "pending_review",
+      publishDate: null,
+      updatedAt: new Date(),
+    })
+    .where(eq(editorials.id, editorialId));
+
+  revalidatePath("/admin/editorials");
+  revalidatePath("/admin/review");
+  revalidatePath("/admin", "layout");
+  revalidatePath("/[locale]", "layout");
+}
