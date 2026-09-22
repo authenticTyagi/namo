@@ -496,7 +496,15 @@ export const moderationFlags = pgTable("moderation_flags", {
 });
 
 // ---------------------------------------------------------------------------
-// Autonomous pipeline (Phase 3) — schema exists now, unused until then
+// Pipeline run tracking. `pipelineConfig` was originally scoped for a future
+// auto-publish threshold — that is now a settled decision, not a pending
+// one: the site owner is the sole, permanent reviewer of every entry,
+// editorial, and comparison, from every source (manual, cron, GitHub
+// Actions, or otherwise), with no exception for confidence score or source
+// tier (confirmed 2026-09-22). `pipelineConfig` stays in the schema for
+// other pipeline settings (e.g. tunable prompts/thresholds surfaced to the
+// reviewer), but nothing should ever read a value from it to skip the
+// pending_review step.
 // ---------------------------------------------------------------------------
 
 export const pipelineRuns = pgTable("pipeline_runs", {
