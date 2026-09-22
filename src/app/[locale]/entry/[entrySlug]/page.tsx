@@ -27,10 +27,22 @@ export async function generateMetadata({
   const entry = await getPublishedEntryBySlug(entrySlug, locale);
   if (!entry) return {};
 
+  const url = `${SITE_URL}/${locale}/entry/${entry.slug}`;
   return {
     title: entry.title,
     description: entry.summary,
-    openGraph: { title: entry.title, description: entry.summary },
+    alternates: { canonical: url },
+    openGraph: {
+      title: entry.title,
+      description: entry.summary,
+      url,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: entry.title,
+      description: entry.summary,
+    },
   };
 }
 

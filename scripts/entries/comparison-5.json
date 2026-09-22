@@ -1,0 +1,101 @@
+{
+  "slug": "global-gender-gap-index-2026",
+  "categorySlug": "women-child-development",
+  "relatedEntrySlug": "female-labour-force-participation",
+  "titleHi": "वैश्विक जेंडर गैप इंडेक्स 2026: भारत 145 में से 131वें स्थान पर, दो दशकों में लगभग अपरिवर्तित",
+  "titleEn": "Global Gender Gap Index 2026: India Ranks 131st of 145, Little Moved in Two Decades",
+  "metricLabelHi": "समग्र लिंग समता स्कोर (कुल अंतर का जितना हिस्सा पाटा गया)",
+  "metricLabelEn": "Overall gender parity score (share of the gap closed)",
+  "unitHi": "%",
+  "unitEn": "%",
+  "narrativeHi": "विश्व आर्थिक मंच (WEF) की 20वीं वार्षिक ग्लोबल जेंडर गैप रिपोर्ट के अनुसार, भारत ने 2026 में 145 देशों में से 131वां स्थान बरकरार रखा, अपने कुल जेंडर गैप का 64.5% पाट लिया — जो 69.2% के वैश्विक औसत से नीचे है। यह रैंक अलग-थलग नहीं है: भारत बांग्लादेश (79वां, 71.2%) और चीन (96वां, 69.9%) से पीछे है, अमेरिका (76.9%) से कहीं ज़्यादा पीछे है, और आइसलैंड (पहला, 92.6%) से बहुत दूर है — हालांकि पाकिस्तान (143वां, 59.5%) से आगे है। भारत का प्रदर्शन असमान है: शिक्षा प्राप्ति (96.6% पाटी गई) और स्वास्थ्य व अस्तित्व (95.6%) में यह वैश्विक औसत के करीब है, और राजनीतिक सशक्तिकरण में 67वें स्थान पर है (हालांकि इस उप-सूचकांक में दुनिया भर में औसतन बहुत कम अंतर पाटा गया है)। लेकिन आर्थिक भागीदारी व अवसर में भारत का स्कोर सिर्फ़ 41.2% है — यही वह उप-सूचकांक है जो समग्र रैंक को सबसे ज़्यादा नीचे खींचता है। एक सामान्य भारतीय परिवार के लिए इसका सीधा मतलब है: इस साइट की अपनी महिला श्रम बल भागीदारी प्रविष्टि जो दिखाती है, ठीक वही यहां भी झलकता है — महिलाओं की श्रम बल भागीदारी दर लगभग दोगुनी होकर 41.7% हुई है, लेकिन इसमें ज़्यादातर हिस्सा अवैतनिक पारिवारिक श्रम या स्वरोज़गार का है, नियमित वेतन वाली नौकरी का नहीं (सिर्फ़ लगभग 9.3%) — यानी बहुत-सी महिलाएं काम तो कर रही हैं, पर उस काम का सीधा नकद फ़ायदा घर तक कम ही पहुंच रहा है। बड़ी तस्वीर में, लगातार निचली रैंक वाली एक बड़ी अर्थव्यवस्था अपनी आधी आबादी की आर्थिक क्षमता का पूरा इस्तेमाल नहीं कर पा रही — बहुपक्षीय संस्थाएं अक्सर इसे मानव-पूंजी उपयोग और लंबी अवधि के आर्थिक विकास से जोड़कर देखती हैं। भारत का अपना स्कोर बीते वर्षों में धीरे-धीरे बढ़ा है, पर यह तुलना ईमानदारी से यही दिखाती है कि यह बढ़त ज़्यादातर साथी देशों के मुकाबले अब भी पीछे से शुरू हो रही है, और रैंक दो दशकों में शायद ही हिली है।",
+  "narrativeEn": "According to the World Economic Forum's 20th annual Global Gender Gap Report, India retained its 131st rank out of 145 economies in 2026, having closed 64.5% of its overall gender gap — below the global average of 69.2%. The rank isn't an outlier: India trails Bangladesh (79th, 71.2%) and China (96th, 69.9%), is well behind the United States (76.9%), and far from Iceland (1st, 92.6%) — though it stays ahead of Pakistan (143rd, 59.5%). India's performance is uneven: it's close to the global average on Educational Attainment (96.6% closed) and Health and Survival (95.6%), and ranks a relatively strong 67th on Political Empowerment (though that subindex has low absolute scores worldwide). But India's Economic Participation and Opportunity score is just 41.2% — the single weakest pillar and the one dragging the overall rank down hardest. For an ordinary Indian household, this lines up exactly with what this site's own female labour force participation entry already documents: FLFPR has nearly doubled to 41.7%, but researchers find most of that gain is unpaid family labour or self-employment rather than paid work, with only about 9.3% in a regular wage job — meaning many more women are working, but that work is translating into far less direct cash income for the household than the headline participation number implies. On the macro side, a large economy stuck at a persistently low gender-parity rank isn't making full use of half its population's economic capacity — a link multilateral institutions routinely draw to human-capital utilization and longer-run growth. India's own score has crept up gradually over the years, but this comparison shows honestly that the improvement is still starting from behind most peers, and the rank itself has barely moved across two decades.",
+  "countries": [
+    {
+      "countryNameHi": "पाकिस्तान",
+      "countryNameEn": "Pakistan",
+      "valueHi": "59.5%",
+      "valueEn": "59.5%",
+      "valueNumeric": 59.5,
+      "isIndia": false,
+      "sortOrder": 0
+    },
+    {
+      "countryNameHi": "भारत",
+      "countryNameEn": "India",
+      "valueHi": "64.5%",
+      "valueEn": "64.5%",
+      "valueNumeric": 64.5,
+      "isIndia": true,
+      "sortOrder": 1
+    },
+    {
+      "countryNameHi": "चीन",
+      "countryNameEn": "China",
+      "valueHi": "69.9%",
+      "valueEn": "69.9%",
+      "valueNumeric": 69.9,
+      "isIndia": false,
+      "sortOrder": 2
+    },
+    {
+      "countryNameHi": "बांग्लादेश",
+      "countryNameEn": "Bangladesh",
+      "valueHi": "71.2%",
+      "valueEn": "71.2%",
+      "valueNumeric": 71.2,
+      "isIndia": false,
+      "sortOrder": 3
+    },
+    {
+      "countryNameHi": "अमेरिका",
+      "countryNameEn": "United States",
+      "valueHi": "76.9%",
+      "valueEn": "76.9%",
+      "valueNumeric": 76.9,
+      "isIndia": false,
+      "sortOrder": 4
+    },
+    {
+      "countryNameHi": "आइसलैंड",
+      "countryNameEn": "Iceland",
+      "valueHi": "92.6%",
+      "valueEn": "92.6%",
+      "valueNumeric": 92.6,
+      "isIndia": false,
+      "sortOrder": 5
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.weforum.org/publications/global-gender-gap-report-2026/",
+      "publisher": "World Economic Forum",
+      "title": "Global Gender Gap Report 2026",
+      "credibilityTier": "official_primary",
+      "language": "en"
+    },
+    {
+      "url": "https://www.weforum.org/press/2026/09/gendergap26/",
+      "publisher": "World Economic Forum",
+      "title": "Twenty Years of Progress on Gender Parity Now Fragile, WEF Report Finds",
+      "credibilityTier": "official_primary",
+      "language": "en"
+    },
+    {
+      "url": "https://www.freepressjournal.in/india/india-retains-131st-rank-in-global-gender-gap-index-2026-iceland-tops-list",
+      "publisher": "Free Press Journal",
+      "title": "India Retains 131st Rank In Global Gender Gap Index 2026; Iceland Tops List",
+      "credibilityTier": "reputable_media",
+      "language": "en",
+      "credibilityNotes": "Used to cross-check India's rank/score and the top-of-list comparator (Iceland)."
+    },
+    {
+      "url": "https://tribune.com.pk/story/2629881/pakistan-ranks-third-last-in-wef-global-gender-gap-index-2026",
+      "publisher": "The Express Tribune",
+      "title": "Pakistan ranks third last in WEF Global Gender Gap Index 2026",
+      "credibilityTier": "reputable_media",
+      "language": "en",
+      "credibilityNotes": "Used for Pakistan's 2026 score and rank."
+    }
+  ]
+}

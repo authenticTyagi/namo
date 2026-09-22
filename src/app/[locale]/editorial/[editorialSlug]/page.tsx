@@ -21,9 +21,12 @@ export async function generateMetadata({
   const editorial = await getPublishedEditorialBySlug(editorialSlug, locale);
   if (!editorial) return {};
 
+  const url = `${SITE_URL}/${locale}/editorial/${editorial.slug}`;
   return {
     title: editorial.headline,
-    openGraph: { title: editorial.headline },
+    alternates: { canonical: url },
+    openGraph: { title: editorial.headline, url, type: "article" },
+    twitter: { card: "summary_large_image", title: editorial.headline },
   };
 }
 

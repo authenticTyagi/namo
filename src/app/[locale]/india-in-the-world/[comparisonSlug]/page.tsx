@@ -20,10 +20,22 @@ export async function generateMetadata({
   const comparison = await getPublishedComparisonBySlug(comparisonSlug, locale);
   if (!comparison) return {};
 
+  const url = `${SITE_URL}/${locale}/india-in-the-world/${comparison.slug}`;
   return {
     title: comparison.title,
     description: comparison.metricLabel,
-    openGraph: { title: comparison.title, description: comparison.metricLabel },
+    alternates: { canonical: url },
+    openGraph: {
+      title: comparison.title,
+      description: comparison.metricLabel,
+      url,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: comparison.title,
+      description: comparison.metricLabel,
+    },
   };
 }
 

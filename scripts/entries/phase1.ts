@@ -13,6 +13,7 @@ import { fdiEntry, itAiEntry } from "./fdi-it-ai-batch";
 import { perCapitaIncomeEntry, taxBaseEntry } from "./percapita-taxbase-batch";
 import { aadhaarSupremeCourtVerdictEntry } from "./sc-judgment-entry";
 import { smartCitiesMissionAuditEntry, gstCompensationCessShortfallEntry } from "./cag-audit-batch";
+import { minesMineralsCriticalMineralsEntry } from "./sept2026-events-batch";
 
 export const category: ContentPack["category"] = {
   slug: "economy-infra-digital",
@@ -774,4 +775,5 @@ export const phase1Entries: EntryInput[] = [
   aadhaarSupremeCourtVerdictEntry,
   smartCitiesMissionAuditEntry,
   gstCompensationCessShortfallEntry,
+  minesMineralsCriticalMineralsEntry,
 ];

@@ -8,6 +8,7 @@
  */
 import type { ContentPack, EntryInput } from "./types";
 import { e20Entry } from "./e20-ethanol-blending";
+import { gobardhanSchemeEntry } from "./sept2026-events-batch";
 
 export const category: ContentPack["category"] = {
   slug: "environment-renewable-energy",
@@ -412,4 +413,5 @@ export const environmentEntries: EntryInput[] = [
     ],
   },
   e20Entry,
+  gobardhanSchemeEntry,
 ];

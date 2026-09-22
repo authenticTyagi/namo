@@ -47,6 +47,8 @@
     "sources": "Sources",
     "tags": "Tags",
     "share": "Share",
+    "shareButton": "Share",
+    "copyLink": "Copy link",
     "published": "Published",
     "lastVerified": "Last verified",
     "reportIssue": "Report an issue with this entry",

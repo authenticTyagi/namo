@@ -8,6 +8,35 @@ import { SITE_URL } from "@/lib/constants";
 import { getCategoryIcon } from "@/lib/category-icons";
 import { getCategoryClasses } from "@/lib/category-colors";
 import type { Locale } from "@/i18n/routing";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale; categorySlug: string }>;
+}): Promise<Metadata> {
+  const { locale, categorySlug } = await params;
+  const category = await getCategoryBySlug(categorySlug, locale);
+  if (!category) return {};
+
+  const url = `${SITE_URL}/${locale}/category/${category.slug}`;
+  return {
+    title: category.name,
+    description: category.description ?? undefined,
+    alternates: { canonical: url },
+    openGraph: {
+      title: category.name,
+      description: category.description ?? undefined,
+      url,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: category.name,
+      description: category.description ?? undefined,
+    },
+  };
+}
 
 export default async function CategoryPage({
   params,

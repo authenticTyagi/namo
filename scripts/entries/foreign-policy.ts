@@ -10,6 +10,7 @@
  */
 import type { ContentPack, EntryInput } from "./types";
 import { bricsEntry } from "./security-diplomacy-batch";
+import { bricsSummitDeclarationEntry } from "./sept2026-events-batch";
 
 export const category: ContentPack["category"] = {
   slug: "foreign-policy-diplomacy",
@@ -291,4 +292,5 @@ export const foreignPolicyEntries: EntryInput[] = [
     ],
   },
   bricsEntry,
+  bricsSummitDeclarationEntry,
 ];

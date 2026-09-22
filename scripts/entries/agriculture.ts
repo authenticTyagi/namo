@@ -8,6 +8,7 @@
  */
 import type { ContentPack, EntryInput } from "./types";
 import { kisanCreditCardEntry } from "./agri-edu-women-batch";
+import { fmdLivestockVaccinationEntry } from "./sept2026-events-batch";
 
 export const category: ContentPack["category"] = {
   slug: "agriculture-farmer-welfare",
@@ -41,8 +42,12 @@ export const agricultureEntries: EntryInput[] = [
         body: "By the 22nd instalment, released on March 13, 2026 from Guwahati, more than 9.32 crore farmer families — including 2.15 crore women farmers — received a combined ₹18,640 crore. Cumulatively, PM-KISAN has disbursed over ₹4.27 lakh crore since 2019, making it one of the world's largest direct benefit transfer programmes.",
       },
       {
+        heading: "Locked in through 2030-31",
+        body: "On August 1, 2026, the Cabinet approved continuing PM-KISAN through 2030-31 with a combined outlay of ₹3.15 lakh crore, giving the scheme a firm five-year runway rather than requiring a fresh approval every year or two. The ₹6,000 annual amount itself was not revised in this approval.",
+      },
+      {
         heading: "Where it has fallen short",
-        body: "An RTI response showed the government had paid ₹2,589.23 crore to about 58 lakh ineligible beneficiaries — including 13.73 lakh income-tax payers who should never have qualified — triggering recovery notices that opposition parties have criticised as unfair to poor farmers. Independent analysis has also found that the fixed ₹6,000 has not kept pace with inflation, with its real value falling to roughly ₹4,800 by 2023, and that landless and tenant farming families, estimated in the crores, remain excluded entirely since the scheme is tied to land records.",
+        body: "An RTI response showed the government had paid ₹2,589.23 crore to about 58 lakh ineligible beneficiaries — including 13.73 lakh income-tax payers who should never have qualified — triggering recovery notices that opposition parties have criticised as unfair to poor farmers. Independent analysis has also found that the fixed ₹6,000 has not kept pace with inflation, with its real value falling to roughly ₹4,800 by 2023, and that landless and tenant farming families, estimated in the crores, remain excluded entirely since the scheme is tied to land records — a gap the 2026 continuation does not address either.",
       },
     ],
     bodySectionsHi: [
@@ -55,13 +60,17 @@ export const agricultureEntries: EntryInput[] = [
         body: "13 मार्च 2026 को गुवाहाटी से जारी 22वीं किस्त में, 2.15 करोड़ महिला किसानों सहित 9.32 करोड़ से ज़्यादा किसान परिवारों को कुल ₹18,640 करोड़ मिले। 2019 से अब तक, पीएम-किसान ₹4.27 लाख करोड़ से अधिक बांट चुकी है, जो इसे दुनिया के सबसे बड़े प्रत्यक्ष लाभ हस्तांतरण कार्यक्रमों में से एक बनाता है।",
       },
       {
+        heading: "2030-31 तक सुनिश्चित",
+        body: "1 अगस्त 2026 को, कैबिनेट ने पीएम-किसान को 2030-31 तक जारी रखने की मंज़ूरी दी, जिसका संयुक्त परिव्यय ₹3.15 लाख करोड़ है — इससे योजना को हर एक-दो साल में नई मंज़ूरी लेने के बजाय पांच साल का पक्का रास्ता मिल गया। इस मंज़ूरी में सालाना ₹6,000 की राशि में कोई बदलाव नहीं किया गया।",
+      },
+      {
         heading: "यह कहां कमज़ोर पड़ी",
-        body: "एक आरटीआई जवाब से पता चला कि सरकार ने लगभग 58 लाख अपात्र लाभार्थियों को ₹2,589.23 करोड़ का भुगतान किया — जिनमें 13.73 लाख आयकरदाता भी शामिल थे जिन्हें कभी पात्र होना ही नहीं चाहिए था — जिसके बाद भेजे गए वसूली नोटिसों की विपक्षी दलों ने गरीब किसानों के साथ अन्याय बताकर आलोचना की। स्वतंत्र विश्लेषण में यह भी सामने आया है कि तय ₹6,000 की राशि महंगाई के साथ नहीं बढ़ी — 2023 तक इसका वास्तविक मूल्य घटकर लगभग ₹4,800 रह गया — और भूमिहीन व बटाईदार किसान परिवार, जिनकी संख्या करोड़ों में आंकी गई है, भूमि रिकॉर्ड से जुड़ी होने के कारण योजना से पूरी तरह बाहर हैं।",
+        body: "एक आरटीआई जवाब से पता चला कि सरकार ने लगभग 58 लाख अपात्र लाभार्थियों को ₹2,589.23 करोड़ का भुगतान किया — जिनमें 13.73 लाख आयकरदाता भी शामिल थे जिन्हें कभी पात्र होना ही नहीं चाहिए था — जिसके बाद भेजे गए वसूली नोटिसों की विपक्षी दलों ने गरीब किसानों के साथ अन्याय बताकर आलोचना की। स्वतंत्र विश्लेषण में यह भी सामने आया है कि तय ₹6,000 की राशि महंगाई के साथ नहीं बढ़ी — 2023 तक इसका वास्तविक मूल्य घटकर लगभग ₹4,800 रह गया — और भूमिहीन व बटाईदार किसान परिवार, जिनकी संख्या करोड़ों में आंकी गई है, भूमि रिकॉर्ड से जुड़ी होने के कारण योजना से पूरी तरह बाहर हैं — 2026 के इस विस्तार में भी यह कमी दूर नहीं हुई।",
       },
     ],
     impactType: "mixed",
     timelineStartDate: "2019-02-24",
-    timelineEndDate: "2026-03-13",
+    timelineEndDate: "2026-08-01",
     tags: [
       { slug: "agriculture", labelHi: "कृषि", labelEn: "Agriculture" },
       { slug: "pm-kisan", labelHi: "पीएम-किसान", labelEn: "PM-KISAN" },
@@ -81,6 +90,19 @@ export const agricultureEntries: EntryInput[] = [
         afterLabelHi: "मार्च 2026 (22वीं किस्त)",
         afterValueEn: "₹4.27 lakh crore to 9.32 crore families",
         afterValueHi: "9.32 करोड़ परिवारों को ₹4.27 लाख करोड़",
+      },
+      {
+        statKey: "pm_kisan_continuation_outlay",
+        metricLabelEn: "Committed scheme outlay",
+        metricLabelHi: "योजना का सुनिश्चित परिव्यय",
+        beforeLabelEn: "Before August 2026",
+        beforeLabelHi: "अगस्त 2026 से पहले",
+        beforeValueEn: "Approved cycle-by-cycle",
+        beforeValueHi: "चक्र-दर-चक्र मंज़ूरी",
+        afterLabelEn: "August 2026 (through 2030-31)",
+        afterLabelHi: "अगस्त 2026 (2030-31 तक)",
+        afterValueEn: "₹3.15 lakh crore, 5-year runway",
+        afterValueHi: "₹3.15 लाख करोड़, 5 साल की सुनिश्चितता",
       },
       {
         statKey: "pm_kisan_real_value_erosion",
@@ -130,6 +152,13 @@ export const agricultureEntries: EntryInput[] = [
         publisher: "National Herald",
         title: "Modi govt paid over Rs 2,589 crore to ineligible persons under PM-KISAN scheme, reveals RTI",
         credibilityTier: "reputable_media",
+        language: "en",
+      },
+      {
+        url: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2292437&reg=48&lang=1",
+        publisher: "Press Information Bureau, Government of India",
+        title: "Cabinet approves continuation of the PM-KISAN Scheme from 2026-27 to 2030-31 with a Financial Outlay of Rs.3.15 lakh crore",
+        credibilityTier: "official_primary",
         language: "en",
       },
     ],
@@ -360,4 +389,5 @@ export const agricultureEntries: EntryInput[] = [
     ],
   },
   kisanCreditCardEntry,
+  fmdLivestockVaccinationEntry,
 ];
