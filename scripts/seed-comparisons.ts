@@ -7,9 +7,10 @@
  *
  * Idempotent: safe to re-run (upserts by slug; points/sources are
  * delete+insert, same pattern as seed.ts). Always lands as pending_review
- * on first insert; never touches status on a re-run, so an already-
- * reviewed comparison isn't silently re-hidden or re-published by this
- * script — same discipline as seed.ts's entries loop.
+ * on first insert; on a re-run, leaves an existing row's status alone
+ * UNLESS it was published and the content actually changed, in which case
+ * it resets to pending_review (matching the admin edit form) — same
+ * discipline as seed.ts's entries loop.
  *
  * Run with: npx tsx scripts/seed-comparisons.ts [file1.json file2.json ...]
  * With no arguments, seeds every scripts/entries/comparison-*.json file.
@@ -109,6 +110,43 @@ async function main() {
       relatedEntryId = entry.id;
     }
 
+    // Detect a content edit to an already-published comparison so
+    // re-seeding sends it back to pending_review, matching seed.ts's
+    // entries loop — fixed 2026-09-23, see PROJECT_LOG.
+    const [existing] = await db
+      .select({
+        status: comparisons.status,
+        titleHi: comparisons.titleHi,
+        titleEn: comparisons.titleEn,
+        metricLabelHi: comparisons.metricLabelHi,
+        metricLabelEn: comparisons.metricLabelEn,
+        unitHi: comparisons.unitHi,
+        unitEn: comparisons.unitEn,
+        narrativeHi: comparisons.narrativeHi,
+        narrativeEn: comparisons.narrativeEn,
+      })
+      .from(comparisons)
+      .where(eq(comparisons.slug, input.slug))
+      .limit(1);
+
+    const contentChanged =
+      !!existing &&
+      (existing.titleHi !== input.titleHi ||
+        existing.titleEn !== input.titleEn ||
+        existing.metricLabelHi !== input.metricLabelHi ||
+        existing.metricLabelEn !== input.metricLabelEn ||
+        existing.unitHi !== (input.unitHi ?? null) ||
+        existing.unitEn !== (input.unitEn ?? null) ||
+        existing.narrativeHi !== input.narrativeHi ||
+        existing.narrativeEn !== input.narrativeEn);
+
+    const shouldResetStatus = existing?.status === "published" && contentChanged;
+    if (shouldResetStatus) {
+      console.log(
+        `  -> ${input.slug} was published and content changed; resetting to pending_review`,
+      );
+    }
+
     const [comparison] = await db
       .insert(comparisons)
       .values({
@@ -124,7 +162,9 @@ async function main() {
         narrativeHi: input.narrativeHi,
         narrativeEn: input.narrativeEn,
         // pending_review on insert only — see file header. The
-        // onConflictDoUpdate below never sets status.
+        // onConflictDoUpdate below normally leaves status alone too, EXCEPT
+        // it resets an already-published row back to pending_review when
+        // the content actually changed (shouldResetStatus, computed above).
         status: "pending_review",
         sourceOfCreation: "manual",
       })
@@ -142,6 +182,7 @@ async function main() {
           narrativeHi: input.narrativeHi,
           narrativeEn: input.narrativeEn,
           updatedAt: new Date(),
+          ...(shouldResetStatus ? { status: "pending_review" as const } : {}),
         },
       })
       .returning();

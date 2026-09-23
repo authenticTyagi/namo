@@ -113,6 +113,49 @@ async function main() {
       const bodyHi = deriveBody(entryInput.quickTakeHi, entryInput.bodySectionsHi);
       const bodyEn = deriveBody(entryInput.quickTakeEn, entryInput.bodySectionsEn);
 
+      // Detect a content edit to an already-published entry so re-seeding
+      // sends it back to pending_review, same as the admin edit form does.
+      // Without this, editing a published entry's content-pack file and
+      // re-running db:seed would silently keep it live with stale review
+      // history — a real gap found and fixed 2026-09-23 (see PROJECT_LOG).
+      const [existing] = await db
+        .select({
+          status: entries.status,
+          titleHi: entries.titleHi,
+          titleEn: entries.titleEn,
+          summaryHi: entries.summaryHi,
+          summaryEn: entries.summaryEn,
+          bodyHi: entries.bodyHi,
+          bodyEn: entries.bodyEn,
+          impactType: entries.impactType,
+          timelineStartDate: entries.timelineStartDate,
+          timelineEndDate: entries.timelineEndDate,
+        })
+        .from(entries)
+        .where(eq(entries.slug, entryInput.slug))
+        .limit(1);
+
+      const contentChanged =
+        !!existing &&
+        (existing.titleHi !== entryInput.titleHi ||
+          existing.titleEn !== entryInput.titleEn ||
+          existing.summaryHi !== entryInput.summaryHi ||
+          existing.summaryEn !== entryInput.summaryEn ||
+          existing.bodyHi !== bodyHi ||
+          existing.bodyEn !== bodyEn ||
+          existing.impactType !== entryInput.impactType ||
+          existing.timelineStartDate?.getTime() !==
+            new Date(entryInput.timelineStartDate).getTime() ||
+          existing.timelineEndDate?.getTime() !==
+            new Date(entryInput.timelineEndDate).getTime());
+
+      const shouldResetStatus = existing?.status === "published" && contentChanged;
+      if (shouldResetStatus) {
+        console.log(
+          `  -> ${entryInput.slug} was published and content changed; resetting to pending_review`,
+        );
+      }
+
       const [entry] = await db
         .insert(entries)
         .values({
@@ -129,13 +172,15 @@ async function main() {
           bodySectionsHi: entryInput.bodySectionsHi,
           bodySectionsEn: entryInput.bodySectionsEn,
           impactType: entryInput.impactType,
-          // pending_review, not published — this script inserts NEW rows
-          // only (the onConflictDoUpdate below never touches status), so a
-          // brand-new entry always needs the same admin approval as an
-          // editorial/comparison/pipeline submission before it's public.
-          // Previously this inserted straight to "published", which was an
-          // inconsistency with the rest of the site's review discipline —
-          // fixed 2026-09-15.
+          // pending_review, not published — a brand-new entry always needs
+          // the same admin approval as an editorial/comparison/pipeline
+          // submission before it's public. Previously this inserted straight
+          // to "published", which was an inconsistency with the rest of the
+          // site's review discipline — fixed 2026-09-15. The onConflictDoUpdate
+          // below normally leaves status alone too, EXCEPT it resets an
+          // already-published row back to pending_review when the content
+          // actually changed (shouldResetStatus, computed above) — fixed
+          // 2026-09-23, see PROJECT_LOG.
           status: "pending_review",
           timelineStartDate: new Date(entryInput.timelineStartDate),
           timelineEndDate: new Date(entryInput.timelineEndDate),
@@ -160,6 +205,7 @@ async function main() {
             timelineEndDate: new Date(entryInput.timelineEndDate),
             lastVerifiedDate: new Date(),
             updatedAt: new Date(),
+            ...(shouldResetStatus ? { status: "pending_review" as const } : {}),
           },
         })
         .returning();
