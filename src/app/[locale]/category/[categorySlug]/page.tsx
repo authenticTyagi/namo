@@ -6,6 +6,7 @@ import { EntryCard } from "@/components/entry/EntryCard";
 import { ShareButtons } from "@/components/entry/ShareButtons";
 import { SITE_URL } from "@/lib/constants";
 import { getCategoryIcon } from "@/lib/category-icons";
+import { OG_LOCALE_TAG } from "@/lib/localized";
 import { getCategoryClasses } from "@/lib/category-colors";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
@@ -19,7 +20,8 @@ export async function generateMetadata({
   const category = await getCategoryBySlug(categorySlug, locale);
   if (!category) return {};
 
-  const url = `${SITE_URL}/${locale}/category/${category.slug}`;
+  const canonicalLocale = category.hasLocalizedContent ? locale : "en";
+  const url = `${SITE_URL}/${canonicalLocale}/category/${category.slug}`;
   return {
     title: category.name,
     description: category.description ?? undefined,
@@ -29,6 +31,7 @@ export async function generateMetadata({
       description: category.description ?? undefined,
       url,
       type: "website",
+      locale: OG_LOCALE_TAG[canonicalLocale],
     },
     twitter: {
       card: "summary_large_image",

@@ -5,7 +5,9 @@ import { getPublishedComparisonBySlug } from "@/db/queries/comparisons";
 import { ComparisonBarChart } from "@/components/comparison/ComparisonBarChart";
 import { CitationList } from "@/components/entry/CitationList";
 import { ShareButtons } from "@/components/entry/ShareButtons";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SITE_URL } from "@/lib/constants";
+import { OG_LOCALE_TAG, isExtraLocale } from "@/lib/localized";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 
@@ -20,7 +22,12 @@ export async function generateMetadata({
   const comparison = await getPublishedComparisonBySlug(comparisonSlug, locale);
   if (!comparison) return {};
 
-  const url = `${SITE_URL}/${locale}/india-in-the-world/${comparison.slug}`;
+  // Comparisons have no bn/te/mr translation table at all (see
+  // ComparisonDetail in db/queries/comparisons.ts) — every extra-locale
+  // request is always English-fallback content, so it always canonicalizes
+  // to the English page.
+  const canonicalLocale = isExtraLocale(locale) ? "en" : locale;
+  const url = `${SITE_URL}/${canonicalLocale}/india-in-the-world/${comparison.slug}`;
   return {
     title: comparison.title,
     description: comparison.metricLabel,
@@ -30,6 +37,7 @@ export async function generateMetadata({
       description: comparison.metricLabel,
       url,
       type: "article",
+      locale: OG_LOCALE_TAG[canonicalLocale],
     },
     twitter: {
       card: "summary_large_image",
@@ -51,9 +59,35 @@ export default async function ComparisonPage({
   if (!comparison) notFound();
 
   const t = await getTranslations("comparisons");
+  const tn = await getTranslations("nav");
+  const comparisonUrl = `${SITE_URL}/${locale}/india-in-the-world/${comparison.slug}`;
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: comparison.title,
+    description: comparison.metricLabel,
+    inLanguage: locale,
+    mainEntityOfPage: comparisonUrl,
+    publisher: { "@type": "Organization", name: "Modi Ne Kiya Kya Hai?", url: SITE_URL },
+    citation: comparison.sources.map((s) => s.url),
+  };
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-10">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger -- static JSON, no user input
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <Breadcrumbs
+        locale={locale}
+        items={[
+          { label: tn("home"), href: "/" },
+          { label: tn("compare"), href: "/india-in-the-world" },
+          { label: comparison.title, href: `/india-in-the-world/${comparison.slug}` },
+        ]}
+      />
       <span className="inline-flex rounded-full bg-neutral-900 px-2.5 py-0.5 text-xs font-medium text-white dark:bg-neutral-100 dark:text-neutral-900">
         {t("badge")}
       </span>
@@ -81,10 +115,7 @@ export default async function ComparisonPage({
 
       <CitationList sources={comparison.sources} />
 
-      <ShareButtons
-        url={`${SITE_URL}/${locale}/india-in-the-world/${comparison.slug}`}
-        title={comparison.title}
-      />
+      <ShareButtons url={comparisonUrl} title={comparison.title} />
     </article>
   );
 }

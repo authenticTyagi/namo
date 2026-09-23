@@ -10,6 +10,8 @@ export interface CategorySummary {
   name: string;
   description: string | null;
   entryCount: number;
+  /** false for bn/te/mr when the name has no real translation yet (see the entries version of this field for why it matters for canonical URLs). */
+  hasLocalizedContent: boolean;
 }
 
 type CategoryRow = typeof categories.$inferSelect;
@@ -29,6 +31,8 @@ function toCategorySummary(row: CategoryRow, locale: Locale, entryCount = 0): Ca
       translated: pickTranslated(row, locale, "description"),
     }),
     entryCount,
+    hasLocalizedContent:
+      locale === "hi" || locale === "en" || pickTranslated(row, locale, "name") != null,
   };
 }
 

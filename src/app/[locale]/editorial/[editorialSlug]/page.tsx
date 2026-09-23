@@ -5,8 +5,9 @@ import { getPublishedEditorialBySlug } from "@/db/queries/editorials";
 import { ToneBadge } from "@/components/editorial/ToneBadge";
 import { CommentSection } from "@/components/comments/CommentSection";
 import { ShareButtons } from "@/components/entry/ShareButtons";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SITE_URL } from "@/lib/constants";
-import { LOCALE_INTL_TAG } from "@/lib/localized";
+import { LOCALE_INTL_TAG, OG_LOCALE_TAG, isExtraLocale } from "@/lib/localized";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 
@@ -21,11 +22,15 @@ export async function generateMetadata({
   const editorial = await getPublishedEditorialBySlug(editorialSlug, locale);
   if (!editorial) return {};
 
-  const url = `${SITE_URL}/${locale}/editorial/${editorial.slug}`;
+  // Editorials have no bn/te/mr translation table at all (see EditorialDetail
+  // in db/queries/editorials.ts) — every extra-locale request is always
+  // English-fallback content, so it always canonicalizes to the English page.
+  const canonicalLocale = isExtraLocale(locale) ? "en" : locale;
+  const url = `${SITE_URL}/${canonicalLocale}/editorial/${editorial.slug}`;
   return {
     title: editorial.headline,
     alternates: { canonical: url },
-    openGraph: { title: editorial.headline, url, type: "article" },
+    openGraph: { title: editorial.headline, url, type: "article", locale: OG_LOCALE_TAG[canonicalLocale] },
     twitter: { card: "summary_large_image", title: editorial.headline },
   };
 }
@@ -42,9 +47,35 @@ export default async function EditorialPage({
   if (!editorial) notFound();
 
   const t = await getTranslations("editorial");
+  const tn = await getTranslations("nav");
+  const editorialUrl = `${SITE_URL}/${locale}/editorial/${editorial.slug}`;
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: editorial.headline,
+    inLanguage: locale,
+    mainEntityOfPage: editorialUrl,
+    ...(editorial.publishDate && { datePublished: editorial.publishDate.toISOString() }),
+    publisher: { "@type": "Organization", name: "Modi Ne Kiya Kya Hai?", url: SITE_URL },
+    about: `${SITE_URL}/${locale}/entry/${editorial.relatedEntrySlug}`,
+  };
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-10">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger -- static JSON, no user input
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <Breadcrumbs
+        locale={locale}
+        items={[
+          { label: tn("home"), href: "/" },
+          { label: tn("editorials"), href: "/editorials" },
+          { label: editorial.headline, href: `/editorial/${editorial.slug}` },
+        ]}
+      />
       <div className="flex items-center gap-2">
         <span className="rounded-full bg-neutral-900 px-2.5 py-0.5 text-xs font-medium text-white dark:bg-neutral-100 dark:text-neutral-900">
           {t("opinionLabel")}
@@ -76,15 +107,12 @@ export default async function EditorialPage({
         {editorial.body}
       </div>
 
-      <ShareButtons
-        url={`${SITE_URL}/${locale}/editorial/${editorial.slug}`}
-        title={editorial.headline}
-      />
+      <ShareButtons url={editorialUrl} title={editorial.headline} />
 
       <CommentSection
         target={{ editorialId: editorial.id }}
         locale={locale}
-        returnTo={`${SITE_URL}/${locale}/editorial/${editorial.slug}`}
+        returnTo={editorialUrl}
       />
     </article>
   );

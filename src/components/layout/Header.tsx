@@ -1,7 +1,11 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { NavLink } from "./NavLink";
 import { LanguagePicker } from "./LanguagePicker";
 import { MobileMenu } from "./MobileMenu";
+
+const NAV_ACTIVE = "text-[#184f95] dark:text-[#3987e5] font-semibold";
+const NAV_INACTIVE = "text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100";
 
 export function Header() {
   const t = useTranslations("nav");
@@ -14,18 +18,27 @@ export function Header() {
           {site("name")}
         </Link>
         <nav className="hidden items-center gap-5 text-sm lg:flex">
-          <Link
-            href="/overview"
-            className="font-semibold text-[#184f95] dark:text-[#3987e5]"
-          >
+          <NavLink href="/overview" className={NAV_INACTIVE} activeClassName={NAV_ACTIVE}>
             {t("overview")}
-          </Link>
-          <Link href="/categories">{t("categories")}</Link>
-          <Link href="/editorials">{t("editorials")}</Link>
-          <Link href="/india-in-the-world">{t("compare")}</Link>
-          <Link href="/search">{t("search")}</Link>
-          <Link href="/about">{t("about")}</Link>
-          <Link href="/methodology">{t("methodology")}</Link>
+          </NavLink>
+          <NavLink href="/categories" className={NAV_INACTIVE} activeClassName={NAV_ACTIVE}>
+            {t("categories")}
+          </NavLink>
+          <NavLink href="/editorials" className={NAV_INACTIVE} activeClassName={NAV_ACTIVE}>
+            {t("editorials")}
+          </NavLink>
+          <NavLink href="/india-in-the-world" className={NAV_INACTIVE} activeClassName={NAV_ACTIVE}>
+            {t("compare")}
+          </NavLink>
+          <NavLink href="/search" className={NAV_INACTIVE} activeClassName={NAV_ACTIVE}>
+            {t("search")}
+          </NavLink>
+          <NavLink href="/about" className={NAV_INACTIVE} activeClassName={NAV_ACTIVE}>
+            {t("about")}
+          </NavLink>
+          <NavLink href="/methodology" className={NAV_INACTIVE} activeClassName={NAV_ACTIVE}>
+            {t("methodology")}
+          </NavLink>
         </nav>
         <div className="flex items-center gap-2">
           <LanguagePicker />

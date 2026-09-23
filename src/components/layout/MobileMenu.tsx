@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { NavLink } from "./NavLink";
 import { Menu, X } from "lucide-react";
+
+const NAV_ACTIVE = "bg-neutral-100 text-[#184f95] dark:bg-neutral-900 dark:text-[#3987e5]";
 
 /**
  * Hamburger menu shown below the `lg` breakpoint — the desktop <nav> in
@@ -41,14 +43,15 @@ export function MobileMenu() {
         <nav className="absolute inset-x-0 top-full z-40 border-b border-neutral-200 bg-white px-4 py-3 shadow-lg dark:border-neutral-800 dark:bg-neutral-950">
           <div className="flex flex-col gap-1">
             {links.map((link) => (
-              <Link
+              <NavLink
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="rounded-md px-3 py-2.5 text-sm font-medium hover:bg-neutral-100 dark:hover:bg-neutral-900"
+                activeClassName={NAV_ACTIVE}
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
           </div>
         </nav>

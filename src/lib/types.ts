@@ -66,6 +66,9 @@ export interface EntryDetail extends EntrySummary {
   timelineStartDate: Date | null;
   timelineEndDate: Date | null;
   lastVerifiedDate: Date | null;
+  category: { slug: string; name: string };
+  /** false for bn/te/mr when this page is serving English-fallback content, not a real translation. */
+  hasLocalizedContent: boolean;
   sources: EntrySource[];
   tags: EntryTag[];
   stats: EntryStat[];

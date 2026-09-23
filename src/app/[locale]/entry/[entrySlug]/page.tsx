@@ -10,9 +10,11 @@ import { Timeline } from "@/components/entry/Timeline";
 import { EntryStatsSection } from "@/components/entry/EntryStatsSection";
 import { CitationList } from "@/components/entry/CitationList";
 import { ShareButtons } from "@/components/entry/ShareButtons";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SITE_URL } from "@/lib/constants";
 import { getEntryIcon } from "@/lib/entry-icons";
-import { LOCALE_INTL_TAG } from "@/lib/localized";
+import { getCategoryClasses } from "@/lib/category-colors";
+import { LOCALE_INTL_TAG, OG_LOCALE_TAG } from "@/lib/localized";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 
@@ -27,7 +29,11 @@ export async function generateMetadata({
   const entry = await getPublishedEntryBySlug(entrySlug, locale);
   if (!entry) return {};
 
-  const url = `${SITE_URL}/${locale}/entry/${entry.slug}`;
+  // A bn/te/mr page with no real translation is serving English-fallback
+  // text — canonicalize it to the actual English page instead of claiming
+  // to be a distinct page with duplicate content (see hasLocalizedContent).
+  const canonicalLocale = entry.hasLocalizedContent ? locale : "en";
+  const url = `${SITE_URL}/${canonicalLocale}/entry/${entry.slug}`;
   return {
     title: entry.title,
     description: entry.summary,
@@ -37,6 +43,7 @@ export async function generateMetadata({
       description: entry.summary,
       url,
       type: "article",
+      locale: OG_LOCALE_TAG[canonicalLocale],
     },
     twitter: {
       card: "summary_large_image",
@@ -58,16 +65,47 @@ export default async function EntryPage({
   if (!entry) notFound();
 
   const t = await getTranslations("entry");
+  const tn = await getTranslations("nav");
   const te = await getTranslations("editorial");
   const tc = await getTranslations("comparisons");
   const Icon = getEntryIcon(entry.slug);
+  const categoryClasses = getCategoryClasses(entry.category.slug);
   const editorials = await getPublishedEditorialsForEntry(entry.id, locale);
   const comparisons = await getPublishedComparisonsForEntry(entry.id, locale);
+  const entryUrl = `${SITE_URL}/${locale}/entry/${entry.slug}`;
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: entry.title,
+    description: entry.summary,
+    inLanguage: locale,
+    mainEntityOfPage: entryUrl,
+    ...(entry.publishDate && { datePublished: entry.publishDate.toISOString() }),
+    ...(entry.lastVerifiedDate && { dateModified: entry.lastVerifiedDate.toISOString() }),
+    publisher: { "@type": "Organization", name: "Modi Ne Kiya Kya Hai?", url: SITE_URL },
+    citation: entry.sources.map((s) => s.url),
+  };
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-10">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger -- static JSON, no user input
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <Breadcrumbs
+        locale={locale}
+        items={[
+          { label: tn("home"), href: "/" },
+          { label: entry.category.name, href: `/category/${entry.category.slug}` },
+          { label: entry.title, href: `/entry/${entry.slug}` },
+        ]}
+      />
       <div className="flex items-center gap-3">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
+        <span
+          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border bg-neutral-50 dark:bg-neutral-900 ${categoryClasses.border} ${categoryClasses.text}`}
+        >
           <Icon aria-hidden className="h-5 w-5" />
         </span>
         <ImpactBadge impactType={entry.impactType} />
@@ -160,7 +198,7 @@ export default async function EntryPage({
 
       <CitationList sources={entry.sources} />
 
-      <ShareButtons url={`${SITE_URL}/${locale}/entry/${entry.slug}`} title={entry.title} />
+      <ShareButtons url={entryUrl} title={entry.title} />
 
       {entry.lastVerifiedDate && (
         <p className="mt-6 text-xs text-neutral-400">
@@ -181,7 +219,7 @@ export default async function EntryPage({
       <CommentSection
         target={{ entryId: entry.id }}
         locale={locale}
-        returnTo={`${SITE_URL}/${locale}/entry/${entry.slug}`}
+        returnTo={entryUrl}
       />
     </article>
   );

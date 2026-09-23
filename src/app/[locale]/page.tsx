@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getActiveCategories } from "@/db/queries/categories";
-import { getPublishedEntriesByCategory } from "@/db/queries/entries";
+import { getRecentPublishedEntries } from "@/db/queries/entries";
 import { getPublicSiteStats } from "@/db/queries/site-stats";
 import { EntryCard } from "@/components/entry/EntryCard";
 import { ShareButtons } from "@/components/entry/ShareButtons";
@@ -23,11 +23,7 @@ export default async function HomePage({
   const site = await getTranslations("site");
   const categories = await getActiveCategories(locale);
   const stats = await getPublicSiteStats();
-
-  const recentByCategory = await Promise.all(
-    categories.map((c) => getPublishedEntriesByCategory(c.slug, locale)),
-  );
-  const recentEntries = recentByCategory.flat().slice(0, 6);
+  const recentEntries = await getRecentPublishedEntries(locale, 6);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10">

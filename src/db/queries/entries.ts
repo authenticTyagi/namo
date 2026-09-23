@@ -74,6 +74,41 @@ export async function getPublishedEntriesByCategory(categorySlug: string, locale
   return rows.map((r) => toEntrySummary(r, locale));
 }
 
+/**
+ * Most recently published entries site-wide (homepage "Recently Added").
+ * Deliberately a single globally-sorted query rather than merging per-
+ * category results — merging would bias toward whichever category happens
+ * to have the most entries rather than true recency (a real bug found and
+ * fixed 2026-09-23; economy-infra-digital alone has 17 entries, so the old
+ * per-category-then-flatten approach could never surface anything else).
+ */
+export async function getRecentPublishedEntries(locale: Locale, limit: number) {
+  if (!isDbConfigured) return [];
+  const rows = await db
+    .select({
+      id: entries.id,
+      slug: entries.slug,
+      titleHi: entries.titleHi,
+      titleEn: entries.titleEn,
+      summaryHi: entries.summaryHi,
+      summaryEn: entries.summaryEn,
+      impactType: entries.impactType,
+      publishDate: entries.publishDate,
+      translatedTitle: entryTranslations.title,
+      translatedSummary: entryTranslations.summary,
+    })
+    .from(entries)
+    .leftJoin(
+      entryTranslations,
+      and(eq(entryTranslations.entryId, entries.id), eq(entryTranslations.locale, locale)),
+    )
+    .where(eq(entries.status, "published"))
+    .orderBy(desc(entries.publishDate))
+    .limit(limit);
+
+  return rows.map((r) => toEntrySummary(r, locale));
+}
+
 /** Full entry detail, with its sources, tags and stats, by slug. Only published entries. */
 export async function getPublishedEntryBySlug(slug: string, locale: Locale) {
   if (!isDbConfigured) return null;
@@ -85,6 +120,12 @@ export async function getPublishedEntryBySlug(slug: string, locale: Locale) {
     .limit(1);
 
   if (!entry) return null;
+
+  const [category] = await db
+    .select()
+    .from(categories)
+    .where(eq(categories.id, entry.categoryId))
+    .limit(1);
 
   const [translation] = await db
     .select()
@@ -160,6 +201,16 @@ export async function getPublishedEntryBySlug(slug: string, locale: Locale) {
     timelineStartDate: entry.timelineStartDate,
     timelineEndDate: entry.timelineEndDate,
     lastVerifiedDate: entry.lastVerifiedDate,
+    category: {
+      slug: category.slug,
+      name: resolveLocalizedText(locale, { hi: category.nameHi, en: category.nameEn, translated: pickCategoryTranslated(category, locale) }),
+    },
+    // hi/en are never "fallback" (their columns are always the real content).
+    // For bn/te/mr, true only when a real entryTranslations row exists —
+    // callers (generateMetadata) use this to canonicalize a fallback page
+    // to the real content locale instead of self-canonicalizing duplicate
+    // English text under a distinct URL. Fixed 2026-09-23.
+    hasLocalizedContent: locale === "hi" || locale === "en" || translation != null,
     sources: entrySources,
     tags: entryTagRows.map((r) => ({
       id: r.tag.id,

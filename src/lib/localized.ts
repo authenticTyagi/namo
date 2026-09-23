@@ -36,6 +36,11 @@ export const LOCALE_INTL_TAG: Record<Locale, string> = {
   mr: "mr-IN",
 };
 
+/** `og:locale` uses an underscore, not BCP-47's hyphen (e.g. "hi_IN"). */
+export const OG_LOCALE_TAG: Record<Locale, string> = Object.fromEntries(
+  Object.entries(LOCALE_INTL_TAG).map(([locale, tag]) => [locale, tag.replace("-", "_")]),
+) as Record<Locale, string>;
+
 /**
  * Resolves a piece of bilingual+extra-locale text for the given locale.
  * `hi`/`en` return their own field directly. `bn`/`te`/`mr` use the value
