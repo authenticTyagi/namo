@@ -9,6 +9,7 @@ import {
   pgEnum,
   uuid,
   jsonb,
+  index,
 } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 
@@ -132,7 +133,9 @@ export const users = pgTable("users", {
   createdAt: timestamp("created_at").notNull().defaultNow(),
 });
 
-export const entries = pgTable("entries", {
+export const entries = pgTable(
+  "entries",
+  {
   id: uuid("id").primaryKey().defaultRandom(),
   categoryId: uuid("category_id")
     .notNull()
@@ -147,7 +150,13 @@ export const entries = pgTable("entries", {
   bodyEn: text("body_en").notNull(),
 
   impactType: impactTypeEnum("impact_type").notNull(),
-  status: entryStatusEnum("status").notNull().default("draft"),
+  // pending_review, not draft — every real insert path (seed.ts, the
+  // pipeline ingest routes) already sets this explicitly, but the column
+  // default itself used to say "draft", which would silently hide a future
+  // insert path that forgot to set status: it'd land invisible (not even in
+  // the review queue) rather than surfacing in pending_review the way the
+  // same mistake would on editorials/comparisons. Fixed 2026-09-23.
+  status: entryStatusEnum("status").notNull().default("pending_review"),
   confidenceScore: numeric("confidence_score", { precision: 3, scale: 2 }),
 
   timelineStartDate: timestamp("timeline_start_date"),
@@ -177,7 +186,9 @@ export const entries = pgTable("entries", {
 
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
-});
+  },
+  (t) => [index("entries_status_idx").on(t.status), index("entries_category_id_idx").on(t.categoryId)],
+);
 
 export const entryTags = pgTable(
   "entry_tags",
@@ -192,20 +203,24 @@ export const entryTags = pgTable(
   (t) => [primaryKey({ columns: [t.entryId, t.tagId] })],
 );
 
-export const sources = pgTable("sources", {
-  id: uuid("id").primaryKey().defaultRandom(),
-  entryId: uuid("entry_id")
-    .notNull()
-    .references(() => entries.id, { onDelete: "cascade" }),
-  url: text("url").notNull(),
-  publisher: text("publisher").notNull(),
-  title: text("title"),
-  retrievedDate: timestamp("retrieved_date").notNull().defaultNow(),
-  publishedDate: timestamp("published_date"),
-  credibilityTier: credibilityTierEnum("credibility_tier").notNull(),
-  credibilityNotes: text("credibility_notes"),
-  language: text("language"),
-});
+export const sources = pgTable(
+  "sources",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    entryId: uuid("entry_id")
+      .notNull()
+      .references(() => entries.id, { onDelete: "cascade" }),
+    url: text("url").notNull(),
+    publisher: text("publisher").notNull(),
+    title: text("title"),
+    retrievedDate: timestamp("retrieved_date").notNull().defaultNow(),
+    publishedDate: timestamp("published_date"),
+    credibilityTier: credibilityTierEnum("credibility_tier").notNull(),
+    credibilityNotes: text("credibility_notes"),
+    language: text("language"),
+  },
+  (t) => [index("sources_entry_id_idx").on(t.entryId)],
+);
 
 /**
  * Before/after (and occasionally a 3rd "extra" point, e.g. a peak figure)
@@ -216,7 +231,9 @@ export const sources = pgTable("sources", {
  * when a stat needs a citation the entry didn't already have, e.g. a
  * pre-2014 baseline figure).
  */
-export const entryStats = pgTable("entry_stats", {
+export const entryStats = pgTable(
+  "entry_stats",
+  {
   id: uuid("id").primaryKey().defaultRandom(),
   entryId: uuid("entry_id")
     .notNull()
@@ -252,7 +269,9 @@ export const entryStats = pgTable("entry_stats", {
 
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
-});
+  },
+  (t) => [index("entry_stats_entry_id_idx").on(t.entryId)],
+);
 
 /**
  * Hand-authored translations for additional locales (Bengali/Telugu/
@@ -314,7 +333,9 @@ export const entryStatTranslations = pgTable(
 // translations are future work, not this round.
 // ---------------------------------------------------------------------------
 
-export const editorials = pgTable("editorials", {
+export const editorials = pgTable(
+  "editorials",
+  {
   id: uuid("id").primaryKey().defaultRandom(),
   slug: text("slug").notNull().unique(),
   relatedEntryId: uuid("related_entry_id")
@@ -340,7 +361,9 @@ export const editorials = pgTable("editorials", {
 
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
-});
+  },
+  (t) => [index("editorials_status_idx").on(t.status), index("editorials_related_entry_id_idx").on(t.relatedEntryId)],
+);
 
 // ---------------------------------------------------------------------------
 // Comparisons — "India in the World": India's own figure on a metric set
@@ -355,7 +378,9 @@ export const editorials = pgTable("editorials", {
 // hi/en only for now, same launch scope as entries/editorials.
 // ---------------------------------------------------------------------------
 
-export const comparisons = pgTable("comparisons", {
+export const comparisons = pgTable(
+  "comparisons",
+  {
   id: uuid("id").primaryKey().defaultRandom(),
   slug: text("slug").notNull().unique(),
   categoryId: uuid("category_id")
@@ -381,10 +406,18 @@ export const comparisons = pgTable("comparisons", {
 
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
-});
+  },
+  (t) => [
+    index("comparisons_status_idx").on(t.status),
+    index("comparisons_category_id_idx").on(t.categoryId),
+    index("comparisons_related_entry_id_idx").on(t.relatedEntryId),
+  ],
+);
 
 /** One row per country shown in a comparison's bar chart. India is flagged, not just another row, so the chart can highlight it distinctly. */
-export const comparisonPoints = pgTable("comparison_points", {
+export const comparisonPoints = pgTable(
+  "comparison_points",
+  {
   id: uuid("id").primaryKey().defaultRandom(),
   comparisonId: uuid("comparison_id")
     .notNull()
@@ -396,10 +429,14 @@ export const comparisonPoints = pgTable("comparison_points", {
   valueHi: text("value_hi").notNull(), // display string, e.g. "52%" / "155 GW"
   valueEn: text("value_en").notNull(),
   valueNumeric: numeric("value_numeric").notNull(), // required here (unlike entryStats) — the bar chart needs every point to be plottable
-});
+  },
+  (t) => [index("comparison_points_comparison_id_idx").on(t.comparisonId)],
+);
 
 /** Same shape/role as `sources`, kept separate since a comparison isn't an entry. */
-export const comparisonSources = pgTable("comparison_sources", {
+export const comparisonSources = pgTable(
+  "comparison_sources",
+  {
   id: uuid("id").primaryKey().defaultRandom(),
   comparisonId: uuid("comparison_id")
     .notNull()
@@ -412,7 +449,9 @@ export const comparisonSources = pgTable("comparison_sources", {
   credibilityTier: credibilityTierEnum("credibility_tier").notNull(),
   credibilityNotes: text("credibility_notes"),
   language: text("language"),
-});
+  },
+  (t) => [index("comparison_sources_comparison_id_idx").on(t.comparisonId)],
+);
 
 // ---------------------------------------------------------------------------
 // Auth.js adapter tables (NextAuth v5 / @auth/drizzle-adapter shape)

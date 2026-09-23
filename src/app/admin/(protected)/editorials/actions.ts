@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { db } from "@/db";
 import { editorials } from "@/db/schema";
 import { auth } from "@/auth";
@@ -12,12 +12,15 @@ async function requireAdmin() {
   return session;
 }
 
+// Both guard on the row still being pending_review — without it, two admin
+// tabs open (or a slow bulk action racing a single-item one) could re-fire
+// on a row already approved/rejected by the other request in between.
 export async function approveEditorial(editorialId: string) {
   await requireAdmin();
   await db
     .update(editorials)
     .set({ status: "published", publishDate: new Date(), updatedAt: new Date() })
-    .where(eq(editorials.id, editorialId));
+    .where(and(eq(editorials.id, editorialId), eq(editorials.status, "pending_review")));
   revalidatePath("/admin/editorials");
   revalidatePath("/admin/review");
   revalidatePath("/admin", "layout");
@@ -29,7 +32,7 @@ export async function rejectEditorial(editorialId: string) {
   await db
     .update(editorials)
     .set({ status: "rejected", updatedAt: new Date() })
-    .where(eq(editorials.id, editorialId));
+    .where(and(eq(editorials.id, editorialId), eq(editorials.status, "pending_review")));
   revalidatePath("/admin/editorials");
   revalidatePath("/admin/review");
   revalidatePath("/admin", "layout");

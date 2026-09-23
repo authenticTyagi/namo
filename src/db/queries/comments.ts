@@ -1,5 +1,5 @@
 import { db, isDbConfigured } from "@/db";
-import { comments, moderationFlags, users } from "@/db/schema";
+import { comments, editorials, entries, moderationFlags, users } from "@/db/schema";
 import { and, asc, eq, isNull } from "drizzle-orm";
 
 export interface CommentWithAuthor {
@@ -58,6 +58,25 @@ export async function createComment(target: CommentTarget, userId: string, body:
   const trimmed = body.trim();
   if (trimmed.length < MIN_COMMENT_LENGTH) throw new Error("Comment is too short");
   if (trimmed.length > MAX_COMMENT_LENGTH) throw new Error("Comment is too long");
+
+  // The UI never links to a pending_review/draft/rejected item, but nothing
+  // stopped a guessed or leaked id from being commented on before this check
+  // — comments are meant to be discussion under real, live content only.
+  const isPublished =
+    "entryId" in target
+      ? await db
+          .select({ id: entries.id })
+          .from(entries)
+          .where(and(eq(entries.id, target.entryId), eq(entries.status, "published")))
+          .limit(1)
+          .then((r) => r.length > 0)
+      : await db
+          .select({ id: editorials.id })
+          .from(editorials)
+          .where(and(eq(editorials.id, target.editorialId), eq(editorials.status, "published")))
+          .limit(1)
+          .then((r) => r.length > 0);
+  if (!isPublished) throw new Error("Cannot comment on unpublished content");
 
   const [comment] = await db
     .insert(comments)

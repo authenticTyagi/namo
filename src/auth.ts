@@ -58,6 +58,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       const currentRole = (user as typeof users.$inferSelect).role;
       if (shouldBeAdmin && currentRole !== "admin") {
         await db.update(users).set({ role: "admin" }).where(eq(users.id, user.id));
+      } else if (!shouldBeAdmin && currentRole === "admin") {
+        // Symmetric demotion: an email removed from ADMIN_EMAILS (offboarding,
+        // a compromised account, a typo fixed) must lose access on their next
+        // sign-in, not keep it forever because role is a persisted DB column
+        // that only ever got promoted, never re-checked downward.
+        await db.update(users).set({ role: "viewer" }).where(eq(users.id, user.id));
       }
     },
   },
