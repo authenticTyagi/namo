@@ -97,7 +97,7 @@ export default async function EditorialPage({
         {t("basedOn")}{" "}
         <Link
           href={`/entry/${editorial.relatedEntrySlug}`}
-          className="font-medium text-[#184f95] underline underline-offset-2 dark:text-[#3987e5]"
+          className="font-medium text-brand underline underline-offset-2"
         >
           {editorial.relatedEntryTitle}
         </Link>

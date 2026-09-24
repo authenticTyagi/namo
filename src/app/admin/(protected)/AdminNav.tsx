@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { signOutAction } from "./actions";
 
 const LINKS = [
@@ -26,7 +27,10 @@ export function AdminNav({
 
   return (
     <nav className="flex w-56 shrink-0 flex-col border-r border-neutral-200 p-4 dark:border-neutral-800">
-      <p className="mb-6 text-sm font-semibold">Admin</p>
+      <div className="mb-6 flex items-center justify-between">
+        <p className="text-sm font-semibold">Admin</p>
+        <ThemeToggle />
+      </div>
       <div className="flex-1 space-y-1">
         {LINKS.map((link) => {
           const count = link.countKey ? counts[link.countKey] : 0;

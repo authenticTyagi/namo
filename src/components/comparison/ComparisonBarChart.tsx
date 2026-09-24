@@ -23,7 +23,7 @@ export function ComparisonBarChart({ points, unit }: { points: ComparisonPoint[]
             className={
               "w-28 shrink-0 text-sm sm:w-36 " +
               (p.isIndia
-                ? "font-bold text-[#184f95] dark:text-[#3987e5]"
+                ? "font-bold text-brand"
                 : "font-medium text-neutral-600 dark:text-neutral-400")
             }
           >
@@ -33,7 +33,7 @@ export function ComparisonBarChart({ points, unit }: { points: ComparisonPoint[]
             <div
               className={
                 "h-2.5 rounded-full " +
-                (p.isIndia ? "bg-[#184f95] dark:bg-[#3987e5]" : "bg-neutral-300 dark:bg-neutral-600")
+                (p.isIndia ? "bg-brand" : "bg-neutral-300 dark:bg-neutral-600")
               }
               style={{ width: `${Math.max((p.valueNumeric / max) * 100, 4)}%` }}
             />
@@ -41,7 +41,7 @@ export function ComparisonBarChart({ points, unit }: { points: ComparisonPoint[]
           <span
             className={
               "w-20 shrink-0 text-right text-sm font-extrabold tabular-nums sm:w-24 " +
-              (p.isIndia ? "text-[#184f95] dark:text-[#3987e5]" : "")
+              (p.isIndia ? "text-brand" : "")
             }
           >
             {p.value}

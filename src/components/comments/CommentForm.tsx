@@ -39,7 +39,7 @@ export function CommentForm({ target }: { target: CommentTarget }) {
       <button
         type="submit"
         disabled={isPending || value.trim().length < 2}
-        className="mt-2 rounded-md bg-[#184f95] px-4 py-1.5 text-sm font-medium text-white hover:bg-[#123c73] disabled:opacity-50 dark:bg-[#123c73] dark:hover:bg-[#0d2b54]"
+        className="mt-2 rounded-md bg-brand px-4 py-1.5 text-sm font-medium text-white hover:bg-brand-hover disabled:opacity-50"
       >
         {isPending ? t("submitting") : t("submit")}
       </button>

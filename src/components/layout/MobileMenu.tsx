@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { NavLink } from "./NavLink";
 import { Menu, X } from "lucide-react";
 
-const NAV_ACTIVE = "bg-neutral-100 text-[#184f95] dark:bg-neutral-900 dark:text-[#3987e5]";
+const NAV_ACTIVE = "bg-neutral-100 text-brand dark:bg-neutral-900";
 
 /**
  * Hamburger menu shown below the `lg` breakpoint — the desktop <nav> in

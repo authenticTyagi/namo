@@ -62,7 +62,7 @@ export default async function AdminSourcesPage() {
         </div>
         <button
           type="submit"
-          className="rounded-md bg-[#184f95] px-4 py-2 text-sm font-medium text-white hover:bg-[#123c73] dark:bg-[#123c73] dark:hover:bg-[#0d2b54]"
+          className="rounded-md bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-brand-hover"
         >
           Submit
         </button>

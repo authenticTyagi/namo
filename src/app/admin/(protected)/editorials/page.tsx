@@ -52,7 +52,7 @@ export default async function AdminEditorialsPage() {
         <h1 className="text-2xl font-bold">Editorials</h1>
         <Link
           href="/admin/editorials/new"
-          className="rounded-md bg-[#184f95] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#123c73]"
+          className="rounded-md bg-brand px-3 py-1.5 text-sm font-medium text-white hover:bg-brand-hover"
         >
           New editorial
         </Link>

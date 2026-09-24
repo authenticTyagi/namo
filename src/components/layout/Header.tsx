@@ -3,8 +3,9 @@ import { Link } from "@/i18n/navigation";
 import { NavLink } from "./NavLink";
 import { LanguagePicker } from "./LanguagePicker";
 import { MobileMenu } from "./MobileMenu";
+import { ThemeToggle } from "./ThemeToggle";
 
-const NAV_ACTIVE = "text-[#184f95] dark:text-[#3987e5] font-semibold";
+const NAV_ACTIVE = "text-brand font-semibold";
 const NAV_INACTIVE = "text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100";
 
 export function Header() {
@@ -41,6 +42,7 @@ export function Header() {
           </NavLink>
         </nav>
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <LanguagePicker />
           <MobileMenu />
         </div>

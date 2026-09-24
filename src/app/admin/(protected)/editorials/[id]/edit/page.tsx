@@ -76,7 +76,7 @@ export default async function EditEditorialPage({
 
         <button
           type="submit"
-          className="rounded-md bg-[#184f95] px-4 py-2 text-sm font-medium text-white hover:bg-[#123c73]"
+          className="rounded-md bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-brand-hover"
         >
           Save (resets to pending review)
         </button>

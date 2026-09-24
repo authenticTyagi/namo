@@ -111,7 +111,7 @@ export default async function OverviewPage({
                         </div>
                         <Link
                           href={`/entry/${entry.slug}`}
-                          className="mt-2 inline-block text-xs font-medium text-[#184f95] underline underline-offset-2 dark:text-[#3987e5]"
+                          className="mt-2 inline-block text-xs font-medium text-brand underline underline-offset-2"
                         >
                           {t("readFullEntry")} →
                         </Link>

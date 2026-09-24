@@ -170,7 +170,7 @@ export default async function EntryPage({
               href={`/editorial/${editorial.slug}`}
               className="block rounded-lg border border-neutral-200 p-3 text-sm transition hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
             >
-              <span className="font-medium text-[#184f95] dark:text-[#3987e5]">
+              <span className="font-medium text-brand">
                 {te("readEditorial")} →
               </span>
               <p className="mt-0.5 text-neutral-600 dark:text-neutral-400">{editorial.headline}</p>
@@ -187,7 +187,7 @@ export default async function EntryPage({
               href={`/india-in-the-world/${c.slug}`}
               className="block rounded-lg border border-neutral-200 p-3 text-sm transition hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
             >
-              <span className="font-medium text-[#184f95] dark:text-[#3987e5]">
+              <span className="font-medium text-brand">
                 {tc("seeComparison")} →
               </span>
               <p className="mt-0.5 text-neutral-600 dark:text-neutral-400">{c.title}</p>

@@ -1,22 +1,42 @@
 @import "tailwindcss";
 
+/*
+ * `dark:` is attribute-driven, not media-query-driven, so a manual
+ * light/dark/device choice (ThemeToggle.tsx) can override the OS
+ * preference. `ThemeInit` (in layout.tsx) sets data-theme on <html>
+ * synchronously before paint — for "device" it resolves the current
+ * matchMedia result once rather than leaving this a live media query,
+ * so it stays in sync with the same toggle state either way.
+ */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Google Blue — the site's one brand accent, used for primary actions,
+     active nav state, and links. Distinct from the category accent hues
+     in category-colors.ts, which identify content categories, not brand. */
+  --brand: #1a73e8;
+  --brand-hover: #1765cc;
+}
+
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  /* Google's own dark-theme blue (used in Search/YouTube/Gmail dark mode) —
+     lighter than the light-mode brand so it keeps AA contrast on a near-black
+     surface; hover lightens further, the standard Material dark-mode direction. */
+  --brand: #8ab4f8;
+  --brand-hover: #aecbfa;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
