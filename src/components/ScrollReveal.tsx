@@ -31,7 +31,11 @@ export function ScrollReveal({
           observer.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+      // threshold is a ratio of the TARGET's own box, not the viewport — a
+      // section taller than ~10x the viewport (e.g. a big overview category)
+      // would never reach 0.1 and stay invisible forever. 0 fires as soon as
+      // any part is visible, so it works regardless of section height.
+      { threshold: 0, rootMargin: "0px 0px -40px 0px" },
     );
     observer.observe(el);
     return () => observer.disconnect();

@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getAllStatsGroupedByCategory } from "@/db/queries/entries";
 import { StatComparison } from "@/components/entry/StatComparison";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { BackToTop } from "@/components/BackToTop";
 import { Link } from "@/i18n/navigation";
 import { getCategoryClasses } from "@/lib/category-colors";
 import { getCategoryIcon } from "@/lib/category-icons";
@@ -124,6 +125,8 @@ export default async function OverviewPage({
           );
         })}
       </div>
+
+      {groups.length > 3 && <BackToTop label={t("backToTop")} />}
     </div>
   );
 }

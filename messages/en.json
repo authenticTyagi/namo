@@ -18,6 +18,7 @@
     "subtitle": "Every sector, every change — in one place, with sources.",
     "counter": "{stats} verified changes across {categories} sectors",
     "jumpToCategory": "Jump to category",
+    "backToTop": "Back to top",
     "empty": "No data available yet.",
     "readFullEntry": "Read full entry"
   },
