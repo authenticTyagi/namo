@@ -27,7 +27,7 @@ export default async function HomePage({
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10">
-      <section className="mb-12 rounded-2xl border border-neutral-200 bg-gradient-to-br from-[#184f95]/[0.06] via-transparent to-transparent p-6 dark:border-neutral-800 dark:from-[#3987e5]/10 sm:p-10">
+      <section className="mb-12 rounded-2xl border border-neutral-200 bg-gradient-to-br from-brand/[0.06] via-transparent to-transparent p-6 dark:border-neutral-800 dark:from-brand/10 sm:p-10">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
           {t("heroTitle")}
         </h1>
@@ -36,7 +36,7 @@ export default async function HomePage({
         </p>
         <Link
           href="/overview"
-          className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#184f95] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#123c73] hover:shadow-md dark:bg-[#123c73] dark:hover:bg-[#0d2b54]"
+          className="mt-5 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-hover hover:shadow-md"
         >
           {t("overviewCta")} →
         </Link>
@@ -52,7 +52,7 @@ export default async function HomePage({
               .filter((s) => s.value > 0)
               .map((s) => (
                 <div key={s.label}>
-                  <span className="text-xl font-bold text-[#184f95] dark:text-[#3987e5]">
+                  <span className="text-xl font-bold text-brand">
                     {s.value}
                   </span>{" "}
                   <span className="text-sm text-neutral-500">{s.label}</span>
@@ -101,7 +101,7 @@ export default async function HomePage({
             </div>
             <Link
               href="/categories"
-              className="mt-4 inline-block text-sm font-medium text-[#184f95] underline underline-offset-2 dark:text-[#3987e5]"
+              className="mt-4 inline-block text-sm font-medium text-brand underline underline-offset-2"
             >
               {t("seeAllCategories")} →
             </Link>

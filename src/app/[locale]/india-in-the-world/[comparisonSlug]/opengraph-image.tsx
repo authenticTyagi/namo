@@ -36,7 +36,7 @@ export default async function OgImage({
             display: "flex",
             padding: "6px 18px",
             borderRadius: 999,
-            backgroundColor: "#3987e5",
+            backgroundColor: "#8ab4f8",
             color: "#0a0a0a",
             fontSize: 22,
             fontWeight: 700,
@@ -49,7 +49,7 @@ export default async function OgImage({
         <div>{title}</div>
         {indiaPoint && (
           <div style={{ display: "flex", alignItems: "baseline", gap: 16, marginTop: 32 }}>
-            <div style={{ fontSize: 72, color: "#3987e5" }}>{indiaPoint.value}</div>
+            <div style={{ fontSize: 72, color: "#8ab4f8" }}>{indiaPoint.value}</div>
             <div style={{ fontSize: 26, color: "#a3a3a3", fontWeight: 400 }}>
               {comparison?.metricLabel}
             </div>

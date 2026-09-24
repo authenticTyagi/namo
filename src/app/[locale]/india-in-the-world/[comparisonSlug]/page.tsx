@@ -108,7 +108,7 @@ export default async function ComparisonPage({
           href={`/entry/${comparison.relatedEntrySlug}`}
           className="mt-6 block rounded-lg border border-neutral-200 p-3 text-sm transition hover:border-neutral-400 dark:border-neutral-800 dark:hover:border-neutral-600"
         >
-          <span className="font-medium text-[#184f95] dark:text-[#3987e5]">{t("relatedEntry")} →</span>
+          <span className="font-medium text-brand">{t("relatedEntry")} →</span>
           <p className="mt-0.5 text-neutral-600 dark:text-neutral-400">{comparison.relatedEntryTitle}</p>
         </Link>
       )}

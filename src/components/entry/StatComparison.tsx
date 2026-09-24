@@ -38,11 +38,11 @@ export function StatComparison({
             {stat.beforeValue}
           </p>
         </div>
-        <div className="bg-[#184f95]/[0.06] p-4 dark:bg-[#3987e5]/[0.12]">
-          <p className="text-xs font-medium text-[#184f95]/80 dark:text-[#3987e5]/90">
+        <div className="bg-brand/[0.06] p-4 dark:bg-brand/[0.12]">
+          <p className="text-xs font-medium text-brand/80 dark:text-brand/90">
             {stat.afterLabel}
           </p>
-          <p className="mt-1 text-3xl font-extrabold tabular-nums text-[#184f95] dark:text-[#3987e5]">
+          <p className="mt-1 text-3xl font-extrabold tabular-nums text-brand">
             {stat.afterValue}
           </p>
         </div>

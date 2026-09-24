@@ -50,19 +50,19 @@ export default async function OgImage({ params }: { params: Promise<{ locale: Lo
         {stats.entryCount > 0 && (
           <div style={{ display: "flex", gap: 48, marginTop: 48 }}>
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <div style={{ fontSize: 44, fontWeight: 700, color: "#3987e5" }}>
+              <div style={{ fontSize: 44, fontWeight: 700, color: "#8ab4f8" }}>
                 {stats.entryCount}
               </div>
               <div style={{ fontSize: 20, color: "#a3a3a3" }}>Entries</div>
             </div>
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <div style={{ fontSize: 44, fontWeight: 700, color: "#3987e5" }}>
+              <div style={{ fontSize: 44, fontWeight: 700, color: "#8ab4f8" }}>
                 {stats.categoryCount}
               </div>
               <div style={{ fontSize: 20, color: "#a3a3a3" }}>Categories</div>
             </div>
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <div style={{ fontSize: 44, fontWeight: 700, color: "#3987e5" }}>
+              <div style={{ fontSize: 44, fontWeight: 700, color: "#8ab4f8" }}>
                 {stats.sourceCount}
               </div>
               <div style={{ fontSize: 20, color: "#a3a3a3" }}>Sources cited</div>
