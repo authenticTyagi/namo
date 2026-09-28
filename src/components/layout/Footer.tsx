@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { BrandMark } from "@/components/BrandMark";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -8,7 +9,10 @@ export function Footer() {
   return (
     <footer className="mt-auto border-t border-neutral-200 py-8 dark:border-neutral-800">
       <div className="mx-auto max-w-5xl px-4">
-        <p className="text-sm font-semibold">{site("name")}</p>
+        <p className="flex items-center gap-2 text-sm font-semibold">
+          <BrandMark className="h-5 w-5 shrink-0" />
+          {site("name")}
+        </p>
         <p className="mt-1 max-w-md text-xs text-neutral-500">{site("tagline")}</p>
         <div className="mt-4 flex flex-col items-start gap-2 text-sm text-neutral-500 sm:flex-row sm:items-center sm:justify-between">
           <span>&copy; {new Date().getFullYear()}</span>

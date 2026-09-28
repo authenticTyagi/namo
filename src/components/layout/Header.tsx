@@ -4,6 +4,7 @@ import { NavLink } from "./NavLink";
 import { LanguagePicker } from "./LanguagePicker";
 import { MobileMenu } from "./MobileMenu";
 import { ThemeToggle } from "./ThemeToggle";
+import { BrandMark } from "@/components/BrandMark";
 
 const NAV_ACTIVE = "text-brand font-semibold";
 const NAV_INACTIVE = "text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100";
@@ -15,7 +16,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-30 border-b border-neutral-200 bg-white/80 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-950/80">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-4">
-        <Link href="/" className="text-lg font-semibold tracking-tight">
+        <Link href="/" className="flex items-center gap-2 text-lg font-semibold tracking-tight">
+          <BrandMark className="h-7 w-7 shrink-0" />
           {site("name")}
         </Link>
         <nav className="hidden items-center gap-5 text-sm lg:flex">
