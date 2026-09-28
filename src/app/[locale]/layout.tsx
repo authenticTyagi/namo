@@ -73,6 +73,18 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        {/* AdSense loader — must be a literal <script> in <head> on every
+            public page (Google's site-verification crawler looks for it).
+            Lives in this shared layout so every existing and future
+            entry/editorial/comparison/category page gets it automatically.
+            Deliberately NOT in /admin's separate root layout. */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1804566337195012"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <ThemeInit />
         <NextIntlClientProvider>
