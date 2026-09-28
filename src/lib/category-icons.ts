@@ -10,6 +10,7 @@ import {
   BookOpen,
   Stethoscope,
   Users,
+  Landmark,
   type LucideIcon,
 } from "lucide-react";
 
@@ -25,6 +26,7 @@ const CATEGORY_ICONS: Record<string, LucideIcon> = {
   "education-skill-development": BookOpen,
   "health-infrastructure": Stethoscope,
   "women-child-development": Users,
+  "governance-judiciary": Landmark,
 };
 
 export function getCategoryIcon(slug: string): LucideIcon {

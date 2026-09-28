@@ -73,6 +73,9 @@ async function main() {
   const { category: womenChildDevelopmentCategory, womenChildDevelopmentEntries } = await import(
     "./entries/women-child-development"
   );
+  const { category: governanceJudiciaryCategory, governanceJudiciaryEntries } = await import(
+    "./entries/governance-judiciary"
+  );
   const contentPacks = [
     { category: economyCategory, entries: phase1Entries },
     { category: spaceCategory, entries: spaceEntries },
@@ -85,6 +88,7 @@ async function main() {
     { category: educationCategory, entries: educationEntries },
     { category: healthInfrastructureCategory, entries: healthInfrastructureEntries },
     { category: womenChildDevelopmentCategory, entries: womenChildDevelopmentEntries },
+    { category: governanceJudiciaryCategory, entries: governanceJudiciaryEntries },
   ];
 
   for (const { category, entries: packEntries } of contentPacks) {
