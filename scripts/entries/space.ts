@@ -194,9 +194,9 @@ export const spaceEntries: EntryInput[] = [
     titleEn: "ISRO Sets a World Record and Pushes Toward India's First Human Spaceflight",
     titleHi: "ISRO ने विश्व रिकॉर्ड बनाया और भारत के पहले मानव अंतरिक्ष मिशन की ओर आगे बढ़ा",
     summaryEn:
-      "In 2017, ISRO's PSLV-C37 launched 104 satellites in a single mission — a world record — while newer missions like Aditya-L1 (India's first solar observatory) and the uncrewed Gaganyaan test point toward India's first crewed spaceflight, targeted for 2027.",
+      "In 2017, ISRO's PSLV-C37 launched 104 satellites in a single mission — a world record — while Aditya-L1 (India's first solar observatory) and the Gaganyaan programme point toward India's first crewed spaceflight. That programme's schedule has moved: the first uncrewed flight is now targeted for Q4 2026, against the second half of 2022 in a December 2021 statement, and no firm crewed date has been given.",
     summaryHi:
-      "2017 में, ISRO के PSLV-C37 ने एक ही मिशन में 104 उपग्रह लॉन्च किए — एक विश्व रिकॉर्ड — जबकि Aditya-L1 (भारत की पहली सौर वेधशाला) और मानवरहित गगनयान परीक्षण जैसे नए मिशन भारत के पहले मानव अंतरिक्ष मिशन की ओर इशारा करते हैं, जो 2027 के लिए तय है।",
+      "2017 में, ISRO के PSLV-C37 ने एक ही मिशन में 104 उपग्रह लॉन्च किए — एक विश्व रिकॉर्ड — जबकि Aditya-L1 (भारत की पहली सौर वेधशाला) और गगनयान कार्यक्रम भारत के पहले मानव अंतरिक्ष मिशन की ओर इशारा करते हैं। उस कार्यक्रम की समय-सारणी खिसकी है: पहली मानवरहित उड़ान अब 2026 की चौथी तिमाही के लिए लक्षित है, जबकि दिसंबर 2021 के कथन में यह 2022 की दूसरी छमाही थी, और मानव उड़ान की कोई पक्की तारीख़ नहीं दी गई है।",
     quickTakeEn:
       "India didn't just catch up in space technology — it broke a world record for the most satellites launched at once.",
     quickTakeHi:
@@ -212,7 +212,7 @@ export const spaceEntries: EntryInput[] = [
       },
       {
         heading: "Toward a crewed mission",
-        body: "Gaganyaan, India's first human spaceflight program, has moved through uncrewed orbital test milestones, with ISRO's chief confirming in October 2025 that the first crewed flight remains on track for 2027.",
+        body: "Gaganyaan, India's first human spaceflight programme, has cleared a series of ground and abort tests — including three crew-module qualification tests ISRO reported on 12 July 2026, which were ground tests on rigs and a simulated crew module, not flights. No Gaganyaan orbital mission has flown yet. In a 6 August 2026 Rajya Sabha reply the government targeted the first uncrewed mission, carrying the Vyommitra robot, for the fourth quarter of 2026, followed by two more uncrewed missions by 2027 before a human orbital flight; it gave no crewed date. A December 2021 statement had scheduled that first uncrewed mission for the second half of 2022 and the crewed flight for 2023, and the Prime Minister's 2018 goal was 2022. An October 2025 statement by ISRO's chief that the crewed flight was on track for 2027 is not confirmed by the August 2026 wording. See the separate Gaganyaan entry for the full record.",
       },
     ],
     bodySectionsHi: [
@@ -226,12 +226,12 @@ export const spaceEntries: EntryInput[] = [
       },
       {
         heading: "मानव मिशन की ओर",
-        body: "गगनयान, भारत का पहला मानव अंतरिक्ष कार्यक्रम, मानवरहित ऑर्बिटल टेस्ट के कई पड़ावों से गुज़र चुका है, और ISRO प्रमुख ने अक्टूबर 2025 में पुष्टि की कि पहला मानव मिशन अभी भी 2027 के लिए तय है।",
+        body: "गगनयान, भारत का पहला मानव अंतरिक्ष कार्यक्रम, ज़मीनी और एबॉर्ट परीक्षणों की एक श्रृंखला पार कर चुका है — जिनमें ISRO द्वारा 12 जुलाई 2026 को बताए गए तीन क्रू-मॉड्यूल क्वालिफ़िकेशन परीक्षण भी हैं, जो परीक्षण रिग और सिम्युलेटेड क्रू मॉड्यूल पर ज़मीनी परीक्षण थे, उड़ानें नहीं। अभी कोई गगनयान कक्षीय मिशन उड़ा नहीं है। 6 अगस्त 2026 के राज्यसभा उत्तर में सरकार ने व्योममित्र रोबोट को ले जाने वाले पहले मानवरहित मिशन को 2026 की चौथी तिमाही के लिए लक्षित किया, जिसके बाद मानव कक्षीय उड़ान से पहले 2027 तक दो और मानवरहित मिशन होंगे; मानव उड़ान की कोई तारीख़ नहीं दी गई। दिसंबर 2021 के कथन में वही पहला मानवरहित मिशन 2022 की दूसरी छमाही के लिए और मानव उड़ान 2023 के लिए तय थी, और प्रधानमंत्री का 2018 का लक्ष्य 2022 था। ISRO प्रमुख का अक्टूबर 2025 का यह कथन कि मानव उड़ान 2027 के लिए तय है, अगस्त 2026 के शब्दों से पुष्ट नहीं होता। पूरे रिकॉर्ड के लिए गगनयान की अलग प्रविष्टि देखें।",
       },
     ],
     impactType: "mixed",
     timelineStartDate: "2017-02-15",
-    timelineEndDate: "2027-01-01",
+    timelineEndDate: "2026-08-06",
     tags: [
       { slug: "space", labelHi: "अंतरिक्ष", labelEn: "Space" },
       { slug: "isro", labelHi: "ISRO", labelEn: "ISRO" },
@@ -276,6 +276,31 @@ export const spaceEntries: EntryInput[] = [
         title: "India's first human spaceflight, Gaganyaan, on track for 2027 launch, confirms ISRO chief",
         credibilityTier: "reputable_media",
         language: "en",
+        credibilityNotes: "October 2025 statement; superseded in emphasis by the August 2026 government reply, which gives no crewed date.",
+      },
+      {
+        url: "https://www.isro.gov.in/Tests_Crew_Module_systems_of_Gaganyaan_Mission.html",
+        publisher: "Indian Space Research Organisation",
+        title: "Successful accomplishment of Major Qualification Tests Crew Module systems of Gaganyaan Mission (12 Jul 2026)",
+        credibilityTier: "official_primary",
+        language: "en",
+        credibilityNotes: "Read in full. Three ground qualification tests on rigs and a simulated crew module.",
+      },
+      {
+        url: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1779647",
+        publisher: "Press Information Bureau, Government of India",
+        title: "Gaganyaan will be launched in 2023 — Dr Jitendra Singh (9 Dec 2021)",
+        credibilityTier: "official_primary",
+        language: "en",
+        credibilityNotes: "Read. December 2021 schedule: first uncrewed mission H2 2022, crewed flight 2023; PM's 2018 goal of 2022.",
+      },
+      {
+        url: "https://www.globalsecurity.org/space/library/news/2026/space-260806-india-pib01.htm",
+        publisher: "GlobalSecurity.org (reproducing a PIB release)",
+        title: "Dr. Jitendra Singh Informs Rajya Sabha of Key Milestones in Gaganyaan (6 Aug 2026)",
+        credibilityTier: "secondary",
+        language: "en",
+        credibilityNotes: "Mirror of the PIB text; the original PIB page was not located. Source for the Q4 2026 uncrewed target and two further uncrewed missions by 2027.",
       },
     ],
   },
