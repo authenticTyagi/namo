@@ -24,13 +24,13 @@ export const currencyPricesEntries: EntryInput[] = [
     titleEn: "India Adopts Formal Inflation Targeting — Average Inflation Falls From ~10% to the 2-6% Band",
     titleHi: "भारत ने औपचारिक मुद्रास्फीति लक्ष्य अपनाया — औसत मुद्रास्फीति ~10% से घटकर 2-6% के दायरे में आई",
     summaryEn:
-      "In 2016, India formally adopted flexible inflation targeting with a 4% CPI target and a 2-6% tolerance band. Average inflation, which ran near double digits (~10%) in 2012-2014, has mostly stayed within that band since, averaging 2.09% in 2025 — though specific food-price shocks still occur periodically.",
+      "In 2016, India formally adopted flexible inflation targeting with a 4% CPI target and a 2-6% tolerance band. Average inflation, which ran near double digits (~10%) in 2012-2014, has mostly stayed within that band since, averaging 2.09% in 2025 — though specific food-price shocks still occur periodically. In 2026 an oil shock from the West Asia conflict has pushed CPI inflation above the 4% target (4.45% in July, still inside the band), and the RBI projects 5.9% in Q3 FY27.",
     summaryHi:
-      "2016 में, भारत ने 4% CPI लक्ष्य और 2-6% सहनशीलता दायरे के साथ औपचारिक रूप से लचीली मुद्रास्फीति लक्ष्य प्रणाली अपनाई। 2012-2014 में मुद्रास्फीति दोहरे अंकों (~10%) के करीब थी, जो अब ज़्यादातर उस दायरे में रही है, 2025 में औसतन 2.09% — हालांकि खाद्य पदार्थों की कीमतों में समय-समय पर झटके अब भी लगते हैं।",
+      "2016 में, भारत ने 4% CPI लक्ष्य और 2-6% सहनशीलता दायरे के साथ औपचारिक रूप से लचीली मुद्रास्फीति लक्ष्य प्रणाली अपनाई। 2012-2014 में मुद्रास्फीति दोहरे अंकों (~10%) के करीब थी, जो अब ज़्यादातर उस दायरे में रही है, 2025 में औसतन 2.09% — हालांकि खाद्य पदार्थों की कीमतों में समय-समय पर झटके अब भी लगते हैं। 2026 में पश्चिम एशिया संघर्ष से आए तेल झटके ने CPI महँगाई को 4% लक्ष्य से ऊपर पहुँचा दिया है (जुलाई में 4.45%, फिर भी दायरे के भीतर), और RBI को Q3 FY27 में 5.9% का अनुमान है।",
     quickTakeEn:
-      "Prices used to rise at nearly double-digit rates every year; a 2016 rule change and a decade of enforcement brought that down to low single digits — most of the time.",
+      "Prices used to rise at nearly double-digit rates every year; a 2016 rule change and a decade of enforcement brought that down to low single digits — most of the time. In 2026 an oil shock is testing that record: inflation is now above the 4% target.",
     quickTakeHi:
-      "पहले हर साल कीमतें लगभग दोहरे अंकों की दर से बढ़ती थीं; 2016 के एक नियम बदलाव और एक दशक के अनुपालन ने इसे ज़्यादातर समय कम एकल अंकों तक ला दिया।",
+      "पहले हर साल कीमतें लगभग दोहरे अंकों की दर से बढ़ती थीं; 2016 के एक नियम बदलाव और एक दशक के अनुपालन ने इसे ज़्यादातर समय कम एकल अंकों तक ला दिया। 2026 में एक तेल झटका इस रिकॉर्ड की परीक्षा ले रहा है: महँगाई अब 4% लक्ष्य से ऊपर है।",
     bodySectionsEn: [
       {
         heading: "A formal target, for the first time",
@@ -43,6 +43,10 @@ export const currencyPricesEntries: EntryInput[] = [
       {
         heading: "The honest caveat",
         body: "Average inflation staying low doesn't mean prices never spike. Specific items — onions, tomatoes, pulses, and edible oils among them — have seen sharp, short-term price surges multiple times over the same period, and headline inflation itself has occasionally moved above the 6% upper band (for example, in 2022) before returning within range. The overall structural trend is real, but it isn't a claim that every price has been stable.",
+      },
+      {
+        heading: "2026: an oil shock tests the target",
+        body: "The 2025 record has not held through 2026. After the West Asia conflict disrupted crude and LPG supplies (see the separate entry on the energy shock), CPI inflation on MoSPI's new 2024-base series was 4.38% in June and 4.45% in July 2026 (rural 4.84%, urban 3.96%), with food inflation at 5.52%. That is above the 4% target but inside the 2-6% band. At its 5 August review the RBI held the repo rate at 5.25%, projected FY27 CPI inflation at 5.0% — 4.7% in Q2, 5.9% in Q3 and 5.5% in Q4, so close to the 6% upper limit at the peak — and said the pressure came mainly from food and fuel with little sign of spreading. Two cautions on comparing years: the 2025 average above is from the older CPI series, while the 2026 figures use the new 2024 base, so they are not strictly like-for-like; and the RBI's projections are forecasts, not outcomes.",
       },
     ],
     bodySectionsHi: [
@@ -58,10 +62,14 @@ export const currencyPricesEntries: EntryInput[] = [
         heading: "ईमानदार टिप्पणी",
         body: "औसत मुद्रास्फीति कम रहने का मतलब यह नहीं कि कीमतें कभी नहीं बढ़ीं। प्याज़, टमाटर, दालें और खाद्य तेल जैसी कुछ चीज़ों में इस दौरान कई बार तेज़, अल्पकालिक कीमत उछाल देखे गए हैं, और हेडलाइन मुद्रास्फीति खुद भी कभी-कभी 6% की ऊपरी सीमा से ऊपर गई (जैसे 2022 में) फिर दायरे में वापस आई। यह संरचनात्मक रुझान असली है, लेकिन यह यह दावा नहीं है कि हर कीमत स्थिर रही है।",
       },
+      {
+        heading: "2026: एक तेल झटका लक्ष्य की परीक्षा ले रहा है",
+        body: "2025 का रिकॉर्ड 2026 में टिका नहीं रहा। पश्चिम एशिया संघर्ष से कच्चे तेल और LPG की आपूर्ति बाधित होने के बाद (ऊर्जा झटके पर अलग प्रविष्टि देखें), MoSPI की नई 2024-आधार श्रृंखला पर CPI महँगाई जून में 4.38% और जुलाई 2026 में 4.45% रही (ग्रामीण 4.84%, शहरी 3.96%), जबकि खाद्य महँगाई 5.52% थी। यह 4% लक्ष्य से ऊपर है पर 2-6% दायरे के भीतर। 5 अगस्त की समीक्षा में RBI ने रेपो दर 5.25% पर स्थिर रखी, FY27 की CPI महँगाई का अनुमान 5.0% रखा — Q2 में 4.7%, Q3 में 5.9% और Q4 में 5.5%, यानी चरम पर 6% ऊपरी सीमा के क़रीब — और कहा कि दबाव मुख्यतः खाद्य और ईंधन से है और फैलने के संकेत कम हैं। वर्षों की तुलना पर दो सावधानियाँ: ऊपर का 2025 औसत पुरानी CPI श्रृंखला का है, जबकि 2026 के आँकड़े नए 2024 आधार के हैं, इसलिए वे पूरी तरह समतुल्य नहीं; और RBI के अनुमान पूर्वानुमान हैं, परिणाम नहीं।",
+      },
     ],
     impactType: "mixed",
     timelineStartDate: "2012-01-01",
-    timelineEndDate: "2025-12-31",
+    timelineEndDate: "2026-08-31",
     tags: [
       { slug: "inflation", labelHi: "मुद्रास्फीति", labelEn: "Inflation" },
       { slug: "rbi", labelHi: "RBI", labelEn: "RBI" },
@@ -80,6 +88,23 @@ export const currencyPricesEntries: EntryInput[] = [
         afterLabelHi: "2025 औसत",
         afterValueEn: "2.09%",
         afterValueHi: "2.09%",
+      },
+      {
+        statKey: "cpi_inflation_2026_oil_shock",
+        metricLabelEn: "CPI inflation, 2026 oil shock (2024-base series; not strictly comparable with the 2025 average)",
+        metricLabelHi: "CPI महँगाई, 2026 का तेल झटका (2024-आधार श्रृंखला; 2025 औसत से पूरी तरह तुलनीय नहीं)",
+        beforeLabelEn: "July 2026 (MoSPI, provisional)",
+        beforeLabelHi: "जुलाई 2026 (MoSPI, अनंतिम)",
+        beforeValueEn: "4.45%",
+        beforeValueHi: "4.45%",
+        afterLabelEn: "Q3 FY27 (RBI projection)",
+        afterLabelHi: "Q3 FY27 (RBI अनुमान)",
+        afterValueEn: "5.9%",
+        afterValueHi: "5.9%",
+        extraLabelEn: "RBI target / tolerance band",
+        extraLabelHi: "RBI लक्ष्य / सहनशीलता दायरा",
+        extraValueEn: "4% (2-6%)",
+        extraValueHi: "4% (2-6%)",
       },
     ],
     sources: [
@@ -104,6 +129,22 @@ export const currencyPricesEntries: EntryInput[] = [
         credibilityTier: "secondary",
         language: "en",
         credibilityNotes: "Data aggregator; used for the 2025 average figure and historical trend context.",
+      },
+      {
+        url: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2298247&reg=48&lang=2",
+        publisher: "Press Information Bureau / Ministry of Statistics and Programme Implementation",
+        title: "Press Release of Consumer Price Index on Base 2024=100 for July, 2026 (12 Aug 2026)",
+        credibilityTier: "official_primary",
+        language: "en",
+        credibilityNotes: "Read in full. July 2026 CPI 4.45% (provisional), June 4.38% (final), food 5.52%. New 2024-base series.",
+      },
+      {
+        url: "https://www.business-standard.com/finance/news/rbi-mpc-lowers-fy27-inflation-forecast-to-5-projects-gdp-growth-at-6-7-126080500300_1.html",
+        publisher: "Business Standard",
+        title: "RBI MPC lowers FY27 inflation forecast to 5%, projects GDP growth at 6.7%",
+        credibilityTier: "reputable_media",
+        language: "en",
+        credibilityNotes: "Source for RBI's 5 Aug 2026 FY27 and quarterly CPI projections; RBI's own release could not be opened (bot check).",
       },
     ],
   },
