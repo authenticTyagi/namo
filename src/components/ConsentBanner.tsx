@@ -6,13 +6,20 @@ import { useTranslations } from "next-intl";
 const CONSENT_KEY = "adConsent"; // "granted" | "denied"
 
 /**
- * Minimal cookie-consent banner for ad personalization (GDPR/UK
- * requirement once AdSense is live). Stores the choice in localStorage
- * only — this is a per-visitor UI preference, not data the site or Claude
- * needs to read back, so localStorage is the right fit here (see the
- * artifact/runtime guidance on browser storage for user-facing sites).
- * AdSense's own script (added once a publisher ID exists) should check
- * this value before requesting personalized ads.
+ * General, site-wide cookie notice — NOT the mechanism that satisfies
+ * Google's EEA/UK/Swiss consent requirement for AdSense. As of 2026-09-29,
+ * that's handled by Google's own Funding Choices CMP (see the script tags
+ * in src/app/[locale]/layout.tsx's <head>), which auto-detects a visitor's
+ * region and shows Google's own consent dialog only where legally
+ * required — a self-built banner like this one doesn't count toward
+ * Google's CMP requirement, per their own publisher policy. This banner
+ * still has a job: a simple, always-shown notice for visitors outside
+ * regions Funding Choices targets. Stores the choice in localStorage only
+ * — a per-visitor UI preference, not data the site or Claude needs to read
+ * back (see the artifact/runtime guidance on browser storage). Nothing
+ * currently reads this value to gate ad requests — that's intentional;
+ * Google's guidance is not to block the ad tag's own script load, only to
+ * let Funding Choices control what each request signals.
  */
 export function ConsentBanner() {
   const t = useTranslations("consent");

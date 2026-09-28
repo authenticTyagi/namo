@@ -74,6 +74,23 @@ export default async function LocaleLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        {/* Google's official consent-management platform for AdSense
+            (Funding Choices) — required by Google's own policy for
+            publishers with EEA/UK/Swiss traffic, not something a custom
+            banner can substitute for. Auto-detects a visitor's region and
+            shows Google's own GDPR/UK consent dialog only where legally
+            required; the adsbygoogle tag below reads its consent signal
+            automatically, no extra wiring needed on our side. Per Google's
+            setup instructions this script must load before the ad tag.
+            INERT until "Privacy & messaging → GDPR message" is turned on
+            in the AdSense dashboard (a manual step, not code) — safe to
+            ship ahead of that. */}
+        <script async src="https://fundingchoicesmessages.google.com/i/pub-1804566337195012?ers=1" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){function signalGooglefcPresent(){if(!window.frames['googlefcPresent']){if(document.body){var iframe=document.createElement('iframe');iframe.style='width:0;height:0;border:none;z-index:-1000;left:-1000px;top:-1000px;';iframe.style.display='none';iframe.name='googlefcPresent';document.body.appendChild(iframe);}else{setTimeout(signalGooglefcPresent,0);}}}signalGooglefcPresent();})();`,
+          }}
+        />
         {/* AdSense loader — must be a literal <script> in <head> on every
             public page (Google's site-verification crawler looks for it).
             Lives in this shared layout so every existing and future
