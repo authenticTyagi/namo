@@ -5,9 +5,15 @@ name: Draft editorials
 # of a Claude Code cloud routine.
 
 on:
-  schedule:
-    # 3:45 UTC = ~9:15am IST
-    - cron: "45 3 * * *"
+  # Schedule disabled 2026-09-29: ANTHROPIC_API_KEY/CRON_SECRET repo secrets
+  # were never added (see PROJECT_LOG.md, Known Issue 2a), so this has
+  # failed on every single scheduled run since 2026-09-16 — 2 weeks of
+  # daily failure-email spam with zero successful drafts. Re-enable the
+  # schedule block below once both secrets are added at Settings → Secrets
+  # and variables → Actions, and a manual workflow_dispatch run succeeds.
+  # schedule:
+  #   # 3:45 UTC = ~9:15am IST
+  #   - cron: "45 3 * * *"
   workflow_dispatch: {}
 
 jobs:
