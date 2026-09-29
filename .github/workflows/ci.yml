@@ -1,0 +1,28 @@
+name: CI
+
+# Type-check, lint, and build on every push/PR — a real gate independent of
+# Vercel's own build step (see PROJECT_LOG.md's "Known issues" #7). Runs
+# with no DATABASE_URL/AUTH_SECRET/etc: src/db/index.ts and friends are
+# built to degrade to empty-dataset mode without them, so this only
+# verifies the app compiles and type-checks, not that it renders real data.
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run lint
+      - run: npx tsc --noEmit
+      - run: npm run build

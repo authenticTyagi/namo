@@ -15,7 +15,19 @@ import {
   entryStats,
   trustedSources,
 } from "@/db/schema";
-import { asc, count, desc, eq, or } from "drizzle-orm";
+import { and, asc, count, desc, eq, isNull, lt, or, sql } from "drizzle-orm";
+
+// How long a published entry can go without a content edit (which bumps
+// lastVerifiedDate — see updateEntry in src/app/admin/(protected)/entries/
+// actions.ts) before it's surfaced as needing a fact re-check. Fast-moving
+// current-events content ages faster than a static reference site would.
+const STALE_ENTRY_THRESHOLD_DAYS = 180;
+
+function staleEntryCutoff() {
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - STALE_ENTRY_THRESHOLD_DAYS);
+  return cutoff;
+}
 
 export async function getDashboardCounts() {
   if (!isDbConfigured) {
@@ -27,6 +39,7 @@ export async function getDashboardCounts() {
       pendingReviewEditorials: 0,
       flaggedComments: 0,
       pendingReviewComparisons: 0,
+      staleEntries: 0,
     };
   }
 
@@ -38,6 +51,7 @@ export async function getDashboardCounts() {
     [pendingEditorials],
     [flagged],
     [pendingComparisons],
+    [stale],
   ] = await Promise.all([
     db
       .select({ value: count() })
@@ -67,6 +81,15 @@ export async function getDashboardCounts() {
       .select({ value: count() })
       .from(comparisons)
       .where(eq(comparisons.status, "pending_review")),
+    db
+      .select({ value: count() })
+      .from(entries)
+      .where(
+        and(
+          eq(entries.status, "published"),
+          or(isNull(entries.lastVerifiedDate), lt(entries.lastVerifiedDate, staleEntryCutoff())),
+        ),
+      ),
   ]);
 
   return {
@@ -77,7 +100,43 @@ export async function getDashboardCounts() {
     pendingReviewEditorials: pendingEditorials?.value ?? 0,
     flaggedComments: flagged?.value ?? 0,
     pendingReviewComparisons: pendingComparisons?.value ?? 0,
+    staleEntries: stale?.value ?? 0,
   };
+}
+
+/**
+ * Published entries whose facts haven't been re-checked in a while — either
+ * never (lastVerifiedDate null, e.g. published before this column was
+ * populated) or longer ago than STALE_ENTRY_THRESHOLD_DAYS. Oldest/never
+ * first. Surfaced at /admin/freshness; re-verifying means opening the
+ * entry's edit form, confirming the facts still hold (or updating them),
+ * and saving — updateEntry already bumps lastVerifiedDate on every save.
+ */
+export async function getStaleEntries() {
+  if (!isDbConfigured) return [];
+
+  return db
+    .select({
+      id: entries.id,
+      slug: entries.slug,
+      titleEn: entries.titleEn,
+      categoryNameEn: categories.nameEn,
+      lastVerifiedDate: entries.lastVerifiedDate,
+      publishDate: entries.publishDate,
+    })
+    .from(entries)
+    .innerJoin(categories, eq(entries.categoryId, categories.id))
+    .where(
+      and(
+        eq(entries.status, "published"),
+        or(isNull(entries.lastVerifiedDate), lt(entries.lastVerifiedDate, staleEntryCutoff())),
+      ),
+    )
+    // Never-verified (null) rows are the most urgent — sort them first,
+    // then oldest-verified next. Plain drizzle asc()/desc() has no
+    // nullsFirst() in this version, so order by "is it null" before the
+    // date itself (false < true in Postgres, so nulls sort first).
+    .orderBy(sql`${entries.lastVerifiedDate} IS NOT NULL`, asc(entries.lastVerifiedDate));
 }
 
 /** Every entry regardless of status, for the admin entries list. */

@@ -71,6 +71,13 @@
       "when": 1790187258138,
       "tag": "0009_elite_agent_brand",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1790702094311,
+      "tag": "0010_remarkable_shatterstar",
+      "breakpoints": true
     }
   ]
 }

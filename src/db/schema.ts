@@ -75,12 +75,11 @@ export const editorialToneEnum = pgEnum("editorial_tone", [
   "mixed",
 ]);
 
-export const editorialStatusEnum = pgEnum("editorial_status", [
-  "draft",
-  "pending_review",
-  "published",
-  "rejected",
-]);
+// editorialStatusEnum used to be a separate Postgres enum with byte-for-byte
+// identical values to entryStatusEnum (draft/pending_review/published/
+// rejected) — noted as a drift risk in PROJECT_LOG.md's Known Issues #(now
+// consolidated). comparisons.status already reused entryStatusEnum
+// directly; editorials.status now does too, via migration 0010.
 
 // ---------------------------------------------------------------------------
 // Content model
@@ -352,7 +351,7 @@ export const editorials = pgTable(
   // "report it honestly" commitment as entries' impactType).
   tone: editorialToneEnum("tone").notNull(),
 
-  status: editorialStatusEnum("status").notNull().default("pending_review"),
+  status: entryStatusEnum("status").notNull().default("pending_review"),
   sourceOfCreation: sourceOfCreationEnum("source_of_creation")
     .notNull()
     .default("manual"),

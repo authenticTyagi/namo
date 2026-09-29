@@ -11,6 +11,7 @@ export default async function AdminDashboardPage() {
     // so the dashboard doesn't need to enumerate them separately too.
     { label: "Needs review (entries + editorials + comparisons)", value: needsReview, href: "/admin/review" },
     { label: "Published entries", value: counts.published, href: "/admin/entries" },
+    { label: "Entries needing a fact re-check", value: counts.staleEntries, href: "/admin/freshness" },
     { label: "Flagged comments", value: counts.flaggedComments, href: "/admin/comments" },
     { label: "New source submissions", value: counts.newSourceSubmissions, href: "/admin/sources" },
     { label: "New feedback", value: counts.newFeedback, href: "/admin/feedback" },

@@ -23,6 +23,7 @@ export default async function ProtectedAdminLayout({
         userEmail={session.user.email ?? ""}
         needsReviewCount={needsReview}
         flaggedCommentsCount={counts.flaggedComments}
+        staleEntriesCount={counts.staleEntries}
       />
       <main className="flex-1 p-6 sm:p-8">{children}</main>
     </div>

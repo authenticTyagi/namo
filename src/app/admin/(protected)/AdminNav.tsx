@@ -8,6 +8,7 @@ const LINKS = [
   { href: "/admin/review", label: "Review queue", countKey: "needsReviewCount" as const },
   { href: "/admin/editorials", label: "Editorials" },
   { href: "/admin/comparisons", label: "Comparisons" },
+  { href: "/admin/freshness", label: "Needs re-check", countKey: "staleEntriesCount" as const },
   { href: "/admin/comments", label: "Comments", countKey: "flaggedCommentsCount" as const },
   { href: "/admin/sources", label: "Sources" },
   { href: "/admin/trusted-sources", label: "Trusted sources" },
@@ -18,12 +19,14 @@ export function AdminNav({
   userEmail,
   needsReviewCount,
   flaggedCommentsCount,
+  staleEntriesCount,
 }: {
   userEmail: string;
   needsReviewCount: number;
   flaggedCommentsCount: number;
+  staleEntriesCount: number;
 }) {
-  const counts = { needsReviewCount, flaggedCommentsCount };
+  const counts = { needsReviewCount, flaggedCommentsCount, staleEntriesCount };
 
   return (
     <nav className="flex w-56 shrink-0 flex-col border-r border-neutral-200 p-4 dark:border-neutral-800">
