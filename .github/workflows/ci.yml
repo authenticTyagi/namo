@@ -5,6 +5,16 @@ name: CI
 # with no DATABASE_URL/AUTH_SECRET/etc: src/db/index.ts and friends are
 # built to degrade to empty-dataset mode without them, so this only
 # verifies the app compiles and type-checks, not that it renders real data.
+#
+# Uses `npm install`, not `npm ci`, deliberately: this repo's dev machine's
+# npm is configured against a corporate registry proxy, so every `resolved`
+# URL in the committed package-lock.json points at an internal host
+# unreachable from here — `npm ci` trusts those URLs literally and fails
+# (first caught as an EUSAGE "lockfile out of sync" error on run #1, but a
+# clean public lockfile would still point `npm ci` at unreachable hosts).
+# `npm install` re-resolves against whatever registry this environment has
+# configured (the real public npm registry, by default), sidestepping both
+# problems at the cost of strict reproducibility. See PROJECT_LOG.md.
 
 on:
   push:
@@ -22,7 +32,7 @@ jobs:
         with:
           node-version: "22"
           cache: "npm"
-      - run: npm ci
+      - run: npm install
       - run: npm run lint
       - run: npx tsc --noEmit
       - run: npm run build
