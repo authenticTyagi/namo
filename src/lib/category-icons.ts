@@ -11,6 +11,7 @@ import {
   Stethoscope,
   Users,
   Landmark,
+  Trophy,
   type LucideIcon,
 } from "lucide-react";
 
@@ -27,6 +28,7 @@ const CATEGORY_ICONS: Record<string, LucideIcon> = {
   "health-infrastructure": Stethoscope,
   "women-child-development": Users,
   "governance-judiciary": Landmark,
+  "sports-youth-affairs": Trophy,
 };
 
 export function getCategoryIcon(slug: string): LucideIcon {
