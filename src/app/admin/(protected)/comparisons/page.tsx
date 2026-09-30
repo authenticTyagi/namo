@@ -2,13 +2,7 @@ import Link from "next/link";
 import { getAllComparisonsForAdmin } from "@/db/queries/admin";
 import { ComparisonPublishToggleButton } from "./ComparisonPublishToggleButton";
 import { SearchFilterTable, type FilterableRow } from "@/components/admin/SearchFilterTable";
-
-const STATUS_STYLES: Record<string, string> = {
-  published: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
-  pending_review: "bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-300",
-  rejected: "bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300",
-  draft: "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300",
-};
+import { StatusBadge } from "@/components/admin/StatusBadge";
 
 export default async function AdminComparisonsPage() {
   const all = await getAllComparisonsForAdmin();
@@ -21,9 +15,7 @@ export default async function AdminComparisonsPage() {
         <td className="py-3 pr-4">{c.titleEn}</td>
         <td className="py-3 pr-4 text-neutral-500">{c.categoryNameEn}</td>
         <td className="py-3 pr-4">
-          <span className={`rounded-full px-2 py-0.5 text-xs ${STATUS_STYLES[c.status] ?? ""}`}>
-            {c.status}
-          </span>
+          <StatusBadge status={c.status} />
         </td>
         <td className="py-3 pr-4">
           <div className="flex items-center gap-2">

@@ -17,7 +17,13 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    // suppressHydrationWarning: ThemeInit sets data-theme on this element
+    // via a beforeInteractive script, before React hydrates it — the server
+    // never renders this attribute (it doesn't know the visitor's stored
+    // preference), so without this flag React logs a false-positive
+    // hydration mismatch on every load. Standard pattern for script-driven
+    // dark mode (e.g. next-themes does the same).
+    <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-neutral-50 text-neutral-900 antialiased dark:bg-neutral-950 dark:text-neutral-100">
         <ThemeInit />
         {children}

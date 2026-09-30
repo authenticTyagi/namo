@@ -2,13 +2,7 @@ import Link from "next/link";
 import { getAllEditorialsForAdmin } from "@/db/queries/admin";
 import { EditorialPublishToggleButton } from "./EditorialPublishToggleButton";
 import { SearchFilterTable, type FilterableRow } from "@/components/admin/SearchFilterTable";
-
-const STATUS_STYLES: Record<string, string> = {
-  published: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
-  pending_review: "bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-300",
-  rejected: "bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300",
-  draft: "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400",
-};
+import { StatusBadge } from "@/components/admin/StatusBadge";
 
 export default async function AdminEditorialsPage() {
   const all = await getAllEditorialsForAdmin();
@@ -22,9 +16,7 @@ export default async function AdminEditorialsPage() {
         <td className="py-3 pr-4 text-neutral-500">{editorial.relatedEntrySlug}</td>
         <td className="py-3 pr-4 text-neutral-500">{editorial.tone}</td>
         <td className="py-3 pr-4">
-          <span className={`rounded-full px-2 py-0.5 text-xs ${STATUS_STYLES[editorial.status] ?? ""}`}>
-            {editorial.status}
-          </span>
+          <StatusBadge status={editorial.status} />
         </td>
         <td className="py-3 pr-4">
           <div className="flex items-center gap-2">

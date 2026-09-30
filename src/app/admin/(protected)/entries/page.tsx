@@ -3,13 +3,7 @@ import { getAllEntriesForAdmin } from "@/db/queries/admin";
 import { SITE_URL } from "@/lib/constants";
 import { PublishToggleButton } from "./PublishToggleButton";
 import { SearchFilterTable, type FilterableRow } from "@/components/admin/SearchFilterTable";
-
-const STATUS_STYLES: Record<string, string> = {
-  published: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
-  draft: "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300",
-  pending_review: "bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-300",
-  rejected: "bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300",
-};
+import { StatusBadge } from "@/components/admin/StatusBadge";
 
 export default async function AdminEntriesPage() {
   const entries = await getAllEntriesForAdmin();
@@ -22,9 +16,7 @@ export default async function AdminEntriesPage() {
         <td className="py-3 pr-4">{entry.titleEn}</td>
         <td className="py-3 pr-4 text-neutral-500">{entry.categoryNameEn}</td>
         <td className="py-3 pr-4">
-          <span className={`rounded-full px-2 py-0.5 text-xs ${STATUS_STYLES[entry.status] ?? ""}`}>
-            {entry.status}
-          </span>
+          <StatusBadge status={entry.status} />
         </td>
         <td className="py-3 pr-4">
           {entry.status === "published" && (

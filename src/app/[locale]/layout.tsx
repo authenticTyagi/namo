@@ -72,6 +72,11 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      // ThemeInit sets data-theme on this element via a beforeInteractive
+      // script, before React hydrates it — the server never renders this
+      // attribute, so without this flag React logs a false-positive
+      // hydration mismatch on every load (same fix as src/app/admin/layout.tsx).
+      suppressHydrationWarning
     >
       <head>
         {/* Google's official consent-management platform for AdSense
