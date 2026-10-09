@@ -4,8 +4,8 @@
     "slug": "major-corruption-cases-before-2014-allegation-vs-outcome",
     "titleHi": "2014 से पहले के बड़े भ्रष्टाचार और धोखाधड़ी के मामले: क्या आरोप थे और हर मामला कैसे ख़त्म हुआ",
     "titleEn": "Major Corruption and Fraud Cases Before 2014: What Was Alleged, and How Each One Ended",
-    "summaryHi": "1948 से 2013 के बीच सामने आए 30 चर्चित भ्रष्टाचार और धोखाधड़ी के मामलों का स्रोत-सहित रिकॉर्ड — भारतीय और अंतरराष्ट्रीय। लगभग एक-तिहाई में कम से कम एक दोषसिद्धि हुई, कुछ में बरी/डिस्चार्ज हुआ, और कई अनसुलझे हैं या देखे गए स्रोतों में पुष्ट नहीं हो सके। बड़े नुकसान के आंकड़े अक्सर ऑडिट या प्रेस के अनुमान हैं, अदालती निष्कर्ष नहीं।",
-    "summaryEn": "A sourced record of 30 widely reported corruption and fraud cases that came to light between 1948 and 2013 — Indian and international. Roughly a third ended in at least one conviction, a handful in acquittal or discharge, and many remain unresolved or could not be verified in the sources reviewed. Headline loss figures are often audit estimates or press estimates, not court findings.",
+    "summaryHi": "1948 से 2013 के बीच सामने आए 31 चर्चित भ्रष्टाचार और धोखाधड़ी के मामलों का स्रोत-सहित रिकॉर्ड — भारतीय और अंतरराष्ट्रीय। लगभग एक-तिहाई में कम से कम एक दोषसिद्धि हुई, कुछ में बरी/डिस्चार्ज हुआ, और कई अनसुलझे हैं या देखे गए स्रोतों में पुष्ट नहीं हो सके। बड़े नुकसान के आंकड़े अक्सर ऑडिट या प्रेस के अनुमान हैं, अदालती निष्कर्ष नहीं।",
+    "summaryEn": "A sourced record of 31 widely reported corruption and fraud cases that came to light between 1948 and 2013 — Indian and international. Roughly a third ended in at least one conviction, a handful in acquittal or discharge, and many remain unresolved or could not be verified in the sources reviewed. Headline loss figures are often audit estimates or press estimates, not court findings.",
     "quickTakeHi": "सुर्खी में बड़ा आंकड़ा शायद ही अंतिम सच होता है। नीचे के मामलों में जिनमें दोषसिद्धि हुई वे ज़्यादातर साफ़ कागज़ी सबूत वाली धोखाधड़ी थे; जो मुख्यतः ऑडिट के 'अनुमानित नुकसान' पर टिके थे, उनमें अक्सर नहीं हुई।",
     "quickTakeEn": "A big number in the headline is rarely the final word. Of the cases below, the ones that ended in convictions were mostly fraud with a clear paper trail; the ones built mainly on an audit's 'presumptive loss' mostly did not.",
     "bodySectionsHi": [
@@ -19,7 +19,7 @@
       },
       {
         "heading": "बरी, डिस्चार्ज, आरोप वापस या बिना अभियोजन के ख़त्म",
-        "body": "सेना की जीप खरीद (1948); बोफ़ोर्स तोप सौदा (1987 में उजागर); जैन 'हवाला' डायरी (1996); 2G स्पेक्ट्रम लाइसेंस (CAG 2010); एंट्रिक्स–देवास उपग्रह सौदा (CAG); अगस्ता वेस्टलैंड वीवीआईपी हेलीकॉप्टर (2013, अंतरराष्ट्रीय)"
+        "body": "संसद में नोट-के-बदले-वोट (2008); सेना की जीप खरीद (1948); बोफ़ोर्स तोप सौदा (1987 में उजागर); जैन 'हवाला' डायरी (1996); 2G स्पेक्ट्रम लाइसेंस (CAG 2010); एंट्रिक्स–देवास उपग्रह सौदा (CAG); अगस्ता वेस्टलैंड वीवीआईपी हेलीकॉप्टर (2013, अंतरराष्ट्रीय)"
       },
       {
         "heading": "अनसुलझे, या देखे गए स्रोतों में नतीजा अपुष्ट",
@@ -41,7 +41,7 @@
       },
       {
         "heading": "Ended in acquittal, discharge, dropped charges or no prosecution",
-        "body": "Army jeep purchase (1948); Bofors howitzer deal (revealed 1987); Jain 'hawala' diaries (1996); 2G spectrum licences (CAG 2010); Antrix–Devas satellite deal (CAG); AgustaWestland VVIP helicopters (2013, international)"
+        "body": "Cash-for-votes in Parliament (2008); Army jeep purchase (1948); Bofors howitzer deal (revealed 1987); Jain 'hawala' diaries (1996); 2G spectrum licences (CAG 2010); Antrix–Devas satellite deal (CAG); AgustaWestland VVIP helicopters (2013, international)"
       },
       {
         "heading": "Unresolved, or outcome not verified in the sources reviewed",
@@ -68,6 +68,22 @@
       }
     ],
     "sources": [
+      {
+        "url": "https://thepeninsulaqatar.com/article/23/11/2013/amar-singh-three-bjp-mps-freed-in-cash-for-vote-case",
+        "publisher": "The Peninsula",
+        "title": "Court frees accused in cash-for-vote case",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Nov 2013 discharge; the aide against whom charges were framed."
+      },
+      {
+        "url": "https://www.governancenow.com/news/regular-story/cash-vote-court-reserves-order-plea-against-amar",
+        "publisher": "Governance Now",
+        "title": "Cash-for-vote: court reserves order",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Court proceedings and the Lok Sabha panel finding."
+      },
       {
         "url": "https://www.thequint.com/news/politics/2g-scam-verdict-revisiting-cag-report-vinod-rai",
         "publisher": "The Quint",
@@ -328,8 +344,8 @@
     "slug": "major-corruption-and-fraud-cases-2014-2026-allegation-vs-outcome",
     "titleHi": "2014 से 2026 तक के बड़े भ्रष्टाचार और धोखाधड़ी के मामले: क्या आरोप थे और हर मामला कहां खड़ा है",
     "titleEn": "Major Corruption and Fraud Cases From 2014 to 2026: What Was Alleged, and Where Each One Stands",
-    "summaryHi": "2014 से अक्टूबर 2026 तक के 23 चर्चित भ्रष्टाचार, धोखाधड़ी और ऑडिट-निष्कर्ष वाले मामलों का स्रोत-सहित रिकॉर्ड। ज़्यादातर हाल के हैं: कई अनसुलझे हैं, कुछ को नियामकों या अदालतों ने क्लीन चिट दी, और कुछ अपराध नहीं बल्कि ऑडिट या संवैधानिक निष्कर्ष हैं। बहुत कम मामले अंतिम फ़ैसले तक पहुंचे हैं, इसलिए यहां के नतीजे पुराने मामलों से तुलना योग्य नहीं।",
-    "summaryEn": "A sourced record of 23 widely reported corruption, fraud and audit-finding cases from 2014 to October 2026. Most are recent: several are unresolved, some were cleared by regulators or courts, and a few are audit or constitutional findings rather than crimes. Only a small number have reached a final verdict, so outcomes here are not comparable to the older cases.",
+    "summaryHi": "2014 से अक्टूबर 2026 तक के 24 चर्चित भ्रष्टाचार, धोखाधड़ी और ऑडिट-निष्कर्ष वाले मामलों का स्रोत-सहित रिकॉर्ड। ज़्यादातर हाल के हैं: कई अनसुलझे हैं, कुछ को नियामकों या अदालतों ने क्लीन चिट दी, और कुछ अपराध नहीं बल्कि ऑडिट या संवैधानिक निष्कर्ष हैं। बहुत कम मामले अंतिम फ़ैसले तक पहुंचे हैं, इसलिए यहां के नतीजे पुराने मामलों से तुलना योग्य नहीं।",
+    "summaryEn": "A sourced record of 24 widely reported corruption, fraud and audit-finding cases from 2014 to October 2026. Most are recent: several are unresolved, some were cleared by regulators or courts, and a few are audit or constitutional findings rather than crimes. Only a small number have reached a final verdict, so outcomes here are not comparable to the older cases.",
     "quickTakeHi": "ये मामले इतने हाल के हैं कि साफ़ स्कोरकार्ड नहीं बन सकता। ईमानदार सार यह है: कुछ को क्लीन चिट मिली, कई अनसुलझे हैं, कुछ ऑडिट निष्कर्ष हैं जिन पर ऑडिट किए गए मंत्रालय ने आपत्ति जताई, और लगभग किसी का अंतिम फ़ैसला अभी नहीं आया।",
     "quickTakeEn": "These cases are too recent for a clean scorecard. The honest summary is: a few are cleared, several are unresolved, a few are audit findings that were disputed by the audited ministry, and almost none has a final verdict yet.",
     "bodySectionsHi": [
@@ -347,7 +363,7 @@
       },
       {
         "heading": "अनसुलझे, या देखे गए स्रोतों में नतीजा अपुष्ट",
-        "body": "पंजाब नेशनल बैंक धोखाधड़ी (2018); किंगफ़िशर एयरलाइंस ऋण (2016 से); IL&FS चूक (2018); DHFL बैंक ऋण धोखाधड़ी (2022 में मामला दर्ज); जेन्सोल / ब्लूस्मार्ट निधि हेराफेरी (2025); सौर अनुबंधों पर अमेरिकी अभियोग (नवंबर 2024, अंतरराष्ट्रीय); तमिलनाडु राज्य शराब निगम (2025); NEET-UG 2024 पेपर लीक; ऑनलाइन सट्टेबाज़ी ऐप धन-शोधन; छत्तीसगढ़ आबकारी विभाग सिंडिकेट (2019–23); येस बैंक ऋण (2020); ABG शिपयार्ड बैंक धोखाधड़ी (FIR 2022); सहकारी बैंक और रियल-एस्टेट डेवलपर धोखाधड़ी (2019)"
+        "body": "पंजाब नेशनल बैंक धोखाधड़ी (2018); किंगफ़िशर एयरलाइंस ऋण (2016 से); IL&FS चूक (2018); DHFL बैंक ऋण धोखाधड़ी (2022 में मामला दर्ज); जेन्सोल / ब्लूस्मार्ट निधि हेराफेरी (2025); सौर अनुबंधों पर अमेरिकी अभियोग (नवंबर 2024, अंतरराष्ट्रीय); तमिलनाडु राज्य शराब निगम (2025); NEET-UG 2024 पेपर लीक; ऑनलाइन सट्टेबाज़ी ऐप धन-शोधन; छत्तीसगढ़ आबकारी विभाग सिंडिकेट (2019–23); येस बैंक ऋण (2020); ABG शिपयार्ड बैंक धोखाधड़ी (FIR 2022); सहकारी बैंक और रियल-एस्टेट डेवलपर धोखाधड़ी (2019); राज्य स्कूल-नौकरी भर्ती धोखाधड़ी (2016 पैनल)"
       },
       {
         "heading": "ऑडिट और संवैधानिक निष्कर्ष (आपराधिक मामले नहीं)",
@@ -373,7 +389,7 @@
       },
       {
         "heading": "Unresolved, or outcome not verified in the sources reviewed",
-        "body": "Punjab National Bank fraud (2018); Kingfisher Airlines loans (from 2016); IL&FS defaults (2018); DHFL bank loan fraud (booked 2022); Gensol / BluSmart fund diversion (2025); US indictment over solar contracts (Nov 2024, international); State liquor retailer, Tamil Nadu (2025); NEET-UG 2024 paper leak; Online betting app money laundering; Chhattisgarh excise department syndicate (2019–23); Yes Bank loans (2020); ABG Shipyard bank fraud (FIR 2022); Cooperative bank and real-estate developer fraud (2019)"
+        "body": "Punjab National Bank fraud (2018); Kingfisher Airlines loans (from 2016); IL&FS defaults (2018); DHFL bank loan fraud (booked 2022); Gensol / BluSmart fund diversion (2025); US indictment over solar contracts (Nov 2024, international); State liquor retailer, Tamil Nadu (2025); NEET-UG 2024 paper leak; Online betting app money laundering; Chhattisgarh excise department syndicate (2019–23); Yes Bank loans (2020); ABG Shipyard bank fraud (FIR 2022); Cooperative bank and real-estate developer fraud (2019); State school-jobs recruitment fraud (2016 panel)"
       },
       {
         "heading": "Audit and constitutional findings (not criminal cases)",
@@ -400,6 +416,22 @@
       }
     ],
     "sources": [
+      {
+        "url": "https://outlookindia.com/national/west-bengal-school-job-scam-supreme-court-hearing-cal-hc-order-cancelling-jobs",
+        "publisher": "Outlook India",
+        "title": "SC calls school jobs scam systemic fraud, stays HC order, clears CBI probe",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Supreme Court observations and the stay."
+      },
+      {
+        "url": "https://www.tribuneindia.com/news/india/supreme-court-stays-calcutta-high-court-order-quashing-appointment-of-25-753-teachers-non-teaching-staff-in-west-bengal-618892/amp",
+        "publisher": "The Tribune",
+        "title": "SC stays HC order quashing 25,753 appointments",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Corroborates the numbers and the stay."
+      },
       {
         "url": "https://en.wikipedia.org/wiki/Punjab_National_Bank_Scam",
         "publisher": "Wikipedia",
