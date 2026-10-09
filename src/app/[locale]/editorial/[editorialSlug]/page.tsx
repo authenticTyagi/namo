@@ -5,6 +5,7 @@ import { getPublishedEditorialBySlug } from "@/db/queries/editorials";
 import { ToneBadge } from "@/components/editorial/ToneBadge";
 import { CommentSection } from "@/components/comments/CommentSection";
 import { ShareButtons } from "@/components/entry/ShareButtons";
+import { AdSlot } from "@/components/AdSlot";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SITE_URL } from "@/lib/constants";
 import { LOCALE_INTL_TAG, OG_LOCALE_TAG, isExtraLocale } from "@/lib/localized";
@@ -108,6 +109,8 @@ export default async function EditorialPage({
       </div>
 
       <ShareButtons url={editorialUrl} title={editorial.headline} />
+
+      <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_CONTENT} />
 
       <CommentSection
         target={{ editorialId: editorial.id }}

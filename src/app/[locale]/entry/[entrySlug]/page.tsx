@@ -10,6 +10,7 @@ import { Timeline } from "@/components/entry/Timeline";
 import { EntryStatsSection } from "@/components/entry/EntryStatsSection";
 import { CitationList } from "@/components/entry/CitationList";
 import { ShareButtons } from "@/components/entry/ShareButtons";
+import { AdSlot } from "@/components/AdSlot";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SITE_URL } from "@/lib/constants";
 import { getEntryIcon } from "@/lib/entry-icons";
@@ -215,6 +216,8 @@ export default async function EntryPage({
       >
         {t("reportIssue")}
       </Link>
+
+      <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_CONTENT} />
 
       <CommentSection
         target={{ entryId: entry.id }}

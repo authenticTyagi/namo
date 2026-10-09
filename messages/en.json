@@ -79,6 +79,9 @@
     "thanks": "Thanks! Your message has been received.",
     "error": "Something went wrong, please try again."
   },
+  "ads": {
+    "label": "Advertisement"
+  },
   "consent": {
     "message": "We may use cookies for advertising and analytics. You can accept or decline.",
     "accept": "Accept",
