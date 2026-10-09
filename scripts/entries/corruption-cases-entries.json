@@ -1,0 +1,586 @@
+[
+  {
+    "categorySlug": "governance-judiciary",
+    "slug": "major-corruption-cases-before-2014-allegation-vs-outcome",
+    "titleHi": "2014 से पहले के बड़े भ्रष्टाचार और धोखाधड़ी के मामले: क्या आरोप थे और हर मामला कैसे ख़त्म हुआ",
+    "titleEn": "Major Corruption and Fraud Cases Before 2014: What Was Alleged, and How Each One Ended",
+    "summaryHi": "1948 से 2013 के बीच सामने आए 30 चर्चित भ्रष्टाचार और धोखाधड़ी के मामलों का स्रोत-सहित रिकॉर्ड — भारतीय और अंतरराष्ट्रीय। लगभग एक-तिहाई में कम से कम एक दोषसिद्धि हुई, कुछ में बरी/डिस्चार्ज हुआ, और कई अनसुलझे हैं या देखे गए स्रोतों में पुष्ट नहीं हो सके। बड़े नुकसान के आंकड़े अक्सर ऑडिट या प्रेस के अनुमान हैं, अदालती निष्कर्ष नहीं।",
+    "summaryEn": "A sourced record of 30 widely reported corruption and fraud cases that came to light between 1948 and 2013 — Indian and international. Roughly a third ended in at least one conviction, a handful in acquittal or discharge, and many remain unresolved or could not be verified in the sources reviewed. Headline loss figures are often audit estimates or press estimates, not court findings.",
+    "quickTakeHi": "सुर्खी में बड़ा आंकड़ा शायद ही अंतिम सच होता है। नीचे के मामलों में जिनमें दोषसिद्धि हुई वे ज़्यादातर साफ़ कागज़ी सबूत वाली धोखाधड़ी थे; जो मुख्यतः ऑडिट के 'अनुमानित नुकसान' पर टिके थे, उनमें अक्सर नहीं हुई।",
+    "quickTakeEn": "A big number in the headline is rarely the final word. Of the cases below, the ones that ended in convictions were mostly fraud with a clear paper trail; the ones built mainly on an audit's 'presumptive loss' mostly did not.",
+    "bodySectionsHi": [
+      {
+        "heading": "इस रिकॉर्ड को कैसे पढ़ें",
+        "body": "हर मामले को वही कहा गया है जो रिकॉर्ड पर है: ऑडिट का अनुमान सिद्ध नुकसान नहीं है, आरोप निष्कर्ष नहीं है, और नियामक की क्लीन चिट या अदालत का डिस्चार्ज वैसा ही दर्ज है। किसी व्यक्ति का नाम नहीं दिया गया: ज़िम्मेदारी भूमिका, कंपनी या एजेंसी के रूप में लिखी है। हर मामले का ब्योरा (आरोप, ज़िम्मेदार भूमिका, सार्वजनिक धन, साबित हुआ या नहीं, अंतिम नतीजा) साथ के संपादकीय में है।"
+      },
+      {
+        "heading": "कम से कम एक दोषसिद्धि में ख़त्म",
+        "body": "LIC शेयर-ख़रीद सौदा (1957); प्रतिभूति घोटाला (1992); यूरिया आयात अग्रिम (1995–96); टेलीकॉम केबल ठेका (1996); चारा घोटाला, बिहार (1990 के दशक); शेयर कीमत हेरफेर और सहकारी बैंक ऋण (2001); फ़र्ज़ी स्टांप पेपर रैकेट (2003 में उजागर); सत्यम लेखा धोखाधड़ी (2009); झारखंड खनन आवंटन (2000 के दशक); व्यापम भर्ती/परीक्षा घोटाला (2013); कोयला ब्लॉक आवंटन, 'कोलगेट' (CAG 2012–13)"
+      },
+      {
+        "heading": "बरी, डिस्चार्ज, आरोप वापस या बिना अभियोजन के ख़त्म",
+        "body": "सेना की जीप खरीद (1948); बोफ़ोर्स तोप सौदा (1987 में उजागर); जैन 'हवाला' डायरी (1996); 2G स्पेक्ट्रम लाइसेंस (CAG 2010); एंट्रिक्स–देवास उपग्रह सौदा (CAG); अगस्ता वेस्टलैंड वीवीआईपी हेलीकॉप्टर (2013, अंतरराष्ट्रीय)"
+      },
+      {
+        "heading": "अनसुलझे, या देखे गए स्रोतों में नतीजा अपुष्ट",
+        "body": "तेजा शिपिंग ऋण (1960); HDW पनडुब्बी कमीशन आरोप (1987); चीनी आयात (1994); UTI यूएस-64 संकट (1998–2002); संयुक्त राष्ट्र 'तेल के बदले भोजन' कमीशन (रिपोर्ट 2005, अंतरराष्ट्रीय); राष्ट्रमंडल खेल ठेके (2010); आदर्श हाउसिंग सोसाइटी (2010); बेल्लारी अवैध लौह-अयस्क खनन (लोकायुक्त 2006–10); गोवा अवैध लौह-अयस्क खनन (शाह आयोग); उत्तर प्रदेश स्वास्थ्य मिशन निधि (CAG 2005–11); शारदा चिट फ़ंड (2013); टाट्रा सेना ट्रक (2012); स्विस बैंक खाता सूची (2011, अंतरराष्ट्रीय)"
+      },
+      {
+        "heading": "सावधानी से लें ये आंकड़े",
+        "body": "• 2G: ₹1,76,379 करोड़ CAG का 'अनुमानित नुकसान' है, और निचली अदालत ने सभी आरोपियों को बरी किया।\n• कोलगेट: CAG के मसौदे का अनुमान ₹10.67 लाख करोड़ था; अंतिम रिपोर्ट में ₹1.86 लाख करोड़।\n• प्रतिभूति घोटाला और सत्यम: स्रोत अलग-अलग (₹4,000–10,000 करोड़; ₹7,000–12,320 करोड़)।\n• राष्ट्रमंडल खेल: लोकप्रिय कुल रकम (₹35,000 करोड़ से ₹1 लाख करोड़) कमज़ोर स्रोतों पर है; आरोपपत्र में टिका एकमात्र आंकड़ा ₹90 करोड़+ है।\n• फ़र्ज़ी स्टांप पेपर: ₹20,000–30,000 करोड़ अनुमान है।\n• कई नतीजों पर 'प्रकाशन से पहले पुष्टि करें' लिखा है क्योंकि देखे गए स्रोतों में अंतिम परिणाम नहीं मिला।"
+      }
+    ],
+    "bodySectionsEn": [
+      {
+        "heading": "How to read this record",
+        "body": "Each case is classified by what is actually on record: an audit estimate is not a proven loss, an allegation is not a finding, and a regulator's clean chit or a court's discharge is reported as such. No individual is named: responsibility is stated by role or by company or agency. The per-case detail (alleged, responsible role, public money, whether proved, final outcome) is in the companion editorial."
+      },
+      {
+        "heading": "Ended in at least one conviction",
+        "body": "LIC share-purchase deal (1957); Securities scam (1992); Urea import advance (1995–96); Telecom cable contract (1996); Fodder scam, Bihar (1990s); Stock-price rigging and cooperative bank loans (2001); Fake stamp paper racket (revealed 2003); Satyam accounting fraud (2009); Jharkhand mining licences (2000s); Vyapam recruitment/exam fraud (2013); Coal block allocation, 'Coalgate' (CAG 2012–13)"
+      },
+      {
+        "heading": "Ended in acquittal, discharge, dropped charges or no prosecution",
+        "body": "Army jeep purchase (1948); Bofors howitzer deal (revealed 1987); Jain 'hawala' diaries (1996); 2G spectrum licences (CAG 2010); Antrix–Devas satellite deal (CAG); AgustaWestland VVIP helicopters (2013, international)"
+      },
+      {
+        "heading": "Unresolved, or outcome not verified in the sources reviewed",
+        "body": "Teja shipping loan (1960); HDW submarine kickback allegations (1987); Sugar import (1994); UTI US-64 collapse (1998–2002); UN Oil-for-Food kickbacks (report 2005, international); Commonwealth Games contracts (2010); Adarsh housing society (2010); Illegal iron-ore mining, Bellary (Lokayukta 2006–10); Illegal iron-ore mining, Goa (Shah Commission); Uttar Pradesh health mission funds (CAG 2005–11); Saradha chit fund (2013); Tatra army trucks (2012); Swiss bank account list (2011, international)"
+      },
+      {
+        "heading": "Figures to treat with caution",
+        "body": "• 2G: the ₹1,76,379 crore is the CAG's 'presumptive loss', and the trial court acquitted all accused.\n• Coalgate: the CAG's draft estimate was ₹10.67 lakh crore; the final report said ₹1.86 lakh crore.\n• Securities scam and Satyam: sources differ (₹4,000–10,000 crore; ₹7,000–12,320 crore).\n• Commonwealth Games: popular totals (₹35,000 crore to ₹1 lakh crore) are weakly sourced; the only chargesheet-backed figure is ₹90 crore+.\n• Fake stamp paper: ₹20,000–30,000 crore is an estimate.\n• Several outcomes are marked 'verify before publishing' because the sources reviewed did not give a final result."
+      }
+    ],
+    "impactType": "intangible",
+    "timelineStartDate": "1948-01-01",
+    "timelineEndDate": "2013-12-31",
+    "tags": [
+      {
+        "slug": "corruption-cases",
+        "labelHi": "भ्रष्टाचार के मामले",
+        "labelEn": "Corruption cases"
+      },
+      {
+        "slug": "accountability",
+        "labelHi": "जवाबदेही",
+        "labelEn": "Accountability"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.thequint.com/news/politics/2g-scam-verdict-revisiting-cag-report-vinod-rai",
+        "publisher": "The Quint",
+        "title": "2G verdict: revisiting the CAG report",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Secondary reporting; primary documents (CAG report, judgment, chargesheet) were not opened in this research pass. Figures that vary across sources are flagged in the entry."
+      },
+      {
+        "url": "https://www.businesstoday.in/sectors/telecom/2g-scam-verdict-a-raja-kanimozhi-cag-vinod-rai-spectrum/story/266449.html",
+        "publisher": "Business Today",
+        "title": "2G scam verdict",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Confirms the 21 Dec 2017 acquittal of all accused and the CAG's ₹1,76,379 crore figure."
+      },
+      {
+        "url": "https://lawfullegal.in/the-coalgate-scam-an-in-depth-analysis-of-indias-coal-allocation-controversy/",
+        "publisher": "Lawful Legal",
+        "title": "The Coalgate scam",
+        "credibilityTier": "secondary",
+        "language": "en",
+        "credibilityNotes": "Source for the ₹10.67 lakh crore draft vs ₹1.86 lakh crore final CAG figures; a legal-explainer site, not a primary source."
+      },
+      {
+        "url": "https://www.tribuneindia.com/news/nation/coal-scam-delhi-court-convicts-former-mp-vijay-darda-ex-coal-secretary-h-c-gupta-525355/amp",
+        "publisher": "The Tribune",
+        "title": "Coal scam: Delhi court convicts former MP, ex-coal secretary",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Confirms convictions in one Coalgate case."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1992_Indian_stock_market_scam",
+        "publisher": "Wikipedia",
+        "title": "1992 Indian stock market scam",
+        "credibilityTier": "secondary",
+        "language": "en",
+        "credibilityNotes": "Encyclopaedia entry; amount estimates differ across sources."
+      },
+      {
+        "url": "https://www.downtoearth.org.in/environment/lalu-yadav-convicted-in-fodder-scam-42313",
+        "publisher": "Down To Earth",
+        "title": "Fodder scam convictions",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Fodder scam conviction reporting."
+      },
+      {
+        "url": "https://www.tribuneindia.com/news/archive/nation/lalu-guilty-in-4th-fodder-case-mishra-acquitted-560723",
+        "publisher": "The Tribune",
+        "title": "Guilty in 4th fodder case, one co-accused acquitted",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Source for the acquittal of a former CM in the fourth case."
+      },
+      {
+        "url": "https://www.legallyindia.com/the-bar-and-bench/satyam-scam-raju-8-others-slapped-with-7-years-jail-crores-in-fines-20150409-5790",
+        "publisher": "Legally India",
+        "title": "Satyam: founder and 8 others get 7 years",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Satyam sentence of April 2015."
+      },
+      {
+        "url": "https://www.wionews.com/india-news/supreme-court-rejects-cbi-plea-challenging-clean-chit-to-hindujas-in-bofors-case-175050/amp",
+        "publisher": "WION",
+        "title": "Supreme Court rejects CBI plea on Bofors",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Bofors: discharge upheld; ₹64 crore / ₹1,437 crore figures."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Hawala_scandal",
+        "publisher": "Wikipedia",
+        "title": "Hawala scandal",
+        "credibilityTier": "secondary",
+        "language": "en",
+        "credibilityNotes": "Hawala case collapse; the Supreme Court's judgment on CBI independence."
+      },
+      {
+        "url": "https://www.business-standard.com/article/news-ians/hawala-diary-court-discharges-jains-others-117090100538_1.html",
+        "publisher": "Business Standard",
+        "title": "Hawala diary: court discharges Jains, others",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Corroborates the discharges."
+      },
+      {
+        "url": "https://www.deccanherald.com/amp/story/india%2Ftelgi-gets-life-term-fake-2315916",
+        "publisher": "Deccan Herald",
+        "title": "Fake stamp paper kingpin sentenced",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Sentence; scale estimates vary (₹20,000–30,000 crore) across sources."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Ketan_Parekh",
+        "publisher": "Wikipedia",
+        "title": "Stock-manipulation broker (encyclopaedia entry)",
+        "credibilityTier": "secondary",
+        "language": "en",
+        "credibilityNotes": "SEBI ban of 14 years and the 2014 CBI-court conviction."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Madhavpura_Mercantile_Cooperative_Bank",
+        "publisher": "Wikipedia",
+        "title": "Madhavpura Mercantile Cooperative Bank",
+        "credibilityTier": "secondary",
+        "language": "en",
+        "credibilityNotes": "₹1,030 crore loans; licence cancelled."
+      },
+      {
+        "url": "https://www.business-standard.com/article/economy-policy/sukhram-gets-5-year-jail-in-1996-telecom-scam-case-111112000037_1.html",
+        "publisher": "Business Standard",
+        "title": "Telecom scam: 5-year sentence",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Conviction 2011."
+      },
+      {
+        "url": "https://www.opindia.com/2018/07/nephew-of-former-pm-narasimha-rao-sentenced-to-three-years-jail-for-133-crore-urea-scam/",
+        "publisher": "OpIndia",
+        "title": "Urea scam sentence",
+        "credibilityTier": "secondary",
+        "language": "en",
+        "credibilityNotes": "Single outlet; the 3-year sentence should be cross-checked against a second source."
+      },
+      {
+        "url": "https://www.washingtonpost.com/wp-dyn/content/article/2005/11/07/AR2005110700781.html",
+        "publisher": "The Washington Post",
+        "title": "India's Foreign Minister fired in Oil-for-Food scandal",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "International reporting on the Volcker report and the dismissal."
+      },
+      {
+        "url": "https://www.aljazeera.com/news/2005/11/7/india-to-probe-volcker-report-claims",
+        "publisher": "Al Jazeera",
+        "title": "India to probe Volcker report claims",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Independent international confirmation."
+      },
+      {
+        "url": "https://www.thequint.com/news/india/agustawestland-vvip-chopper-case-ex-finmeccanica-ceo-acquitted",
+        "publisher": "The Quint",
+        "title": "AgustaWestland: ex-Finmeccanica CEO acquitted",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Italian appeals-court acquittal, Jan 2018."
+      },
+      {
+        "url": "https://science.thewire.in/politics/government/india-isro-arbitration-antrix-devas/",
+        "publisher": "The Wire",
+        "title": "India loses another arbitration case: Antrix–Devas",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Arbitration outcome; the deal was cancelled and no bribery was found."
+      },
+      {
+        "url": "https://www.mangaloretoday.com/headlineprint/Goa-mining-scam-worth-Rs-34-935-crore-Shah-Commission.html",
+        "publisher": "Mangalore Today",
+        "title": "Goa mining scam worth ₹34,935 crore: Shah Commission",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Shah Commission figure."
+      },
+      {
+        "url": "https://www.downtoearth.org.in/environment/how-bellary-was-laid-waste-33862",
+        "publisher": "Down To Earth",
+        "title": "How Bellary was laid waste",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Karnataka Lokayukta figure and findings."
+      },
+      {
+        "url": "https://www.thequint.com/explainers/madhu-koda-mining-scam-explained",
+        "publisher": "The Quint",
+        "title": "Former Jharkhand chief minister and the coal mining case",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Conviction of December 2017."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Vyapam_scam",
+        "publisher": "Wikipedia",
+        "title": "Vyapam scam",
+        "credibilityTier": "secondary",
+        "language": "en",
+        "credibilityNotes": "Scale and arrests; some convictions."
+      },
+      {
+        "url": "https://www.business-standard.com/article/current-affairs/saradha-scam-worth-rs-2-460cr-owner-in-control-of-deposits-113102000259_1.html",
+        "publisher": "Business Standard",
+        "title": "Saradha scam worth ₹2,460 crore",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Deposit figures."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Uttar_Pradesh_NRHM_scam",
+        "publisher": "Wikipedia",
+        "title": "Uttar Pradesh NRHM scam",
+        "credibilityTier": "secondary",
+        "language": "en",
+        "credibilityNotes": "CAG finding; deaths linked to the case."
+      },
+      {
+        "url": "https://www.moneylife.in/article/cbi-registers-case-in-tatrabeml-truck-supply-deal-with-army/24643.html",
+        "publisher": "Moneylife",
+        "title": "CBI registers Tatra–BEML case",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "CBI case 2012. The ₹750 crore figure comes from a weaker source and is flagged."
+      },
+      {
+        "url": "https://www.ibtimes.co.uk/hsbc-leaked-list-1195-indians-including-countrys-richest-mukesh-ambani-have-swiss-accounts-1487141",
+        "publisher": "IBTimes UK",
+        "title": "HSBC leaked list: 1,195 Indians",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "HSBC list; the entry avoids naming any account holder."
+      },
+      {
+        "url": "https://www.icmrindia.org/free%20resources/casestudies/The%20US%2064%20Controversy1.htm",
+        "publisher": "ICMR India case study",
+        "title": "The US-64 controversy",
+        "credibilityTier": "secondary",
+        "language": "en",
+        "credibilityNotes": "Case-study source for the ₹3,300 / ₹14,561 crore bailouts."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Jeep_scandal_case",
+        "publisher": "Wikipedia",
+        "title": "Jeep scandal case",
+        "credibilityTier": "secondary",
+        "language": "en",
+        "credibilityNotes": "Closure of the case."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Haridas_Mundhra",
+        "publisher": "Wikipedia",
+        "title": "LIC share-purchase businessman (encyclopaedia entry)",
+        "credibilityTier": "secondary",
+        "language": "en",
+        "credibilityNotes": "Conviction is reported here; not independently cross-checked in this pass."
+      }
+    ],
+    "stats": [],
+    "sourceSignals": {
+      "numericConsistency": false,
+      "contradictionFound": true
+    }
+  },
+  {
+    "categorySlug": "governance-judiciary",
+    "slug": "major-corruption-and-fraud-cases-2014-2026-allegation-vs-outcome",
+    "titleHi": "2014 से 2026 तक के बड़े भ्रष्टाचार और धोखाधड़ी के मामले: क्या आरोप थे और हर मामला कहां खड़ा है",
+    "titleEn": "Major Corruption and Fraud Cases From 2014 to 2026: What Was Alleged, and Where Each One Stands",
+    "summaryHi": "2014 से अक्टूबर 2026 तक के 16 चर्चित भ्रष्टाचार, धोखाधड़ी और ऑडिट-निष्कर्ष वाले मामलों का स्रोत-सहित रिकॉर्ड। ज़्यादातर हाल के हैं: कई अनसुलझे हैं, कुछ को नियामकों या अदालतों ने क्लीन चिट दी, और कुछ अपराध नहीं बल्कि ऑडिट या संवैधानिक निष्कर्ष हैं। बहुत कम मामले अंतिम फ़ैसले तक पहुंचे हैं, इसलिए यहां के नतीजे पुराने मामलों से तुलना योग्य नहीं।",
+    "summaryEn": "A sourced record of 16 widely reported corruption, fraud and audit-finding cases from 2014 to October 2026. Most are recent: several are unresolved, some were cleared by regulators or courts, and a few are audit or constitutional findings rather than crimes. Only a small number have reached a final verdict, so outcomes here are not comparable to the older cases.",
+    "quickTakeHi": "ये मामले इतने हाल के हैं कि साफ़ स्कोरकार्ड नहीं बन सकता। ईमानदार सार यह है: कुछ को क्लीन चिट मिली, कई अनसुलझे हैं, कुछ ऑडिट निष्कर्ष हैं जिन पर ऑडिट किए गए मंत्रालय ने आपत्ति जताई, और लगभग किसी का अंतिम फ़ैसला अभी नहीं आया।",
+    "quickTakeEn": "These cases are too recent for a clean scorecard. The honest summary is: a few are cleared, several are unresolved, a few are audit findings that were disputed by the audited ministry, and almost none has a final verdict yet.",
+    "bodySectionsHi": [
+      {
+        "heading": "इस रिकॉर्ड को कैसे पढ़ें",
+        "body": "हर मामले को वही कहा गया है जो रिकॉर्ड पर है: ऑडिट का अनुमान सिद्ध नुकसान नहीं है, आरोप निष्कर्ष नहीं है, और नियामक की क्लीन चिट या अदालत का डिस्चार्ज वैसा ही दर्ज है। किसी व्यक्ति का नाम नहीं दिया गया: ज़िम्मेदारी भूमिका, कंपनी या एजेंसी के रूप में लिखी है। हर मामले का ब्योरा (आरोप, ज़िम्मेदार भूमिका, सार्वजनिक धन, साबित हुआ या नहीं, अंतिम नतीजा) साथ के संपादकीय में है।"
+      },
+      {
+        "heading": "आरोपियों के विरुद्ध दीवानी या अदालती निष्कर्ष",
+        "body": "बायजूस धोखाधड़ीपूर्ण हस्तांतरण (अमेरिकी अदालत, 2025)"
+      },
+      {
+        "heading": "बरी, डिस्चार्ज, आरोप वापस या बिना अभियोजन के ख़त्म",
+        "body": "NSE को-लोकेशन (2015 से); एक समूह पर हिंडनबर्ग आरोप (2023); राफ़ेल लड़ाकू विमान सौदा (2018–19)"
+      },
+      {
+        "heading": "अनसुलझे, या देखे गए स्रोतों में नतीजा अपुष्ट",
+        "body": "पंजाब नेशनल बैंक धोखाधड़ी (2018); किंगफ़िशर एयरलाइंस ऋण (2016 से); IL&FS चूक (2018); DHFL बैंक ऋण धोखाधड़ी (2022 में मामला दर्ज); जेन्सोल / ब्लूस्मार्ट निधि हेराफेरी (2025); सौर अनुबंधों पर अमेरिकी अभियोग (नवंबर 2024, अंतरराष्ट्रीय); तमिलनाडु राज्य शराब निगम (2025)"
+      },
+      {
+        "heading": "ऑडिट और संवैधानिक निष्कर्ष (आपराधिक मामले नहीं)",
+        "body": "चुनावी बॉन्ड (2024 में रद्द); पेगासस जासूसी सॉफ़्टवेयर आरोप (2021–22); द्वारका एक्सप्रेसवे लागत (CAG, अगस्त 2023); भारतमाला निविदा अनियमितताएं (CAG); आयुष्मान भारत दावे (CAG)"
+      },
+      {
+        "heading": "सावधानी से लें ये आंकड़े",
+        "body": "• बैंक धोखाधड़ी की रकम जांचकर्ताओं या ऋणदाताओं के आरोपित आंकड़े हैं, अदालत द्वारा आंका गया नुकसान नहीं।\n• द्वारका एक्सप्रेसवे और भारतमाला CAG के ऑडिट निष्कर्ष हैं; मंत्रालय ने द्वारका की तुलना पर आपत्ति जताई।\n• कथित SEC समझौते के बाद अमेरिकी आपराधिक आरोपों की स्थिति अपुष्ट है।\n• RBI के सालाना बैंक-धोखाधड़ी आंकड़े साल-दर-साल बहुत घटते-बढ़ते हैं; प्राथमिक तालिकाओं के बिना इन्हें रुझान न मानें।"
+      }
+    ],
+    "bodySectionsEn": [
+      {
+        "heading": "How to read this record",
+        "body": "Each case is classified by what is actually on record: an audit estimate is not a proven loss, an allegation is not a finding, and a regulator's clean chit or a court's discharge is reported as such. No individual is named: responsibility is stated by role or by company or agency. The per-case detail (alleged, responsible role, public money, whether proved, final outcome) is in the companion editorial."
+      },
+      {
+        "heading": "Civil or court findings against the accused",
+        "body": "Byju's fraudulent transfers (US court, 2025)"
+      },
+      {
+        "heading": "Ended in acquittal, discharge, dropped charges or no prosecution",
+        "body": "NSE co-location (2015–); Hindenburg allegations on a conglomerate (2023); Rafale fighter-jet deal (2018–19)"
+      },
+      {
+        "heading": "Unresolved, or outcome not verified in the sources reviewed",
+        "body": "Punjab National Bank fraud (2018); Kingfisher Airlines loans (from 2016); IL&FS defaults (2018); DHFL bank loan fraud (booked 2022); Gensol / BluSmart fund diversion (2025); US indictment over solar contracts (Nov 2024, international); State liquor retailer, Tamil Nadu (2025)"
+      },
+      {
+        "heading": "Audit and constitutional findings (not criminal cases)",
+        "body": "Electoral bonds (struck down 2024); Pegasus spyware allegations (2021–22); Dwarka Expressway cost (CAG, Aug 2023); Bharatmala tender irregularities (CAG); Ayushman Bharat claims (CAG)"
+      },
+      {
+        "heading": "Figures to treat with caution",
+        "body": "• Bank-fraud amounts are the amounts alleged by investigators or lenders, not court-assessed losses.\n• Dwarka Expressway and Bharatmala are CAG audit findings; the ministry disputed the Dwarka comparison.\n• The US criminal-charge status after the reported SEC settlement is not verified.\n• RBI's annual bank-fraud totals swing widely between years and should not be read as a trend without the primary tables."
+      }
+    ],
+    "impactType": "intangible",
+    "timelineStartDate": "2014-01-01",
+    "timelineEndDate": "2026-10-09",
+    "tags": [
+      {
+        "slug": "corruption-cases",
+        "labelHi": "भ्रष्टाचार के मामले",
+        "labelEn": "Corruption cases"
+      },
+      {
+        "slug": "accountability",
+        "labelHi": "जवाबदेही",
+        "labelEn": "Accountability"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Punjab_National_Bank_Scam",
+        "publisher": "Wikipedia",
+        "title": "Punjab National Bank scam",
+        "credibilityTier": "secondary",
+        "language": "en",
+        "credibilityNotes": "Secondary reporting; primary documents (CAG report, judgment, chargesheet) were not opened in this research pass. Figures that vary across sources are flagged in the entry."
+      },
+      {
+        "url": "https://www.business-standard.com/amp/india-news/cbi-arrests-nirav-modi-aide-after-extradition-from-uae-in-pnb-scam-126092900676_1.html",
+        "publisher": "Business Standard",
+        "title": "CBI arrests aide after extradition from UAE",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "September 2026 development."
+      },
+      {
+        "url": "https://www.etvbharat.com/en/bharat/belgium-antwerp-court-advises-govt-to-clear-mehul-choksi-extradition-on-six-counts-of-crimes-enn26040800892",
+        "publisher": "ETV Bharat",
+        "title": "Antwerp court advises extradition on six counts",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "April 2026 development."
+      },
+      {
+        "url": "https://theprint.in/india/vijay-mallya-loses-appeal-against-extradition-faces-fraud-charges-worth-rs-9000-crore/405270/",
+        "publisher": "ThePrint",
+        "title": "Airline promoter loses appeal against extradition",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Extradition approved; never executed."
+      },
+      {
+        "url": "https://www.business-standard.com/india-news/mumbai-special-court-issues-non-bailable-warrant-against-vijay-mallya-124070200774_1.html",
+        "publisher": "Business Standard",
+        "title": "Non-bailable warrant against airline promoter",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "2024 warrant."
+      },
+      {
+        "url": "https://blog.instafinancials.com/2019/06/06/sfio-claim-defaults-over-90000-crore-in-ilfs-scam/",
+        "publisher": "InstaFinancials",
+        "title": "SFIO: defaults over ₹90,000 crore in IL&FS",
+        "credibilityTier": "secondary",
+        "language": "en",
+        "credibilityNotes": "Blog restating the SFIO figure; cross-check with the SFIO / MCA record."
+      },
+      {
+        "url": "https://www.business-standard.com/amp/article/companies/cbi-books-dhfl-former-cmd-and-director-in-rs-34-615-crore-bank-fraud-case-122062200611_1.html",
+        "publisher": "Business Standard",
+        "title": "CBI books DHFL in ₹34,615 crore bank fraud",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "CBI case."
+      },
+      {
+        "url": "https://www.businesstoday.in/india/story/dhfl-scam-dheeraj-wadhawan-arrested-by-cbi-in-rs-34000-cr-banking-loan-fraud-case-429568-2024-05-14",
+        "publisher": "Business Today",
+        "title": "DHFL scam: promoter arrested",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "May 2024 arrest."
+      },
+      {
+        "url": "https://www.tribuneindia.com/news/india/explainer-how-the-gensol-blusmart-saga-unfolded",
+        "publisher": "The Tribune",
+        "title": "How the Gensol–BluSmart saga unfolded",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "₹978 crore from IREDA and PFC; SEBI action."
+      },
+      {
+        "url": "https://www.boomlive.in/explainers/explained-what-sebis-investigation-reveals-about-the-blusmart-scandal-28309",
+        "publisher": "BoomLive",
+        "title": "What SEBI's investigation reveals about BluSmart",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Corroborates the SEBI findings."
+      },
+      {
+        "url": "https://www.barandbench.com/news/co-location-scam-sebi-drops-charges-against-nse-chitra-ramkrishna",
+        "publisher": "Bar & Bench",
+        "title": "SEBI drops charges in co-location case",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "SEBI dropped charges."
+      },
+      {
+        "url": "https://www.barandbench.com/news/nse-co-location-scam-sat-sets-aside-sebi-order-disgorgement-amounts-nse-chitra-ramkrishna-ravi-narain",
+        "publisher": "Bar & Bench",
+        "title": "SAT sets aside disgorgement order",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "SAT order."
+      },
+      {
+        "url": "https://www.business-standard.com/markets/news/sebi-clears-adani-group-dismisses-hindenburg-allegations-125091801259_1.html",
+        "publisher": "Business Standard",
+        "title": "SEBI clears the group of Hindenburg allegations",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "September 2025 order."
+      },
+      {
+        "url": "https://www.cnbc.com/2026/05/15/us-sec-settlement-gautam-adani-sagar-adani-fraud-case.html",
+        "publisher": "CNBC",
+        "title": "SEC settlement over fraud allegations",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Reported May 2026 settlement; status of criminal charges is not verified."
+      },
+      {
+        "url": "https://www.aljazeera.com/economy/2024/12/6/what-are-the-legal-options-for-gautam-adani-after-the-us-indictment",
+        "publisher": "Al Jazeera",
+        "title": "Legal options after the US indictment",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "International reporting on the Nov 2024 indictment."
+      },
+      {
+        "url": "https://www.thequint.com/news/law/centre-correction-application-supreme-court-cag-report-pac",
+        "publisher": "The Quint",
+        "title": "Rafale verdict: the CAG report row",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Procedural row about the CAG report."
+      },
+      {
+        "url": "https://www.lexology.com/library/detail.aspx?g=f2107762-d93e-45e5-9f24-7d2252e0d38e",
+        "publisher": "Lexology",
+        "title": "Electoral bonds held unconstitutional",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Legal summary of the 15 Feb 2024 judgment."
+      },
+      {
+        "url": "https://www.livelaw.in/top-stories/supreme-court-pegasus-malware-in-529-devices-says-centre-did-not-cooperate-cji-ramana-207435",
+        "publisher": "LiveLaw",
+        "title": "Pegasus: malware in 5 of 29 devices",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Technical committee findings."
+      },
+      {
+        "url": "https://theprint.in/india/oppn-cries-scam-govt-says-erroneous-whats-in-cag-report-on-rs-250-cr-km-dwarka-expressway/1718639/",
+        "publisher": "ThePrint",
+        "title": "What's in the CAG report on Dwarka Expressway",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Both the audit finding and the ministry's reply."
+      },
+      {
+        "url": "https://thewire.in/government/cag-finds-irregularities-in-award-of-highway-projects-under-bharatmala-pariyojana",
+        "publisher": "The Wire",
+        "title": "CAG finds irregularities in Bharatmala awards",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Bharatmala audit findings."
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/2025_TASMAC_scam",
+        "publisher": "Wikipedia",
+        "title": "2025 TASMAC scam",
+        "credibilityTier": "secondary",
+        "language": "en",
+        "credibilityNotes": "Allegation-stage case; ED claim of over ₹1,000 crore."
+      },
+      {
+        "url": "https://www.medianama.com/2025/12/223-cards-internet-fraud-66-in-fy25-decline-banking-rbi/",
+        "publisher": "MediaNama",
+        "title": "RBI bank-fraud figures",
+        "credibilityTier": "reputable_media",
+        "language": "en",
+        "credibilityNotes": "Context only."
+      }
+    ],
+    "stats": [],
+    "sourceSignals": {
+      "numericConsistency": false,
+      "contradictionFound": true
+    }
+  }
+]
