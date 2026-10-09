@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { BrandMark } from "@/components/BrandMark";
+import { InstagramLink } from "@/components/InstagramLink";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -14,6 +15,10 @@ export function Footer() {
           {site("name")}
         </p>
         <p className="mt-1 max-w-md text-xs text-neutral-500">{site("tagline")}</p>
+        <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-neutral-500">
+          <InstagramLink label={t("instagramLabel")} />
+          <span className="text-xs">{t("onlyOfficialSocial")}</span>
+        </p>
         <div className="mt-4 flex flex-col items-start gap-2 text-sm text-neutral-500 sm:flex-row sm:items-center sm:justify-between">
           <span>&copy; {new Date().getFullYear()}</span>
           <div className="flex flex-wrap gap-4">
