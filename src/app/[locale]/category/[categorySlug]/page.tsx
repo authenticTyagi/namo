@@ -8,8 +8,22 @@ import { SITE_URL } from "@/lib/constants";
 import { getCategoryIcon } from "@/lib/category-icons";
 import { OG_LOCALE_TAG } from "@/lib/localized";
 import { getCategoryClasses } from "@/lib/category-colors";
+import { routing } from "@/i18n/routing";
+import { getSitemapData } from "@/db/queries/sitemap";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
+
+// ISR: cached for an hour; admin actions call revalidatePath("/[locale]", "layout") so
+// publish/unpublish still shows up immediately.
+export const revalidate = 3600;
+
+// Pre-render every category/locale at build; unknown slugs still render on demand.
+export async function generateStaticParams() {
+  const { categorySlugs } = await getSitemapData();
+  return routing.locales.flatMap((locale) =>
+    categorySlugs.map((c) => ({ locale, categorySlug: c.slug })),
+  );
+}
 
 export async function generateMetadata({
   params,

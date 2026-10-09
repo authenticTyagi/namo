@@ -35,7 +35,7 @@ Editing published content resets it to `pending_review`. No auto-publish path ex
 | Concern | State |
 |---|---|
 | Compression | `compress: true` is the Next default (gzip when self-hosted). On Vercel the CDN negotiates Brotli/gzip automatically. No app-level zstd; not configured, not verified on the edge. |
-| Caching | No `revalidate`/`unstable_cache`/`generateStaticParams` in public routes: pages are rendered per request and hit Neon. This is the biggest performance gap (see TASKS.md T-1). |
+| Caching | Home, list and info pages are SSG. Category and comparison detail pages are SSG + ISR (`revalidate = 3600`, `generateStaticParams` from `getSitemapData`); verified `x-nextjs-cache: HIT`. Admin actions call `revalidatePath("/[locale]", "layout")`, so publish/unpublish shows immediately. **Entry and editorial detail pages are still per-request** because `CommentSection` calls `auth()` (cookies) — see TASKS.md T-1b. |
 | Bloom filter | Not used. See "Bloom filter" below. |
 | Search | Postgres query over all content types, all-words match, ranked, noindex (`src/db/queries/search.ts`). |
 | Images/OG | `next/og` ImageResponse for icons and opengraph. |
@@ -49,6 +49,6 @@ complexity for no measurable gain. **Not adopted.** Revisit only if slug-404 tra
 the simpler fix is ISR + `notFound()` caching.
 
 ## Known gaps
-- Public pages not cached (T-1). No rate limiting on comment/feedback/search endpoints (T-3).
+- Entry/editorial detail pages not cached (T-1b). No rate limiting on comment/feedback/search endpoints (T-3).
 - No real-user performance monitoring beyond Vercel Analytics (T-6).
 - No automated tests beyond lint/tsc/build (T-5).

@@ -4,6 +4,8 @@
 
 Live site: https://modinekiyakyahai.com (also .vercel.app, www.). Repo: https://github.com/authenticTyagi/namo. Admin: https://modinekiyakyahai.com/admin (Google sign-in, `ADMIN_EMAILS` env var gates access).
 
+- **Docs set added; category + comparison pages cached** (2026-10-10): added PRD/ARCHITECTURE/RULES/DESIGN/TASKS. Audit correction: home/list pages were already SSG; only detail pages were per-request. Category and comparison detail now SSG+ISR (1h, verified HIT). Entry/editorial still dynamic due to `auth()` in comments (TASKS T-1b). Bloom filter deliberately not adopted.
+
 ## What this project is
 
 A sourced, fact-checked, bilingual (Hindi/English) reference site documenting verifiable government work under PM Modi's leadership. Core commitment, non-negotiable: **every claim is cited, nothing is published without a source, mixed/negative data is reported honestly (not spun)**. Explicitly NOT a propaganda site, NOT affiliated with any government body or political party — see `/methodology` and `/about`. No individual is named anywhere on the site (deliberate privacy choice by the owner).

@@ -8,10 +8,24 @@ import { ShareButtons } from "@/components/entry/ShareButtons";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SITE_URL } from "@/lib/constants";
 import { OG_LOCALE_TAG, isExtraLocale } from "@/lib/localized";
+import { routing } from "@/i18n/routing";
+import { getSitemapData } from "@/db/queries/sitemap";
 import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 
 type Params = { locale: Locale; comparisonSlug: string };
+
+// ISR: cached for an hour; admin actions call revalidatePath("/[locale]", "layout") so
+// publish/unpublish still shows up immediately.
+export const revalidate = 3600;
+
+// Pre-render every comparison/locale at build; unknown slugs still render on demand.
+export async function generateStaticParams() {
+  const { comparisonSlugs } = await getSitemapData();
+  return routing.locales.flatMap((locale) =>
+    comparisonSlugs.map((c) => ({ locale, comparisonSlug: c.slug })),
+  );
+}
 
 export async function generateMetadata({
   params,
