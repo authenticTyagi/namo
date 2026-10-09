@@ -5,6 +5,7 @@ import { LanguagePicker } from "./LanguagePicker";
 import { MobileMenu } from "./MobileMenu";
 import { ThemeToggle } from "./ThemeToggle";
 import { BrandMark } from "@/components/BrandMark";
+import { Search } from "lucide-react";
 
 const NAV_ACTIVE = "text-brand font-semibold";
 const NAV_INACTIVE = "text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100";
@@ -33,9 +34,6 @@ export function Header() {
           <NavLink href="/india-in-the-world" className={NAV_INACTIVE} activeClassName={NAV_ACTIVE}>
             {t("compare")}
           </NavLink>
-          <NavLink href="/search" className={NAV_INACTIVE} activeClassName={NAV_ACTIVE}>
-            {t("search")}
-          </NavLink>
           <NavLink href="/about" className={NAV_INACTIVE} activeClassName={NAV_ACTIVE}>
             {t("about")}
           </NavLink>
@@ -44,6 +42,14 @@ export function Header() {
           </NavLink>
         </nav>
         <div className="flex items-center gap-2">
+          <Link
+            href="/search"
+            aria-label={t("search")}
+            title={t("search")}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-neutral-300 text-neutral-600 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800"
+          >
+            <Search className="h-4 w-4" aria-hidden="true" />
+          </Link>
           <ThemeToggle />
           <LanguagePicker />
           <MobileMenu />

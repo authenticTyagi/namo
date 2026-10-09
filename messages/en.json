@@ -60,8 +60,18 @@
     }
   },
   "search": {
-    "placeholder": "Search...",
-    "noResults": "No results found"
+    "title": "Search",
+    "placeholder": "Search entries, editorials and comparisons...",
+    "button": "Search",
+    "hint": "Search every entry, editorial and comparison on this site. Words can be in any order.",
+    "examples": "Try: solar, GDP, UPI, defence, diplomacy, scam",
+    "noResults": "No results found. Try fewer or different words.",
+    "resultsCount": "{count, plural, one {# result} other {# results}} for \"{q}\"",
+    "type": {
+      "entry": "Entry",
+      "editorial": "Editorial",
+      "comparison": "Comparison"
+    }
   },
   "feedback": {
     "title": "Send feedback or a report",
