@@ -46,7 +46,7 @@ export function Header() {
             href="/search"
             aria-label={t("search")}
             title={t("search")}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-neutral-300 text-neutral-600 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800"
+            className="hidden h-9 w-9 items-center justify-center rounded-md border border-neutral-300 text-neutral-600 sm:inline-flex hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800"
           >
             <Search className="h-4 w-4" aria-hidden="true" />
           </Link>
