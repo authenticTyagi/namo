@@ -149,7 +149,11 @@ What we collect
 
 Admin sign-in: the site admin's Google sign-in stores only email, name, and profile photo — used solely for identity and access control.
 
-General visitors: browsing the site normally, we collect no personal information. A language preference (Hindi, English, Bengali, Telugu, or Marathi) is stored in an essential cookie.
+Comments: signing in with Google to comment stores your email, name and profile photo, plus the comments and reports you submit.
+
+Feedback form: the message you send, and the optional name and email you choose to give, are stored so the site owner can review and respond.
+
+General visitors: just browsing the site, we collect no personal information. A language preference (Hindi, English, Bengali, Telugu, or Marathi) is stored in an essential cookie.
 
 Advertising cookies: if advertising (e.g. Google AdSense) is active on the site, it may use cookies to serve ads, including personalized ads — unless you decline via our cookie banner. You can change your choice at any time.
 
@@ -163,7 +167,7 @@ Under India's Digital Personal Data Protection Act, 2023 (DPDPA), you can reques
 
 Data retention
 
-Admin account data is retained for as long as admin access is needed. Advertising cookie data is retained per Google's own policy.
+Account, comment and feedback data is retained for as long as it is needed for moderation and review, and deleted on request. Advertising cookie data is retained per Google's own policy.
 
 Children's privacy
 
@@ -171,6 +175,6 @@ This site does not knowingly collect information from children under 18.
 
 Changes to this policy
 
-This policy will be updated as new features (such as comments) are added to the site.`,
+This policy will be updated as new features are added to the site.`,
   },
 } as const;

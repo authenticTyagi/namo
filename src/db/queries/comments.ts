@@ -1,6 +1,6 @@
 import { db, isDbConfigured } from "@/db";
 import { comments, editorials, entries, moderationFlags, users } from "@/db/schema";
-import { and, asc, eq, isNull } from "drizzle-orm";
+import { and, asc, count, eq, gte, isNull } from "drizzle-orm";
 
 export interface CommentWithAuthor {
   id: string;
@@ -52,6 +52,11 @@ export async function getVisibleComments(
 
 const MIN_COMMENT_LENGTH = 2;
 const MAX_COMMENT_LENGTH = 2000;
+const COMMENT_LIMIT = 5;
+const COMMENT_WINDOW_MS = 10 * 60 * 1000;
+const FLAG_LIMIT = 10;
+const FLAG_WINDOW_MS = 60 * 60 * 1000;
+const MAX_FLAG_REASON_LENGTH = 500;
 
 /** Throws on invalid input — callers (server actions) should catch and surface the message. */
 export async function createComment(target: CommentTarget, userId: string, body: string) {
@@ -78,6 +83,14 @@ export async function createComment(target: CommentTarget, userId: string, body:
           .then((r) => r.length > 0);
   if (!isPublished) throw new Error("Cannot comment on unpublished content");
 
+  // DB-backed rate limit (serverless instances share no memory): at most
+  // COMMENT_LIMIT comments per user per window.
+  const [{ n }] = await db
+    .select({ n: count() })
+    .from(comments)
+    .where(and(eq(comments.userId, userId), gte(comments.createdAt, new Date(Date.now() - COMMENT_WINDOW_MS))));
+  if (n >= COMMENT_LIMIT) throw new Error("You're commenting too fast. Please wait a few minutes.");
+
   const [comment] = await db
     .insert(comments)
     .values({
@@ -91,10 +104,24 @@ export async function createComment(target: CommentTarget, userId: string, body:
 }
 
 export async function flagComment(commentId: string, reporterUserId: string, reason: string | null) {
+  const trimmedReason = reason?.trim() || null;
+  if (trimmedReason && trimmedReason.length > MAX_FLAG_REASON_LENGTH) throw new Error("Reason is too long");
+
+  const [{ n }] = await db
+    .select({ n: count() })
+    .from(moderationFlags)
+    .where(
+      and(
+        eq(moderationFlags.reporterUserId, reporterUserId),
+        gte(moderationFlags.createdAt, new Date(Date.now() - FLAG_WINDOW_MS)),
+      ),
+    );
+  if (n >= FLAG_LIMIT) throw new Error("Too many reports. Please try again later.");
+
   await db.insert(moderationFlags).values({
     commentId,
     reporterUserId,
-    reason: reason?.trim() || null,
+    reason: trimmedReason,
   });
   await db.update(comments).set({ status: "flagged" }).where(eq(comments.id, commentId));
 }
