@@ -48,13 +48,16 @@ export function ShareButtons({ url, title }: { url: string; title: string }) {
   }
 
   return (
-    <div className="mt-8 flex items-center gap-3">
+    <div data-no-read className="mt-8 flex flex-wrap items-center gap-3">
       <span className="text-sm font-medium text-neutral-500">{t("share")}</span>
       {canNativeShare ? (
         <>
           <button type="button" onClick={nativeShare} className={buttonClass}>
             {t("shareButton")}
           </button>
+          <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className={buttonClass}>
+            WhatsApp
+          </a>
           <button type="button" onClick={copyLink} className={buttonClass}>
             {copied ? "✓" : t("copyLink")}
           </button>

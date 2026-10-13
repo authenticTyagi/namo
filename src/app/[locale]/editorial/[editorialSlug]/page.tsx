@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { getPublishedEditorialBySlug } from "@/db/queries/editorials";
 import { ToneBadge } from "@/components/editorial/ToneBadge";
 import { CommentSection } from "@/components/comments/CommentSection";
+import { ReadAloud } from "@/components/ReadAloud";
 import { ShareButtons } from "@/components/entry/ShareButtons";
 import { AdSlot } from "@/components/AdSlot";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -85,6 +86,7 @@ export default async function EditorialPage({
       </div>
 
       <h1 className="mt-3 text-3xl font-bold tracking-tight">{editorial.headline}</h1>
+      <ReadAloud locale={locale} />
       {editorial.publishDate && (
         <p className="mt-1 text-xs text-neutral-400">
           {t("published")}:{" "}
@@ -112,11 +114,13 @@ export default async function EditorialPage({
 
       <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_CONTENT} />
 
-      <CommentSection
+      <div data-no-read>
+        <CommentSection
         target={{ editorialId: editorial.id }}
         locale={locale}
         returnTo={editorialUrl}
       />
+      </div>
     </article>
   );
 }

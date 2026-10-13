@@ -142,5 +142,13 @@
     "signInButton": "Sign in with Google",
     "report": "Report",
     "reported": "Reported"
+  },
+  "readAloud": {
+    "label": "Read aloud",
+    "listen": "Listen",
+    "pause": "Pause",
+    "resume": "Resume",
+    "stop": "Stop",
+    "noVoice": "No voice for this language on your device."
   }
 }

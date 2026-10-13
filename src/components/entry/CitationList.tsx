@@ -36,7 +36,7 @@ export function CitationList({ sources }: { sources: CitableSource[] }) {
   if (sources.length === 0) return null;
 
   return (
-    <section aria-labelledby="sources-heading" className="mt-8">
+    <section data-no-read aria-labelledby="sources-heading" className="mt-8">
       <h2 id="sources-heading" className="mb-3 text-sm font-semibold uppercase tracking-wide text-neutral-500">
         {t("sources")}
       </h2>

@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { getPublishedComparisonBySlug } from "@/db/queries/comparisons";
 import { ComparisonBarChart } from "@/components/comparison/ComparisonBarChart";
 import { CitationList } from "@/components/entry/CitationList";
+import { ReadAloud } from "@/components/ReadAloud";
 import { ShareButtons } from "@/components/entry/ShareButtons";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SITE_URL } from "@/lib/constants";
@@ -107,6 +108,7 @@ export default async function ComparisonPage({
       </span>
 
       <h1 className="mt-3 text-3xl font-bold tracking-tight">{comparison.title}</h1>
+      <ReadAloud locale={locale} />
       <p className="mt-1 text-sm font-medium text-neutral-500">{comparison.metricLabel}</p>
 
       <div className="mt-6 rounded-xl border border-neutral-200 p-4 dark:border-neutral-800">

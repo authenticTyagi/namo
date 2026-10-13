@@ -9,6 +9,7 @@ import { ImpactBadge } from "@/components/entry/ImpactBadge";
 import { Timeline } from "@/components/entry/Timeline";
 import { EntryStatsSection } from "@/components/entry/EntryStatsSection";
 import { CitationList } from "@/components/entry/CitationList";
+import { ReadAloud } from "@/components/ReadAloud";
 import { ShareButtons } from "@/components/entry/ShareButtons";
 import { AdSlot } from "@/components/AdSlot";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -112,6 +113,7 @@ export default async function EntryPage({
         <ImpactBadge impactType={entry.impactType} />
       </div>
       <h1 className="mt-3 text-3xl font-bold tracking-tight">{entry.title}</h1>
+      <ReadAloud locale={locale} />
       {entry.publishDate && (
         <p className="mt-1 text-xs text-neutral-400">
           {t("published")}:{" "}
@@ -219,11 +221,13 @@ export default async function EntryPage({
 
       <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_CONTENT} />
 
-      <CommentSection
+      <div data-no-read>
+        <CommentSection
         target={{ entryId: entry.id }}
         locale={locale}
         returnTo={entryUrl}
       />
+      </div>
     </article>
   );
 }
