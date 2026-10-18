@@ -45,3 +45,5 @@ _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJE
 - [~] Short-video series: **480 text-on-music reels rendered and verified 2026-10-18 (all play, 1080x1920 with audio, 14-44 s, median 26 s; 18 reels re-rendered after removing lines that referred to "this site" or "the entry")** (`scripts/video/`, see PROJECT_LOG). Owner to: watch a sample, have a native reader check the Hindi hooks, choose which to post (INDEX.csv + posting-plan CSVs in `scripts/video/out/`). Open: voiced variant (Piper models downloaded, owner must judge a sample), re-run `export-content.mjs` + `build_specs.py` + `reel.py --skip-existing` whenever new pages are published.
 - [ ] Pre-generated TTS audio at approval time (only if read-aloud is used)
 - [ ] Deepen bn/te/mr translations
+
+- [ ] Review new Gen Z entries + editorials in admin queue: online-gaming, pmis, tele-manas (low confidence: official replies unread). Then reels. Open: DPDP children's-data rules (need official text), CBSE two-exam rules.
