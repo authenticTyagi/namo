@@ -70,6 +70,7 @@ def stat_scene(s, loc):
             "label": note if len(note) <= 70 else "", "dur": None}
 
 
+META = re.compile(r"this editorial|the entry|this entry|this site|our entry|this page|the editorial|यह प्रविष्टि|इस प्रविष्टि|यह संपादकीय|इस संपादकीय|इस साइट|यह साइट|हमारी प्रविष्टि|इस साइट|साइट का", re.I)
 SPLIT = re.compile(r"(?<=[.!?।])\s+(?=[\"“‘(₹0-9A-Zऀ-ॿ])")
 
 
@@ -83,7 +84,7 @@ def sentences(text):
 def pick_opening(paras):
     for p in paras[:2]:
         for s in p[:2]:
-            if 6 <= words(s) <= 34:
+            if 6 <= words(s) <= 34 and not META.search(s):
                 return s
     return None
 
@@ -92,6 +93,17 @@ DEPENDENT = re.compile(r"^(?:So|And|But|That|This|It|Both|Neither|These|Those|Wh
 
 
 def pick_conclusion(paras):
+    r = _pick_conclusion(paras)
+    if r and META.search(r):
+        alts = [s for p in paras for s in p][-4:]
+        for s in reversed(alts):
+            if 8 <= words(s) <= 34 and not META.search(s) and not DEPENDENT.match(s):
+                return s
+        return None
+    return r
+
+
+def _pick_conclusion(paras):
     last = [s for p in paras for s in p][-3:]
     if not last:
         return None
