@@ -3,7 +3,7 @@
 _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJECT_LOG.md with a date._
 
 ## Now
-- [ ] **T-0** Owner review: bank asset-quality entry (`bank-bad-loans-gross-npa-peak-to-2025-writeoffs-caveat`, confidence 0.68) and editorial (`bank-clean-up-ratio-fell-but-who-paid-for-the-loss`), both `pending_review` (2026-10-18). Metro rail and Namami Gange (entries + editorials) were reviewed and published (DB check: 101 entries published, 1 pending).
+- [ ] **T-0** Owner review: TB elimination entry (`tb-india-incidence-237-to-187-per-lakh-2015-2024-who-milestone-missed`, confidence 0.96) and editorial (`tb-india-falling-but-the-who-milestone-was-half-missed`), both `pending_review` (2026-10-18); and the bank asset-quality entry (`bank-bad-loans-gross-npa-peak-to-2025-writeoffs-caveat`, confidence 0.68) and editorial (`bank-clean-up-ratio-fell-but-who-paid-for-the-loss`), both `pending_review` (2026-10-18). Metro rail and Namami Gange (entries + editorials) were reviewed and published (DB check: 101 entries published, 1 pending).
 
 ## Next (performance and architecture, from the 2026-10-10 audit)
 - [x] **T-1** Category and comparison detail pages: SSG + ISR (2026-10-10).
@@ -17,7 +17,7 @@ _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJE
 ## Content backlog (see PROJECT_LOG.md for context)
 - [x] The 2026-10-01 shortlist is exhausted: metro rail and Namami Gange (both published) were the last two, both 2026-10-18. Follow-up for Namami Gange: if the Lok Sabha reply or a PIB release and the CAG Uttarakhand report can be reached, replace the press-report sources with them and raise confidence.
 - [ ] **Fresh shortlist (2026-10-18), aimed at thin categories** (coverage now: economy 27, foreign 10, governance 9, environment 9, education 9, space 7, then 5 each agriculture/welfare/defence/prices, 4 each health/women-child, sports 2). Search-checked only; nothing drafted. Ranked:
-  1. **TB elimination** (health): WHO Global TB Report 2025 via secondary coverage: incidence 237 to 187 per lakh (2015 to 2024), treatment coverage 53% to ~92%, mortality 28 to 21. Neutral body, but modelled estimates and 2015 baselines differ between reports; open the WHO report itself.
+  1. ~~**TB elimination** (health)~~ **Drafted 2026-10-18**, pending review (see T-0). Follow-up: treatment success, drug-resistant TB, funding, nutrition support and the national 2025 target were not read; WHO India profile not opened. Original note: WHO Global TB Report 2025 via secondary coverage: incidence 237 to 187 per lakh (2015 to 2024), treatment coverage 53% to ~92%, mortality 28 to 21. Neutral body, but modelled estimates and 2015 baselines differ between reports; open the WHO report itself.
   2. **MGNREGA replaced by VB-G RAM G** (welfare): in force from 1 Jul 2026 (125 days, wages 100% central, other costs 60:40). Contested; early wage-delay reports from one district only; sources so far are news and opinion. Needs the Act text/PIB and a both-sides treatment (RULES #5).
   3. **PMGKAY free grain** (welfare): 81.35 crore beneficiaries, ₹11.80 lakh crore over 5 years from Jan 2024 (Cabinet decision, official). Need current-year data and leakage/beneficiary-list evidence for the honest counterweight.
   4. **Anaemia, NFHS-4 vs NFHS-5** (women-child): not yet searched; check whether a newer NFHS exists.
