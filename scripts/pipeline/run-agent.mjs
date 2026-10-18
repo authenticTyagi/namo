@@ -346,7 +346,8 @@ CATEGORIES (use the exact slug; only these exist, you cannot create a new
 one): economy-infra-digital, space-science, foreign-policy-diplomacy,
 defense-security, currency-prices-inflation, welfare-social-schemes,
 agriculture-farmer-welfare, environment-renewable-energy,
-education-skill-development, health-infrastructure. currency-prices-
+education-skill-development, health-infrastructure, women-child-development,
+governance-judiciary, sports-youth-affairs. currency-prices-
 inflation and any welfare/subsidy topic must be reported honestly
 including mixed or negative data — these are not wins-only categories.
 

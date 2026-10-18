@@ -1,0 +1,342 @@
+[
+  {
+    "slug": "access-to-clean-cooking-india-vs-peers-2024",
+    "categorySlug": "welfare-social-schemes",
+    "relatedEntrySlug": "pm-ujjwala-lpg-access-refill-usage-subsidy-cut",
+    "titleEn": "Clean Cooking: 81% of Indians Mainly Cook With Clean Fuels, Up From 46% in 2014 — the Biggest Gain in This Group, but Still Behind China, Indonesia and Vietnam",
+    "titleHi": "स्वच्छ खाना पकाना: 81% भारतीय मुख्य रूप से स्वच्छ ईंधन से खाना पकाते हैं, 2014 के 46% से ऊपर — इस समूह में सबसे बड़ी बढ़त, पर चीन, इंडोनेशिया और वियतनाम से अब भी पीछे",
+    "metricLabelEn": "Population mainly using clean fuels and technologies for cooking (share of population, 2024)",
+    "metricLabelHi": "मुख्य रूप से स्वच्छ ईंधन और तकनीक से खाना पकाने वाली आबादी (आबादी का हिस्सा, 2024)",
+    "unitEn": "%",
+    "unitHi": "%",
+    "narrativeEn": "World Bank data, tracking the UN Sustainable Development Goal on clean energy, puts the share of India's population that mainly cooks with clean fuels and technologies (such as LPG, piped gas, electricity or biogas) at 81% in 2024. In 2014 it was 46%, a gain of 35 percentage points, the largest among the nine countries compared (Indonesia gained 26, Vietnam 28, China 21, Pakistan 12, Bangladesh 13). India is now ahead of Pakistan (51%) and Bangladesh (29%), but behind Indonesia and China (90% each), Vietnam (91%), Brazil (98%) and the developed economies (Germany and the United States, 100%). Micro: about one Indian in five still cooks mainly with firewood, dung, coal or similar fuels; health research links the smoke to lung disease, and in many homes the hours spent collecting fuel and cooking over a smoky fire fall mostly on women. Macro: household cooking smoke adds to the outdoor pollution shown in this site's PM2.5 comparison, and moving off solid fuels is one of the places where a large, still-developing country can close a visible gap with East Asia. Reading note: this is not the same measure as the LPG connection and 'coverage' figures in this site's Ujjwala entry. That entry counts connections and refills (it reports an average of only 4.71 refills a year per consumer), while this indicator asks what households mainly cook with. Owning a connection and cooking with it every day are different things, and neither measure says which scheme or policy produced the change.",
+    "narrativeHi": "विश्व बैंक के आंकड़े, जो स्वच्छ ऊर्जा के संयुक्त राष्ट्र सतत विकास लक्ष्य को ट्रैक करते हैं, बताते हैं कि 2024 में भारत की 81% आबादी मुख्य रूप से स्वच्छ ईंधन और तकनीक (जैसे एलपीजी, पाइप्ड गैस, बिजली या बायोगैस) से खाना पकाती है। 2014 में यह 46% थी, यानी 35 प्रतिशत अंकों की बढ़त — तुलना किए गए नौ देशों में सबसे बड़ी (इंडोनेशिया में 26, वियतनाम में 28, चीन में 21, पाकिस्तान में 12, बांग्लादेश में 13 अंकों की बढ़त)। भारत अब पाकिस्तान (51%) और बांग्लादेश (29%) से आगे है, पर इंडोनेशिया और चीन (दोनों 90%), वियतनाम (91%), ब्राज़ील (98%) और विकसित अर्थव्यवस्थाओं (जर्मनी और अमेरिका, 100%) से पीछे। सूक्ष्म स्तर पर: लगभग हर पाँच में से एक भारतीय अब भी मुख्य रूप से लकड़ी, उपले, कोयले या ऐसे ही ईंधन से खाना पकाता है; स्वास्थ्य शोध इस धुएँ को फेफड़ों की बीमारी से जोड़ता है, और कई घरों में ईंधन जुटाने और धुएँ भरी आग पर खाना पकाने के घंटे ज़्यादातर महिलाओं पर पड़ते हैं। व्यापक स्तर पर: घरेलू चूल्हे का धुआँ बाहरी प्रदूषण में जुड़ता है जो इस साइट की PM2.5 तुलना में दिखता है, और ठोस ईंधन से हटना उन जगहों में से एक है जहाँ एक बड़ा, विकासशील देश पूर्वी एशिया से दिखने वाली दूरी घटा सकता है। पढ़ने का नोट: यह उस माप से अलग है जो इस साइट की उज्ज्वला प्रविष्टि के एलपीजी कनेक्शन और 'कवरेज' आंकड़ों में है। वह प्रविष्टि कनेक्शन और रिफ़िल गिनती है (प्रति उपभोक्ता औसतन सिर्फ़ 4.71 रिफ़िल सालाना), जबकि यह संकेतक पूछता है कि परिवार मुख्य रूप से किससे खाना पकाते हैं। कनेक्शन होना और रोज़ उसी से खाना पकाना दो अलग बातें हैं, और कोई भी माप यह नहीं बताता कि बदलाव किस योजना या नीति से आया।",
+    "countries": [
+      {
+        "countryNameHi": "बांग्लादेश",
+        "countryNameEn": "Bangladesh",
+        "valueHi": "29%",
+        "valueEn": "29%",
+        "valueNumeric": 29,
+        "isIndia": false,
+        "sortOrder": 0
+      },
+      {
+        "countryNameHi": "पाकिस्तान",
+        "countryNameEn": "Pakistan",
+        "valueHi": "51%",
+        "valueEn": "51%",
+        "valueNumeric": 51,
+        "isIndia": false,
+        "sortOrder": 1
+      },
+      {
+        "countryNameHi": "भारत",
+        "countryNameEn": "India",
+        "valueHi": "81%",
+        "valueEn": "81%",
+        "valueNumeric": 81,
+        "isIndia": true,
+        "sortOrder": 2
+      },
+      {
+        "countryNameHi": "इंडोनेशिया",
+        "countryNameEn": "Indonesia",
+        "valueHi": "90%",
+        "valueEn": "90%",
+        "valueNumeric": 90,
+        "isIndia": false,
+        "sortOrder": 3
+      },
+      {
+        "countryNameHi": "चीन",
+        "countryNameEn": "China",
+        "valueHi": "90%",
+        "valueEn": "90%",
+        "valueNumeric": 90,
+        "isIndia": false,
+        "sortOrder": 4
+      },
+      {
+        "countryNameHi": "वियतनाम",
+        "countryNameEn": "Vietnam",
+        "valueHi": "91%",
+        "valueEn": "91%",
+        "valueNumeric": 91,
+        "isIndia": false,
+        "sortOrder": 5
+      },
+      {
+        "countryNameHi": "ब्राज़ील",
+        "countryNameEn": "Brazil",
+        "valueHi": "98%",
+        "valueEn": "98%",
+        "valueNumeric": 98,
+        "isIndia": false,
+        "sortOrder": 6
+      },
+      {
+        "countryNameHi": "जर्मनी",
+        "countryNameEn": "Germany",
+        "valueHi": "100%",
+        "valueEn": "100%",
+        "valueNumeric": 100,
+        "isIndia": false,
+        "sortOrder": 7
+      },
+      {
+        "countryNameHi": "अमेरिका",
+        "countryNameEn": "United States",
+        "valueHi": "100%",
+        "valueEn": "100%",
+        "valueNumeric": 100,
+        "isIndia": false,
+        "sortOrder": 8
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS",
+        "publisher": "World Bank",
+        "title": "Access to clean fuels and technologies for cooking (% of population) (World Development Indicators)",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "slug": "safely-managed-sanitation-india-vs-peers-2024",
+    "categorySlug": "welfare-social-schemes",
+    "relatedEntrySlug": "swachh-bharat-sanitation-coverage",
+    "titleEn": "Sanitation: 63% of Indians Use Safely Managed Sanitation, Up From 42% in 2015 — Ahead of Brazil and Vietnam, Behind China and South Africa",
+    "titleHi": "स्वच्छता: 63% भारतीय सुरक्षित रूप से प्रबंधित स्वच्छता सुविधा का उपयोग करते हैं, 2015 के 42% से ऊपर — ब्राज़ील और वियतनाम से आगे, चीन और दक्षिण अफ़्रीका से पीछे",
+    "metricLabelEn": "Population using safely managed sanitation services (share of population, 2024)",
+    "metricLabelHi": "सुरक्षित रूप से प्रबंधित स्वच्छता सेवाओं का उपयोग करने वाली आबादी (आबादी का हिस्सा, 2024)",
+    "unitEn": "%",
+    "unitHi": "%",
+    "narrativeEn": "World Bank data, drawn from the WHO/UNICEF Joint Monitoring Programme, puts the share of India's population using safely managed sanitation at 62.79% in 2024, up from 42.48% in 2015, a gain of about 20 points. 'Safely managed' is a deliberately strict standard: an improved toilet that is not shared with other households and whose waste is safely contained, emptied and treated or safely disposed of. India is level with Mexico (62.75%) and ahead of Brazil (54.96%), Vietnam (45.37%), Bangladesh (37.32%) and Thailand (26.72%), but behind China (68.89%) and South Africa (73.78%), and far from Germany (96.77%) and the United States (97.01%). Indonesia and Pakistan are left out because the series has no value for them. China's gain since 2015 was about 19 points, close to India's; Brazil's was about 8. Micro: the remaining 37% of Indians do not have a toilet system whose waste is safely handled end to end, which matters for drinking-water contamination and for disease, especially for small children. Macro: India's pace of improvement is among the faster ones here, but the gap to East Asia and to richer economies is still large. Reading note: this site's Swachh Bharat entry reports toilet access and the 2019 rural open-defecation-free declaration, which is a lower bar than 'safely managed'. The two do not contradict each other. A low score here does not mean few toilets, and the indicator does not say which programme caused the change.",
+    "narrativeHi": "विश्व बैंक के आंकड़े, जो WHO/UNICEF संयुक्त निगरानी कार्यक्रम से लिए गए हैं, बताते हैं कि 2024 में भारत की 62.79% आबादी सुरक्षित रूप से प्रबंधित स्वच्छता सेवाओं का उपयोग कर रही थी, जो 2015 के 42.48% से लगभग 20 अंक ऊपर है। 'सुरक्षित रूप से प्रबंधित' जान-बूझकर सख़्त मानक है: ऐसा उन्नत शौचालय जो अन्य परिवारों के साथ साझा न हो और जिसका मल-अपशिष्ट सुरक्षित रूप से रोका, निकाला और उपचारित या सुरक्षित तरीके से निपटाया जाए। भारत मेक्सिको (62.75%) के बराबर है और ब्राज़ील (54.96%), वियतनाम (45.37%), बांग्लादेश (37.32%) और थाईलैंड (26.72%) से आगे, पर चीन (68.89%) और दक्षिण अफ़्रीका (73.78%) से पीछे, और जर्मनी (96.77%) व अमेरिका (97.01%) से बहुत दूर। इंडोनेशिया और पाकिस्तान को शामिल नहीं किया गया क्योंकि श्रृंखला में उनके मान नहीं हैं। 2015 से चीन की बढ़त करीब 19 अंक रही, जो भारत के लगभग बराबर है; ब्राज़ील की करीब 8। सूक्ष्म स्तर पर: बाकी 37% भारतीयों के पास ऐसी शौचालय प्रणाली नहीं है जिसका अपशिष्ट शुरू से अंत तक सुरक्षित संभाला जाए, जो पीने के पानी के प्रदूषण और बीमारियों, खासकर छोटे बच्चों के लिए, मायने रखता है। व्यापक स्तर पर: सुधार की रफ़्तार इस समूह में तेज़ों में है, पर पूर्वी एशिया और अमीर अर्थव्यवस्थाओं से दूरी अब भी बड़ी है। पढ़ने का नोट: इस साइट की स्वच्छ भारत प्रविष्टि शौचालय की पहुँच और 2019 में ग्रामीण खुले में शौच से मुक्त घोषणा बताती है, जो 'सुरक्षित रूप से प्रबंधित' से नीचा मानक है। दोनों एक-दूसरे का खंडन नहीं करते। यहाँ कम अंक का मतलब कम शौचालय नहीं है, और यह संकेतक नहीं बताता कि बदलाव किस कार्यक्रम से आया।",
+    "countries": [
+      {
+        "countryNameHi": "थाईलैंड",
+        "countryNameEn": "Thailand",
+        "valueHi": "26.72%",
+        "valueEn": "26.72%",
+        "valueNumeric": 26.72,
+        "isIndia": false,
+        "sortOrder": 0
+      },
+      {
+        "countryNameHi": "बांग्लादेश",
+        "countryNameEn": "Bangladesh",
+        "valueHi": "37.32%",
+        "valueEn": "37.32%",
+        "valueNumeric": 37.32,
+        "isIndia": false,
+        "sortOrder": 1
+      },
+      {
+        "countryNameHi": "वियतनाम",
+        "countryNameEn": "Vietnam",
+        "valueHi": "45.37%",
+        "valueEn": "45.37%",
+        "valueNumeric": 45.37,
+        "isIndia": false,
+        "sortOrder": 2
+      },
+      {
+        "countryNameHi": "ब्राज़ील",
+        "countryNameEn": "Brazil",
+        "valueHi": "54.96%",
+        "valueEn": "54.96%",
+        "valueNumeric": 54.96,
+        "isIndia": false,
+        "sortOrder": 3
+      },
+      {
+        "countryNameHi": "मेक्सिको",
+        "countryNameEn": "Mexico",
+        "valueHi": "62.75%",
+        "valueEn": "62.75%",
+        "valueNumeric": 62.75,
+        "isIndia": false,
+        "sortOrder": 4
+      },
+      {
+        "countryNameHi": "भारत",
+        "countryNameEn": "India",
+        "valueHi": "62.79%",
+        "valueEn": "62.79%",
+        "valueNumeric": 62.79,
+        "isIndia": true,
+        "sortOrder": 5
+      },
+      {
+        "countryNameHi": "चीन",
+        "countryNameEn": "China",
+        "valueHi": "68.89%",
+        "valueEn": "68.89%",
+        "valueNumeric": 68.89,
+        "isIndia": false,
+        "sortOrder": 6
+      },
+      {
+        "countryNameHi": "दक्षिण अफ़्रीका",
+        "countryNameEn": "South Africa",
+        "valueHi": "73.78%",
+        "valueEn": "73.78%",
+        "valueNumeric": 73.78,
+        "isIndia": false,
+        "sortOrder": 7
+      },
+      {
+        "countryNameHi": "जर्मनी",
+        "countryNameEn": "Germany",
+        "valueHi": "96.77%",
+        "valueEn": "96.77%",
+        "valueNumeric": 96.77,
+        "isIndia": false,
+        "sortOrder": 8
+      },
+      {
+        "countryNameHi": "अमेरिका",
+        "countryNameEn": "United States",
+        "valueHi": "97.01%",
+        "valueEn": "97.01%",
+        "valueNumeric": 97.01,
+        "isIndia": false,
+        "sortOrder": 9
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS",
+        "publisher": "World Bank",
+        "title": "People using safely managed sanitation services (% of population) (World Development Indicators)",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      },
+      {
+        "url": "https://washdata.org",
+        "publisher": "WHO/UNICEF Joint Monitoring Programme for Water Supply, Sanitation and Hygiene (JMP)",
+        "title": "JMP — household data on drinking water, sanitation and hygiene",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "slug": "net-fdi-inflows-share-of-gdp-2023-2025-average-india-vs-peers",
+    "categorySlug": "economy-infra-digital",
+    "relatedEntrySlug": "fdi-record-inflows-net-fdi-decline",
+    "titleEn": "Foreign Investment: India's Net FDI Inflows Averaged 0.85% of GDP in 2023–2025, Half the 2014 Level and Below Vietnam, Brazil, Thailand and Indonesia",
+    "titleHi": "विदेशी निवेश: 2023–2025 में भारत का शुद्ध FDI प्रवाह औसतन जीडीपी का 0.85% रहा, 2014 के स्तर का लगभग आधा और वियतनाम, ब्राज़ील, थाईलैंड व इंडोनेशिया से कम",
+    "metricLabelEn": "Net FDI inflows, average of 2023–2025 (share of GDP; site-derived 3-year mean of World Bank annual values)",
+    "metricLabelHi": "शुद्ध FDI प्रवाह, 2023–2025 का औसत (जीडीपी का हिस्सा; विश्व बैंक के वार्षिक मानों का साइट द्वारा निकाला 3-वर्षीय औसत)",
+    "unitEn": "% of GDP",
+    "unitHi": "% जीडीपी",
+    "narrativeEn": "Net foreign direct investment inflows are what is left after foreign investors' withdrawals and sales are subtracted from new investment coming in. Averaging three years smooths the swings in single-year values; this site computed the average from the World Bank's annual figures. For 2023–2025, India averaged 0.85% of GDP, against Vietnam 4.26%, Brazil 3.22%, Thailand 2.64%, Germany 1.74%, Indonesia 1.63% and the United States undefined% (all above India), and Pakistan 0.59%, Bangladesh 0.34% and China 0.31% (below India). India's own single-year values were 1.70% in 2014, 0.80% in 2023, 0.72% in 2024 and 1.03% in 2025. China's fall is far steeper, from 2.51% in 2014 to about 0.3%, so the low end of this chart is not only an Indian story. Micro: foreign investment is one of several channels that bring new factories, offices and jobs, but it is a small part of the total investment that creates them, so a household should not read this figure as a measure of local job creation. Macro: it shows how much net foreign capital the economy is attracting relative to its size, and it is lower than at the start of the decade for India and several peers. Reading note: this site's FDI entry reports record gross inflows but a sharp fall in net FDI. The World Bank series here is the net measure, so the two point the same way. Net figures also fall when foreign firms repatriate profits, sell stakes or when Indian firms invest abroad, so a lower number is not by itself a verdict on the investment climate.",
+    "narrativeHi": "शुद्ध प्रत्यक्ष विदेशी निवेश (FDI) प्रवाह वह है जो नए आते निवेश में से विदेशी निवेशकों की निकासी और बिक्री घटाने के बाद बचता है। तीन साल का औसत लेने से एक साल के उतार-चढ़ाव कम होते हैं; यह औसत इस साइट ने विश्व बैंक के वार्षिक आंकड़ों से निकाला है। 2023–2025 में भारत का औसत जीडीपी का 0.85% रहा, जबकि वियतनाम 4.26%, ब्राज़ील 3.22%, थाईलैंड 2.64%, जर्मनी 1.74%, इंडोनेशिया 1.63% और अमेरिका undefined% (सभी भारत से ऊपर), तथा पाकिस्तान 0.59%, बांग्लादेश 0.34% और चीन 0.31% (भारत से नीचे) रहे। भारत के अपने एकल-वर्ष मान 2014 में 1.70%, 2023 में 0.80%, 2024 में 0.72% और 2025 में 1.03% थे। चीन की गिरावट कहीं तीखी है, 2014 के 2.51% से करीब 0.3% तक, इसलिए इस चार्ट का निचला सिरा सिर्फ़ भारत की कहानी नहीं है। सूक्ष्म स्तर पर: विदेशी निवेश नई फ़ैक्टरियों, दफ़्तरों और नौकरियों के कई रास्तों में से एक है, पर उन्हें बनाने वाले कुल निवेश का छोटा हिस्सा है, इसलिए परिवार को इस आंकड़े को स्थानीय रोज़गार सृजन का माप नहीं मानना चाहिए। व्यापक स्तर पर: यह दिखाता है कि अर्थव्यवस्था अपने आकार के मुकाबले कितनी शुद्ध विदेशी पूँजी खींच रही है, और भारत व कई साथी देशों के लिए यह दशक की शुरुआत से कम है। पढ़ने का नोट: इस साइट की FDI प्रविष्टि रिकॉर्ड सकल प्रवाह पर शुद्ध FDI में तेज़ गिरावट बताती है। यहाँ विश्व बैंक की श्रृंखला शुद्ध माप है, इसलिए दोनों एक ही दिशा में इशारा करते हैं। शुद्ध आंकड़े तब भी गिरते हैं जब विदेशी कंपनियाँ मुनाफ़ा बाहर भेजती हैं, हिस्सेदारी बेचती हैं या भारतीय कंपनियाँ विदेश में निवेश करती हैं, इसलिए कम संख्या अपने आप में निवेश माहौल पर फ़ैसला नहीं है।",
+    "countries": [
+      {
+        "countryNameHi": "चीन",
+        "countryNameEn": "China",
+        "valueHi": "0.31%",
+        "valueEn": "0.31%",
+        "valueNumeric": 0.31,
+        "isIndia": false,
+        "sortOrder": 0
+      },
+      {
+        "countryNameHi": "बांग्लादेश",
+        "countryNameEn": "Bangladesh",
+        "valueHi": "0.34%",
+        "valueEn": "0.34%",
+        "valueNumeric": 0.34,
+        "isIndia": false,
+        "sortOrder": 1
+      },
+      {
+        "countryNameHi": "पाकिस्तान",
+        "countryNameEn": "Pakistan",
+        "valueHi": "0.59%",
+        "valueEn": "0.59%",
+        "valueNumeric": 0.59,
+        "isIndia": false,
+        "sortOrder": 2
+      },
+      {
+        "countryNameHi": "भारत",
+        "countryNameEn": "India",
+        "valueHi": "0.85%",
+        "valueEn": "0.85%",
+        "valueNumeric": 0.85,
+        "isIndia": true,
+        "sortOrder": 3
+      },
+      {
+        "countryNameHi": "अमेरिका",
+        "countryNameEn": "United States",
+        "valueHi": "1.03%",
+        "valueEn": "1.03%",
+        "valueNumeric": 1.03,
+        "isIndia": false,
+        "sortOrder": 4
+      },
+      {
+        "countryNameHi": "इंडोनेशिया",
+        "countryNameEn": "Indonesia",
+        "valueHi": "1.63%",
+        "valueEn": "1.63%",
+        "valueNumeric": 1.63,
+        "isIndia": false,
+        "sortOrder": 5
+      },
+      {
+        "countryNameHi": "जर्मनी",
+        "countryNameEn": "Germany",
+        "valueHi": "1.74%",
+        "valueEn": "1.74%",
+        "valueNumeric": 1.74,
+        "isIndia": false,
+        "sortOrder": 6
+      },
+      {
+        "countryNameHi": "थाईलैंड",
+        "countryNameEn": "Thailand",
+        "valueHi": "2.64%",
+        "valueEn": "2.64%",
+        "valueNumeric": 2.64,
+        "isIndia": false,
+        "sortOrder": 7
+      },
+      {
+        "countryNameHi": "ब्राज़ील",
+        "countryNameEn": "Brazil",
+        "valueHi": "3.22%",
+        "valueEn": "3.22%",
+        "valueNumeric": 3.22,
+        "isIndia": false,
+        "sortOrder": 8
+      },
+      {
+        "countryNameHi": "वियतनाम",
+        "countryNameEn": "Vietnam",
+        "valueHi": "4.26%",
+        "valueEn": "4.26%",
+        "valueNumeric": 4.26,
+        "isIndia": false,
+        "sortOrder": 9
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://data.worldbank.org/indicator/BX.KLT.DINV.WD.GD.ZS",
+        "publisher": "World Bank",
+        "title": "Foreign direct investment, net inflows (% of GDP) (World Development Indicators)",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      }
+    ]
+  }
+]
