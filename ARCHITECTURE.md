@@ -52,3 +52,6 @@ the simpler fix is ISR + `notFound()` caching.
 - `GET /api/comments` is not rate-limited (read-only, one indexed query per page view); comment/flag/feedback writes are (T-3). Comment text is no longer in the server HTML, so search engines will not index comments.
 - No real-user performance monitoring beyond Vercel Analytics (T-6).
 - No automated tests beyond lint/tsc/build (T-5).
+
+## Real-user performance (added 2026-10-18)
+`<SpeedInsights />` (`@vercel/speed-insights`) in the root locale layout reports real-user Core Web Vitals to Vercel, next to `<Analytics />`. It must also be enabled in the Vercel project dashboard. Lab numbers (Lighthouse) are not a substitute: the entry and editorial pages are ISR-cached, so field data is the check that the caching works for real visitors.

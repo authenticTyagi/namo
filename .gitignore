@@ -50,3 +50,4 @@ scripts/video/music/
 scripts/video/batch.log
 scripts/video/out_*/
 scripts/video/specs/
+scripts/video/specs_voice/

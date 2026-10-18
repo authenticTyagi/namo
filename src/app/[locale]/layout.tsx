@@ -9,6 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ThemeInit } from "@/components/layout/ThemeInit";
 import { ConsentBanner } from "@/components/ConsentBanner";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL } from "@/lib/constants";
 import "../globals.css";
 
@@ -116,6 +117,7 @@ export default async function LocaleLayout({
           <ConsentBanner />
         </NextIntlClientProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

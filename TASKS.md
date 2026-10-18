@@ -12,7 +12,7 @@ _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJE
 - [x] **T-3** Rate limit comment/feedback/search endpoints.
 - [x] **T-4** Cache-Control / security headers (CSP, HSTS, Referrer-Policy) in `next.config.ts`.
 - [x] **T-5** Tests: `npm test` (Node built-in runner via tsx, no new dependency; runs in CI). Done 2026-10-18, 36 tests: sourcing bar + confidence, locale fallback, pipeline auth, seed change-detection/reset rule (`src/lib/review-status.ts`, shared by both seed scripts), and source-level contract tests that the admin edit actions still reset to `pending_review` and approve/reject still guard on it. **Gap, not fixed:** `seed-comparisons.ts` only compares a comparison's text fields, so a seed run that changes only a country value or a source would not reset a published comparison to review. Admin edit actions need a DB to test for real (contract tests only check the line is present).
-- [ ] **T-6** Real-user Core Web Vitals reporting.
+- [x] **T-6** Done 2026-10-18: `<SpeedInsights />` added (`@vercel/speed-insights@2.0.0`). **Owner step:** enable Speed Insights in the Vercel project, then read real-user LCP/INP/CLS there after a few days of traffic.
 
 ## Content backlog (see PROJECT_LOG.md for context)
 - [x] The 2026-10-01 shortlist is exhausted: metro rail and Namami Gange (both published) were the last two, both 2026-10-18. Follow-up for Namami Gange: if the Lok Sabha reply or a PIB release and the CAG Uttarakhand report can be reached, replace the press-report sources with them and raise confidence.
@@ -25,7 +25,7 @@ _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJE
   6. ~~**Bank asset quality** (economy)~~ **Drafted 2026-10-18**, pending review (see T-0). Follow-ups: RBI's own FSR/Trend and Progress tables are behind a bot check (open them in a browser and supply the text, or the figures stay press/PIB-sourced); public cost of PSB recapitalisation is not quantified anywhere I could read.
   7. Unchecked ideas: Mudra loans, Lakhpati Didi, PM-KUSUM/fertiliser subsidy, Commonwealth Games 2030 / Olympic 2036 bid (sports), ABDM digital health.
 - [ ] India vs the World (30 comparisons, all published, as of 2026-10-18): remaining ideas are adult literacy, physicians/beds per 1,000 (India's latest value is 2020, stale), exports % GDP, researchers per million (India 2020, sparse peer data). Agent `comparisons` mode built 2026-10-18 (manual workflow only; needs the repo secrets to run).
-- [ ] Locale coverage for bn/te/mr translations.
+- [ ] Locale coverage for bn/te/mr translations. Audited 2026-10-18: UI strings complete; content translations 0 (entries 105, stats, category names). `entry_translations` has no status column, so rows would publish immediately. Options: (a) add a `status` (default pending_review) to the translation tables, make readers filter on published, and draft a small gated pilot; (b) translate only the 13 category names and descriptions; (c) wait for human translators. Needs the owner's choice.
 - [ ] Freshness re-verification of old published entries (detection exists; re-drafting not built).
 
 ## Decided: not doing

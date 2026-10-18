@@ -160,6 +160,21 @@ def _init():
     _page = _browser.new_page(viewport={"width": W, "height": H})
 
 
+PIPER_MODELS = {"en": "en_GB-jenny_dioco-medium", "hi": "hi_IN-priyamvada-medium"}
+_voices = {}
+
+
+def piper_wav(text, locale, out_wav, model=None):
+    """Synthesise one scene's narration with a local Piper voice (models in scripts/video/models)."""
+    import wave
+    from piper import PiperVoice
+    name = model or PIPER_MODELS[locale]
+    if name not in _voices:
+        _voices[name] = PiperVoice.load(str(HERE / "models" / f"{name}.onnx"))
+    with wave.open(str(out_wav), "wb") as wf:
+        _voices[name].synthesize_wav(text, wf)
+
+
 def duration_of(path):
     r = subprocess.run([FFMPEG, "-i", str(path)], capture_output=True, text=True)
     m = re.search(r"Duration: (\d+):(\d+):([\d.]+)", r.stderr)
@@ -167,7 +182,7 @@ def duration_of(path):
 
 
 def render_one(args):
-    spec_path, out_dir, music = args
+    spec_path, out_dir, music, voice = args
     t0 = time.time()
     spec = json.loads(Path(spec_path).read_text(encoding="utf-8"))
     out = Path(out_dir)
@@ -178,8 +193,19 @@ def render_one(args):
     work.mkdir(parents=True)
     try:
         segs = []
+        durs, narr = [], []
         for i, sc in enumerate(spec["scenes"]):
             d = scene_dur(sc)
+            if voice == "piper" and sc.get("narration"):
+                wav = work / f"n{i}.wav"
+                piper_wav(sc["narration"], spec["locale"], wav, spec.get("piper_model"))
+                d = max(d, duration_of(wav) + 0.5)
+                narr.append((wav, d))
+            elif voice == "piper":
+                narr.append((None, d))
+            durs.append(d)
+        for i, sc in enumerate(spec["scenes"]):
+            d = durs[i]
             steps = [(0.45, 0.09), (0.8, 0.09), (1.0, None)]
             for j, (p, hold) in enumerate(steps):
                 _page.set_content(scene_html(sc, spec, p))
@@ -193,7 +219,24 @@ def render_one(args):
             f.write(f"file '{segs[-1][0].resolve().as_posix()}'\n")
         total = sum(d for _, d in segs)
         cmd = [FFMPEG, "-y", "-f", "concat", "-safe", "0", "-i", str(lst)]
-        if music != "none":
+        if voice == "piper":
+            nin, nfilt = [], []
+            for k, (wav, d) in enumerate(narr):
+                if wav is None:
+                    nin += ["-f", "lavfi", "-t", f"{d:.3f}", "-i", "anullsrc=r=22050:cl=mono"]
+                    nfilt.append(f"[{k + 1}:a]aformat=sample_rates=22050:channel_layouts=mono[a{k}]")
+                else:
+                    nin += ["-i", str(wav)]
+                    nfilt.append(f"[{k + 1}:a]apad=whole_dur={d:.3f},aformat=sample_rates=22050:channel_layouts=mono[a{k}]")
+            ncat = "".join(f"[a{k}]" for k in range(len(narr))) + f"concat=n={len(narr)}:v=0:a=1,loudnorm=I=-16:TP=-1.5:LRA=11[v]"
+            mus_idx = len(narr) + 1
+            track = spec.get("music") or TRACKS[int(hashlib.md5(spec["id"].encode()).hexdigest(), 16) % len(TRACKS)]
+            fc = ";".join(nfilt + [ncat,
+                 f"[{mus_idx}:a]atrim=0:{total:.2f},volume=0.16[m]",
+                 f"[v][m]amix=inputs=2:duration=first:normalize=0,aresample=44100,afade=t=out:st={max(total - 1.2, 0):.2f}:d=1.2[a]"])
+            cmd += nin + ["-i", str(HERE / "music" / f"{track}.wav"), "-filter_complex", fc,
+                          "-map", "0:v", "-map", "[a]", "-c:a", "aac", "-b:a", "160k"]
+        elif music != "none":
             track = spec.get("music") or TRACKS[int(hashlib.md5(spec["id"].encode()).hexdigest(), 16) % len(TRACKS)]
             cmd += ["-i", str(HERE / "music" / f"{track}.wav"),
                     "-filter_complex", f"[1:a]atrim=0:{total:.2f},afade=t=out:st={max(total - 1.6, 0):.2f}:d=1.6,volume=0.9[a]",
@@ -216,6 +259,7 @@ def main():
     ap.add_argument("--out", default="scripts/video/out")
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--music", default="auto", help="auto | none")
+    ap.add_argument("--voice", default="none", help="none | piper (local voice-over from each scene's narration field)")
     ap.add_argument("--skip-existing", action="store_true")
     a = ap.parse_args()
     paths = []
@@ -224,7 +268,7 @@ def main():
     if a.skip_existing:
         paths = [p for p in paths if not (Path(a.out) / f"{p.stem}.mp4").exists()]
     print(f"{len(paths)} specs, {a.workers} workers", flush=True)
-    jobs = [(str(p), a.out, a.music) for p in paths]
+    jobs = [(str(p), a.out, a.music, a.voice) for p in paths]
     ok = bad = 0
     t = time.time()
     with Pool(a.workers, initializer=_init) as pool:
