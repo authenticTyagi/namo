@@ -47,3 +47,4 @@ _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJE
 - [ ] Deepen bn/te/mr translations
 
 - [ ] Review new Gen Z entries + editorials in admin queue: online-gaming, pmis, tele-manas (low confidence: official replies unread). Then reels. Open: DPDP children's-data rules (need official text), CBSE two-exam rules.
+- [ ] Review PM-VBRY and cyber-fraud entries + editorials in admin queue (PM-VBRY confidence is 0.15; consider holding until an official page is read).
