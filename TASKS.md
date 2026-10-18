@@ -48,3 +48,4 @@ _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJE
 
 - [ ] Review new Gen Z entries + editorials in admin queue: online-gaming, pmis, tele-manas (low confidence: official replies unread). Then reels. Open: DPDP children's-data rules (need official text), CBSE two-exam rules.
 - [ ] Review PM-VBRY and cyber-fraud entries + editorials in admin queue (PM-VBRY confidence is 0.15; consider holding until an official page is read).
+- [ ] Review students-abroad (0.15), gig-workers (0.75), housing (0.90) entries + editorials. Gen Z batches 1-3 now total 11 entries + 11 editorials awaiting review (plus tax).
