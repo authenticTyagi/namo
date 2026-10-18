@@ -4,6 +4,9 @@ import { Link } from "@/i18n/navigation";
 import { getPublishedEditorialBySlug } from "@/db/queries/editorials";
 import { ToneBadge } from "@/components/editorial/ToneBadge";
 import { CommentSection } from "@/components/comments/CommentSection";
+import { SignInToComment } from "@/components/comments/SignInToComment";
+import { getSitemapData } from "@/db/queries/sitemap";
+import { routing } from "@/i18n/routing";
 import { ReadAloud } from "@/components/ReadAloud";
 import { ShareButtons } from "@/components/entry/ShareButtons";
 import { AdSlot } from "@/components/AdSlot";
@@ -14,6 +17,19 @@ import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 
 type Params = { locale: Locale; editorialSlug: string };
+
+// ISR: cached for an hour; admin actions call revalidatePath("/[locale]", "layout") so
+// publish/unpublish still shows up immediately. Comments and the session are fetched
+// client-side from /api/comments, which is what keeps this page cacheable.
+export const revalidate = 3600;
+
+// Pre-render every published editorial/locale at build; unknown slugs still render on demand.
+export async function generateStaticParams() {
+  const { editorialSlugs } = await getSitemapData();
+  return routing.locales.flatMap((locale) =>
+    editorialSlugs.map((e) => ({ locale, editorialSlug: e.slug })),
+  );
+}
 
 export async function generateMetadata({
   params,
@@ -116,10 +132,10 @@ export default async function EditorialPage({
 
       <div data-no-read>
         <CommentSection
-        target={{ editorialId: editorial.id }}
-        locale={locale}
-        returnTo={editorialUrl}
-      />
+          target={{ editorialId: editorial.id }}
+          locale={locale}
+          signIn={<SignInToComment returnTo={editorialUrl} />}
+        />
       </div>
     </article>
   );

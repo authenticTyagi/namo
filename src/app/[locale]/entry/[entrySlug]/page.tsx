@@ -5,6 +5,9 @@ import { getPublishedEntryBySlug } from "@/db/queries/entries";
 import { getPublishedEditorialsForEntry } from "@/db/queries/editorials";
 import { getPublishedComparisonsForEntry } from "@/db/queries/comparisons";
 import { CommentSection } from "@/components/comments/CommentSection";
+import { SignInToComment } from "@/components/comments/SignInToComment";
+import { getSitemapData } from "@/db/queries/sitemap";
+import { routing } from "@/i18n/routing";
 import { ImpactBadge } from "@/components/entry/ImpactBadge";
 import { Timeline } from "@/components/entry/Timeline";
 import { EntryStatsSection } from "@/components/entry/EntryStatsSection";
@@ -21,6 +24,19 @@ import type { Locale } from "@/i18n/routing";
 import type { Metadata } from "next";
 
 type Params = { locale: Locale; entrySlug: string };
+
+// ISR: cached for an hour; admin actions call revalidatePath("/[locale]", "layout") so
+// publish/unpublish still shows up immediately. Comments and the session are fetched
+// client-side from /api/comments, which is what keeps this page cacheable.
+export const revalidate = 3600;
+
+// Pre-render every published entry/locale at build; unknown slugs still render on demand.
+export async function generateStaticParams() {
+  const { entrySlugs } = await getSitemapData();
+  return routing.locales.flatMap((locale) =>
+    entrySlugs.map((e) => ({ locale, entrySlug: e.slug })),
+  );
+}
 
 export async function generateMetadata({
   params,
@@ -223,10 +239,10 @@ export default async function EntryPage({
 
       <div data-no-read>
         <CommentSection
-        target={{ entryId: entry.id }}
-        locale={locale}
-        returnTo={entryUrl}
-      />
+          target={{ entryId: entry.id }}
+          locale={locale}
+          signIn={<SignInToComment returnTo={entryUrl} />}
+        />
       </div>
     </article>
   );

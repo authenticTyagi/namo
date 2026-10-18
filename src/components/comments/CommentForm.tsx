@@ -5,7 +5,13 @@ import { useTranslations } from "next-intl";
 import { postComment } from "./actions";
 import type { CommentTarget } from "@/db/queries/comments";
 
-export function CommentForm({ target }: { target: CommentTarget }) {
+export function CommentForm({
+  target,
+  onPosted,
+}: {
+  target: CommentTarget;
+  onPosted: () => void | Promise<void>;
+}) {
   const t = useTranslations("comments");
   const [value, setValue] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -21,6 +27,7 @@ export function CommentForm({ target }: { target: CommentTarget }) {
           try {
             await postComment(target, body);
             setValue("");
+            await onPosted();
           } catch (err) {
             setError(err instanceof Error ? err.message : t("error"));
           }

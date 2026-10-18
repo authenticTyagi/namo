@@ -35,7 +35,7 @@ Editing published content resets it to `pending_review`. No auto-publish path ex
 | Concern | State |
 |---|---|
 | Compression | `compress: true` is the Next default (gzip when self-hosted). On Vercel the CDN negotiates Brotli/gzip automatically. No app-level zstd. **Verified 2026-10-18** with `curl -H "Accept-Encoding: br, gzip, zstd" -I`: `/en` and `/en/india-in-the-world` both return `Content-Encoding: br` (the edge picks Brotli, not zstd); the comparisons index was an `X-Vercel-Cache: HIT`. |
-| Caching | Home, list and info pages are SSG. Category and comparison detail pages are SSG + ISR (`revalidate = 3600`, `generateStaticParams` from `getSitemapData`); verified `x-nextjs-cache: HIT`. Admin actions call `revalidatePath("/[locale]", "layout")`, so publish/unpublish shows immediately. **Entry and editorial detail pages are still per-request** because `CommentSection` calls `auth()` (cookies) — see TASKS.md T-1b. |
+| Caching | Home, list and info pages are SSG. Category, comparison, **entry and editorial** detail pages are SSG + ISR (`revalidate = 3600`, `generateStaticParams` from `getSitemapData`); verified `x-nextjs-cache: HIT` locally (entry/editorial: 2026-10-18, not yet verified on Vercel). Admin actions call `revalidatePath("/[locale]", "layout")`, so publish/unpublish shows immediately. Comments and the session are **not** in the cached HTML: `CommentSection` is a client island that fetches `GET /api/comments` (per-viewer, `private, no-store`, the only place `auth()` runs for comments). `postComment`/`reportComment` therefore do not revalidate anything (doing so would purge every cached page). |
 | Bloom filter | Not used. See "Bloom filter" below. |
 | Search | Postgres query over all content types, all-words match, ranked, noindex (`src/db/queries/search.ts`). |
 | Images/OG | `next/og` ImageResponse for icons and opengraph. |
@@ -49,6 +49,6 @@ complexity for no measurable gain. **Not adopted.** Revisit only if slug-404 tra
 the simpler fix is ISR + `notFound()` caching.
 
 ## Known gaps
-- Entry/editorial detail pages not cached (T-1b). No rate limiting on comment/feedback/search endpoints (T-3).
+- `GET /api/comments` is not rate-limited (read-only, one indexed query per page view); comment/flag/feedback writes are (T-3). Comment text is no longer in the server HTML, so search engines will not index comments.
 - No real-user performance monitoring beyond Vercel Analytics (T-6).
 - No automated tests beyond lint/tsc/build (T-5).
