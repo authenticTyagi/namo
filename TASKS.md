@@ -3,7 +3,7 @@
 _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJECT_LOG.md with a date._
 
 ## Now
-- [ ] **T-0** Owner: (1) open /admin/translations and, with a native reader, approve or reject the 18 bn/te/mr drafts of 6 entries; (2) in Vercel, enable Speed Insights for the project (T-6); (3) watch a few reels from `scripts/video/out/` and post from `posting-plan-*.csv`. Everything else is shipped (2026-10-18).
+- [ ] **T-0** Owner: (1) open /admin/translations and, with a native reader, approve or reject the 18 bn/te/mr drafts of 6 entries; (2) in Vercel, enable Speed Insights for the project (T-6); (3) watch a few reels from `scripts/video/out/` and post from `posting-plan-*.csv`. (4) review the new PLFS entry and editorial in the admin queue. Everything else is shipped (2026-10-18).
 
 ## Next (performance and architecture, from the 2026-10-10 audit)
 - [x] **T-1** Category and comparison detail pages: SSG + ISR (2026-10-10).
@@ -21,7 +21,7 @@ _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJE
   2. **MGNREGA replaced by VB-G RAM G** (welfare): in force from 1 Jul 2026 (125 days, wages 100% central, other costs 60:40). Contested; early wage-delay reports from one district only; sources so far are news and opinion. Needs the Act text/PIB and a both-sides treatment (RULES #5).
   3. ~~**PMGKAY free grain** (welfare)~~ **Drafted 2026-10-18**, pending review. Original note: 81.35 crore beneficiaries, ₹11.80 lakh crore over 5 years from Jan 2024 (Cabinet decision, official). Need current-year data and leakage/beneficiary-list evidence for the honest counterweight.
   4. ~~**Anaemia**~~ **Drafted 2026-10-18**, pending review (NFHS-6 fact sheet dropped anaemia; if the owner can supply the official NFHS-5 fact sheet text, confidence can rise). Original note: not yet searched; check whether a newer NFHS exists.
-  5. **PLFS annual report 2025** (MoSPI press note found): unemployment 3.1%, female LFPR 40.0%, urban female unemployment 6.4%, youth 9.9%. Overlaps the existing female-LFPR entry; some secondary sites misquote figures, use the MoSPI note only.
+  5. ~~**PLFS annual report 2025**~~ **Drafted 2026-10-18**, pending review; original note (MoSPI press note found): unemployment 3.1%, female LFPR 40.0%, urban female unemployment 6.4%, youth 9.9%. Overlaps the existing female-LFPR entry; some secondary sites misquote figures, use the MoSPI note only.
   6. ~~**Bank asset quality** (economy)~~ **Drafted 2026-10-18**, pending review (see T-0). Follow-ups: RBI's own FSR/Trend and Progress tables are behind a bot check (open them in a browser and supply the text, or the figures stay press/PIB-sourced); public cost of PSB recapitalisation is not quantified anywhere I could read.
   7. Unchecked ideas: Mudra loans, Lakhpati Didi, PM-KUSUM/fertiliser subsidy, Commonwealth Games 2030 / Olympic 2036 bid (sports), ABDM digital health.
 - [ ] India vs the World (30 comparisons, all published, as of 2026-10-18): remaining ideas are adult literacy, physicians/beds per 1,000 (India's latest value is 2020, stale), exports % GDP, researchers per million (India 2020, sparse peer data). Agent `comparisons` mode built 2026-10-18 (manual workflow only; needs the repo secrets to run).
