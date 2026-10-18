@@ -41,6 +41,6 @@ _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJE
 - [ ] Topic hub pages with FAQ schema (JSON-LD)
 - [ ] Embeddable comparison charts with credit link
 - [ ] Printable fact-sheet PDFs
-- [~] Short-video series (one sourced fact each) linking back. **Renderer and 5 English pilots built 2026-10-18** (`scripts/video/`, see PROJECT_LOG): next is the owner's verdict on the look, a Hindi voice decision, then scripts in batches of 20-30 for approval. Owner asked 2026-10-18 (inspired by gullykidukaan.com/videos). Plan: pilot of 5 videos of about 45 seconds (110-120 words) from already-published pages only; scripts go to the owner for approval, no auto-posting; build a render script (TTS or human voice-over, captions, chart from site data, ffmpeg); Hindi and English first; vertical 9:16
+- [~] Short-video series: **480 text-on-music reels rendered 2026-10-18** (`scripts/video/`, see PROJECT_LOG). Owner to: watch a sample, have a native reader check the Hindi hooks, choose which to post (INDEX.csv + posting-plan CSVs in `scripts/video/out/`). Open: voiced variant (Piper models downloaded, owner must judge a sample), re-run `export-content.mjs` + `build_specs.py` + `reel.py --skip-existing` whenever new pages are published.
 - [ ] Pre-generated TTS audio at approval time (only if read-aloud is used)
 - [ ] Deepen bn/te/mr translations

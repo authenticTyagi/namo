@@ -1,2 +1,4 @@
 imageio-ffmpeg
-edge-tts   # optional; unofficial endpoint, was rejected (403) from the owner's machine on 2026-10-18
+edge-tts   # optional, unofficial endpoint (HTTP 403 from the owner machine on 2026-10-18)
+playwright  # fast screenshots via installed Edge (channel msedge)
+piper-tts   # optional local voices (models in scripts/video/models, not in git)

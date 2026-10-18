@@ -44,3 +44,9 @@ next-env.d.ts
 # rendered videos and recorded audio
 scripts/video/out/
 scripts/video/audio/
+scripts/video/models/
+scripts/video/data/
+scripts/video/music/
+scripts/video/batch.log
+scripts/video/out_*/
+scripts/video/specs/
