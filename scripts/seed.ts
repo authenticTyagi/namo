@@ -12,6 +12,8 @@
  */
 import { config } from "dotenv";
 
+import { entryContentChanged, shouldResetToPendingReview } from "../src/lib/review-status";
+
 config({ path: ".env.local" });
 
 /** Joins a quickTake + bodySections into the legacy plain-text body field. */
@@ -143,21 +145,19 @@ async function main() {
         .where(eq(entries.slug, entryInput.slug))
         .limit(1);
 
-      const contentChanged =
-        !!existing &&
-        (existing.titleHi !== entryInput.titleHi ||
-          existing.titleEn !== entryInput.titleEn ||
-          existing.summaryHi !== entryInput.summaryHi ||
-          existing.summaryEn !== entryInput.summaryEn ||
-          existing.bodyHi !== bodyHi ||
-          existing.bodyEn !== bodyEn ||
-          existing.impactType !== entryInput.impactType ||
-          existing.timelineStartDate?.getTime() !==
-            new Date(entryInput.timelineStartDate).getTime() ||
-          existing.timelineEndDate?.getTime() !==
-            new Date(entryInput.timelineEndDate).getTime());
+      const contentChanged = entryContentChanged(existing, {
+        titleHi: entryInput.titleHi,
+        titleEn: entryInput.titleEn,
+        summaryHi: entryInput.summaryHi,
+        summaryEn: entryInput.summaryEn,
+        bodyHi,
+        bodyEn,
+        impactType: entryInput.impactType,
+        timelineStartDate: entryInput.timelineStartDate,
+        timelineEndDate: entryInput.timelineEndDate,
+      });
 
-      const shouldResetStatus = existing?.status === "published" && contentChanged;
+      const shouldResetStatus = shouldResetToPendingReview(existing?.status, contentChanged);
       if (shouldResetStatus) {
         console.log(
           `  -> ${entryInput.slug} was published and content changed; resetting to pending_review`,

@@ -18,6 +18,7 @@
 import { config } from "dotenv";
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
+import { comparisonContentChanged, shouldResetToPendingReview } from "../src/lib/review-status";
 
 config({ path: ".env.local" });
 
@@ -129,18 +130,9 @@ async function main() {
       .where(eq(comparisons.slug, input.slug))
       .limit(1);
 
-    const contentChanged =
-      !!existing &&
-      (existing.titleHi !== input.titleHi ||
-        existing.titleEn !== input.titleEn ||
-        existing.metricLabelHi !== input.metricLabelHi ||
-        existing.metricLabelEn !== input.metricLabelEn ||
-        existing.unitHi !== (input.unitHi ?? null) ||
-        existing.unitEn !== (input.unitEn ?? null) ||
-        existing.narrativeHi !== input.narrativeHi ||
-        existing.narrativeEn !== input.narrativeEn);
+    const contentChanged = comparisonContentChanged(existing, input);
 
-    const shouldResetStatus = existing?.status === "published" && contentChanged;
+    const shouldResetStatus = shouldResetToPendingReview(existing?.status, contentChanged);
     if (shouldResetStatus) {
       console.log(
         `  -> ${input.slug} was published and content changed; resetting to pending_review`,

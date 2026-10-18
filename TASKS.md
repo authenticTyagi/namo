@@ -11,7 +11,7 @@ _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJE
 - [x] **T-2** Verified 2026-10-18: production serves Brotli (`Content-Encoding: br`); recorded in ARCHITECTURE.md. Do not add app-level compression on Vercel.
 - [x] **T-3** Rate limit comment/feedback/search endpoints.
 - [x] **T-4** Cache-Control / security headers (CSP, HSTS, Referrer-Policy) in `next.config.ts`.
-- [~] **T-5** Tests: `npm test` (Node built-in runner via tsx, no new dependency; runs in CI). Done 2026-10-18: sourcing bar + confidence (`src/lib/sourcing.ts`, extracted from the ingest route), locale fallback, pipeline auth (19 tests). **Still open:** status-reset-on-edit (inside DB-bound server actions in `src/app/admin`; needs the rule extracted into a pure function or a test DB).
+- [x] **T-5** Tests: `npm test` (Node built-in runner via tsx, no new dependency; runs in CI). Done 2026-10-18, 36 tests: sourcing bar + confidence, locale fallback, pipeline auth, seed change-detection/reset rule (`src/lib/review-status.ts`, shared by both seed scripts), and source-level contract tests that the admin edit actions still reset to `pending_review` and approve/reject still guard on it. **Gap, not fixed:** `seed-comparisons.ts` only compares a comparison's text fields, so a seed run that changes only a country value or a source would not reset a published comparison to review. Admin edit actions need a DB to test for real (contract tests only check the line is present).
 - [ ] **T-6** Real-user Core Web Vitals reporting.
 
 ## Content backlog (see PROJECT_LOG.md for context)
