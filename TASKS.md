@@ -3,7 +3,7 @@
 _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJECT_LOG.md with a date._
 
 ## Now
-- [ ] **T-0** Owner review (2026-10-18): free grain / PMGKAY entry `pmgkay-free-grain-81-crore-people-cost-coverage-and-leakage-questions` (0.85) and editorial `free-grain-for-81-crore-a-safety-net-that-needs-updated-numbers`; anaemia entry `anaemia-rose-in-nfhs-5-and-nfhs-6-factsheet-has-no-anaemia-figures` (0.77, no official primary source obtainable) and editorial `anaemia-the-number-that-went-up-and-the-number-that-was-not-published`. All four `pending_review`. TB and bank were reviewed and published (DB: 103 entries published, 2 pending).
+- [ ] **T-0** Owner: (1) open /admin/translations and, with a native reader, approve or reject the 18 bn/te/mr drafts of 6 entries; (2) in Vercel, enable Speed Insights for the project (T-6); (3) watch a few reels from `scripts/video/out/` and post from `posting-plan-*.csv`. Everything else is shipped (2026-10-18).
 
 ## Next (performance and architecture, from the 2026-10-10 audit)
 - [x] **T-1** Category and comparison detail pages: SSG + ISR (2026-10-10).

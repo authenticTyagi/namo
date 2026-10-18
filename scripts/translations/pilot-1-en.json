@@ -1,0 +1,198 @@
+{
+ "upi-worlds-largest-real-time-payments": {
+  "title": "UPI Becomes the World's Largest Real-Time Payments Platform",
+  "summary": "Ten years after its 2016 launch, UPI processed ₹314 lakh crore across 24,161 crore transactions in FY2025-26 alone — India's homegrown digital payments rail is now the world's largest real-time payment system.",
+  "quickTake": "In under a decade, UPI turned a mobile number into a full replacement for cash, cards, and even most bank transfers.",
+  "sections": [
+   {
+    "body": "Launched by NPCI in April 2016, the Unified Payments Interface (UPI) let people send and receive money instantly using just a mobile number or a QR code — no bank details needed.",
+    "heading": "How it works"
+   },
+   {
+    "body": "A decade on, UPI has become the backbone of India's everyday digital economy: FY2025-26 alone saw 24,161.69 crore transactions worth ₹314 lakh crore, transaction volumes growing 32.5% year-on-year. Monthly volumes crossed 2,000 crore transactions for the first time in August 2025, and by May 2026 a single month's value hit a record ₹29.90 lakh crore. In October 2025, monthly transaction value hit a then-record ₹27.28 lakh crore.",
+    "heading": "The scale today"
+   },
+   {
+    "body": "The scale has made UPI, per the government, the world's largest real-time payments platform — used for everything from paying a street vendor to settling large B2B invoices.",
+    "heading": "Why it matters"
+   }
+  ],
+  "stats": [
+   {
+    "stat_key": "upi_annual_value",
+    "metric_label_en": "Annual UPI transaction value",
+    "before_label_en": "Before launch (pre-April 2016)",
+    "before_value_en": "Did not exist",
+    "after_label_en": "FY2025-26",
+    "after_value_en": "₹314 lakh crore/year",
+    "extra_label_en": null,
+    "extra_value_en": null
+   }
+  ]
+ },
+ "jan-dhan-yojana-financial-inclusion": {
+  "title": "Jan Dhan Yojana Brings 56 Crore Indians Into the Banking System",
+  "summary": "Launched in August 2014, PMJDY has opened over 56 crore bank accounts holding ₹2.67 lakh crore in deposits, with over 36 crore accounts in rural and semi-urban India — laying the foundation for direct benefit transfers.",
+  "quickTake": "A financial-inclusion scheme that started at zero in 2014 now holds over ₹2.67 lakh crore across 56+ crore accounts — most of them in rural India.",
+  "sections": [
+   {
+    "body": "The Pradhan Mantri Jan Dhan Yojana (PMJDY), launched in August 2014, set out to give every Indian household access to a bank account. As of mid-2025, over 56 crore accounts have been opened with deposit balances crossing ₹2.67 lakh crore — up from 51.04 crore accounts and ₹2.08 lakh crore in deposits in late 2023.",
+    "heading": "From zero to universal"
+   },
+   {
+    "body": "As of March 2025, 36.63 crore of the 55.02 crore accounts opened till then were in rural and semi-urban areas, extending formal banking to places it had rarely reached before.",
+    "heading": "Reaching rural India"
+   },
+   {
+    "body": "PMJDY accounts are the foundation of the JAM trinity (Jan Dhan-Aadhaar-Mobile), which routes welfare payments directly into beneficiaries' accounts instead of through intermediaries — the same infrastructure behind the Direct Benefit Transfer savings documented separately on this site.",
+    "heading": "The foundation for other reforms"
+   }
+  ],
+  "stats": [
+   {
+    "stat_key": "jandhan_accounts",
+    "metric_label_en": "Bank accounts opened",
+    "before_label_en": "Before launch (pre-Aug 2014)",
+    "before_value_en": "0 (scheme didn't exist)",
+    "after_label_en": "Mid-2025",
+    "after_value_en": "56+ crore accounts",
+    "extra_label_en": null,
+    "extra_value_en": null
+   },
+   {
+    "stat_key": "jandhan_deposits",
+    "metric_label_en": "Total deposits",
+    "before_label_en": "Before launch",
+    "before_value_en": "₹0",
+    "after_label_en": "Mid-2025",
+    "after_value_en": "₹2.67 lakh crore",
+    "extra_label_en": null,
+    "extra_value_en": null
+   }
+  ]
+ },
+ "ayushman-bharat-health-insurance": {
+  "title": "Ayushman Bharat Covers 12 Crore Families With Free Hospital Care",
+  "summary": "Launched in September 2018, Ayushman Bharat PM-JAY now covers 12 crore families with free hospital treatment up to ₹5 lakh a year, and has authorized over 10.98 crore hospital admissions worth ₹1.60 lakh crore since it began.",
+  "quickTake": "Before 2018, a family without insurance risked bankruptcy from one major hospital bill. Now 12 crore families have a government-backed safety net worth ₹5 lakh a year.",
+  "sections": [
+   {
+    "body": "Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (PM-JAY), launched in September 2018, provides free hospital treatment up to ₹5 lakh per family per year to economically vulnerable households. In October 2024, coverage was extended to all senior citizens aged 70 and above through the Ayushman Vay Vandana card, regardless of income.",
+    "heading": "What the scheme covers"
+   },
+   {
+    "body": "As of December 2025, 12 crore families are covered, with 42.48 crore Ayushman Cards issued since the scheme began. Cumulatively, 10.98 crore hospital admissions have been authorized under the scheme, worth ₹1.60 lakh crore in treatment costs.",
+    "heading": "The scale today"
+   },
+   {
+    "body": "Coverage was further expanded in February 2024 to include about 37 lakh ASHA workers, Anganwadi Workers, and Anganwadi Helpers — frontline health workers who previously weren't covered by the scheme themselves.",
+    "heading": "Who it reaches"
+   }
+  ],
+  "stats": [
+   {
+    "stat_key": "ayushman_bharat_coverage",
+    "metric_label_en": "Families covered / hospital admissions authorized",
+    "before_label_en": "Before September 2018",
+    "before_value_en": "Scheme did not exist",
+    "after_label_en": "December 2025",
+    "after_value_en": "12 crore families, 10.98 crore admissions",
+    "extra_label_en": null,
+    "extra_value_en": null
+   }
+  ]
+ },
+ "jal-jeevan-mission-tap-water": {
+  "title": "Rural Tap Water Coverage Jumps From 17% to 81% Under Jal Jeevan Mission",
+  "summary": "When Jal Jeevan Mission launched in August 2019, only 3.23 crore (17%) rural households had a tap water connection. By December 2025, that had risen to over 15.75 crore households — 81.37% of rural India.",
+  "quickTake": "Five out of six rural households had no tap water in 2019. Today, more than four out of five do.",
+  "sections": [
+   {
+    "body": "When Prime Minister Modi launched the Jal Jeevan Mission on August 15, 2019, only 3.23 crore rural households out of roughly 19 crore — about 17% — had a functional tap water connection at home.",
+    "heading": "The 2019 starting point"
+   },
+   {
+    "body": "By February 2025, the mission had added tap water connections to 12.20 crore additional rural households, taking total coverage past 15.44 crore households (79.74%). By December 2025, coverage reached over 15.75 crore households — 81.37% of all rural households in the country.",
+    "heading": "The scale-up"
+   },
+   {
+    "body": "Piped water at home cuts the time — historically borne mostly by women and girls — spent fetching water from distant sources, and reduces exposure to contaminated water sources.",
+    "heading": "Why this matters"
+   }
+  ],
+  "stats": [
+   {
+    "stat_key": "jjm_tap_water_coverage",
+    "metric_label_en": "Rural households with tap water",
+    "before_label_en": "August 2019",
+    "before_value_en": "3.23 crore (17%)",
+    "after_label_en": "December 2025",
+    "after_value_en": "15.75 crore (81.37%)",
+    "extra_label_en": null,
+    "extra_value_en": null
+   }
+  ]
+ },
+ "pm-awas-yojana-housing": {
+  "title": "PM Awas Yojana Delivers 4.21 Crore Homes Over a Decade",
+  "summary": "Since launching in 2015-16, the Pradhan Mantri Awas Yojana has built 4.21 crore homes for economically weaker families across rural and urban India, with 3 crore more approved for the next phase.",
+  "quickTake": "Owning a pucca house used to be out of reach for tens of millions of poor families. A decade of PMAY has handed over keys to 4.21 crore of them.",
+  "sections": [
+   {
+    "body": "The Pradhan Mantri Awas Yojana (PMAY) — Urban launched in June 2015, Gramin (rural) in April 2016 — set out to provide pucca (permanent) houses to economically weaker and low-income families. Over the past 10 years, the scheme has delivered 4.21 crore houses.",
+    "heading": "A decade of home-building"
+   },
+   {
+    "body": "Under PMAY-Gramin alone, against a target of 4.12 crore houses, 3.85 crore have been sanctioned and more than 2.82 crore completed as of August 2025.",
+    "heading": "Rural progress specifically"
+   },
+   {
+    "body": "In 2024, the government approved 3 crore additional houses under PMAY — 2 crore in rural areas and 1 crore in urban areas — extending the scheme rather than closing it out.",
+    "heading": "The next phase"
+   }
+  ],
+  "stats": [
+   {
+    "stat_key": "pmay_houses_built",
+    "metric_label_en": "Houses built under PMAY",
+    "before_label_en": "Before 2015-16",
+    "before_value_en": "Scheme did not exist",
+    "after_label_en": "2025 (10-year total)",
+    "after_value_en": "4.21 crore houses",
+    "extra_label_en": null,
+    "extra_value_en": null
+   }
+  ]
+ },
+ "swachh-bharat-sanitation-coverage": {
+  "title": "Rural Sanitation Coverage Rises From 39% to 100% Under Swachh Bharat",
+  "summary": "When Swachh Bharat Mission launched in October 2014, only 38.7% of rural India had toilet access. Over 11 crore individual household toilets later, rural India was declared 100% open-defecation-free by October 2019.",
+  "quickTake": "Barely 4 in 10 rural households had a toilet in 2014. Five years and 11 crore toilets later, that number was effectively 10 in 10.",
+  "sections": [
+   {
+    "body": "When Prime Minister Modi launched the Swachh Bharat Mission on October 2, 2014, rural toilet coverage in India stood at just 38.7%, meaning most rural households had no access to a toilet at home and relied on open defecation.",
+    "heading": "The starting point"
+   },
+   {
+    "body": "Over the following five years, more than 11 crore individual household latrines and 2.23 lakh community sanitary complexes were built across all states and union territories under the mission.",
+    "heading": "Building at scale"
+   },
+   {
+    "body": "Rural India was declared 100% open-defecation-free on October 2, 2019, exactly five years after the mission's launch — a jump from under 40% to 100% coverage.",
+    "heading": "Reaching full coverage"
+   }
+  ],
+  "stats": [
+   {
+    "stat_key": "rural_sanitation_coverage",
+    "metric_label_en": "Rural sanitation (toilet) coverage",
+    "before_label_en": "October 2014",
+    "before_value_en": "38.7%",
+    "after_label_en": "October 2019",
+    "after_value_en": "100%",
+    "extra_label_en": null,
+    "extra_value_en": null
+   }
+  ]
+ }
+}
