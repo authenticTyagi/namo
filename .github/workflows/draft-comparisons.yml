@@ -1,0 +1,28 @@
+name: Draft comparisons
+
+# Manual-only comparison-drafting agent for "India vs the World". No
+# schedule on purpose: the other two drafting workflows are also
+# schedule-disabled until the ANTHROPIC_API_KEY/CRON_SECRET repo secrets
+# exist (see PROJECT_LOG.md), and RULES #11 sizes draft volume to one
+# reviewer. Run it by hand from the Actions tab; everything it submits
+# lands as pending_review.
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  draft-comparisons:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Run drafting agent
+        env:
+          MODE: comparisons
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          SITE_BASE_URL: ${{ vars.SITE_BASE_URL }}
+        run: node scripts/pipeline/run-agent.mjs

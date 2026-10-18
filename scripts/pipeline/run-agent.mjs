@@ -9,7 +9,7 @@
 // API (/api/pipeline/*). Everything it produces lands as pending_review —
 // this script never publishes anything itself.
 //
-// Required env: ANTHROPIC_API_KEY, CRON_SECRET, MODE ("entries" | "editorials").
+// Required env: ANTHROPIC_API_KEY, CRON_SECRET, MODE ("entries" | "editorials" | "comparisons").
 // Optional env: SITE_BASE_URL (default https://modinekiyakyahai.com).
 
 import { readFile } from "node:fs/promises";
@@ -26,8 +26,8 @@ const SITE_BASE_URL = process.env.SITE_BASE_URL || "https://modinekiyakyahai.com
 const MODEL = "claude-sonnet-5";
 const MAX_TURNS = 20;
 
-if (!["entries", "editorials"].includes(MODE)) {
-  console.error(`MODE must be "entries" or "editorials", got: ${MODE}`);
+if (!["entries", "editorials", "comparisons"].includes(MODE)) {
+  console.error(`MODE must be "entries", "editorials" or "comparisons", got: ${MODE}`);
   process.exit(1);
 }
 if (!ANTHROPIC_API_KEY) {
@@ -71,7 +71,39 @@ async function pipelineFetch(method, endpoint, body) {
   return { status: res.status, body: json };
 }
 
+// Read-only World Bank WDI lookup. Comparison figures must come from a
+// neutral international dataset; search-engine summaries of those numbers
+// have proven unreliable, the API itself is not. Inputs are validated so the
+// model can only ever hit api.worldbank.org's indicator endpoint.
+async function fetchWorldBank({ indicator, countries, date }) {
+  if (!/^[A-Za-z0-9._]{3,40}$/.test(indicator ?? "")) {
+    return { status: 400, body: { error: "indicator must look like SH.XPD.CHEX.GD.ZS" } };
+  }
+  if (!/^[A-Z]{3}(;[A-Z]{3}){1,19}$/.test(countries ?? "")) {
+    return { status: 400, body: { error: "countries must be ISO3 codes joined by ';', e.g. IND;CHN;BGD" } };
+  }
+  if (date !== undefined && !/^\d{4}(:\d{4})?$/.test(date)) {
+    return { status: 400, body: { error: "date must be YYYY or YYYY:YYYY" } };
+  }
+  // No date → latest non-empty value per country (mrnev); with a range → every year in it.
+  const query = date ? `date=${date}` : "mrnev=1";
+  const res = await fetch(
+    `https://api.worldbank.org/v2/country/${countries}/indicator/${indicator}?format=json&per_page=1000&${query}`,
+  );
+  if (!res.ok) return { status: res.status, body: { error: await res.text() } };
+  const json = await res.json();
+  const rows = (json[1] ?? []).map((r) => ({
+    country: r.country?.value,
+    iso3: r.countryiso3code,
+    year: r.date,
+    value: r.value,
+  }));
+  return { status: 200, body: { indicator: json[1]?.[0]?.indicator?.value ?? indicator, rows } };
+}
+
 const TOOL_HANDLERS = {
+  fetch_worldbank: fetchWorldBank,
+  submit_comparison: async (input) => pipelineFetch("POST", "/api/pipeline/comparison-ingest", input),
   list_existing_entries: async () => pipelineFetch("GET", "/api/pipeline/existing-slugs"),
   list_trusted_sources: async () => pipelineFetch("GET", "/api/pipeline/trusted-sources"),
   list_editorial_candidates: async () => pipelineFetch("GET", "/api/pipeline/editorial-candidates"),
@@ -81,10 +113,79 @@ const TOOL_HANDLERS = {
 
 const TOOL_DEFS = {
   web_search: { type: "web_search_20250305", name: "web_search", max_uses: 10 },
+  fetch_worldbank: {
+    name: "fetch_worldbank",
+    description:
+      "Read World Bank WDI values for one indicator and several countries. Omit date for each country's latest non-empty value (years can differ per country: check the 'year' on every row and align or flag them). Pass date as 'YYYY' or 'YYYY:YYYY' for specific years.",
+    input_schema: {
+      type: "object",
+      properties: {
+        indicator: { type: "string", description: "WDI code, e.g. SH.DYN.MORT" },
+        countries: { type: "string", description: "ISO3 codes joined by ';', e.g. IND;CHN;BGD;PAK" },
+        date: { type: "string" },
+      },
+      required: ["indicator", "countries"],
+    },
+  },
+  submit_comparison: {
+    name: "submit_comparison",
+    description:
+      "Submit one drafted India-vs-peers comparison. Lands as pending_review. Returns 409 on a duplicate slug, 400 on validation failure (read the error, fix or skip). Needs exactly one country with isIndia true.",
+    input_schema: {
+      type: "object",
+      properties: {
+        categorySlug: { type: "string" },
+        relatedEntrySlug: { type: "string", description: "Optional slug of an existing entry to link" },
+        slug: { type: "string", description: "lowercase kebab-case" },
+        titleHi: { type: "string" },
+        titleEn: { type: "string" },
+        metricLabelHi: { type: "string" },
+        metricLabelEn: { type: "string" },
+        unitHi: { type: "string" },
+        unitEn: { type: "string" },
+        narrativeHi: { type: "string" },
+        narrativeEn: { type: "string" },
+        countries: {
+          type: "array",
+          items: {
+            type: "object",
+            properties: {
+              countryNameHi: { type: "string" },
+              countryNameEn: { type: "string" },
+              valueHi: { type: "string" },
+              valueEn: { type: "string" },
+              valueNumeric: { type: "number" },
+              isIndia: { type: "boolean" },
+              sortOrder: { type: "integer" },
+            },
+            required: ["countryNameHi", "countryNameEn", "valueHi", "valueEn", "valueNumeric", "isIndia", "sortOrder"],
+          },
+        },
+        sources: {
+          type: "array",
+          items: {
+            type: "object",
+            properties: {
+              url: { type: "string" },
+              publisher: { type: "string" },
+              title: { type: "string" },
+              credibilityTier: { type: "string", enum: ["official_primary", "reputable_media", "secondary"] },
+              language: { type: "string" },
+            },
+            required: ["url", "publisher", "credibilityTier"],
+          },
+        },
+      },
+      required: [
+        "categorySlug", "slug", "titleHi", "titleEn", "metricLabelHi", "metricLabelEn",
+        "narrativeHi", "narrativeEn", "countries", "sources",
+      ],
+    },
+  },
   list_existing_entries: {
     name: "list_existing_entries",
     description:
-      "Get every entry's slug/title/category regardless of status (published, pending, rejected). Call this FIRST, before researching anything, so you never re-cover a topic that's already there or was already rejected.",
+      "Get every entry's and every comparison's slug/title/category regardless of status (published, pending, rejected), as { entries, comparisons }. Call this FIRST, before researching anything, so you never re-cover a topic that's already there or was already rejected.",
     input_schema: { type: "object", properties: {}, required: [] },
   },
   list_trusted_sources: {
@@ -218,8 +319,8 @@ async function buildSystemPrompt() {
 fact-checked bilingual (Hindi/English) reference site documenting verifiable
 Government of India work since 2014 — explicitly NOT a propaganda site, NOT
 affiliated with any party, every claim cited, mixed/negative data reported
-honestly. You have web_search and three read tools (list_existing_entries,
-list_trusted_sources${MODE === "editorials" ? ", list_editorial_candidates" : ""}).
+honestly. You have web_search and read tools (list_existing_entries,
+list_trusted_sources${MODE === "editorials" ? ", list_editorial_candidates" : ""}; comparisons mode has fetch_worldbank instead).
 Everything you submit lands as pending_review — a human reviews and
 publishes it. You never publish directly.
 
@@ -268,6 +369,65 @@ WORKFLOW:
    if any credible source disputes the claim, even if you still submit.
 
 An empty run (nothing clears the bar) is a fine outcome, not a failure.`;
+  }
+
+  if (MODE === "comparisons") {
+    return `${shared}
+YOUR JOB THIS RUN: draft 1-2 NEW "India vs the World" comparisons and submit
+them via submit_comparison. Each ranks India against 7-9 other countries on
+ONE metric, using the World Bank's WDI via fetch_worldbank.
+
+HARD RULES:
+- Data comes from fetch_worldbank (neutral international dataset). NEVER use
+  Indian government sources for a comparison. Never type a figure you did
+  not read from a tool result. Use web_search only to find an indicator code
+  or to read a methodology note.
+- Source list: the World Bank indicator page
+  https://data.worldbank.org/indicator/<CODE> (credibilityTier
+  official_primary) plus the underlying agency if you know its real URL
+  (e.g. UN IGME, ITU, UNESCO UIS, WHO). Do not invent URLs.
+- Use the same year for every country wherever the data allows. If years
+  differ, drop the odd country or say so in the narrative. If a country has
+  no value for the year, leave it out and say so.
+- Do not cherry-pick the peer set to flatter or to embarrass India. Include
+  neighbours (Bangladesh, Pakistan), large Asian economies (China,
+  Indonesia, Vietnam) and one or two developed economies (e.g. Germany,
+  United States) plus Brazil where data exists. If India ranks last, say so.
+- Say whether higher or lower is better in metricLabel. sortOrder ascending
+  by valueNumeric. Exactly one country has isIndia true.
+- Any figure you compute yourself (an average, a ratio) must be labelled
+  "site-derived" in the metric label or narrative, with the method.
+- Narrative (both languages): the headline ranking, a trend or per-person
+  figure that stops the aggregate misleading, a MICRO paragraph (what it
+  means for an ordinary household), a MACRO paragraph (India's capability
+  and standing, never adversarial), and honest caveats (modelled data,
+  different fiscal years, what the metric does not measure). No individual
+  is named. No party or era is credited or blamed. Do not attribute a change
+  to any scheme or government unless a neutral source does.
+- Topics to avoid: territorial disputes, military conflicts, and metrics
+  that are not like-for-like across countries (e.g. Gini mixes consumption
+  and income surveys).
+
+CATEGORIES (exact slug): economy-infra-digital, space-science,
+foreign-policy-diplomacy, defense-security, currency-prices-inflation,
+welfare-social-schemes, agriculture-farmer-welfare, environment-renewable-
+energy, education-skill-development, health-infrastructure,
+women-child-development, governance-judiciary, sports-youth-affairs.
+
+WORKFLOW:
+1. Call list_existing_entries FIRST; it returns { entries, comparisons }.
+   Skip any metric already covered by a comparison in any status. Use an
+   entry slug as relatedEntrySlug only if it appears in that list.
+2. Pick up to 2 metrics (hard cap, a human reviews each one by hand). Ideas
+   if nothing better: adult literacy (SE.ADT.LITR.ZS), physicians per 1,000
+   (SH.MED.PHYS.ZS), FDI inflow % GDP (BX.KLT.DINV.WD.GD.ZS), exports % GDP
+   (NE.EXP.GNFS.ZS), electricity access (EG.ELC.ACCS.ZS).
+3. fetch_worldbank for the metric, plus a second call for a trend year or a
+   per-person companion figure.
+4. submit_comparison. On 409 pick a different slug once; on 400 read the
+   error and fix or skip.
+
+An empty run is a fine outcome, not a failure.`;
   }
 
   const editorialVoice = await readDoc("scripts/entries/EDITORIAL_VOICE.md");
@@ -324,7 +484,14 @@ async function callAnthropic(messages, tools, system) {
 async function main() {
   const system = await buildSystemPrompt();
   const tools =
-    MODE === "entries"
+    MODE === "comparisons"
+      ? [
+          TOOL_DEFS.web_search,
+          TOOL_DEFS.list_existing_entries,
+          TOOL_DEFS.fetch_worldbank,
+          TOOL_DEFS.submit_comparison,
+        ]
+      : MODE === "entries"
       ? [TOOL_DEFS.web_search, TOOL_DEFS.list_existing_entries, TOOL_DEFS.list_trusted_sources, TOOL_DEFS.submit_entry]
       : [
           TOOL_DEFS.web_search,

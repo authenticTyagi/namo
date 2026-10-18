@@ -1,0 +1,699 @@
+[
+  {
+    "slug": "health-spending-share-of-gdp-india-vs-peers-2023",
+    "categorySlug": "health-infrastructure",
+    "relatedEntrySlug": "ayushman-bharat-health-insurance",
+    "titleEn": "Health Spending: India Spends 3.34% of GDP on Health, Below China, Brazil and Germany — and Households Pay 44% of It Directly",
+    "titleHi": "स्वास्थ्य पर खर्च: भारत जीडीपी का 3.34% स्वास्थ्य पर खर्च करता है — चीन, ब्राज़ील और जर्मनी से कम, और इसका 44% परिवार सीधे जेब से भरते हैं",
+    "metricLabelEn": "Total health expenditure, public and private (share of GDP, 2023)",
+    "metricLabelHi": "स्वास्थ्य पर कुल खर्च, सार्वजनिक और निजी (जीडीपी का हिस्सा, 2023)",
+    "unitEn": "%",
+    "unitHi": "%",
+    "narrativeEn": "World Bank data (built on WHO's health-expenditure accounts) puts India's total health spending, public and private together, at 3.34% of GDP in 2023. That is above Bangladesh (2.17%), Pakistan (2.52%) and Indonesia (2.70%), but below Vietnam (4.56%), China (5.94%), Brazil (9.73%), Germany (11.74%) and the United States (16.69%). The government's own share is smaller still: public health spending is 1.30% of GDP in India, against 3.39% in China, 4.29% in Brazil and about 9% in Germany and the United States. The gap is made up by households: 43.89% of all health spending in India is paid out of pocket, versus 32.17% in China, 26.23% in Brazil and about 11% in Germany and the US (Bangladesh, at 79.31%, and Pakistan, at 52.93%, are higher than India). Micro: for an ordinary family, close to half of every rupee spent on health is paid at the counter, which is why one hospital stay can still push a household into debt; this site's Ayushman Bharat entry covers the insurance scheme aimed at exactly that risk, and this comparison shows the scale of what it is working against. Macro: a share of GDP is not spending per person. Per head, India spends about $346 a year (PPP, 2023), up from $188 in 2014 (about 84% more), but that is still under a quarter of China's $1,487, roughly a sixth of Brazil's $2,070 and a small fraction of Germany's $8,306 and the US's $13,473. This comparison does not measure health outcomes or quality, and a low spending share is partly a feature of a lower-income economy; it does show that India's health system rests on a much thinner financial base than most large peers, and that the public share is the part that lags most.",
+    "narrativeHi": "विश्व बैंक के आंकड़ों (जो WHO के स्वास्थ्य-व्यय लेखों पर आधारित हैं) के अनुसार 2023 में भारत का कुल स्वास्थ्य खर्च — सार्वजनिक और निजी मिलाकर — जीडीपी का 3.34% था। यह बांग्लादेश (2.17%), पाकिस्तान (2.52%) और इंडोनेशिया (2.70%) से ज़्यादा है, पर वियतनाम (4.56%), चीन (5.94%), ब्राज़ील (9.73%), जर्मनी (11.74%) और अमेरिका (16.69%) से कम। इसमें सरकार का हिस्सा और भी छोटा है: भारत में सार्वजनिक स्वास्थ्य खर्च जीडीपी का 1.30% है, जबकि चीन में 3.39%, ब्राज़ील में 4.29% और जर्मनी व अमेरिका में लगभग 9%। यह कमी परिवारों की जेब से पूरी होती है: भारत में कुल स्वास्थ्य खर्च का 43.89% लोग सीधे अपनी जेब से देते हैं, जबकि चीन में 32.17%, ब्राज़ील में 26.23% और जर्मनी व अमेरिका में लगभग 11% (बांग्लादेश में 79.31% और पाकिस्तान में 52.93% के साथ ये दोनों भारत से भी ऊपर हैं)। सूक्ष्म स्तर पर: एक आम परिवार के लिए इसका मतलब है कि स्वास्थ्य पर खर्च होने वाले हर रुपये में से लगभग आधा काउंटर पर ही चुकाना पड़ता है — इसीलिए अस्पताल में एक भर्ती आज भी परिवार को कर्ज़ में धकेल सकती है; इस साइट की आयुष्मान भारत प्रविष्टि उसी जोखिम को घटाने वाली बीमा योजना को कवर करती है, और यह तुलना दिखाती है कि वह किस पैमाने की चुनौती से जूझ रही है। व्यापक स्तर पर: जीडीपी का हिस्सा प्रति व्यक्ति खर्च नहीं होता। प्रति व्यक्ति भारत लगभग $346 सालाना खर्च करता है (PPP, 2023), जो 2014 के $188 से करीब 84% ज़्यादा है, फिर भी चीन के $1,487 के एक-चौथाई से कम, ब्राज़ील के $2,070 का लगभग छठा हिस्सा और जर्मनी के $8,306 व अमेरिका के $13,473 का एक छोटा अंश है। यह तुलना स्वास्थ्य के नतीजे या गुणवत्ता नहीं मापती, और खर्च का कम हिस्सा कुछ हद तक कम आय वाली अर्थव्यवस्था का भी परिणाम है; पर यह दिखाती है कि भारत की स्वास्थ्य प्रणाली अधिकांश बड़े साथी देशों की तुलना में कहीं पतले वित्तीय आधार पर खड़ी है, और सबसे ज़्यादा कमी सार्वजनिक हिस्से में है।",
+    "countries": [
+      {
+        "countryNameHi": "बांग्लादेश",
+        "countryNameEn": "Bangladesh",
+        "valueHi": "2.17%",
+        "valueEn": "2.17%",
+        "valueNumeric": 2.17,
+        "isIndia": false,
+        "sortOrder": 0
+      },
+      {
+        "countryNameHi": "पाकिस्तान",
+        "countryNameEn": "Pakistan",
+        "valueHi": "2.52%",
+        "valueEn": "2.52%",
+        "valueNumeric": 2.52,
+        "isIndia": false,
+        "sortOrder": 1
+      },
+      {
+        "countryNameHi": "इंडोनेशिया",
+        "countryNameEn": "Indonesia",
+        "valueHi": "2.70%",
+        "valueEn": "2.70%",
+        "valueNumeric": 2.7,
+        "isIndia": false,
+        "sortOrder": 2
+      },
+      {
+        "countryNameHi": "भारत",
+        "countryNameEn": "India",
+        "valueHi": "3.34%",
+        "valueEn": "3.34%",
+        "valueNumeric": 3.34,
+        "isIndia": true,
+        "sortOrder": 3
+      },
+      {
+        "countryNameHi": "वियतनाम",
+        "countryNameEn": "Vietnam",
+        "valueHi": "4.56%",
+        "valueEn": "4.56%",
+        "valueNumeric": 4.56,
+        "isIndia": false,
+        "sortOrder": 4
+      },
+      {
+        "countryNameHi": "चीन",
+        "countryNameEn": "China",
+        "valueHi": "5.94%",
+        "valueEn": "5.94%",
+        "valueNumeric": 5.94,
+        "isIndia": false,
+        "sortOrder": 5
+      },
+      {
+        "countryNameHi": "ब्राज़ील",
+        "countryNameEn": "Brazil",
+        "valueHi": "9.73%",
+        "valueEn": "9.73%",
+        "valueNumeric": 9.73,
+        "isIndia": false,
+        "sortOrder": 6
+      },
+      {
+        "countryNameHi": "जर्मनी",
+        "countryNameEn": "Germany",
+        "valueHi": "11.74%",
+        "valueEn": "11.74%",
+        "valueNumeric": 11.74,
+        "isIndia": false,
+        "sortOrder": 7
+      },
+      {
+        "countryNameHi": "अमेरिका",
+        "countryNameEn": "United States",
+        "valueHi": "16.69%",
+        "valueEn": "16.69%",
+        "valueNumeric": 16.69,
+        "isIndia": false,
+        "sortOrder": 8
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS",
+        "publisher": "World Bank",
+        "title": "Current health expenditure (% of GDP) (World Development Indicators)",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      },
+      {
+        "url": "https://data.worldbank.org/indicator/SH.XPD.GHED.GD.ZS",
+        "publisher": "World Bank",
+        "title": "Domestic general government health expenditure (% of GDP) (World Development Indicators)",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      },
+      {
+        "url": "https://data.worldbank.org/indicator/SH.XPD.OOPC.CH.ZS",
+        "publisher": "World Bank",
+        "title": "Out-of-pocket expenditure (% of current health expenditure) (World Development Indicators)",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      },
+      {
+        "url": "https://data.worldbank.org/indicator/SH.XPD.CHEX.PP.CD",
+        "publisher": "World Bank",
+        "title": "Current health expenditure per capita, PPP (current international $) (World Development Indicators)",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "slug": "under-five-child-mortality-india-vs-peers-2024",
+    "categorySlug": "health-infrastructure",
+    "relatedEntrySlug": "poshan-abhiyaan-child-stunting",
+    "titleEn": "Under-5 Child Mortality: India at 26.6 per 1,000 Births, Down 43% Since 2014 — Ahead of Bangladesh and Pakistan, Far Behind China",
+    "titleHi": "पाँच साल से कम उम्र के बच्चों की मृत्यु दर: भारत में प्रति 1,000 जन्म पर 26.6, 2014 से 43% कम — बांग्लादेश और पाकिस्तान से बेहतर, चीन से बहुत पीछे",
+    "metricLabelEn": "Under-five mortality rate, 2024 (deaths per 1,000 live births; lower is better)",
+    "metricLabelHi": "पाँच वर्ष से कम आयु की मृत्यु दर, 2024 (प्रति 1,000 जीवित जन्म पर मृत्यु; कम बेहतर है)",
+    "unitEn": "per 1,000 live births",
+    "unitHi": "प्रति 1,000 जीवित जन्म",
+    "narrativeEn": "UN estimates (the UN Inter-agency Group for Child Mortality Estimation, published through the World Bank) put India's under-five mortality at 26.6 deaths per 1,000 live births in 2024 — about one child in 38 not reaching their fifth birthday. That is down from 46.4 in 2014 (a fall of about 43%) and 91.8 in 2000. Against peers, Germany (3.7), China (5.7), the United States (6.5), Vietnam (17.3), Indonesia (17.7) and Brazil (14.2) are all lower than India, while Bangladesh (30.5) and Pakistan (56.0) are higher. In percentage terms India's fall since 2014 is faster than Bangladesh's (40.5 to 30.5, about 25%) and Pakistan's (77.2 to 56.0, about 27%), but China fell from 11.6 to 5.7 (about 51%) from a much lower starting point, so India is still about 21 deaths per 1,000 births away from China. Micro: for a family in a village or an urban settlement, the gap between 26.6 and 5.7 is the gap between losing a child being a real, familiar risk and being rare; each point on this national rate stands for many actual households, and the deaths are often from causes that health systems can largely prevent or treat. Macro: this is a national average, and it hides large differences between states and between richer and poorer households, which this dataset cannot show. The comparison also does not credit the fall to any single scheme or government, since child survival depends on incomes, sanitation, nutrition, immunisation and access to care all at once. What it does show is steady improvement, a position ahead of both South Asian neighbours, and a long distance still to go to reach East Asian levels.",
+    "narrativeHi": "संयुक्त राष्ट्र के अनुमान (UN Inter-agency Group for Child Mortality Estimation, जो विश्व बैंक के माध्यम से प्रकाशित होते हैं) के अनुसार 2024 में भारत में पाँच वर्ष से कम आयु की मृत्यु दर प्रति 1,000 जीवित जन्म पर 26.6 थी — यानी लगभग हर 38 में से एक बच्चा अपना पाँचवाँ जन्मदिन नहीं देख पाता। यह 2014 के 46.4 से करीब 43% और 2000 के 91.8 से काफ़ी नीचे है। साथी देशों में जर्मनी (3.7), चीन (5.7), अमेरिका (6.5), ब्राज़ील (14.2), वियतनाम (17.3) और इंडोनेशिया (17.7) भारत से कम हैं, जबकि बांग्लादेश (30.5) और पाकिस्तान (56.0) ज़्यादा। प्रतिशत के लिहाज़ से 2014 के बाद भारत की गिरावट बांग्लादेश (40.5 से 30.5, लगभग 25%) और पाकिस्तान (77.2 से 56.0, लगभग 27%) से तेज़ है, लेकिन चीन बहुत नीचे के स्तर से शुरू करके भी 11.6 से 5.7 पर आ गया (लगभग 51% की गिरावट), इसलिए भारत अब भी चीन से प्रति 1,000 जन्म पर लगभग 21 मौतों की दूरी पर है। सूक्ष्म स्तर पर: गाँव या शहरी बस्ती के किसी परिवार के लिए 26.6 और 5.7 के बीच का फ़र्क यही है कि बच्चे को खो देना एक जानी-पहचानी, वास्तविक आशंका है या दुर्लभ घटना; राष्ट्रीय दर का हर अंक अनगिनत असली परिवारों का प्रतिनिधित्व करता है, और ये मौतें अक्सर ऐसे कारणों से होती हैं जिन्हें स्वास्थ्य व्यवस्था काफ़ी हद तक रोक या ठीक कर सकती है। व्यापक स्तर पर: यह राष्ट्रीय औसत है और राज्यों के बीच तथा अमीर-गरीब परिवारों के बीच के बड़े अंतर को छिपा लेता है, जो इस डेटा में दिखाई नहीं देते। यह तुलना गिरावट का श्रेय किसी एक योजना या सरकार को भी नहीं देती, क्योंकि बच्चों का जीवित रहना आय, स्वच्छता, पोषण, टीकाकरण और इलाज तक पहुँच — सब पर एक साथ निर्भर है। यह जो दिखाती है वह है: लगातार सुधार, दोनों दक्षिण एशियाई पड़ोसियों से आगे की स्थिति, और पूर्वी एशिया के स्तर तक पहुँचने के लिए अभी लंबा रास्ता।",
+    "countries": [
+      {
+        "countryNameHi": "जर्मनी",
+        "countryNameEn": "Germany",
+        "valueHi": "3.7",
+        "valueEn": "3.7",
+        "valueNumeric": 3.7,
+        "isIndia": false,
+        "sortOrder": 0
+      },
+      {
+        "countryNameHi": "चीन",
+        "countryNameEn": "China",
+        "valueHi": "5.7",
+        "valueEn": "5.7",
+        "valueNumeric": 5.7,
+        "isIndia": false,
+        "sortOrder": 1
+      },
+      {
+        "countryNameHi": "अमेरिका",
+        "countryNameEn": "United States",
+        "valueHi": "6.5",
+        "valueEn": "6.5",
+        "valueNumeric": 6.5,
+        "isIndia": false,
+        "sortOrder": 2
+      },
+      {
+        "countryNameHi": "ब्राज़ील",
+        "countryNameEn": "Brazil",
+        "valueHi": "14.2",
+        "valueEn": "14.2",
+        "valueNumeric": 14.2,
+        "isIndia": false,
+        "sortOrder": 3
+      },
+      {
+        "countryNameHi": "वियतनाम",
+        "countryNameEn": "Vietnam",
+        "valueHi": "17.3",
+        "valueEn": "17.3",
+        "valueNumeric": 17.3,
+        "isIndia": false,
+        "sortOrder": 4
+      },
+      {
+        "countryNameHi": "इंडोनेशिया",
+        "countryNameEn": "Indonesia",
+        "valueHi": "17.7",
+        "valueEn": "17.7",
+        "valueNumeric": 17.7,
+        "isIndia": false,
+        "sortOrder": 5
+      },
+      {
+        "countryNameHi": "भारत",
+        "countryNameEn": "India",
+        "valueHi": "26.6",
+        "valueEn": "26.6",
+        "valueNumeric": 26.6,
+        "isIndia": true,
+        "sortOrder": 6
+      },
+      {
+        "countryNameHi": "बांग्लादेश",
+        "countryNameEn": "Bangladesh",
+        "valueHi": "30.5",
+        "valueEn": "30.5",
+        "valueNumeric": 30.5,
+        "isIndia": false,
+        "sortOrder": 7
+      },
+      {
+        "countryNameHi": "पाकिस्तान",
+        "countryNameEn": "Pakistan",
+        "valueHi": "56.0",
+        "valueEn": "56.0",
+        "valueNumeric": 56,
+        "isIndia": false,
+        "sortOrder": 8
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://data.worldbank.org/indicator/SH.DYN.MORT",
+        "publisher": "World Bank",
+        "title": "Mortality rate, under-5 (per 1,000 live births) (World Development Indicators)",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      },
+      {
+        "url": "https://childmortality.org",
+        "publisher": "UN Inter-agency Group for Child Mortality Estimation (UN IGME)",
+        "title": "Child Mortality Estimates",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "slug": "internet-users-share-of-population-india-vs-peers-2024",
+    "categorySlug": "economy-infra-digital",
+    "relatedEntrySlug": "digital-india-billion-broadband-users",
+    "titleEn": "Internet Use: 65% of Indians Were Online in 2024, Up From 13.5% in 2014 — Ahead of Pakistan and Bangladesh, Behind China, Brazil and Vietnam",
+    "titleHi": "इंटरनेट का उपयोग: 2024 में 65% भारतीय ऑनलाइन थे, 2014 के 13.5% से बहुत ऊपर — पाकिस्तान और बांग्लादेश से आगे, चीन, ब्राज़ील और वियतनाम से पीछे",
+    "metricLabelEn": "Individuals using the internet (share of population, 2024)",
+    "metricLabelHi": "इंटरनेट इस्तेमाल करने वाले लोग (आबादी का हिस्सा, 2024)",
+    "unitEn": "%",
+    "unitHi": "%",
+    "narrativeEn": "The World Bank, using International Telecommunication Union (ITU) data, estimates that 64.94% of India's population used the internet in 2024. (The series shows 70.0% for 2025, but 2024 is the latest year most peers have, so it is used for every country here.) That is a very large rise from 13.5% in 2014 — more than 51 percentage points in ten years, similar to Indonesia (17.1% to 72.8%) and bigger in points than China (47.9% to 92.0%) or Pakistan (10.0% to 57.3%). India now sits above Pakistan (57.25%) and Bangladesh (53.42%), but below Indonesia (72.78%), Vietnam (84.15%), Brazil (84.46%), China (92.00%), Germany (93.50%) and the United States (94.69%). Micro: being online is what makes digital payments, online government services, remote schooling, telemedicine and job search reachable at all; roughly one in three Indians (about 35%) is still outside that, and this indicator cannot show the gaps between men and women, rich and poor, or town and village. Macro: scale is India's strength — a user base this large makes it a major market and a hub for digital services — but the share of people online still trails the countries India competes with for manufacturing and services investment. Note that this is not in conflict with the 'one billion broadband subscribers' figure in this site's Digital India entry: subscribers count connections (one person can hold several), while the ITU measure counts individuals who actually used the internet in the previous three months.",
+    "narrativeHi": "विश्व बैंक, अंतर्राष्ट्रीय दूरसंचार संघ (ITU) के आंकड़ों के आधार पर, अनुमान लगाता है कि 2024 में भारत की 64.94% आबादी ने इंटरनेट का उपयोग किया। (श्रृंखला में 2025 के लिए 70.0% दिखता है, लेकिन ज़्यादातर साथी देशों के लिए 2024 ही नवीनतम वर्ष है, इसलिए यहाँ सभी देशों के लिए 2024 लिया गया है।) यह 2014 के 13.5% से बहुत बड़ी छलांग है — दस साल में 51 प्रतिशत अंकों से अधिक, जो इंडोनेशिया (17.1% से 72.8%) के लगभग बराबर है और अंकों में चीन (47.9% से 92.0%) या पाकिस्तान (10.0% से 57.3%) से बड़ी है। भारत अब पाकिस्तान (57.25%) और बांग्लादेश (53.42%) से ऊपर है, पर इंडोनेशिया (72.78%), वियतनाम (84.15%), ब्राज़ील (84.46%), चीन (92.00%), जर्मनी (93.50%) और अमेरिका (94.69%) से नीचे। सूक्ष्म स्तर पर: ऑनलाइन होना ही डिजिटल भुगतान, सरकारी सेवाओं, दूरस्थ पढ़ाई, टेलीमेडिसिन और नौकरी की खोज तक पहुँच संभव बनाता है; लगभग हर तीन में से एक भारतीय (करीब 35%) अब भी इससे बाहर है, और यह संकेतक महिला-पुरुष, अमीर-गरीब या शहर-गाँव के अंतर को नहीं दिखाता। व्यापक स्तर पर: पैमाना भारत की ताक़त है — इतना बड़ा उपयोगकर्ता आधार उसे एक बड़ा बाज़ार और डिजिटल सेवाओं का केंद्र बनाता है — लेकिन ऑनलाइन लोगों का हिस्सा अब भी उन देशों से कम है जिनसे भारत मैन्युफैक्चरिंग और सेवाओं के निवेश के लिए होड़ करता है। ध्यान दें, यह इस साइट की डिजिटल इंडिया प्रविष्टि के 'एक अरब ब्रॉडबैंड ग्राहक' के आंकड़े का खंडन नहीं है: ग्राहक संख्या कनेक्शन गिनती है (एक व्यक्ति के कई कनेक्शन हो सकते हैं), जबकि ITU का माप उन व्यक्तियों को गिनता है जिन्होंने पिछले तीन महीनों में वास्तव में इंटरनेट इस्तेमाल किया।",
+    "countries": [
+      {
+        "countryNameHi": "बांग्लादेश",
+        "countryNameEn": "Bangladesh",
+        "valueHi": "53.42%",
+        "valueEn": "53.42%",
+        "valueNumeric": 53.42,
+        "isIndia": false,
+        "sortOrder": 0
+      },
+      {
+        "countryNameHi": "पाकिस्तान",
+        "countryNameEn": "Pakistan",
+        "valueHi": "57.25%",
+        "valueEn": "57.25%",
+        "valueNumeric": 57.25,
+        "isIndia": false,
+        "sortOrder": 1
+      },
+      {
+        "countryNameHi": "भारत",
+        "countryNameEn": "India",
+        "valueHi": "64.94%",
+        "valueEn": "64.94%",
+        "valueNumeric": 64.94,
+        "isIndia": true,
+        "sortOrder": 2
+      },
+      {
+        "countryNameHi": "इंडोनेशिया",
+        "countryNameEn": "Indonesia",
+        "valueHi": "72.78%",
+        "valueEn": "72.78%",
+        "valueNumeric": 72.78,
+        "isIndia": false,
+        "sortOrder": 3
+      },
+      {
+        "countryNameHi": "वियतनाम",
+        "countryNameEn": "Vietnam",
+        "valueHi": "84.15%",
+        "valueEn": "84.15%",
+        "valueNumeric": 84.15,
+        "isIndia": false,
+        "sortOrder": 4
+      },
+      {
+        "countryNameHi": "ब्राज़ील",
+        "countryNameEn": "Brazil",
+        "valueHi": "84.46%",
+        "valueEn": "84.46%",
+        "valueNumeric": 84.46,
+        "isIndia": false,
+        "sortOrder": 5
+      },
+      {
+        "countryNameHi": "चीन",
+        "countryNameEn": "China",
+        "valueHi": "92.00%",
+        "valueEn": "92.00%",
+        "valueNumeric": 92,
+        "isIndia": false,
+        "sortOrder": 6
+      },
+      {
+        "countryNameHi": "जर्मनी",
+        "countryNameEn": "Germany",
+        "valueHi": "93.50%",
+        "valueEn": "93.50%",
+        "valueNumeric": 93.5,
+        "isIndia": false,
+        "sortOrder": 7
+      },
+      {
+        "countryNameHi": "अमेरिका",
+        "countryNameEn": "United States",
+        "valueHi": "94.69%",
+        "valueEn": "94.69%",
+        "valueNumeric": 94.69,
+        "isIndia": false,
+        "sortOrder": 8
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://data.worldbank.org/indicator/IT.NET.USER.ZS",
+        "publisher": "World Bank",
+        "title": "Individuals using the Internet (% of population) (World Development Indicators)",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      },
+      {
+        "url": "https://www.itu.int/en/ITU-D/Statistics/Pages/stat/default.aspx",
+        "publisher": "International Telecommunication Union (ITU)",
+        "title": "ITU DataHub — ICT statistics",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "slug": "air-pollution-pm25-exposure-india-vs-peers-2023",
+    "categorySlug": "environment-renewable-energy",
+    "titleEn": "Air Pollution: India's Population Breathes Air With 54 µg/m³ of PM2.5 — About 11 Times the WHO Guideline, and Higher Than in 2014 While China's Fell 39%",
+    "titleHi": "वायु प्रदूषण: भारत की आबादी औसतन 54 µg/m³ PM2.5 वाली हवा में साँस लेती है — WHO मानक का लगभग 11 गुना, और 2014 से ज़्यादा, जबकि चीन का स्तर 39% गिरा",
+    "metricLabelEn": "Mean annual PM2.5 exposure, population-weighted, 2023 (µg/m³; lower is better)",
+    "metricLabelHi": "PM2.5 का औसत वार्षिक जोखिम, आबादी-भारित, 2023 (µg/m³; कम बेहतर है)",
+    "unitEn": "µg/m³",
+    "unitHi": "µg/m³",
+    "narrativeEn": "Estimates from the Institute for Health Metrics and Evaluation's Global Burden of Disease 2023 study, published through the World Bank, put the population-weighted average PM2.5 exposure in India at 54.05 µg/m³ in 2023. Of the nine countries compared, only Pakistan (58.37) and Bangladesh (69.25) are higher; China is at 31.99, Vietnam 24.78, Indonesia 20.84, Brazil 13.38, Germany 8.81 and the United States 6.97. For reference, the WHO's 2021 annual guideline is 5 µg/m³, so every country here is above it, and India is almost 11 times over. The direction of travel matters as much as the level: India's exposure was 51.69 in 2014 and 54.05 in 2023 (up about 5%), while China's fell from 52.51 to 31.99 (down about 39%) over the same years — two countries that started at almost the same level nine years ago are now far apart. Micro: this is the air a family breathes every day, indoors and out; at these levels, health research links it to lung and heart disease and shorter lives, and it shows up as sick days, medical bills and lost work. Macro: a country that wants to be a manufacturing and services hub also competes on how liveable its cities are. Cautions: these are modelled estimates combining satellite data, atmospheric models and ground monitors, not a count of monitor readings; a national population-weighted average hides large differences between cities, regions and seasons; and this comparison does not assess any particular policy or government programme.",
+    "narrativeHi": "स्वास्थ्य मापन एवं मूल्यांकन संस्थान (IHME) के ग्लोबल बर्डन ऑफ़ डिज़ीज़ 2023 अध्ययन के अनुमान, जो विश्व बैंक के माध्यम से प्रकाशित हैं, बताते हैं कि 2023 में भारत में आबादी-भारित औसत PM2.5 जोखिम 54.05 µg/m³ था। तुलना किए गए नौ देशों में केवल पाकिस्तान (58.37) और बांग्लादेश (69.25) ऊपर हैं; चीन 31.99, वियतनाम 24.78, इंडोनेशिया 20.84, ब्राज़ील 13.38, जर्मनी 8.81 और अमेरिका 6.97 पर है। संदर्भ के लिए, WHO का 2021 का वार्षिक मानक 5 µg/m³ है, यानी यहाँ हर देश उससे ऊपर है और भारत लगभग 11 गुना ऊपर। स्तर जितना ही अहम दिशा भी है: भारत का जोखिम 2014 में 51.69 था और 2023 में 54.05 (करीब 5% ऊपर), जबकि इसी दौरान चीन का 52.51 से घटकर 31.99 रह गया (लगभग 39% नीचे) — नौ साल पहले लगभग एक ही स्तर से चले दो देश आज बहुत दूर हैं। सूक्ष्म स्तर पर: यह वह हवा है जिसमें परिवार रोज़ घर के अंदर और बाहर साँस लेता है; इस स्तर पर स्वास्थ्य शोध इसे फेफड़ों व हृदय के रोगों और कम उम्र से जोड़ता है, और यह बीमारी की छुट्टियों, इलाज के बिलों और खोई हुई कमाई के रूप में दिखता है। व्यापक स्तर पर: जो देश मैन्युफैक्चरिंग और सेवाओं का केंद्र बनना चाहता है, वह इस पर भी होड़ करता है कि उसके शहर रहने लायक कितने हैं। सावधानियाँ: ये उपग्रह डेटा, वायुमंडलीय मॉडल और ज़मीनी मॉनिटरों को मिलाकर बनाए गए अनुमान हैं, मॉनिटर रीडिंग की सीधी गिनती नहीं; राष्ट्रीय आबादी-भारित औसत शहरों, क्षेत्रों और मौसमों के बीच के बड़े अंतर को छिपा लेता है; और यह तुलना किसी विशेष नीति या सरकारी कार्यक्रम का मूल्यांकन नहीं करती।",
+    "countries": [
+      {
+        "countryNameHi": "अमेरिका",
+        "countryNameEn": "United States",
+        "valueHi": "6.97 µg/m³",
+        "valueEn": "6.97 µg/m³",
+        "valueNumeric": 6.97,
+        "isIndia": false,
+        "sortOrder": 0
+      },
+      {
+        "countryNameHi": "जर्मनी",
+        "countryNameEn": "Germany",
+        "valueHi": "8.81 µg/m³",
+        "valueEn": "8.81 µg/m³",
+        "valueNumeric": 8.81,
+        "isIndia": false,
+        "sortOrder": 1
+      },
+      {
+        "countryNameHi": "ब्राज़ील",
+        "countryNameEn": "Brazil",
+        "valueHi": "13.38 µg/m³",
+        "valueEn": "13.38 µg/m³",
+        "valueNumeric": 13.38,
+        "isIndia": false,
+        "sortOrder": 2
+      },
+      {
+        "countryNameHi": "इंडोनेशिया",
+        "countryNameEn": "Indonesia",
+        "valueHi": "20.84 µg/m³",
+        "valueEn": "20.84 µg/m³",
+        "valueNumeric": 20.84,
+        "isIndia": false,
+        "sortOrder": 3
+      },
+      {
+        "countryNameHi": "वियतनाम",
+        "countryNameEn": "Vietnam",
+        "valueHi": "24.78 µg/m³",
+        "valueEn": "24.78 µg/m³",
+        "valueNumeric": 24.78,
+        "isIndia": false,
+        "sortOrder": 4
+      },
+      {
+        "countryNameHi": "चीन",
+        "countryNameEn": "China",
+        "valueHi": "31.99 µg/m³",
+        "valueEn": "31.99 µg/m³",
+        "valueNumeric": 31.99,
+        "isIndia": false,
+        "sortOrder": 5
+      },
+      {
+        "countryNameHi": "भारत",
+        "countryNameEn": "India",
+        "valueHi": "54.05 µg/m³",
+        "valueEn": "54.05 µg/m³",
+        "valueNumeric": 54.05,
+        "isIndia": true,
+        "sortOrder": 6
+      },
+      {
+        "countryNameHi": "पाकिस्तान",
+        "countryNameEn": "Pakistan",
+        "valueHi": "58.37 µg/m³",
+        "valueEn": "58.37 µg/m³",
+        "valueNumeric": 58.37,
+        "isIndia": false,
+        "sortOrder": 7
+      },
+      {
+        "countryNameHi": "बांग्लादेश",
+        "countryNameEn": "Bangladesh",
+        "valueHi": "69.25 µg/m³",
+        "valueEn": "69.25 µg/m³",
+        "valueNumeric": 69.25,
+        "isIndia": false,
+        "sortOrder": 8
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://data.worldbank.org/indicator/EN.ATM.PM25.MC.M3",
+        "publisher": "World Bank",
+        "title": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter) (World Development Indicators)",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      },
+      {
+        "url": "https://ghdx.healthdata.org/record/ihme-data/gbd-2023-air-pollution-exposure-estimates-1990-2023",
+        "publisher": "Institute for Health Metrics and Evaluation (IHME)",
+        "title": "GBD 2023 Air Pollution Exposure Estimates and Risk Curves 1990-2023",
+        "credibilityTier": "secondary",
+        "language": "en"
+      },
+      {
+        "url": "https://www.who.int/news-room/feature-stories/detail/what-are-the-who-air-quality-guidelines",
+        "publisher": "World Health Organization",
+        "title": "What are the WHO Air quality guidelines?",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "slug": "average-annual-gdp-growth-2015-2025-india-vs-peers",
+    "categorySlug": "economy-infra-digital",
+    "relatedEntrySlug": "india-fourth-largest-economy",
+    "titleEn": "Economic Growth: India Averaged 6.07% a Year Over 2015–2025 — Level With Bangladesh, Just Behind Vietnam, Ahead of China, From a Much Lower Income Base",
+    "titleHi": "आर्थिक वृद्धि: 2015–2025 में भारत की औसत वृद्धि 6.07% सालाना — बांग्लादेश के बराबर, वियतनाम से ज़रा पीछे, चीन से आगे, पर बहुत कम आय के आधार से",
+    "metricLabelEn": "Average annual real GDP growth, 2015–2025 (simple mean of yearly rates; site-derived)",
+    "metricLabelHi": "औसत वार्षिक वास्तविक जीडीपी वृद्धि, 2015–2025 (वार्षिक दरों का सरल औसत; साइट द्वारा निकाला गया)",
+    "unitEn": "% per year",
+    "unitHi": "% प्रति वर्ष",
+    "narrativeEn": "Using the World Bank's annual real GDP growth series (constant 2015 US dollars), the simple average of yearly growth rates over 2015–2025 is 6.07% for India. That is effectively level with Bangladesh (6.04%) and just behind Vietnam (6.31%), and ahead of China (5.71%), Indonesia (4.30%), Pakistan (3.66%), the United States (2.48%), Brazil (1.00%) and Germany (0.84%). The average includes the pandemic: India's economy shrank 5.8% in 2020, the sharpest fall among these nine countries, then grew 9.7% in 2021; the latest year in the series, 2025, is 7.57%. Micro: faster growth reaches a household through jobs, wages and prices, and a simple average does not show who gained or how steadily. Per person, India is still poor next to most of this group: GDP per capita (PPP) was about $10,700 in 2024, against Bangladesh at $9,700, Vietnam $16,400, China $27,100 and Germany $74,000 — a high growth rate from a lower base is not the same as catching up in living standards. Macro: sustained fast growth is what made India the economy this site's entry reports as the world's fourth largest. Cautions: a simple average of yearly rates is not compound annual growth; India, Bangladesh and Pakistan report on April–March or July–June fiscal years while most others use calendar years, so year labels are not perfectly aligned; and the average is calculated by this site from the World Bank's published annual figures.",
+    "narrativeHi": "विश्व बैंक की वार्षिक वास्तविक जीडीपी वृद्धि श्रृंखला (स्थिर 2015 अमेरिकी डॉलर) के आधार पर 2015–2025 की वार्षिक दरों का सरल औसत भारत के लिए 6.07% है। यह बांग्लादेश (6.04%) के लगभग बराबर और वियतनाम (6.31%) से ज़रा पीछे है, तथा चीन (5.71%), इंडोनेशिया (4.30%), पाकिस्तान (3.66%), अमेरिका (2.48%), ब्राज़ील (1.00%) और जर्मनी (0.84%) से आगे। इस औसत में महामारी का दौर भी शामिल है: 2020 में भारत की अर्थव्यवस्था 5.8% सिकुड़ी, जो इन नौ देशों में सबसे तीखी गिरावट थी, फिर 2021 में 9.7% बढ़ी; श्रृंखला के नवीनतम वर्ष 2025 में वृद्धि 7.57% है। सूक्ष्म स्तर पर: तेज़ वृद्धि परिवार तक नौकरियों, मज़दूरी और कीमतों के रास्ते पहुँचती है, और सरल औसत यह नहीं दिखाता कि फ़ायदा किसे मिला या कितनी स्थिरता से। प्रति व्यक्ति के हिसाब से भारत इस समूह के ज़्यादातर देशों के मुकाबले अब भी गरीब है: 2024 में प्रति व्यक्ति जीडीपी (PPP) लगभग $10,700 था, जबकि बांग्लादेश में $9,700, वियतनाम में $16,400, चीन में $27,100 और जर्मनी में $74,000 — कम आधार से ऊँची वृद्धि दर का मतलब जीवन-स्तर में बराबरी पा लेना नहीं है। व्यापक स्तर पर: लगातार तेज़ वृद्धि ही वह वजह है जिससे भारत वह अर्थव्यवस्था बना जिसे इस साइट की प्रविष्टि दुनिया की चौथी सबसे बड़ी बताती है। सावधानियाँ: वार्षिक दरों का सरल औसत चक्रवृद्धि वार्षिक वृद्धि नहीं होता; भारत, बांग्लादेश और पाकिस्तान अप्रैल–मार्च या जुलाई–जून के वित्त वर्ष पर रिपोर्ट करते हैं जबकि ज़्यादातर अन्य देश कैलेंडर वर्ष पर, इसलिए वर्षों के लेबल पूरी तरह मेल नहीं खाते; और यह औसत इस साइट ने विश्व बैंक के प्रकाशित वार्षिक आंकड़ों से निकाला है।",
+    "countries": [
+      {
+        "countryNameHi": "जर्मनी",
+        "countryNameEn": "Germany",
+        "valueHi": "0.84%",
+        "valueEn": "0.84%",
+        "valueNumeric": 0.84,
+        "isIndia": false,
+        "sortOrder": 0
+      },
+      {
+        "countryNameHi": "ब्राज़ील",
+        "countryNameEn": "Brazil",
+        "valueHi": "1.00%",
+        "valueEn": "1.00%",
+        "valueNumeric": 1,
+        "isIndia": false,
+        "sortOrder": 1
+      },
+      {
+        "countryNameHi": "अमेरिका",
+        "countryNameEn": "United States",
+        "valueHi": "2.48%",
+        "valueEn": "2.48%",
+        "valueNumeric": 2.48,
+        "isIndia": false,
+        "sortOrder": 2
+      },
+      {
+        "countryNameHi": "पाकिस्तान",
+        "countryNameEn": "Pakistan",
+        "valueHi": "3.66%",
+        "valueEn": "3.66%",
+        "valueNumeric": 3.66,
+        "isIndia": false,
+        "sortOrder": 3
+      },
+      {
+        "countryNameHi": "इंडोनेशिया",
+        "countryNameEn": "Indonesia",
+        "valueHi": "4.30%",
+        "valueEn": "4.30%",
+        "valueNumeric": 4.3,
+        "isIndia": false,
+        "sortOrder": 4
+      },
+      {
+        "countryNameHi": "चीन",
+        "countryNameEn": "China",
+        "valueHi": "5.71%",
+        "valueEn": "5.71%",
+        "valueNumeric": 5.71,
+        "isIndia": false,
+        "sortOrder": 5
+      },
+      {
+        "countryNameHi": "बांग्लादेश",
+        "countryNameEn": "Bangladesh",
+        "valueHi": "6.04%",
+        "valueEn": "6.04%",
+        "valueNumeric": 6.04,
+        "isIndia": false,
+        "sortOrder": 6
+      },
+      {
+        "countryNameHi": "भारत",
+        "countryNameEn": "India",
+        "valueHi": "6.07%",
+        "valueEn": "6.07%",
+        "valueNumeric": 6.07,
+        "isIndia": true,
+        "sortOrder": 7
+      },
+      {
+        "countryNameHi": "वियतनाम",
+        "countryNameEn": "Vietnam",
+        "valueHi": "6.31%",
+        "valueEn": "6.31%",
+        "valueNumeric": 6.31,
+        "isIndia": false,
+        "sortOrder": 8
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG",
+        "publisher": "World Bank",
+        "title": "GDP growth (annual %) (World Development Indicators)",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      },
+      {
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD",
+        "publisher": "World Bank",
+        "title": "GDP per capita, PPP (current international $) (World Development Indicators)",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "slug": "government-education-spending-share-of-gdp-india-vs-peers-2022",
+    "categorySlug": "education-skill-development",
+    "relatedEntrySlug": "school-dropout-secondary-retention",
+    "titleEn": "Education Spending: Governments in India Spend 4.1% of GDP on Education — More Than Vietnam and Bangladesh, Less Than Brazil and Germany — While Adult Literacy Is 78%",
+    "titleHi": "शिक्षा पर खर्च: भारत में सरकारें जीडीपी का 4.1% शिक्षा पर खर्च करती हैं — वियतनाम और बांग्लादेश से ज़्यादा, ब्राज़ील और जर्मनी से कम — जबकि वयस्क साक्षरता 78% है",
+    "metricLabelEn": "General government expenditure on education (share of GDP, 2022)",
+    "metricLabelHi": "शिक्षा पर सामान्य सरकारी खर्च (जीडीपी का हिस्सा, 2022)",
+    "unitEn": "%",
+    "unitHi": "%",
+    "narrativeEn": "UNESCO Institute for Statistics data, published through the World Bank, puts general-government spending on education in India (all levels of government together) at 4.10% of GDP in 2022; the figure was 3.90% in both 2014 and 2019. Among countries with a 2022 value, Indonesia (0.86%), Pakistan (1.97%), Bangladesh (2.09%) and Vietnam (2.89%) are below India; Germany (5.24%), Brazil (5.62%) and South Africa (6.16%) are above. China and the United States are left out because the series has no 2022 value for them, and Indonesia's series moved sharply (3.29% in 2014 to 0.86% in 2022), so treat that point with caution. Micro: a share of GDP is not spending per child. India's 4.1% of a GDP of roughly $10,700 per person (PPP) works out to very roughly $440 per resident a year, against about $3,800 for Germany (5.24% of about $72,300) — a site-derived approximation that mixes 2022 shares with 2023–24 GDP — so the same share buys far less per person. Outcomes still lag: adult literacy in India is 78.16% (2024), against 96.13% in Vietnam (2022), 94.74% in Brazil (2024) and 79.0% in Bangladesh (2022), though above Pakistan's 58.86% (2021). Macro: a population's skills are a long-run source of economic capability. India's share sits in the middle of this group and has moved only slightly upward since 2014 rather than in a big step. See this site's school-dropout entry for what happens to children inside the system.",
+    "narrativeHi": "यूनेस्को इंस्टीट्यूट फ़ॉर स्टैटिस्टिक्स के आंकड़े, जो विश्व बैंक के माध्यम से प्रकाशित हैं, बताते हैं कि भारत में शिक्षा पर सामान्य सरकारी खर्च (सरकार के सभी स्तर मिलाकर) 2022 में जीडीपी का 4.10% था; 2014 और 2019 दोनों में यह 3.90% था। जिन देशों के 2022 के आंकड़े उपलब्ध हैं, उनमें इंडोनेशिया (0.86%), पाकिस्तान (1.97%), बांग्लादेश (2.09%) और वियतनाम (2.89%) भारत से नीचे हैं; जर्मनी (5.24%), ब्राज़ील (5.62%) और दक्षिण अफ़्रीका (6.16%) ऊपर। चीन और अमेरिका को इसमें शामिल नहीं किया गया क्योंकि श्रृंखला में उनके 2022 के आंकड़े नहीं हैं, और इंडोनेशिया की श्रृंखला तेज़ी से बदली है (2014 में 3.29% से 2022 में 0.86%), इसलिए उस बिंदु को सावधानी से देखें। सूक्ष्म स्तर पर: जीडीपी का हिस्सा प्रति बच्चा खर्च नहीं होता। भारत का 4.1%, जब प्रति व्यक्ति जीडीपी लगभग $10,700 (PPP) हो, तो मोटे तौर पर प्रति निवासी सालाना करीब $440 बैठता है, जबकि जर्मनी में करीब $3,800 (लगभग $72,300 का 5.24%) — यह साइट द्वारा निकाला गया मोटा अनुमान है जिसमें 2022 के हिस्सों को 2023–24 की जीडीपी से मिलाया गया है — यानी वही हिस्सा प्रति व्यक्ति कहीं कम खरीद पाता है। नतीजे अब भी पीछे हैं: भारत में वयस्क साक्षरता 78.16% है (2024), जबकि वियतनाम में 96.13% (2022), ब्राज़ील में 94.74% (2024) और बांग्लादेश में 79.0% (2022); हालाँकि पाकिस्तान के 58.86% (2021) से ऊपर। व्यापक स्तर पर: किसी आबादी का कौशल दीर्घकालिक आर्थिक क्षमता का स्रोत होता है। भारत का हिस्सा इस समूह के बीच में है और 2014 के बाद किसी बड़ी छलांग के बजाय सिर्फ़ थोड़ा ऊपर गया है। व्यवस्था के भीतर बच्चों के साथ क्या होता है, इसके लिए इस साइट की स्कूल ड्रॉपआउट प्रविष्टि देखें।",
+    "countries": [
+      {
+        "countryNameHi": "इंडोनेशिया",
+        "countryNameEn": "Indonesia",
+        "valueHi": "0.86%",
+        "valueEn": "0.86%",
+        "valueNumeric": 0.86,
+        "isIndia": false,
+        "sortOrder": 0
+      },
+      {
+        "countryNameHi": "पाकिस्तान",
+        "countryNameEn": "Pakistan",
+        "valueHi": "1.97%",
+        "valueEn": "1.97%",
+        "valueNumeric": 1.97,
+        "isIndia": false,
+        "sortOrder": 1
+      },
+      {
+        "countryNameHi": "बांग्लादेश",
+        "countryNameEn": "Bangladesh",
+        "valueHi": "2.09%",
+        "valueEn": "2.09%",
+        "valueNumeric": 2.09,
+        "isIndia": false,
+        "sortOrder": 2
+      },
+      {
+        "countryNameHi": "वियतनाम",
+        "countryNameEn": "Vietnam",
+        "valueHi": "2.89%",
+        "valueEn": "2.89%",
+        "valueNumeric": 2.89,
+        "isIndia": false,
+        "sortOrder": 3
+      },
+      {
+        "countryNameHi": "भारत",
+        "countryNameEn": "India",
+        "valueHi": "4.10%",
+        "valueEn": "4.10%",
+        "valueNumeric": 4.1,
+        "isIndia": true,
+        "sortOrder": 4
+      },
+      {
+        "countryNameHi": "जर्मनी",
+        "countryNameEn": "Germany",
+        "valueHi": "5.24%",
+        "valueEn": "5.24%",
+        "valueNumeric": 5.24,
+        "isIndia": false,
+        "sortOrder": 5
+      },
+      {
+        "countryNameHi": "ब्राज़ील",
+        "countryNameEn": "Brazil",
+        "valueHi": "5.62%",
+        "valueEn": "5.62%",
+        "valueNumeric": 5.62,
+        "isIndia": false,
+        "sortOrder": 6
+      },
+      {
+        "countryNameHi": "दक्षिण अफ़्रीका",
+        "countryNameEn": "South Africa",
+        "valueHi": "6.16%",
+        "valueEn": "6.16%",
+        "valueNumeric": 6.16,
+        "isIndia": false,
+        "sortOrder": 7
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://data.worldbank.org/indicator/SE.XPD.TOTL.GD.ZS",
+        "publisher": "World Bank",
+        "title": "Government expenditure on education, total (% of GDP) (World Development Indicators)",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      },
+      {
+        "url": "https://data.worldbank.org/indicator/SE.ADT.LITR.ZS",
+        "publisher": "World Bank",
+        "title": "Literacy rate, adult total (% of people ages 15 and above) (World Development Indicators)",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      },
+      {
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD",
+        "publisher": "World Bank",
+        "title": "GDP per capita, PPP (current international $) (World Development Indicators)",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      },
+      {
+        "url": "https://uis.unesco.org",
+        "publisher": "UNESCO Institute for Statistics",
+        "title": "UIS data on education spending and literacy",
+        "credibilityTier": "official_primary",
+        "language": "en"
+      }
+    ]
+  }
+]

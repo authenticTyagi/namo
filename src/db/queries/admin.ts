@@ -234,6 +234,19 @@ export async function getAllEntrySlugsForDedupe() {
     .innerJoin(categories, eq(entries.categoryId, categories.id));
 }
 
+export async function getAllComparisonSlugsForDedupe() {
+  if (!isDbConfigured) return [];
+
+  return db
+    .select({
+      slug: comparisons.slug,
+      titleEn: comparisons.titleEn,
+      categorySlug: categories.slug,
+    })
+    .from(comparisons)
+    .innerJoin(categories, eq(comparisons.categoryId, categories.id));
+}
+
 export async function getPendingReviewEditorials() {
   if (!isDbConfigured) return [];
 
