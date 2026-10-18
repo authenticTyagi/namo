@@ -3,11 +3,11 @@
 _Last updated: 2026-10-10. Update when the stack, data flow, caching or delivery changes._
 
 ## Stack
-- Next.js **15.5.25 (pinned; do not move to 16 canary)**, React 19, TypeScript, Tailwind v4.
+- Next.js **15.5.27 (pinned; do not move to 16 canary)**, React 19, TypeScript, Tailwind v4.
 - Neon Postgres via `@neondatabase/serverless` + Drizzle ORM (`src/db/schema.ts`, migrations in `drizzle/`).
 - next-intl: locales `hi` (default), `en`, `bn`, `te`, `mr`; fallback bn/te/mr -> en -> hi.
 - NextAuth v5 + Google OAuth; `/admin` gated by `ADMIN_EMAILS`.
-- Hosting: Vercel. CI: `.github/workflows/ci.yml` (npm install -> lint -> tsc -> build).
+- Hosting: Vercel. CI: `.github/workflows/ci.yml` (npm install -> lint -> tsc -> test -> build).
 - Analytics: `@vercel/analytics`. Ads: AdSense behind consent (`ConsentBanner`, `AdSlot`).
 
 ## Layout

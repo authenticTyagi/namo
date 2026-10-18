@@ -67,7 +67,7 @@ Sourcing criteria vary by content type:
 
 ## 5. Technical Stack & Architecture
 
-* **Framework:** Next.js 15.5.25 (pinned stable — do not upgrade to Next 16 canary).
+* **Framework:** Next.js 15.5.27 (pinned stable — do not upgrade to Next 16 canary).
 * **Styling:** Tailwind CSS v4.
 * **Database & ORM:** Neon Postgres + Drizzle ORM.
   * Migrations: Run migrations using `npx drizzle-kit migrate` or `npm run db:migrate`.
