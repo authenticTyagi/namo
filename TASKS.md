@@ -7,7 +7,7 @@ _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJE
 
 ## Next (performance and architecture, from the 2026-10-10 audit)
 - [x] **T-1** Category and comparison detail pages: SSG + ISR (2026-10-10).
-- [~] **T-1b** Built 2026-10-18, committed locally, **not pushed**: entry and editorial pages are SSG + 1h ISR; comments/session load client-side from `/api/comments`. Verified signed-out (build, headers, API validation, browser render). **Owner to test signed-in on localhost before push:** sign in, post a comment (should appear without reload), report someone else's comment, sign in from the prompt and land back on the page. Then check `x-nextjs-cache: HIT` on Vercel for an entry URL.
+- [x] **T-1b** Done 2026-10-18 (`b659023`, live): entry and editorial pages are SSG + 1h ISR, verified `PRERENDER` then `HIT` on Vercel; comments/session load client-side from `/api/comments`. Owner ran the signed-in checks (post, report, sign-in round trip) after deploy and reported "Done" with no problems (their summary, not a line-by-line record).
 - [x] **T-2** Verified 2026-10-18: production serves Brotli (`Content-Encoding: br`); recorded in ARCHITECTURE.md. Do not add app-level compression on Vercel.
 - [x] **T-3** Rate limit comment/feedback/search endpoints.
 - [x] **T-4** Cache-Control / security headers (CSP, HSTS, Referrer-Policy) in `next.config.ts`.
