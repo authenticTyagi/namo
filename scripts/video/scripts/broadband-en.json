@@ -1,0 +1,55 @@
+{
+  "id": "broadband-en",
+  "locale": "en",
+  "source_url": "https://modinekiyakyahai.com/en/india-in-the-world",
+  "display_url": "modinekiyakyahai.com",
+  "tag": "India vs the World · Internet",
+  "scenes": [
+    {
+      "kind": "hook",
+      "kicker": "India vs the world",
+      "caption": "Fixed broadband: how does India compare?",
+      "narration": "How does India compare on fixed broadband?"
+    },
+    {
+      "kind": "bars",
+      "title": "Fixed broadband subscriptions per 100 people, 2024 (World Bank)",
+      "caption": "Up from 1.2 in 2014, but second lowest of ten countries.",
+      "bars": [
+        {
+          "label": "India",
+          "value": 3.2,
+          "show": "3.2",
+          "hl": true
+        },
+        {
+          "label": "Bangladesh",
+          "value": 8.1,
+          "show": "8.1"
+        },
+        {
+          "label": "Vietnam",
+          "value": 23.7,
+          "show": "23.7"
+        },
+        {
+          "label": "China",
+          "value": 47.2,
+          "show": "47.2"
+        }
+      ],
+      "narration": "India has three point two fixed broadband subscriptions per hundred people, up from one point two in twenty fourteen. That is second lowest of ten countries, far below China's forty seven."
+    },
+    {
+      "kind": "caveat",
+      "kicker": "Read it with care",
+      "caption": "Fixed lines only. Mobile internet is not counted here.",
+      "narration": "This counts fixed lines only. Mobile internet is not part of this measure."
+    },
+    {
+      "kind": "cta",
+      "caption": "Search: broadband",
+      "narration": "Sources and the full story, on modinekiyakyahai dot com."
+    }
+  ]
+}

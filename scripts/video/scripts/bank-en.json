@@ -1,0 +1,64 @@
+{
+  "id": "bank-en",
+  "locale": "en",
+  "source_url": "https://modinekiyakyahai.com/en/entry/bank-bad-loans-gross-npa-peak-to-2025-writeoffs-caveat",
+  "display_url": "modinekiyakyahai.com",
+  "tag": "Economy · Banks",
+  "scenes": [
+    {
+      "kind": "hook",
+      "kicker": "Bank bad loans",
+      "caption": "Bad loans fell from 11.5% to 2.8%. What that number hides.",
+      "narration": "India's bank bad loans have fallen sharply. But what does that number leave out?"
+    },
+    {
+      "kind": "bars",
+      "title": "Gross bad loans, all scheduled banks (RBI data via PIB)",
+      "caption": "Peak in 2018. Down to 2.79% by 2025.",
+      "bars": [
+        {
+          "label": "March 2014",
+          "value": 4.1,
+          "show": "4.1%"
+        },
+        {
+          "label": "March 2018, peak",
+          "value": 11.46,
+          "show": "11.46%",
+          "hl": true
+        },
+        {
+          "label": "March 2025",
+          "value": 2.79,
+          "show": "2.79%"
+        }
+      ],
+      "narration": "Bad loans were four point one percent of all bank lending in twenty fourteen, peaked at eleven and a half percent in twenty eighteen, and were down to two point eight in twenty twenty five."
+    },
+    {
+      "kind": "caveat",
+      "kicker": "Part of the rise was recognition",
+      "caption": "The Finance Ministry says 2018 mostly showed stress being counted honestly.",
+      "narration": "The Finance Ministry says much of that rise was stress being counted honestly after a twenty fifteen review, not new trouble."
+    },
+    {
+      "kind": "stat",
+      "kicker": "Public sector banks, written off in about 5½ years",
+      "big": "₹6.16 lakh crore",
+      "label": "about 2.25 times the bad loans left across all banks",
+      "note": "Rough comparison. A write-off is not a waiver.",
+      "narration": "And public sector banks wrote off six point one six lakh crore rupees. A write-off removes a loan from the count, but the debt is not forgiven."
+    },
+    {
+      "kind": "caveat",
+      "kicker": "Still missing",
+      "caption": "What did recapitalising the banks cost the public? No source we read says.",
+      "narration": "What we could not find is what the clean-up cost the public."
+    },
+    {
+      "kind": "cta",
+      "caption": "Search: bank bad loans",
+      "narration": "Sources and the full story, on modinekiyakyahai dot com."
+    }
+  ]
+}

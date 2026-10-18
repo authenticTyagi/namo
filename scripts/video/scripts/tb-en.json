@@ -1,0 +1,65 @@
+{
+  "id": "tb-en",
+  "locale": "en",
+  "source_slug": "tb-india-incidence-237-to-187-per-lakh-2015-2024-who-milestone-missed",
+  "source_url": "https://modinekiyakyahai.com/en/entry/tb-india-incidence-237-to-187-per-lakh-2015-2024-who-milestone-missed",
+  "display_url": "modinekiyakyahai.com",
+  "tag": "Health · TB",
+  "scenes": [
+    {
+      "kind": "hook",
+      "kicker": "India and TB",
+      "caption": "TB is down a fifth in nine years. Is that enough?",
+      "narration": "India's TB rate has fallen by a fifth in nine years. Is that enough?"
+    },
+    {
+      "kind": "stat",
+      "kicker": "TB cases per lakh people, WHO estimate",
+      "big": "237 → 187",
+      "label": "2015 to 2024",
+      "narration": "WHO estimates India had two hundred thirty seven TB cases per lakh people in twenty fifteen. By twenty twenty four, one eighty seven."
+    },
+    {
+      "kind": "bars",
+      "title": "Fall in TB rate, 2015 to 2024",
+      "caption": "Faster than the world. Short of the target.",
+      "bars": [
+        {
+          "label": "India",
+          "value": 21,
+          "show": "21%",
+          "hl": true
+        },
+        {
+          "label": "World",
+          "value": 12.3,
+          "show": "12.3%"
+        },
+        {
+          "label": "WHO target for 2025",
+          "value": 50,
+          "show": "50%"
+        }
+      ],
+      "narration": "That is a twenty one percent fall. The world managed twelve. But WHO's target for twenty twenty five was fifty."
+    },
+    {
+      "kind": "caveat",
+      "kicker": "Read the 92% with care",
+      "caption": "92% coverage = reported cases ÷ a modelled estimate. Both moved.",
+      "narration": "The headline ninety two percent coverage is reported cases divided by a model's estimate. Reported cases rose by half and the estimate fell. So it is an estimate, not a count."
+    },
+    {
+      "kind": "stat",
+      "kicker": "Where India stands",
+      "big": "~1 in 4",
+      "label": "of the world's TB cases are still in India",
+      "narration": "India still has about a quarter of the world's TB cases."
+    },
+    {
+      "kind": "cta",
+      "caption": "Search: TB elimination",
+      "narration": "Sources and the full story, on modinekiyakyahai dot com."
+    }
+  ]
+}

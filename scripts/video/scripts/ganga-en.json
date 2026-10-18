@@ -1,0 +1,52 @@
+{
+  "id": "ganga-en",
+  "locale": "en",
+  "source_url": "https://modinekiyakyahai.com/en/entry/namami-gange-sewage-capacity-built-vs-river-quality-record",
+  "display_url": "modinekiyakyahai.com",
+  "tag": "Environment · Ganga",
+  "scenes": [
+    {
+      "kind": "hook",
+      "kicker": "Namami Gange",
+      "caption": "Sewage plants built. Is the river cleaner?",
+      "narration": "Thousands of crores have been sanctioned to clean the Ganga. Capacity is the easy number. What else do we know?"
+    },
+    {
+      "kind": "bars",
+      "title": "Sewage treatment capacity, million litres a day",
+      "caption": "Built is not the same as running.",
+      "bars": [
+        {
+          "label": "Sanctioned, 219 projects",
+          "value": 6610,
+          "show": "6,610"
+        },
+        {
+          "label": "Created by completed projects, June 2026",
+          "value": 4263,
+          "show": "4,263",
+          "hl": true
+        }
+      ],
+      "narration": "Two hundred nineteen sewerage projects, worth about thirty six thousand crore rupees, were sanctioned. A hundred forty six are complete, creating about two thirds of the planned capacity."
+    },
+    {
+      "kind": "stat",
+      "kicker": "Uttarakhand audit by the CAG, 2018 to 2023",
+      "big": "5 of 44",
+      "label": "treatment plants inspected met the NGT's standards (Jan to Mar 2023)",
+      "narration": "But an audit in Uttarakhand found only five of forty four plants it inspected met the green tribunal's standards."
+    },
+    {
+      "kind": "caveat",
+      "kicker": "Two official readings of one river",
+      "caption": "Prayagraj 2025: both statements may be true. Median vs single readings.",
+      "narration": "And two official statements about Prayagraj water quality differ. Both may be true, one using medians, the other individual readings."
+    },
+    {
+      "kind": "cta",
+      "caption": "Search: Namami Gange",
+      "narration": "Sources and the full story, on modinekiyakyahai dot com."
+    }
+  ]
+}

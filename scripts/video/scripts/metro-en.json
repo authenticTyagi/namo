@@ -1,0 +1,52 @@
+{
+  "id": "metro-en",
+  "locale": "en",
+  "source_url": "https://modinekiyakyahai.com/en/entry/metro-rail-network-248-km-to-1095-km-ridership-gap",
+  "display_url": "modinekiyakyahai.com",
+  "tag": "Infrastructure · Metro",
+  "scenes": [
+    {
+      "kind": "hook",
+      "kicker": "Metro rail",
+      "caption": "Metros went from 5 cities to 26. Do the trains fill?",
+      "narration": "India's metro network has grown enormously. But do the trains fill?"
+    },
+    {
+      "kind": "stat",
+      "kicker": "Operational metro and RRTS network, PIB",
+      "big": "248 → 1,095 km",
+      "label": "2014 to 2025, and from 5 cities to 26",
+      "narration": "In twenty fourteen, five cities had two hundred forty eight kilometres of metro. By twenty twenty five, twenty six cities had about one thousand ninety five."
+    },
+    {
+      "kind": "bars",
+      "title": "Chennai Metro, daily riders (lakh)",
+      "caption": "One city, one line set. Not the whole country.",
+      "bars": [
+        {
+          "label": "Project report's projection for 2026",
+          "value": 15.69,
+          "show": "15.69"
+        },
+        {
+          "label": "Reported actual, July 2026",
+          "value": 3.14,
+          "show": "3.14",
+          "hl": true
+        }
+      ],
+      "narration": "But in Chennai, the project report expected fifteen point six nine lakh riders a day by twenty twenty six. The reported figure is three point one four lakh, about a fifth."
+    },
+    {
+      "kind": "caveat",
+      "kicker": "How far this goes",
+      "caption": "We found no comparable forecast for Delhi, so we don't claim it met its target.",
+      "narration": "One city is not the country. We found no comparable forecast for Delhi, so we make no claim either way."
+    },
+    {
+      "kind": "cta",
+      "caption": "Search: metro rail",
+      "narration": "Sources and the full story, on modinekiyakyahai dot com."
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+imageio-ffmpeg
+edge-tts   # optional; unofficial endpoint, was rejected (403) from the owner's machine on 2026-10-18
