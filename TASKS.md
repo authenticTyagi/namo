@@ -3,7 +3,7 @@
 _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJECT_LOG.md with a date._
 
 ## Now
-- [ ] **T-0** Owner review: metro rail entry (`metro-rail-network-248-km-to-1095-km-ridership-gap`) and its editorial (`metro-rail-five-cities-to-twenty-six-but-do-the-trains-fill`), both `pending_review` (2026-10-18). The queue was otherwise clear (99 entries, 99 editorials, 30 comparisons published).
+- [ ] **T-0** Owner review: Namami Gange entry (`namami-gange-sewage-capacity-built-vs-river-quality-record`, confidence 0.22, no primary government document read) and editorial (`ganga-built-capacity-vs-clean-river-what-the-evidence-says`), both `pending_review` (2026-10-18). Metro rail entry + editorial were reviewed and published the same day.
 
 ## Next (performance and architecture, from the 2026-10-10 audit)
 - [x] **T-1** Category and comparison detail pages: SSG + ISR (2026-10-10).
@@ -15,7 +15,7 @@ _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJE
 - [ ] **T-6** Real-user Core Web Vitals reporting.
 
 ## Content backlog (see PROJECT_LOG.md for context)
-- [ ] Uncovered shortlisted topics: Namami Gange. (Metro rail drafted 2026-10-18, entry + editorial pending review.)
+- [x] The 2026-10-01 shortlist is exhausted: metro rail (published) and Namami Gange (drafted, pending review) were the last two, both 2026-10-18. Further topics need a fresh shortlist. Follow-up for Namami Gange: if the Lok Sabha reply or a PIB release and the CAG Uttarakhand report can be reached, replace the press-report sources with them and raise confidence.
 - [ ] India vs the World (30 comparisons, all published, as of 2026-10-18): remaining ideas are adult literacy, physicians/beds per 1,000 (India's latest value is 2020, stale), exports % GDP, researchers per million (India 2020, sparse peer data). Agent `comparisons` mode built 2026-10-18 (manual workflow only; needs the repo secrets to run).
 - [ ] Locale coverage for bn/te/mr translations.
 - [ ] Freshness re-verification of old published entries (detection exists; re-drafting not built).
