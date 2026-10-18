@@ -3,7 +3,7 @@
 _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJECT_LOG.md with a date._
 
 ## Now
-- [ ] **T-0** Owner review of all `pending_review` items (entries, editorials, comparisons), including the 2026-10-09 corruption and diplomacy lists and the 9 new India-vs-the-World comparisons (2026-10-18).
+- [ ] **T-0** Owner review of all `pending_review` items (entries, editorials, comparisons), including the 2026-10-09 corruption and diplomacy lists and the 4 newest India-vs-the-World comparisons (2026-10-18). The earlier 9 comparisons from the same day were approved (DB check: 26 comparisons published).
 
 ## Next (performance and architecture, from the 2026-10-10 audit)
 - [x] **T-1** Category and comparison detail pages: SSG + ISR (2026-10-10).
@@ -16,7 +16,7 @@ _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJE
 
 ## Content backlog (see PROJECT_LOG.md for context)
 - [ ] Uncovered shortlisted topics: Namami Gange, metro rail.
-- [ ] India vs the World (26 comparisons, 9 pending review as of 2026-10-18): remaining ideas are adult literacy, physicians/beds per 1,000, exports % GDP, safely managed drinking water. Pause adding until the 9 are reviewed (RULES #11). Agent `comparisons` mode built 2026-10-18 (manual workflow only; needs the repo secrets to run).
+- [ ] India vs the World (30 comparisons as of 2026-10-18: 26 published, 4 pending review): remaining ideas are adult literacy, physicians/beds per 1,000 (India's latest value is 2020, stale), exports % GDP, researchers per million (India 2020, sparse peer data). Hold further drafts until the 4 are reviewed (RULES #11). Agent `comparisons` mode built 2026-10-18 (manual workflow only; needs the repo secrets to run).
 - [ ] Locale coverage for bn/te/mr translations.
 - [ ] Freshness re-verification of old published entries (detection exists; re-drafting not built).
 
