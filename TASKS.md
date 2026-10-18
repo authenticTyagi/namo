@@ -3,7 +3,7 @@
 _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJECT_LOG.md with a date._
 
 ## Now
-- [ ] **T-0** Owner: (1) open /admin/translations and, with a native reader, approve or reject the 18 bn/te/mr drafts of 6 entries; (2) in Vercel, enable Speed Insights for the project (T-6); (3) watch a few reels from `scripts/video/out/` and post from `posting-plan-*.csv`. (4) review the new PLFS and exam-integrity (paper-leak law) entries and editorials in the admin queue. Everything else is shipped (2026-10-18).
+- [ ] **T-0** Owner: (1) open /admin/translations and, with a native reader, approve or reject the 18 bn/te/mr drafts of 6 entries; (2) in Vercel, enable Speed Insights for the project (T-6); (3) watch a few reels from `scripts/video/out/` and post from `posting-plan-*.csv`. (4) review the new new tax (who pays) entry and editorial in the admin queue (PLFS and paper-leak pieces were published 2026-10-18). Everything else is shipped (2026-10-18).
 
 ## Next (performance and architecture, from the 2026-10-10 audit)
 - [x] **T-1** Category and comparison detail pages: SSG + ISR (2026-10-10).
