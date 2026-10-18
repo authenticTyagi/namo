@@ -16,6 +16,14 @@ _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJE
 
 ## Content backlog (see PROJECT_LOG.md for context)
 - [x] The 2026-10-01 shortlist is exhausted: metro rail (published) and Namami Gange (drafted, pending review) were the last two, both 2026-10-18. Further topics need a fresh shortlist. Follow-up for Namami Gange: if the Lok Sabha reply or a PIB release and the CAG Uttarakhand report can be reached, replace the press-report sources with them and raise confidence.
+- [ ] **Fresh shortlist (2026-10-18), aimed at thin categories** (coverage now: economy 27, foreign 10, governance 9, environment 9, education 9, space 7, then 5 each agriculture/welfare/defence/prices, 4 each health/women-child, sports 2). Search-checked only; nothing drafted. Ranked:
+  1. **TB elimination** (health): WHO Global TB Report 2025 via secondary coverage: incidence 237 to 187 per lakh (2015 to 2024), treatment coverage 53% to ~92%, mortality 28 to 21. Neutral body, but modelled estimates and 2015 baselines differ between reports; open the WHO report itself.
+  2. **MGNREGA replaced by VB-G RAM G** (welfare): in force from 1 Jul 2026 (125 days, wages 100% central, other costs 60:40). Contested; early wage-delay reports from one district only; sources so far are news and opinion. Needs the Act text/PIB and a both-sides treatment (RULES #5).
+  3. **PMGKAY free grain** (welfare): 81.35 crore beneficiaries, ₹11.80 lakh crore over 5 years from Jan 2024 (Cabinet decision, official). Need current-year data and leakage/beneficiary-list evidence for the honest counterweight.
+  4. **Anaemia, NFHS-4 vs NFHS-5** (women-child): not yet searched; check whether a newer NFHS exists.
+  5. **PLFS annual report 2025** (MoSPI press note found): unemployment 3.1%, female LFPR 40.0%, urban female unemployment 6.4%, youth 9.9%. Overlaps the existing female-LFPR entry; some secondary sites misquote figures, use the MoSPI note only.
+  6. **Bank asset quality** (economy): RBI FSR June 2026 gross NPA 1.8% (Mar 2026). Need a 2014-era baseline and the write-offs caveat from RBI tables.
+  7. Unchecked ideas: Mudra loans, Lakhpati Didi, PM-KUSUM/fertiliser subsidy, Commonwealth Games 2030 / Olympic 2036 bid (sports), ABDM digital health.
 - [ ] India vs the World (30 comparisons, all published, as of 2026-10-18): remaining ideas are adult literacy, physicians/beds per 1,000 (India's latest value is 2020, stale), exports % GDP, researchers per million (India 2020, sparse peer data). Agent `comparisons` mode built 2026-10-18 (manual workflow only; needs the repo secrets to run).
 - [ ] Locale coverage for bn/te/mr translations.
 - [ ] Freshness re-verification of old published entries (detection exists; re-drafting not built).
