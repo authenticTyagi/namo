@@ -1,3 +1,4 @@
+import { jsonLdString } from "@/lib/json-ld";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -93,7 +94,7 @@ export default async function ComparisonPage({
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger -- static JSON, no user input
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(articleJsonLd) }}
       />
       <Breadcrumbs
         locale={locale}

@@ -31,7 +31,7 @@ const countrySchema = z.object({
 });
 
 const sourceSchema = z.object({
-  url: z.url(),
+  url: z.httpUrl(),
   publisher: z.string().min(1),
   title: z.string().min(1).optional(),
   credibilityTier: z.enum(["official_primary", "reputable_media", "secondary"]),

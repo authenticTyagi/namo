@@ -47,7 +47,7 @@ export function CitationList({ sources }: { sources: CitableSource[] }) {
             className="rounded-lg border border-neutral-200 p-3 text-sm dark:border-neutral-800"
           >
             <a
-              href={source.url}
+              href={/^https?:\/\//i.test(source.url) ? source.url : undefined}
               target="_blank"
               rel="noopener noreferrer nofollow"
               className="font-medium underline underline-offset-2"

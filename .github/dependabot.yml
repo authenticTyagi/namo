@@ -1,0 +1,16 @@
+# Security and version updates arrive as pull requests for the reviewer to
+# merge; nothing here auto-merges.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    ignore:
+      # Next.js is pinned on purpose (see PROJECT_LOG.md): upgrade by hand.
+      - dependency-name: next
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

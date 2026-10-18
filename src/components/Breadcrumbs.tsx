@@ -1,3 +1,4 @@
+import { jsonLdString } from "@/lib/json-ld";
 import { Link } from "@/i18n/navigation";
 import { SITE_URL } from "@/lib/constants";
 import type { Locale } from "@/i18n/routing";
@@ -29,7 +30,7 @@ export function Breadcrumbs({ items, locale }: { items: BreadcrumbItem[]; locale
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger -- static JSON, no user input
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }}
       />
       <nav aria-label="Breadcrumb" className="mb-4 text-sm text-neutral-500 dark:text-neutral-400">
         <ol className="flex flex-wrap items-center gap-1.5">
