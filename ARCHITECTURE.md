@@ -34,7 +34,7 @@ Editing published content resets it to `pending_review`. No auto-publish path ex
 ## Delivery and performance (honest current state)
 | Concern | State |
 |---|---|
-| Compression | `compress: true` is the Next default (gzip when self-hosted). On Vercel the CDN negotiates Brotli/gzip automatically. No app-level zstd; not configured, not verified on the edge. |
+| Compression | `compress: true` is the Next default (gzip when self-hosted). On Vercel the CDN negotiates Brotli/gzip automatically. No app-level zstd. **Verified 2026-10-18** with `curl -H "Accept-Encoding: br, gzip, zstd" -I`: `/en` and `/en/india-in-the-world` both return `Content-Encoding: br` (the edge picks Brotli, not zstd); the comparisons index was an `X-Vercel-Cache: HIT`. |
 | Caching | Home, list and info pages are SSG. Category and comparison detail pages are SSG + ISR (`revalidate = 3600`, `generateStaticParams` from `getSitemapData`); verified `x-nextjs-cache: HIT`. Admin actions call `revalidatePath("/[locale]", "layout")`, so publish/unpublish shows immediately. **Entry and editorial detail pages are still per-request** because `CommentSection` calls `auth()` (cookies) — see TASKS.md T-1b. |
 | Bloom filter | Not used. See "Bloom filter" below. |
 | Search | Postgres query over all content types, all-words match, ranked, noindex (`src/db/queries/search.ts`). |

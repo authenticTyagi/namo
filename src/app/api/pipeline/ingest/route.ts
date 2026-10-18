@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { eq } from "drizzle-orm";
+import { computeConfidence, passesSourcingBar } from "@/lib/sourcing";
 import { db } from "@/db";
 import {
   categories,
@@ -76,31 +77,6 @@ const ingestSchema = z.object({
     contradictionFound: z.boolean(),
   }),
 });
-
-type IngestInput = z.infer<typeof ingestSchema>;
-
-const TIER_WEIGHT = { official_primary: 1.0, reputable_media: 0.7, secondary: 0.4 } as const;
-
-function computeConfidence(
-  sourceList: IngestInput["sources"],
-  signals: IngestInput["sourceSignals"],
-): number {
-  const avgTierWeight =
-    sourceList.reduce((sum, s) => sum + TIER_WEIGHT[s.credibilityTier], 0) / sourceList.length;
-  const sourceCountFactor = Math.min(sourceList.length, 3) / 3;
-  const numericConsistency = signals.numericConsistency ? 1 : 0;
-  const contradictionPenalty = signals.contradictionFound ? 1 : 0;
-
-  const raw =
-    0.5 * avgTierWeight + 0.3 * sourceCountFactor + 0.2 * numericConsistency - 0.4 * contradictionPenalty;
-
-  return Math.min(1, Math.max(0, raw));
-}
-
-function passesSourcingBar(sourceList: IngestInput["sources"]): boolean {
-  const hasOfficialPrimary = sourceList.some((s) => s.credibilityTier === "official_primary");
-  return hasOfficialPrimary || sourceList.length >= 2;
-}
 
 function deriveBody(quickTake: string, sections: { heading: string; body: string }[]): string {
   return [quickTake, ...sections.map((s) => `${s.heading}\n\n${s.body}`)]
