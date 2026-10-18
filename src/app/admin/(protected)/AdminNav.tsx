@@ -13,6 +13,7 @@ import {
   Link2,
   ShieldCheck,
   Inbox,
+  Languages,
   type LucideIcon,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
@@ -51,6 +52,7 @@ const SECTIONS: { label: string; links: NavLink[] }[] = [
     links: [
       { href: "/admin/review", label: "Review queue", icon: ClipboardCheck, countKey: "needsReviewCount" },
       { href: "/admin/freshness", label: "Needs re-check", icon: RefreshCw, countKey: "staleEntriesCount" },
+      { href: "/admin/translations", label: "Translations", icon: Languages },
     ],
   },
   {

@@ -55,3 +55,6 @@ the simpler fix is ISR + `notFound()` caching.
 
 ## Real-user performance (added 2026-10-18)
 `<SpeedInsights />` (`@vercel/speed-insights`) in the root locale layout reports real-user Core Web Vitals to Vercel, next to `<Analytics />`. It must also be enabled in the Vercel project dashboard. Lab numbers (Lighthouse) are not a substitute: the entry and editorial pages are ISR-cached, so field data is the check that the caching works for real visitors.
+
+## Translation review gate (added 2026-10-18)
+`entry_translations` and `entry_stat_translations` carry no status, so readers show whatever is in them. To keep unreviewed text out, translations are submitted to `translation_drafts` (always `pending_review`) via `POST /api/pipeline/translation-ingest`, and only an admin's approve action copies a draft into the live tables (atomic `db.batch`). Never insert into the live translation tables directly. Contract tests in `src/lib/translation-drafts.test.ts` enforce this.

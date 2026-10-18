@@ -14,6 +14,7 @@ import {
   tags,
   entryStats,
   trustedSources,
+  translationDrafts,
 } from "@/db/schema";
 import { and, asc, count, desc, eq, isNull, lt, or, sql } from "drizzle-orm";
 
@@ -402,4 +403,29 @@ export async function getEntryByIdForAdmin(id: string) {
     tags: entryTagRows.map((r) => r.tag),
     stats: entryStatRows,
   };
+}
+
+/** bn/te/mr translation drafts waiting for the owner, with the English they translate for side-by-side review. */
+export async function getPendingTranslationDrafts() {
+  if (!isDbConfigured) return [];
+  return db
+    .select({
+      id: translationDrafts.id,
+      locale: translationDrafts.locale,
+      title: translationDrafts.title,
+      summary: translationDrafts.summary,
+      quickTake: translationDrafts.quickTake,
+      bodySections: translationDrafts.bodySections,
+      stats: translationDrafts.stats,
+      note: translationDrafts.note,
+      entrySlug: entries.slug,
+      titleEn: entries.titleEn,
+      summaryEn: entries.summaryEn,
+      quickTakeEn: entries.quickTakeEn,
+      bodySectionsEn: entries.bodySectionsEn,
+    })
+    .from(translationDrafts)
+    .innerJoin(entries, eq(entries.id, translationDrafts.entryId))
+    .where(eq(translationDrafts.status, "pending_review"))
+    .orderBy(asc(entries.slug), asc(translationDrafts.locale));
 }

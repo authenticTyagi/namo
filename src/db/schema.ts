@@ -10,6 +10,7 @@ import {
   uuid,
   jsonb,
   index,
+  uniqueIndex,
 } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 
@@ -319,6 +320,55 @@ export const entryStatTranslations = pgTable(
     extraValue: text("extra_value"),
   },
   (t) => [primaryKey({ columns: [t.entryStatId, t.locale] })],
+);
+
+/**
+ * Staging area for bn/te/mr translations, so a drafted translation can never
+ * reach a reader before the owner has approved it. entry_translations (the
+ * table every reader joins) has no status column, so rows are only ever
+ * written there by approveTranslationDraft (src/app/admin/(protected)/
+ * translations/actions.ts), which copies an approved draft across. One row
+ * per (entry, locale); a re-submission resets it to pending_review and leaves
+ * any already-live translation untouched until it is approved again.
+ */
+export const translationDrafts = pgTable(
+  "translation_drafts",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    entryId: uuid("entry_id")
+      .notNull()
+      .references(() => entries.id, { onDelete: "cascade" }),
+    locale: text("locale").notNull(), // 'bn' | 'te' | 'mr'
+    title: text("title").notNull(),
+    summary: text("summary").notNull(),
+    quickTake: text("quick_take").notNull(),
+    bodySections: jsonb("body_sections")
+      .$type<{ heading: string; body: string }[]>()
+      .notNull(),
+    // One object per entry_stats row, keyed by statKey (see entryStatTranslations).
+    stats: jsonb("stats")
+      .$type<
+        {
+          statKey: string;
+          metricLabel: string;
+          beforeLabel: string;
+          beforeValue: string;
+          afterLabel: string;
+          afterValue: string;
+          extraLabel?: string | null;
+          extraValue?: string | null;
+        }[]
+      >()
+      .notNull(),
+    note: text("note"), // who/what drafted it, e.g. "machine-drafted, needs a native reader"
+    status: entryStatusEnum("status").notNull().default("pending_review"),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    updatedAt: timestamp("updated_at").notNull().defaultNow(),
+  },
+  (t) => [
+    uniqueIndex("translation_drafts_entry_locale_uq").on(t.entryId, t.locale),
+    index("translation_drafts_status_idx").on(t.status),
+  ],
 );
 
 // ---------------------------------------------------------------------------
