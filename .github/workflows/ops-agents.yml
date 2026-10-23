@@ -1,0 +1,73 @@
+name: Ops agents
+
+# Eight read-only monitoring agents (scripts/ops, contract in OPS_AGENTS.md).
+# Each writes one rolling GitHub issue labelled `ops-agent` (its digest) and
+# uploads its report as an artifact. They never push, never publish content
+# and never change the site. A failing check is a finding in the digest, not
+# a failed run, so this does not produce failure-email spam.
+#
+# Optional repository settings (agents degrade gracefully without them):
+#   secret   CRON_SECRET   same value as in Vercel; enables database figures
+#   secret   PSI_API_KEY   Google PageSpeed Insights key; avoids shared rate limit
+#   variable SITE_BASE_URL defaults to https://modinekiyakyahai.com
+#   variable DB_LIMIT_MB   Neon plan size, defaults to 512
+
+on:
+  schedule:
+    # Security and infra every day, ~08:00 IST
+    - cron: "30 2 * * *"
+    # The rest every Monday, ~09:00 IST
+    - cron: "30 3 * * 1"
+  workflow_dispatch:
+    inputs:
+      agents:
+        description: "Comma-separated agents, or all (security,infra,frontend,performance,business,scaling,growth,nudges)"
+        default: "all"
+        required: true
+
+permissions:
+  contents: read
+  issues: write
+  actions: read
+  pull-requests: read
+
+concurrency:
+  group: ops-agents
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Pick agents
+        id: pick
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "agents=${{ inputs.agents }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "30 2 * * *" ]; then
+            echo "agents=security,infra" >> "$GITHUB_OUTPUT"
+          else
+            echo "agents=frontend,performance,business,scaling,growth,nudges" >> "$GITHUB_OUTPUT"
+          fi
+      # npm audit needs a lockfile whose resolved URLs the runner can reach.
+      - name: Refresh lockfile (no install)
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+      - name: Run agents
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          PSI_API_KEY: ${{ secrets.PSI_API_KEY }}
+          SITE_BASE_URL: ${{ vars.SITE_BASE_URL }}
+          DB_LIMIT_MB: ${{ vars.DB_LIMIT_MB }}
+        run: node scripts/ops/run.mjs "${{ steps.pick.outputs.agents }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ops-reports
+          path: ops-reports/
+          retention-days: 30

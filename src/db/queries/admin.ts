@@ -429,3 +429,12 @@ export async function getPendingTranslationDrafts() {
     .where(eq(translationDrafts.status, "pending_review"))
     .orderBy(asc(entries.slug), asc(translationDrafts.locale));
 }
+
+/** Translation drafts per status, for the ops agents' read-only stats (counts only). */
+export async function getTranslationDraftCounts(): Promise<{ status: string; n: number }[]> {
+  if (!isDbConfigured) return [];
+  return db
+    .select({ status: translationDrafts.status, n: count() })
+    .from(translationDrafts)
+    .groupBy(translationDrafts.status);
+}
