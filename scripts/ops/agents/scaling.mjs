@@ -63,6 +63,12 @@ export async function run({ previous } = {}) {
     if (stats.commentsLast7d > 200) findings.push(finding("medium", "moderation", `${stats.commentsLast7d} comments in the last 7 days`, { suggestion: "Moderation is a single-reviewer job (RULES #9): consider stricter limits or approve-first for new accounts." }));
   }
 
+  findings.push(
+    finding("info", "headroom", `Headroom now: ${metrics.sitemapUrls} prerendered URLs, edge cache hit ratio ${metrics.cacheHitRatio ?? "n/a"}%` + (metrics.dbMb != null ? `, database ${metrics.dbMb} of ${DB_LIMIT_MB} MB (${metrics.users} signed-in users, ${metrics.comments} comments)` : ""), {
+      suggestion: "No action needed unless a warning above appears; this line is the baseline the next run compares against.",
+    }),
+  );
+
   notes.push("Checks: sitemap size (build time), edge cache hit ratio on a repeat request, database size against a limit, growth rate and days to limit, user and comment growth.");
   notes.push(`Limit assumed: ${DB_LIMIT_MB} MB (set the DB_LIMIT_MB repository variable for a paid Neon plan). Vercel function and bandwidth quotas have no read API here, so check them in the dashboard.`);
   return { findings, metrics, notes };

@@ -7,7 +7,9 @@ _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJE
 
 - [ ] **SIR entry + editorial (2026-10-23)** in the admin queue, pending review. Before approving: check the Bengal and Bihar numbers, the BLO-death wording, and whether to hold until the judgment PDF and ECI press notes are read. Follow-ups: read the judgment PDF, ECI final-roll releases, phase 3 final rolls, and find a reputable voter survey.
 - [ ] **Security follow-ups (see SECURITY.md)**: enforce 2-step verification on every `ADMIN_EMAILS` Google account (owner); triage CodeQL; rate-limit sign-in and search; consider a least-privilege DB role; script-src CSP with nonces; automated guard check for `"use server"` files.
-- [ ] **Build the monitoring agents (see OPS_AGENTS.md)**: none exist. Owner to pick the first (suggested: security, then uptime).
+- [ ] **Switch the ops agents on (see OPS_AGENTS.md)**: built 2026-10-23, all eight. Owner: add the `CRON_SECRET` repository secret (and optionally `PSI_API_KEY`), then Actions -> "Ops agents" -> Run workflow, and read the `[ops]` issues it opens.
+- [ ] **Canonical and hreflang tags (frontend agent finding)**: most pages have none (only /about has a canonical). bn/te/mr serve English fallback text, so canonicalise those to /en (same rule as about/page.tsx); add alternates.languages only for locales with real content (see sitemap.ts). Needs care: wrong canonicals hurt SEO.
+- [ ] **32 published entries have confidence under 0.50 (business agent finding)**: review them in /admin, raise sourcing or add a caveat.
 - [ ] Refresh README.md (still says Phase 0) and add a short CONTRIBUTING pointer to RUNBOOK.md.
 
 ## Next (performance and architecture, from the 2026-10-10 audit)

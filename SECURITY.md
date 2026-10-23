@@ -30,7 +30,8 @@ _Last audited: 2026-10-23 (code read by Claude; no external penetration test has
 | Exposed source maps | OK | `productionBrowserSourceMaps` is not enabled (Next default is off). Verify after any config change. |
 | Sensitive data | OK | The site stores Google profile basics for signed-in users and optional feedback name/email. `/api/health` returns only `ok` and whether a DB is configured. Admin errors throw generic messages. |
 | Dependency vulnerabilities | OK | `npm audit --omit=dev`: 0 vulnerabilities after bumping Next 15.5.27 to 15.5.28 (2026-10-23; the previous version had a critical advisory about image-optimisation SVG handling and a server-action DoS; the site does not use remote or SVG images through `next/image`, so exposure was low). Dependabot, CodeQL and an `npm audit` CI step run on every push. |
-| Security headers | PARTIAL | HSTS, nosniff, referrer policy, permissions policy, `frame-ancestors`, `base-uri`, `object-src` are set (`next.config.ts`). **No script-src CSP**, deliberately, because AdSense needs inline and third-party scripts. Revisit with nonces when ads are on (TASKS). |
+| Automated re-checks | NEW | The security agent (`scripts/ops/agents/security.mjs`, daily) re-runs most rows above and opens/updates an `[ops] Security and auth digest` issue. See OPS_AGENTS.md. |
+| Security headers | PARTIAL | HSTS, nosniff, referrer policy, `X-Powered-By` removed (2026-10-23), permissions policy, `frame-ancestors`, `base-uri`, `object-src` are set (`next.config.ts`). **No script-src CSP**, deliberately, because AdSense needs inline and third-party scripts. Revisit with nonces when ads are on (TASKS). |
 
 ## Open items for a human or the security agent
 1. Enforce 2-step verification on all admin Google accounts (owner).

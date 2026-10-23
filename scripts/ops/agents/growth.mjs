@@ -13,8 +13,17 @@ export function parseGrowthBacklog(md) {
   const rest = md.slice(start + 3);
   const end = rest.search(/\n## /);
   const section = end === -1 ? rest : rest.slice(0, end);
-  return section
-    .split("\n")
+  // The ideas are one contiguous bullet list; stop at the first blank line after it so
+  // unrelated bullets appended further down the file are not read as growth ideas.
+  const lines = [];
+  let seen = false;
+  for (const l of section.split("\n")) {
+    if (/^- \[[ ~xX]\]/.test(l)) {
+      seen = true;
+      lines.push(l);
+    } else if (seen && l.trim() === "") break;
+  }
+  return lines
     .filter((l) => /^- \[[ ~]\]/.test(l))
     .map((l) => ({ started: l.startsWith("- [~]"), text: l.replace(/^- \[[ ~]\]\s*/, "").slice(0, 200) }));
 }
