@@ -5,7 +5,11 @@ verifiable government work under PM Modi's leadership. Every published claim car
 citation; unverifiable claims don't get published. See the full plan at
 `.claude/plans` in this session, or ask Claude Code to re-summarize it.
 
-## Status: Phase 0 (scaffold)
+## Status: live (see PROJECT_LOG.md for current state)
+
+> This README is partly stale. For setup, moving hosts or onboarding, read `RUNBOOK.md`; for security, `SECURITY.md`; for rules, `RULES.md`.
+
+## Original Phase 0 note
 
 This repo currently has the app skeleton, full data model, and page structure —
 **no real content yet**. Phase 1 (hand-curated, cited entries for Economy/Infra/Digital)

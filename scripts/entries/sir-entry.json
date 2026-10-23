@@ -1,0 +1,301 @@
+{
+  "categorySlug": "governance-judiciary",
+  "slug": "sir-electoral-roll-revision-before-2014-and-2025-26-process-results-court-ruling-controversies",
+  "titleEn": "Special Intensive Revision of Electoral Rolls: How It Differs From Earlier Revisions Before 2014, What the 2025-26 Drive Did to the Rolls in 13 States and UTs, and What the Supreme Court and Its Critics Said",
+  "titleHi": "मतदाता सूची का विशेष गहन पुनरीक्षण (SIR): 2014 से पहले के पुनरीक्षणों से यह कैसे अलग है, 2025-26 में 13 राज्यों/केंद्र शासित प्रदेशों की सूचियों का क्या हुआ, और सुप्रीम कोर्ट व आलोचकों ने क्या कहा",
+  "summaryEn": "The Election Commission of India (ECI), a constitutional body and not part of the Union government, began a Special Intensive Revision (SIR) of electoral rolls in Bihar on 24 June 2025, then extended it to 12 more states and UTs (announced 27 October 2025) and to 16 states and 3 UTs (announced 14 May 2026). Business Standard's state-wise tally of the first two phases (13 states and UTs) puts the combined net fall in electors at about 5.84 crore, from 6% in Bihar to 13.4% in Gujarat and 13.2% in Uttar Pradesh, after additions at the claims stage. Intensive revisions had been done before: sources list them from 1952-56 through 2002-04, after which summary revisions became the norm. On 27 May 2026 the Supreme Court upheld the ECI's power to run the SIR under Article 324 and section 21(3) of the Representation of the People Act, 1950, while saying the ECI's citizenship findings are for electoral purposes only and not final. Opposition parties call it a threat to eligible voters; ruling-side spokespersons and the ECI call it a clean-up of duplicate, dead and shifted entries. Deletion counts for the 2015 Aadhaar-seeding drive and for Bengal are disputed.",
+  "summaryHi": "भारत निर्वाचन आयोग (ECI), जो एक संवैधानिक संस्था है और केंद्र सरकार का हिस्सा नहीं, ने 24 जून 2025 को बिहार में मतदाता सूची का विशेष गहन पुनरीक्षण (SIR) शुरू किया, फिर इसे 12 और राज्यों/केंद्र शासित प्रदेशों (घोषणा 27 अक्टूबर 2025) और 16 राज्यों व 3 केंद्र शासित प्रदेशों (घोषणा 14 मई 2026) तक बढ़ाया। बिज़नेस स्टैंडर्ड का पहले दो चरणों (13 राज्य/केंद्र शासित प्रदेश) का राज्यवार हिसाब दावे-आपत्ति चरण की वापसी के बाद मतदाताओं में कुल शुद्ध गिरावट लगभग 5.84 करोड़ बताता है: बिहार में 6% से गुजरात में 13.4% और उत्तर प्रदेश में 13.2% तक। गहन पुनरीक्षण पहले भी हुए हैं: स्रोत 1952-56 से 2002-04 तक की सूची देते हैं, जिसके बाद संक्षिप्त पुनरीक्षण आम हो गए। 27 मई 2026 को सुप्रीम कोर्ट ने अनुच्छेद 324 और लोक प्रतिनिधित्व अधिनियम, 1950 की धारा 21(3) के तहत ECI की SIR कराने की शक्ति को वैध ठहराया, साथ ही कहा कि नागरिकता पर आयोग का निष्कर्ष केवल चुनावी प्रयोजन के लिए है, अंतिम नहीं। विपक्षी दल इसे पात्र मतदाताओं के लिए ख़तरा बताते हैं; सत्ता-पक्ष के प्रवक्ता और ECI इसे दोहरी, मृत और स्थानांतरित प्रविष्टियाँ हटाने की सफ़ाई कहते हैं। 2015 के आधार-जोड़ो अभियान और बंगाल में हटाए गए नामों की संख्या विवादित है।",
+  "quickTakeEn": "A bigger, faster revision of voter lists than anything in recent memory has cut the rolls by millions in 13 states and UTs, and the Supreme Court has said the Election Commission may do it. Whether the removals are mostly dead, duplicate and moved voters, or also eligible people who could not produce papers, is still argued, and the sources read do not settle it.",
+  "quickTakeHi": "हाल की याद में सबसे बड़ा और तेज़ मतदाता-सूची पुनरीक्षण 13 राज्यों/केंद्र शासित प्रदेशों में सूचियों को लाखों-करोड़ों से घटा चुका है, और सुप्रीम कोर्ट ने कहा है कि निर्वाचन आयोग यह कर सकता है। हटाए गए नाम ज़्यादातर मृत, दोहरे और स्थानांतरित मतदाताओं के हैं या पात्र लोग भी हैं जो काग़ज़ नहीं दे सके, यह बहस अभी जारी है और पढ़े गए स्रोत इसे तय नहीं करते।",
+  "bodySectionsEn": [
+    {
+      "heading": "What the SIR is, and who runs it",
+      "body": "An electoral roll lists the people entitled to vote in each constituency. The Election Commission of India, a constitutional authority under Article 324, prepares and revises it, not the Union government. This entry is included because the SIR is one of the most debated governance exercises of the period and the Union government, state governments and parties are all arguing about it, not because it is a government scheme. The ECI's stated aims, as recorded in the Supreme Court case, are that every eligible citizen is enrolled, no ineligible person is enrolled, and dead, shifted and duplicate entries are removed, citing urbanisation, migration, young voters and under-reported deaths. The ECI has also framed it as roll purification and not a decision on citizenship."
+    },
+    {
+      "heading": "Before 2014: intensive and summary revisions",
+      "body": "A Vajiram and Ravi explainer, which cites the Indian Express and was not checked against the ECI's own records, lists intensive revisions in 1952-56, 1957, 1961, 1965, 1966, 1983-84, 1987-89, 1992, 1993, 1995, and 2002, 2003 and 2004. It says the 1993 and 1995 revisions helped bring in the voter photo ID card (EPIC), although that was not their main purpose, that from the 1980s the focus moved to keeping out ineligible entries, and that summary revisions later became the norm. In an intensive revision officials re-verify entries door to door; in a summary revision the existing roll is updated through claims and objections. Bihar's last intensive revision was in 2003, so the 2025 exercise was described by the ECI as its first there in over two decades. The sources read do not say how many names those older revisions removed or whether they were challenged in court."
+    },
+    {
+      "heading": "After 2014 but before the SIR: the 2015 Aadhaar-seeding drive",
+      "body": "In 2015 the ECI ran the National Electoral Roll Purification and Authentication Programme (NERPAP), linking voter ID numbers with Aadhaar. Reports say the Supreme Court halted it in August 2015; the order itself was not read. A petition that the Supreme Court took up with notice in December 2022 alleges that the ECI deleted 46 lakh entries in Andhra Pradesh and Telangana in 2015, that software flagged 37,54,648 voters as duplicates of which 2,47,789 (8%) were confirmed in field checks, and that no audit trail was shared. These are the petitioner's allegations; the ECI's reply was not found. Other reports give 30, 41.5 and 55 lakh for what appear to be different measures and dates, so no single figure is settled here. A Telangana election official is reported to have said that most deletions were genuine."
+    },
+    {
+      "heading": "How the 2025-26 SIR works",
+      "body": "The ECI's Bihar order of 24 June 2025 set 1 July 2025 as the date by which an applicant must be 18. Booth level officers (BLOs) visit homes with pre-filled enumeration forms; forms can also be filed online through ECINET. Voters on the 2003 Bihar roll were not asked for further documents (the ECI told the court about 6.5 crore did not need to submit documents); others had to give one of 11 listed documents, which at first left out Aadhaar, voter ID and ration cards. A draft roll lists those who returned forms; claims and objections follow, with hearings and a final roll. Non-submission of a form means provisional non-inclusion in the draft, and final deletion comes only after the claims stage, with show-cause notices, speaking orders and two levels of appeal, according to the court's summary. Phase 2 was announced on 27 October 2025 for 12 states and UTs covering about 51 crore voters, with rolls frozen and people on the 2002-04 rolls exempt from extra documents. Phase 3, announced 14 May 2026, covers 16 states and 3 UTs with about 36.73 crore electors; Himachal Pradesh, Jammu and Kashmir and Ladakh are left for later. The ECI said the phase 3 timetable was built around field staff engaged in Census house-listing."
+    },
+    {
+      "heading": "Results so far",
+      "body": "Bihar: 65 lakh names were left out of the 1 August 2025 draft; at the claims stage 21.5 lakh were added through Form 6 and 3.66 lakh removed; the final roll of 30 September 2025 had about 7.42 crore electors against 7.89 crore on 24 June, a net fall of about 47 lakh or 6%. Business Standard's 20 July 2026 state-wise tally of final rolls (net of additions): Uttar Pradesh 15.44 crore to 13.39 crore (13.21% fall); Gujarat 5.08 to 4.40 crore (13.4%); Tamil Nadu about 6.41 to 5.67 crore (11.5%); Chhattisgarh 11.8%; Goa 10.76%; Rajasthan 5.74%; Madhya Pradesh 5.97%; Kerala 3.22% (8,97,211 electors); Puducherry 7.57%; the Andaman and Nicobar Islands 16.87%, the highest share; Lakshadweep 0.36%. Across all 13 states and UTs the net fall is about 5.84 crore. West Bengal needed a separate step: its final roll of 28 February 2026 had 7.05 crore after 63.7 lakh deletions and 1.89 lakh additions, 60.1 lakh names were put under adjudication, and 27.2 lakh of those were deleted, taking the electorate to about 6.77 crore from 7.66 crore, a net fall of 11.6%. All India Radio reports 'nearly 91 lakh' deleted, which matches the gross count of about 63.7 plus 27.2 lakh; Business Standard's 88.9 lakh is net of additions. The reasons behind each deletion (death, shifting, duplication, not found) were not available for most states in the sources read."
+    },
+    {
+      "heading": "What the courts have said",
+      "body": "In Association for Democratic Reforms v. Election Commission of India, the Supreme Court first urged the ECI to consider Aadhaar, voter ID and ration cards (July 2025), ordered on 14 August 2025 that the roughly 65 lakh names missing from the draft be published with reasons and be searchable by voter ID number, and on 8 September 2025 directed that Aadhaar be treated as a 12th identity document, subject to authenticity checks, and not as proof of citizenship. Judgment was reserved on 29 January 2026 after 29 hearing days and delivered on 27 May 2026 by a bench of the Chief Justice and one other judge. As reported by LiveLaw and the Supreme Court Observer, it held that the ECI can run an SIR under Article 324 read with section 21(3) of the 1950 Act, that the SIR 'does not supplant' the Act and Rules, that the 2003 baseline was neither arbitrary nor irrational, and that the ECI may make a limited inquiry into citizenship for electoral purposes but its finding 'cannot assume finality' on citizenship, with doubtful cases referred to the competent authority. It asked the ECI to forward to the Centre, within four weeks, the names deleted from the 2003 Bihar roll on doubtful-citizenship grounds. The court's full text was not read, only these reports and the observer's summary."
+    },
+    {
+      "heading": "Controversies and both sides",
+      "body": "Petitioners and opposition parties argue that the SIR is a third kind of revision with no basis in the Act or Rules, that it shifts the burden of proof to the voter ('if one person does not fill a form, he is out'), that the 2003 cut-off is arbitrary, that 90 days with about one lakh BLOs was too short, and that Aadhaar was excluded though most Bihar residents hold it. Bengal's ruling party and Congress, CPI and CPI(M) leaders have said that eligible voters, minorities, migrants and the poor are being deleted; the Congress described the ECI as under suspicion. The ECI, through senior counsel, argued that Article 324 is a 'reservoir of power', that safeguards include house visits, notices and two appeals, that the exercise is about electoral rolls and not 'deportation', and that over a crore deaths and 70 lakh migrations had occurred since 2003. BJP spokespersons called opposition criticism hypocrisy and said illegal entries must go; they have also linked the SIR to illegal immigration, while the ECI says it is not deciding citizenship. On BLO workload, families and a state party alleged that deaths followed work pressure; in one West Bengal case another report attributed the death to a brain stroke. The Tribune reports that the Supreme Court asked states to provide more staff to ease BLO pressure. No independent tally of BLO deaths was found."
+    },
+    {
+      "heading": "Public reaction and media coverage",
+      "body": "No opinion survey of voters on the SIR was found. What the sources show is coverage dominated by the political dispute and by official progress bulletins. The ECI reported that 99.93% of phase 2 enumeration forms had been distributed and about 97.49% digitised by early December 2025, with Uttar Pradesh lowest at 94.04%, and the deadline was extended. Reports of the daily experience of voters, such as queues, forms and document searches, were not captured in the pages read. Opposition leaders called the exercise a 'conspiracy against democracy'; ruling-side spokespersons called that rhetoric; Organiser ran a piece defending the ECI under the title 'Beyond Vote Chori', while Sabrang, Drishti IAS and Business Standard carried numerical breakdowns. Readers should expect both political camps to read the same totals differently."
+    },
+    {
+      "heading": "Micro lens: what it means for a voter",
+      "body": "A voter has to be on the roll to vote. The practical test is whether your enumeration form was returned, whether you are on the 2002-04 roll (no extra documents) or not (document list), and whether you are in the draft. People who found themselves left out could file Form 6 claims; in Bihar 21.5 lakh were added at that stage and the ECI told the court that 33,351 inclusion claims from the 65 lakh excluded had come in by 8 September 2025, including 22,723 after the Aadhaar order. Critics say women changing names after marriage, migrant workers and those without papers face more hurdles, an academic analysis the sources only summarise."
+    },
+    {
+      "heading": "Macro lens: roll accuracy and trust in the process",
+      "body": "A clean roll supports elections that are both fair and seen to be fair, and rolls inflated with dead, duplicate and shifted entries are a long-recognised problem. Against that, any large deletion exercise needs visible proof that the removed names were correct. The data so far show net falls of 0.4% to 16.9% across 13 states and UTs, with sizeable additions at the claims stage; they do not show how many removed names were wrongly removed, nor how many fake entries remain. The court's own test, as reported, was proportionality with safeguards; it also reportedly said that proof of even one wrongful exclusion could undo the exercise, a line reported by one source and not confirmed from the judgment text."
+    },
+    {
+      "heading": "Not covered",
+      "body": "The ECI's own orders, press notes and final-roll data, and the text of the Supreme Court judgment (only LiveLaw's report and the Supreme Court Observer's summary were read), were not opened. Per-reason deletion counts, claims and objections data for most states, appeals outcomes, the outcome of Bihar's 2025 and Bengal's 2026 polls in relation to the rolls, phase 3 results (final rolls for Andhra Pradesh, Telangana and Karnataka were scheduled for September-October 2026), the date of Uttar Pradesh's final roll (one report says it was postponed), the August 2015 Supreme Court order, and any survey of voters were not found. The sources disagree on how long it has been since the last intensive revision (more than two decades for Bihar; 'more than four decades' in LiveLaw's report of the ECI's reasons) and on the Bengal total (91 lakh gross, 88.9 lakh net)."
+    }
+  ],
+  "bodySectionsHi": [
+    {
+      "heading": "SIR क्या है और इसे कौन चलाता है",
+      "body": "मतदाता सूची में हर निर्वाचन क्षेत्र के वे लोग दर्ज होते हैं जिन्हें वोट देने का अधिकार है। इसे अनुच्छेद 324 के तहत संवैधानिक संस्था भारत निर्वाचन आयोग (ECI) तैयार और संशोधित करता है, केंद्र सरकार नहीं। यह प्रविष्टि इसलिए शामिल है कि SIR इस दौर की सबसे चर्चित शासन-प्रक्रियाओं में है और केंद्र, राज्य सरकारें व दल सब इस पर बहस कर रहे हैं, इसलिए नहीं कि यह कोई सरकारी योजना है। सुप्रीम कोर्ट मामले में दर्ज ECI के घोषित उद्देश्य हैं: हर पात्र नागरिक दर्ज हो, कोई अपात्र दर्ज न हो, मृत, स्थानांतरित और दोहरी प्रविष्टियाँ हटें; आयोग शहरीकरण, प्रवासन, नए युवा मतदाताओं और मौतों की कम दर्ज़गी का हवाला देता है। ECI इसे सूची की सफ़ाई बताता है, नागरिकता का फ़ैसला नहीं।"
+    },
+    {
+      "heading": "2014 से पहले: गहन और संक्षिप्त पुनरीक्षण",
+      "body": "वाजीराम एंड रवि की एक व्याख्या, जो इंडियन एक्सप्रेस का हवाला देती है और जिसे ECI के अपने रिकॉर्ड से नहीं मिलाया गया, गहन पुनरीक्षण 1952-56, 1957, 1961, 1965, 1966, 1983-84, 1987-89, 1992, 1993, 1995 और 2002, 2003, 2004 में गिनाती है। वह कहती है कि 1993 और 1995 के पुनरीक्षणों ने मतदाता फ़ोटो पहचान पत्र (EPIC) लाने में मदद की, हालाँकि वह मुख्य उद्देश्य नहीं था; 1980 के दशक से ध्यान अपात्र प्रविष्टियाँ रोकने पर गया; और बाद में संक्षिप्त पुनरीक्षण आम हो गए। गहन पुनरीक्षण में अधिकारी घर-घर जाकर प्रविष्टियाँ दोबारा जाँचते हैं; संक्षिप्त में मौजूदा सूची दावे-आपत्तियों से अपडेट होती है। बिहार का पिछला गहन पुनरीक्षण 2003 में हुआ था, इसलिए ECI ने 2025 के अभियान को वहाँ दो दशक से ज़्यादा में पहला बताया। पढ़े गए स्रोत यह नहीं बताते कि उन पुराने पुनरीक्षणों में कितने नाम हटे या उन्हें अदालत में चुनौती मिली या नहीं।"
+    },
+    {
+      "heading": "2014 के बाद, SIR से पहले: 2015 का आधार-जोड़ो अभियान",
+      "body": "2015 में ECI ने राष्ट्रीय निर्वाचन सूची शुद्धिकरण एवं प्रमाणीकरण कार्यक्रम (NERPAP) चलाया, जिसमें मतदाता पहचान संख्या को आधार से जोड़ा गया। रिपोर्टों के अनुसार सुप्रीम कोर्ट ने अगस्त 2015 में इसे रोक दिया; आदेश स्वयं नहीं पढ़ा गया। दिसंबर 2022 में सुप्रीम कोर्ट द्वारा नोटिस जारी की गई एक याचिका का आरोप है कि ECI ने 2015 में आंध्र प्रदेश और तेलंगाना में 46 लाख प्रविष्टियाँ हटाईं, कि सॉफ़्टवेयर ने 37,54,648 मतदाताओं को दोहरा बताया जिनमें से फ़ील्ड जाँच में 2,47,789 (8%) की पुष्टि हुई, और कि कोई ऑडिट ट्रेल साझा नहीं की गई। ये याचिकाकर्ता के आरोप हैं; ECI का उत्तर नहीं मिला। अन्य रिपोर्टें 30, 41.5 और 55 लाख बताती हैं, जो संभवतः अलग मापदंड और तारीख़ें हैं, इसलिए कोई एक संख्या तय नहीं मानी गई। तेलंगाना के एक चुनाव अधिकारी के हवाले से कहा गया है कि ज़्यादातर नाम सही हटे थे।"
+    },
+    {
+      "heading": "2025-26 का SIR कैसे चलता है",
+      "body": "बिहार के लिए ECI के 24 जून 2025 के आदेश में 1 जुलाई 2025 को 18 वर्ष का होना पात्रता तिथि रखा गया। बूथ स्तर अधिकारी (BLO) पहले से भरे गणना-प्रपत्र लेकर घर जाते हैं; प्रपत्र ECINET से ऑनलाइन भी भरे जा सकते हैं। 2003 की बिहार सूची में दर्ज मतदाताओं से अतिरिक्त दस्तावेज़ नहीं माँगे गए (ECI ने अदालत को बताया कि लगभग 6.5 करोड़ को दस्तावेज़ नहीं देने थे); बाक़ी को 11 सूचीबद्ध दस्तावेज़ों में से एक देना था, जिनमें शुरू में आधार, मतदाता पहचान पत्र और राशन कार्ड नहीं थे। मसौदा सूची में प्रपत्र लौटाने वाले होते हैं; फिर दावे-आपत्तियाँ, सुनवाई और अंतिम सूची। अदालत के सार के अनुसार प्रपत्र न देने पर मसौदे में अस्थायी रूप से नाम नहीं आता, और अंतिम हटाव दावे-आपत्ति चरण के बाद ही होता है, जिसमें कारण-बताओ नोटिस, तर्कसंगत आदेश और दो स्तर की अपील है। चरण 2 की घोषणा 27 अक्टूबर 2025 को 12 राज्यों/केंद्र शासित प्रदेशों के लिए हुई, लगभग 51 करोड़ मतदाता, सूचियाँ फ़्रीज़, और 2002-04 की सूची वालों को अतिरिक्त दस्तावेज़ नहीं। चरण 3, घोषित 14 मई 2026, 16 राज्य और 3 केंद्र शासित प्रदेश, लगभग 36.73 करोड़ मतदाता; हिमाचल प्रदेश, जम्मू-कश्मीर और लद्दाख बाद के लिए रखे गए हैं। ECI के अनुसार चरण 3 का कार्यक्रम जनगणना के मकान-सूचीकरण में लगे फ़ील्ड कर्मचारियों को ध्यान में रखकर बना।"
+    },
+    {
+      "heading": "अब तक के नतीजे",
+      "body": "बिहार: 1 अगस्त 2025 के मसौदे से 65 लाख नाम बाहर थे; दावे-आपत्ति चरण में फ़ॉर्म 6 से 21.5 लाख जुड़े और 3.66 लाख हटे; 30 सितंबर 2025 की अंतिम सूची में लगभग 7.42 करोड़ मतदाता थे, जबकि 24 जून को 7.89 करोड़, यानी लगभग 47 लाख या 6% की शुद्ध गिरावट। बिज़नेस स्टैंडर्ड की 20 जुलाई 2026 की राज्यवार तालिका (जोड़ने के बाद शुद्ध): उत्तर प्रदेश 15.44 करोड़ से 13.39 करोड़ (13.21% गिरावट); गुजरात 5.08 से 4.40 करोड़ (13.4%); तमिलनाडु लगभग 6.41 से 5.67 करोड़ (11.5%); छत्तीसगढ़ 11.8%; गोवा 10.76%; राजस्थान 5.74%; मध्य प्रदेश 5.97%; केरल 3.22% (8,97,211 मतदाता); पुडुचेरी 7.57%; अंडमान-निकोबार 16.87%, सबसे ज़्यादा प्रतिशत; लक्षद्वीप 0.36%। सभी 13 राज्यों/केंद्र शासित प्रदेशों में शुद्ध गिरावट लगभग 5.84 करोड़ है। पश्चिम बंगाल में एक अलग चरण था: 28 फ़रवरी 2026 की अंतिम सूची में 63.7 लाख हटाने और 1.89 लाख जोड़ने के बाद 7.05 करोड़ मतदाता थे, 60.1 लाख नाम 'न्यायिक निर्णयन' (adjudication) में रखे गए और उनमें से 27.2 लाख हटे, जिससे मतदाता 7.66 करोड़ से घटकर लगभग 6.77 करोड़ रह गए, यानी 11.6% शुद्ध गिरावट। आकाशवाणी 'लगभग 91 लाख' हटाए जाने की बात कहता है, जो लगभग 63.7 और 27.2 लाख के कुल हटाव से मेल खाती है; बिज़नेस स्टैंडर्ड का 88.9 लाख जोड़ने के बाद का शुद्ध आँकड़ा है। पढ़े गए स्रोतों में ज़्यादातर राज्यों के लिए हर हटाव का कारण (मृत्यु, स्थानांतरण, दोहरापन, न मिलना) उपलब्ध नहीं था।"
+    },
+    {
+      "heading": "अदालतों ने क्या कहा",
+      "body": "एसोसिएशन फ़ॉर डेमोक्रेटिक रिफ़ॉर्म्स बनाम भारत निर्वाचन आयोग में सुप्रीम कोर्ट ने पहले (जुलाई 2025) ECI से आधार, मतदाता पहचान पत्र और राशन कार्ड पर विचार करने को कहा, 14 अगस्त 2025 को निर्देश दिया कि मसौदे से बाहर लगभग 65 लाख नाम कारणों सहित और मतदाता पहचान संख्या से खोजने योग्य रूप में प्रकाशित हों, और 8 सितंबर 2025 को निर्देश दिया कि आधार को प्रामाणिकता की जाँच के अधीन 12वें पहचान दस्तावेज़ के रूप में माना जाए, नागरिकता के प्रमाण के रूप में नहीं। 29 जनवरी 2026 को 29 सुनवाई-दिनों के बाद फ़ैसला सुरक्षित हुआ और 27 मई 2026 को मुख्य न्यायाधीश व एक अन्य न्यायाधीश की पीठ ने सुनाया। LiveLaw और सुप्रीम कोर्ट ऑब्ज़र्वर के अनुसार इसने माना कि ECI अनुच्छेद 324 और 1950 अधिनियम की धारा 21(3) के तहत SIR करा सकता है, कि SIR अधिनियम और नियमों का 'स्थान नहीं लेता', कि 2003 का आधार न मनमाना है न अतार्किक, और कि ECI चुनावी प्रयोजन के लिए नागरिकता की सीमित जाँच कर सकता है पर उसका निष्कर्ष नागरिकता पर 'अंतिम नहीं' हो सकता, संदिग्ध मामले सक्षम प्राधिकारी को भेजे जाएँगे। इसने ECI से कहा कि 2003 की बिहार सूची से संदिग्ध नागरिकता के आधार पर हटाए गए नाम चार हफ़्ते में केंद्र को भेजे जाएँ। फ़ैसले का पूरा पाठ नहीं पढ़ा गया, केवल ये रिपोर्टें और ऑब्ज़र्वर का सार।"
+    },
+    {
+      "heading": "विवाद और दोनों पक्ष",
+      "body": "याचिकाकर्ता और विपक्षी दल कहते हैं कि SIR तीसरी तरह का पुनरीक्षण है जिसका अधिनियम या नियमों में आधार नहीं, कि यह सबूत का बोझ मतदाता पर डालता है ('अगर कोई एक प्रपत्र नहीं भरता तो वह बाहर है'), कि 2003 की सीमा मनमानी है, कि लगभग एक लाख BLO के साथ 90 दिन कम थे, और कि आधार को छोड़ा गया जबकि बिहार के ज़्यादातर लोगों के पास वह है। बंगाल के सत्तारूढ़ दल और कांग्रेस, भाकपा व माकपा के नेताओं ने कहा है कि पात्र मतदाता, अल्पसंख्यक, प्रवासी और ग़रीब हट रहे हैं; कांग्रेस ने कहा कि ECI की नीयत संदेह के घेरे में है। ECI ने वरिष्ठ अधिवक्ता के माध्यम से तर्क दिया कि अनुच्छेद 324 'शक्ति का भंडार' है, कि सुरक्षा उपायों में घर-घर जाँच, नोटिस और दो अपीलें हैं, कि अभ्यास मतदाता सूची का है 'निर्वासन' का नहीं, और कि 2003 से अब तक एक करोड़ से ज़्यादा मौतें और 70 लाख प्रवासन हुए हैं। भाजपा प्रवक्ताओं ने विपक्ष की आलोचना को पाखंड कहा और कहा कि अवैध प्रविष्टियाँ हटनी चाहिए; उन्होंने SIR को अवैध आप्रवासन से भी जोड़ा है, जबकि ECI कहता है कि वह नागरिकता तय नहीं कर रहा। BLO के काम के दबाव पर परिवारों और एक राज्य दल ने आरोप लगाया कि मौतें दबाव से हुईं; पश्चिम बंगाल के एक मामले में दूसरी रिपोर्ट ने मृत्यु का कारण ब्रेन स्ट्रोक बताया। ट्रिब्यून के अनुसार सुप्रीम कोर्ट ने राज्यों से BLO का दबाव कम करने के लिए अधिक कर्मचारी देने को कहा। BLO की मौतों का कोई स्वतंत्र आँकड़ा नहीं मिला।"
+    },
+    {
+      "heading": "जनता की प्रतिक्रिया और मीडिया कवरेज",
+      "body": "SIR पर मतदाताओं का कोई जनमत सर्वेक्षण नहीं मिला। स्रोत दिखाते हैं कि कवरेज पर राजनीतिक विवाद और आधिकारिक प्रगति बुलेटिन हावी हैं। ECI ने बताया कि दिसंबर 2025 की शुरुआत तक चरण 2 के 99.93% गणना-प्रपत्र बँट चुके थे और लगभग 97.49% डिजिटाइज़ हुए, उत्तर प्रदेश सबसे कम 94.04% पर, और समय-सीमा बढ़ाई गई। मतदाताओं के रोज़ के अनुभव, जैसे कतारें, प्रपत्र और दस्तावेज़ों की खोज, पढ़े गए पन्नों में नहीं मिले। विपक्षी नेताओं ने इसे 'लोकतंत्र के ख़िलाफ़ साज़िश' कहा; सत्ता-पक्ष के प्रवक्ताओं ने इस बयानबाज़ी को पाखंड कहा; ऑर्गनाइज़र ने 'Beyond Vote Chori' शीर्षक से ECI के पक्ष में लेख छापा, जबकि सबरंग, दृष्टि IAS और बिज़नेस स्टैंडर्ड ने आँकड़ों का ब्योरा दिया। पाठक यह मानकर चलें कि दोनों राजनीतिक खेमे एक ही कुल संख्या को अलग ढंग से पढ़ते हैं।"
+    },
+    {
+      "heading": "सूक्ष्म दृष्टि: मतदाता के लिए इसका क्या अर्थ है",
+      "body": "वोट देने के लिए नाम सूची में होना चाहिए। व्यावहारिक कसौटी यह है कि आपका गणना-प्रपत्र लौटा या नहीं, आप 2002-04 की सूची में हैं (अतिरिक्त दस्तावेज़ नहीं) या नहीं (दस्तावेज़ सूची), और क्या आप मसौदे में हैं। जिनके नाम छूटे वे फ़ॉर्म 6 से दावा कर सकते थे; बिहार में उस चरण में 21.5 लाख जुड़े, और ECI ने अदालत को बताया कि 8 सितंबर 2025 तक बाहर किए गए 65 लाख में से 33,351 समावेश-दावे आए थे, जिनमें 22,723 आधार आदेश के बाद के थे। आलोचक कहते हैं कि विवाह के बाद नाम बदलने वाली महिलाओं, प्रवासी मज़दूरों और काग़ज़ न रखने वालों के सामने ज़्यादा अड़चनें हैं; यह एक अकादमिक विश्लेषण है जिसे स्रोतों ने केवल संक्षेप में बताया।"
+    },
+    {
+      "heading": "व्यापक दृष्टि: सूची की सटीकता और प्रक्रिया पर भरोसा",
+      "body": "साफ़ सूची निष्पक्ष और निष्पक्ष दिखने वाले चुनाव का आधार है, और मृत, दोहरी व स्थानांतरित प्रविष्टियों से फूली सूचियाँ पुरानी जानी-मानी समस्या हैं। इसके सामने, किसी भी बड़े हटाव अभियान को यह दिखाना पड़ता है कि हटाए गए नाम सही थे। अब तक के आँकड़े 13 राज्यों/केंद्र शासित प्रदेशों में 0.4% से 16.9% की शुद्ध गिरावट और दावे-आपत्ति चरण में बड़ी वापसी दिखाते हैं; वे यह नहीं दिखाते कि कितने नाम ग़लत हटे या कितनी फ़र्ज़ी प्रविष्टियाँ बची हैं। अदालत की रिपोर्ट की गई कसौटी सुरक्षा उपायों के साथ आनुपातिकता थी; एक स्रोत के अनुसार उसने यह भी कहा कि एक भी ग़लत बहिष्करण साबित होने पर अभ्यास रद्द हो सकता है, जिसकी फ़ैसले के पाठ से पुष्टि नहीं हुई।"
+    },
+    {
+      "heading": "जो शामिल नहीं है",
+      "body": "ECI के अपने आदेश, प्रेस नोट और अंतिम सूची के आँकड़े, और सुप्रीम कोर्ट फ़ैसले का पाठ (केवल LiveLaw की रिपोर्ट और सुप्रीम कोर्ट ऑब्ज़र्वर का सार पढ़ा गया) नहीं खोले गए। हटाव के कारणवार आँकड़े, ज़्यादातर राज्यों के दावे-आपत्ति आँकड़े, अपीलों के नतीजे, सूचियों के संदर्भ में बिहार 2025 और बंगाल 2026 के चुनाव नतीजे, चरण 3 के नतीजे (आंध्र प्रदेश, तेलंगाना और कर्नाटक की अंतिम सूचियाँ सितंबर-अक्टूबर 2026 के लिए निर्धारित थीं), उत्तर प्रदेश की अंतिम सूची की तारीख़ (एक रिपोर्ट के अनुसार टली), अगस्त 2015 का सुप्रीम कोर्ट आदेश, और मतदाताओं का कोई सर्वेक्षण नहीं मिला। स्रोत इस पर असहमत हैं कि पिछले गहन पुनरीक्षण को कितना समय हुआ (बिहार के लिए दो दशक से ज़्यादा; ECI के कारणों की LiveLaw रिपोर्ट में 'चार दशक से ज़्यादा') और बंगाल के कुल पर (91 लाख कुल, 88.9 लाख शुद्ध)।"
+    }
+  ],
+  "impactType": "mixed",
+  "timelineStartDate": "2025-06-24",
+  "timelineEndDate": "2026-05-27",
+  "tags": [
+    { "slug": "electoral-rolls", "labelHi": "मतदाता सूची", "labelEn": "Electoral rolls" },
+    { "slug": "sir", "labelHi": "SIR", "labelEn": "SIR" },
+    { "slug": "election-commission", "labelHi": "निर्वाचन आयोग", "labelEn": "Election Commission" }
+  ],
+  "sources": [
+    {
+      "url": "https://www.newsonair.gov.in/second-phase-of-special-intensive-revision-of-electoral-rolls-to-cover-12-states-and-uts",
+      "publisher": "All India Radio (Prasar Bharati)",
+      "title": "Second phase of SIR of electoral rolls to cover 12 States and UTs (28 October 2025)",
+      "credibilityTier": "official_primary",
+      "language": "en",
+      "credibilityNotes": "Public broadcaster's report of the Election Commission's briefing. Source of the phase 2 states, about 51 crore voters, schedule, frozen rolls and the 2003-list exemption. Reflects the ECI's framing."
+    },
+    {
+      "url": "https://www.newsonair.gov.in/assembly-election-2026-eci-revises-voter-list-removing-over-91-lakh-names-in-west-bengal",
+      "publisher": "All India Radio (Prasar Bharati)",
+      "title": "ECI revises voter list removing over 91 lakh names in West Bengal (8 April 2026)",
+      "credibilityTier": "official_primary",
+      "language": "en",
+      "credibilityNotes": "Reports about 63 lakh earlier deletions plus 27 lakh after adjudication ('nearly 91 lakh'); gross count. Does not define adjudication. Records the Bengal ruling party's and the BJP's positions."
+    },
+    {
+      "url": "https://www.business-standard.com/india-news/how-much-did-india-s-voter-rolls-shrink-after-sir-state-wise-analysis-126072000267_1.html",
+      "publisher": "Business Standard",
+      "title": "How much did India's voter rolls shrink after SIR? State-wise analysis (20 July 2026)",
+      "credibilityTier": "reputable_media",
+      "language": "en",
+      "credibilityNotes": "Read in full in a browser after a server fetch was refused. Source of the Bihar and state-wise pre-SIR and final-roll figures, the 5.84 crore combined net fall, and the West Bengal adjudication steps. It says it draws on state election officers' figures; those primary releases were not opened."
+    },
+    {
+      "url": "https://www.livelaw.in/top-stories/supreme-court-upholds-election-commissions-power-to-conduct-sir-of-electoral-rolls-535850",
+      "publisher": "LiveLaw",
+      "title": "Supreme Court upholds Election Commission's power to conduct SIR of electoral rolls (27 May 2026)",
+      "credibilityTier": "reputable_media",
+      "language": "en",
+      "credibilityNotes": "Legal news report of the 27 May 2026 judgment, not the judgment text. Source of the holdings on Article 324, section 21(3), the limited citizenship inquiry and the four-week referral. Its 'four decades' wording differs from the ECI's 'two decades' for Bihar."
+    },
+    {
+      "url": "https://www.scobserver.in/cases/challenge-to-the-ecis-revision-of-electoral-rolls-in-bihar-sir-association-for-democratic-reforms-v-election-commission-of-india/",
+      "publisher": "Supreme Court Observer",
+      "title": "Challenge to the ECI's Revision of Electoral Rolls in Bihar (case page, hearing reports and judgment summary)",
+      "credibilityTier": "reputable_media",
+      "language": "en",
+      "credibilityNotes": "Independent court tracker. Source of the hearing timeline, the arguments on both sides, the 14 August and 8 September 2025 orders and the ECI's claims figures. Judgment summary read; the 124-page judgment was not."
+    },
+    {
+      "url": "https://vajiramandravi.com/current-affairs/electoral-roll-revision-in-india/",
+      "publisher": "Vajiram and Ravi",
+      "title": "Electoral Roll Revision in India: Special Intensive Revision, History, and Legal Safeguards Explained (11 July 2025)",
+      "credibilityTier": "secondary",
+      "language": "en",
+      "credibilityNotes": "Exam-preparation explainer citing the Indian Express. Source of the list of pre-2014 intensive revisions; not checked against ECI records. Written before the judgment, so its court discussion is out of date."
+    },
+    {
+      "url": "https://theleaflet.in/supreme-court-issues-notice-in-petition-alleging-arbitrary-deletion-of-46-lakh-entries-from-electoral-rolls-in-andhra-pradesh-telangana-by-election-commission-of-india",
+      "publisher": "The Leaflet",
+      "title": "Supreme Court issues notice in petition alleging arbitrary deletion of 46 lakh entries (14 December 2022)",
+      "credibilityTier": "reputable_media",
+      "language": "en",
+      "credibilityNotes": "Reports a petitioner's allegations about the 2015 NERPAP; no ECI reply in the article. The 30, 41.5 and 55 lakh figures and the August 2015 halt come from search summaries of other pages, not read."
+    },
+    {
+      "url": "https://www.thenewsminute.com/news/eci-announces-third-phase-of-sir-covering-16-states-and-3-uts",
+      "publisher": "The News Minute",
+      "title": "ECI announces third phase of SIR covering 16 states and 3 UTs (14 May 2026)",
+      "credibilityTier": "reputable_media",
+      "language": "en",
+      "credibilityNotes": "Source of phase 3 scope, about 36.73 crore electors, the Census field-staff reason and three states' timetables. Final-roll outcomes for phase 3 were not found."
+    },
+    {
+      "url": "https://www.tribuneindia.com/news/india/opposition-questions-ecs-intentions-behind-sir-say-names-of-eligible-voters-shouldnt-be-deleted",
+      "publisher": "The Tribune (PTI)",
+      "title": "Opposition questions EC's intentions behind SIR (27 October 2025)",
+      "credibilityTier": "reputable_media",
+      "language": "en",
+      "credibilityNotes": "Wire report of party reactions to phase 2. Gives opposition and BJP statements; contains no ECI reply. The Tribune's report on the Supreme Court asking states for more BLO staff was seen only as a headline."
+    }
+  ],
+  "stats": [
+    {
+      "statKey": "sir-bihar-electors-crore",
+      "sortOrder": 0,
+      "metricLabelEn": "Bihar electors (crore)",
+      "metricLabelHi": "बिहार के मतदाता (करोड़)",
+      "beforeLabelEn": "Before SIR, 24 Jun 2025",
+      "beforeLabelHi": "SIR से पहले, 24 जून 2025",
+      "beforeValueEn": "7.89",
+      "beforeValueHi": "7.89",
+      "beforeValueNumeric": 7.89,
+      "afterLabelEn": "Final roll, 30 Sep 2025",
+      "afterLabelHi": "अंतिम सूची, 30 सितंबर 2025",
+      "afterValueEn": "7.42",
+      "afterValueHi": "7.42",
+      "afterValueNumeric": 7.42
+    },
+    {
+      "statKey": "sir-bihar-claims-stage-lakh",
+      "sortOrder": 1,
+      "metricLabelEn": "Bihar: names removed for the draft versus added back at the claims stage (lakh)",
+      "metricLabelHi": "बिहार: मसौदे के लिए हटे नाम बनाम दावे-आपत्ति चरण में जुड़े नाम (लाख)",
+      "beforeLabelEn": "Left out of draft, 1 Aug 2025",
+      "beforeLabelHi": "मसौदे से बाहर, 1 अगस्त 2025",
+      "beforeValueEn": "65",
+      "beforeValueHi": "65",
+      "beforeValueNumeric": 65,
+      "afterLabelEn": "Added through Form 6 at claims stage",
+      "afterLabelHi": "दावे-आपत्ति चरण में फ़ॉर्म 6 से जुड़े",
+      "afterValueEn": "21.5",
+      "afterValueHi": "21.5",
+      "afterValueNumeric": 21.5,
+      "extraLabelEn": "Removed at claims stage",
+      "extraLabelHi": "दावे-आपत्ति चरण में हटे",
+      "extraValueEn": "3.66",
+      "extraValueHi": "3.66",
+      "extraValueNumeric": 3.66
+    },
+    {
+      "statKey": "sir-up-electors-crore",
+      "sortOrder": 2,
+      "metricLabelEn": "Uttar Pradesh electors (crore)",
+      "metricLabelHi": "उत्तर प्रदेश के मतदाता (करोड़)",
+      "beforeLabelEn": "Before SIR, Oct 2025",
+      "beforeLabelHi": "SIR से पहले, अक्टूबर 2025",
+      "beforeValueEn": "15.44",
+      "beforeValueHi": "15.44",
+      "beforeValueNumeric": 15.44,
+      "afterLabelEn": "Final roll",
+      "afterLabelHi": "अंतिम सूची",
+      "afterValueEn": "13.39",
+      "afterValueHi": "13.39",
+      "afterValueNumeric": 13.39
+    },
+    {
+      "statKey": "sir-wb-electors-crore",
+      "sortOrder": 3,
+      "metricLabelEn": "West Bengal electors (crore)",
+      "metricLabelHi": "पश्चिम बंगाल के मतदाता (करोड़)",
+      "beforeLabelEn": "Before SIR",
+      "beforeLabelHi": "SIR से पहले",
+      "beforeValueEn": "7.66",
+      "beforeValueHi": "7.66",
+      "beforeValueNumeric": 7.66,
+      "afterLabelEn": "After adjudication",
+      "afterLabelHi": "निर्णयन के बाद",
+      "afterValueEn": "6.77",
+      "afterValueHi": "6.77",
+      "afterValueNumeric": 6.77,
+      "extraLabelEn": "Final roll, 28 Feb 2026 (before adjudication)",
+      "extraLabelHi": "अंतिम सूची, 28 फ़रवरी 2026 (निर्णयन से पहले)",
+      "extraValueEn": "7.05",
+      "extraValueHi": "7.05",
+      "extraValueNumeric": 7.05
+    },
+    {
+      "statKey": "sir-tn-electors-crore",
+      "sortOrder": 4,
+      "metricLabelEn": "Tamil Nadu electors (crore)",
+      "metricLabelHi": "तमिलनाडु के मतदाता (करोड़)",
+      "beforeLabelEn": "Before SIR, Oct 2025",
+      "beforeLabelHi": "SIR से पहले, अक्टूबर 2025",
+      "beforeValueEn": "6.41",
+      "beforeValueHi": "6.41",
+      "beforeValueNumeric": 6.41,
+      "afterLabelEn": "Final roll, 23 Feb 2026",
+      "afterLabelHi": "अंतिम सूची, 23 फ़रवरी 2026",
+      "afterValueEn": "5.67",
+      "afterValueHi": "5.67",
+      "afterValueNumeric": 5.67
+    },
+    {
+      "statKey": "sir-kerala-net-fall-pct",
+      "sortOrder": 5,
+      "metricLabelEn": "Net fall in electors, selected states (%)",
+      "metricLabelHi": "मतदाताओं में शुद्ध गिरावट, चुनिंदा राज्य (%)",
+      "beforeLabelEn": "Kerala (lowest of the large states)",
+      "beforeLabelHi": "केरल (बड़े राज्यों में सबसे कम)",
+      "beforeValueEn": "3.22",
+      "beforeValueHi": "3.22",
+      "beforeValueNumeric": 3.22,
+      "afterLabelEn": "Gujarat (highest of the large states)",
+      "afterLabelHi": "गुजरात (बड़े राज्यों में सबसे ज़्यादा)",
+      "afterValueEn": "13.4",
+      "afterValueHi": "13.4",
+      "afterValueNumeric": 13.4,
+      "extraLabelEn": "Andaman and Nicobar Islands (highest overall)",
+      "extraLabelHi": "अंडमान-निकोबार (कुल मिलाकर सबसे ज़्यादा)",
+      "extraValueEn": "16.87",
+      "extraValueHi": "16.87",
+      "extraValueNumeric": 16.87
+    }
+  ],
+  "sourceSignals": {
+    "numericConsistency": true,
+    "contradictionFound": true
+  }
+}

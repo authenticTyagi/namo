@@ -20,7 +20,7 @@ _Last updated: 2026-10-10. These are owner decisions. Change only on explicit ow
 13. Verify against the live DB; do not trust agent self-reports.
 
 ## Engineering
-14. Next.js stays pinned at 15.5.27 (bumped from 15.5.25 on 2026-10-18 for a security advisory; patch bumps only, never 16). Read `node_modules/next/dist/docs/` if present before using Next APIs (see AGENTS.md).
+14. Next.js stays pinned at 15.5.28 (bumped from 15.5.27 on 2026-10-23 and from 15.5.25 on 2026-10-18, each for a security advisory; patch bumps only, never 16). Read `node_modules/next/dist/docs/` if present before using Next APIs (see AGENTS.md).
 15. Tailwind `dark:` is attribute-driven (`data-theme`); `/admin` has its own root layout, so ThemeInit must be wired into both.
 16. Ads: off unless slot id set; never unconditional loading before consent; reserved heights to protect CLS.
 17. Commit only when asked. Don't commit secrets (`.env.local`).

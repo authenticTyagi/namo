@@ -24,7 +24,7 @@
     "date-fns": "^4.4.0",
     "drizzle-orm": "^0.45.2",
     "lucide-react": "^1.42.0",
-    "next": "15.5.27",
+    "next": "15.5.28",
     "next-auth": "^5.0.0-beta.32",
     "next-intl": "^4.14.2",
     "react": "19.2.8",
@@ -40,7 +40,7 @@
     "dotenv": "^17.4.2",
     "drizzle-kit": "^0.31.10",
     "eslint": "^9",
-    "eslint-config-next": "15.5.27",
+    "eslint-config-next": "15.5.28",
     "tailwindcss": "^4",
     "tsx": "^4.23.13",
     "typescript": "^5"
