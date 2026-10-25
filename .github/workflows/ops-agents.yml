@@ -65,7 +65,7 @@ jobs:
           SITE_BASE_URL: ${{ vars.SITE_BASE_URL }}
           DB_LIMIT_MB: ${{ vars.DB_LIMIT_MB }}
         run: node scripts/ops/run.mjs "${{ steps.pick.outputs.agents }}"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: ops-reports
