@@ -3,7 +3,7 @@
 _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJECT_LOG.md with a date._
 
 ## Now
-- [ ] **T-0** Owner: (1) open /admin/translations and, with a native reader, approve or reject the 18 bn/te/mr drafts of 6 entries; (2) in Vercel, enable Speed Insights for the project (T-6); (3) watch a few reels from `scripts/video/out/` and post from `posting-plan-*.csv`. (4) review the new new tax (who pays) entry and editorial in the admin queue (PLFS and paper-leak pieces were published 2026-10-18). Everything else is shipped (2026-10-18).
+- [ ] **T-0** Owner: (1) open /admin/translations and, with a native reader, approve or reject the 18 bn/te/mr drafts of 6 entries (bulk select + approve/reject added 2026-10-27); (2) in Vercel, enable Speed Insights for the project (T-6); (3) watch a few reels from `scripts/video/out/` and post from `posting-plan-*.csv`. (4) review the new new tax (who pays) entry and editorial in the admin queue (PLFS and paper-leak pieces were published 2026-10-18). Everything else is shipped (2026-10-18).
 
 - [ ] **SIR entry + editorial (2026-10-23)** in the admin queue, pending review. Before approving: check the Bengal and Bihar numbers, the BLO-death wording, and whether to hold until the judgment PDF and ECI press notes are read. Follow-ups: read the judgment PDF, ECI final-roll releases, phase 3 final rolls, and find a reputable voter survey.
 - [ ] **Security follow-ups (see SECURITY.md)**: enforce 2-step verification on every `ADMIN_EMAILS` Google account (owner); triage CodeQL; rate-limit sign-in and search; consider a least-privilege DB role; script-src CSP with nonces; automated guard check for `"use server"` files.

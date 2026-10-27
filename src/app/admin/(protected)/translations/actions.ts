@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { and, eq } from "drizzle-orm";
+import { and, eq, inArray } from "drizzle-orm";
 import type { BatchItem } from "drizzle-orm/batch";
 import { db } from "@/db";
 import { entryStats, entryStatTranslations, entryTranslations, translationDrafts } from "@/db/schema";
@@ -19,14 +19,13 @@ async function requireAdmin() {
  * being pending_review so a second tab cannot re-fire on a draft that was
  * already approved or rejected.
  */
-export async function approveTranslationDraft(draftId: string) {
-  await requireAdmin();
+async function applyApproval(draftId: string): Promise<boolean> {
   const [draft] = await db
     .select()
     .from(translationDrafts)
     .where(and(eq(translationDrafts.id, draftId), eq(translationDrafts.status, "pending_review")))
     .limit(1);
-  if (!draft) return;
+  if (!draft) return false;
 
   const statRows = await db
     .select({ id: entryStats.id, statKey: entryStats.statKey })
@@ -73,9 +72,34 @@ export async function approveTranslationDraft(draftId: string) {
     db.update(translationDrafts).set({ status: "published", updatedAt: new Date() }).where(eq(translationDrafts.id, draft.id)),
   );
   await db.batch(statements as [BatchItem<"pg">, ...BatchItem<"pg">[]]);
+  return true;
+}
 
+export async function approveTranslationDraft(draftId: string) {
+  await requireAdmin();
+  if (!(await applyApproval(draftId))) return;
   revalidatePath("/admin/translations");
   revalidatePath("/[locale]", "layout");
+}
+
+/** Approves every ticked draft, one atomic batch each; a stale id is skipped by the pending_review guard. */
+export async function bulkApproveTranslationDrafts(formData: FormData) {
+  await requireAdmin();
+  const ids = formData.getAll("draftId").filter((v): v is string => typeof v === "string");
+  for (const id of ids) await applyApproval(id);
+  revalidatePath("/admin/translations");
+  revalidatePath("/[locale]", "layout");
+}
+
+export async function bulkRejectTranslationDrafts(formData: FormData) {
+  await requireAdmin();
+  const ids = formData.getAll("draftId").filter((v): v is string => typeof v === "string");
+  if (ids.length === 0) return;
+  await db
+    .update(translationDrafts)
+    .set({ status: "rejected", updatedAt: new Date() })
+    .where(and(inArray(translationDrafts.id, ids), eq(translationDrafts.status, "pending_review")));
+  revalidatePath("/admin/translations");
 }
 
 export async function rejectTranslationDraft(draftId: string) {

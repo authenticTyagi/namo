@@ -1,5 +1,6 @@
 import { getPendingTranslationDrafts } from "@/db/queries/admin";
 import { LOCALE_NAMES, type Locale } from "@/lib/localized";
+import { BulkBar } from "./BulkBar";
 import { TranslationActions } from "./TranslationActions";
 
 export default async function AdminTranslationsPage() {
@@ -17,15 +18,30 @@ export default async function AdminTranslationsPage() {
       {drafts.length === 0 ? (
         <p className="mt-8 text-sm text-neutral-400">No translation drafts waiting.</p>
       ) : (
+        <form id="bulk-translations" className="mt-6">
+          <BulkBar total={drafts.length} />
+        </form>
+      )}
+      {drafts.length > 0 && (
         <div className="mt-6 space-y-8">
           {drafts.map((d) => (
             <article key={d.id} className="rounded-lg border border-neutral-200 p-5 dark:border-neutral-800">
               <div className="flex flex-wrap items-start justify-between gap-3">
-                <div>
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    name="draftId"
+                    value={d.id}
+                    form="bulk-translations"
+                    aria-label={`Select ${d.entrySlug} (${d.locale})`}
+                    className="mt-0.5 h-4 w-4"
+                  />
+                  <div>
                   <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
                     {LOCALE_NAMES[d.locale as Locale] ?? d.locale} · {d.entrySlug}
                   </div>
                   {d.note && <div className="mt-1 text-xs text-amber-600 dark:text-amber-400">{d.note}</div>}
+                  </div>
                 </div>
                 <TranslationActions draftId={d.id} />
               </div>
