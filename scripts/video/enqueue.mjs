@@ -13,7 +13,20 @@ import { neon } from "@neondatabase/serverless";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(HERE, "out");
-const sql = neon(process.env.DATABASE_URL);
+const rawSql = neon(process.env.DATABASE_URL);
+
+// Network on the owner's machine drops now and then (DNS lookups fail); retry with backoff.
+async function retry(fn, tries = 8) {
+  for (let i = 1; ; i++) {
+    try {
+      return await fn();
+    } catch (e) {
+      if (i >= tries) throw e;
+      await new Promise((r) => setTimeout(r, 2000 * i));
+    }
+  }
+}
+const sql = (...a) => retry(() => rawSql(...a));
 
 const CTA = {
   en: "Follow @modinekiyakyahai for one sourced fact a day.",
@@ -67,11 +80,13 @@ async function add() {
     form.set("language", lang);
     form.set("position", String(position));
     form.set("caption", buildCaption(readFileSync(txt, "utf8"), lang));
-    const res = await fetch(`${site}/api/pipeline/reel-upload`, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${process.env.CRON_SECRET}` },
-      body: form,
-    });
+    const res = await retry(() =>
+      fetch(`${site}/api/pipeline/reel-upload`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${process.env.CRON_SECRET}` },
+        body: form,
+      }),
+    );
     if (!res.ok) throw new Error(`upload failed for ${slug}: ${res.status} ${await res.text()}`);
     added += 1;
     console.log(`held #${position}: ${slug}`);
