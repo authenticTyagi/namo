@@ -860,3 +860,27 @@ export const moderationFlagsRelations = relations(
     }),
   }),
 );
+
+// Instagram reels waiting to be posted by /api/cron/instagram, one per run.
+// `position` is the posting order (lowest first). Rows are added by
+// scripts/video/enqueue.mjs only after the owner has reviewed the reel.
+export const reelPosts = pgTable(
+  "reel_posts",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    slug: text("slug").notNull(), // reel file name without extension, e.g. world-en-...
+    videoUrl: text("video_url").notNull(), // public URL Instagram fetches the video from
+    caption: text("caption").notNull(),
+    language: text("language").notNull(),
+    position: integer("position").notNull(),
+    status: text("status").notNull().default("queued"), // queued | posted | failed | held
+    igMediaId: text("ig_media_id"),
+    error: text("error"),
+    postedAt: timestamp("posted_at"),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+  },
+  (t) => [
+    uniqueIndex("reel_posts_slug_uq").on(t.slug),
+    index("reel_posts_status_position_idx").on(t.status, t.position),
+  ],
+);
