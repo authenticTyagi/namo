@@ -1,5 +1,5 @@
 import { put } from "@vercel/blob";
-import { eq } from "drizzle-orm";
+import { and, eq, inArray } from "drizzle-orm";
 import { db } from "@/db";
 import { reelPosts } from "@/db/schema";
 import { isAuthorizedPipelineRequest } from "@/lib/pipeline-auth";
@@ -32,6 +32,23 @@ export async function POST(request: Request) {
   }
 
   const [existing] = await db.select({ id: reelPosts.id }).from(reelPosts).where(eq(reelPosts.slug, slug)).limit(1);
+  if (existing && form.get("replace") === "1") {
+    // Swap the video of a reel that has not posted yet. New path, because the old public URL
+    // may be cached; the row keeps its position and caption.
+    const version = String(form.get("version") ?? "v2").replace(/[^a-z0-9]/gi, "").slice(0, 8) || "v2";
+    const blob = await put(`reels/${version}/${slug}.mp4`, file, {
+      access: "public",
+      contentType: "video/mp4",
+      addRandomSuffix: false,
+      allowOverwrite: true,
+    });
+    const done = await db
+      .update(reelPosts)
+      .set({ videoUrl: blob.url })
+      .where(and(eq(reelPosts.id, existing.id), inArray(reelPosts.status, ["held", "queued"])))
+      .returning({ id: reelPosts.id });
+    return Response.json(done.length ? { replaced: slug } : { skipped: slug, reason: "already posted or posting" });
+  }
   if (existing) return Response.json({ skipped: slug });
 
   const blob = await put(`reels/${slug}.mp4`, file, {

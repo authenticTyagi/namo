@@ -94,6 +94,33 @@ async function add() {
   console.log(`added ${added} reel(s) as held`);
 }
 
+// Re-upload re-rendered videos for reels that have not posted yet (held or queued).
+async function refresh() {
+  const site = process.env.SITE_URL ?? "https://modinekiyakyahai.com";
+  const version = arg("version", "v2");
+  const rows = await sql`select slug, language from reel_posts where status in ('held', 'queued') and video_url not like ${"%/" + version + "/%"} order by position`;
+  let n = 0;
+  for (const r of rows) {
+    const mp4 = path.join(OUT, `${r.slug}.mp4`);
+    if (!existsSync(mp4)) continue;
+    const form = new FormData();
+    form.set("file", new Blob([readFileSync(mp4)], { type: "video/mp4" }), `${r.slug}.mp4`);
+    form.set("slug", r.slug);
+    form.set("language", r.language);
+    form.set("position", "0");
+    form.set("caption", "unused");
+    form.set("replace", "1");
+    form.set("version", version);
+    const res = await retry(() =>
+      fetch(`${site}/api/pipeline/reel-upload`, { method: "POST", headers: { Authorization: `Bearer ${process.env.CRON_SECRET}` }, body: form }),
+    );
+    if (!res.ok) throw new Error(`refresh failed for ${r.slug}: ${res.status} ${await res.text()}`);
+    n += 1;
+    if (n % 20 === 0) console.log(`refreshed ${n}/${rows.length}`);
+  }
+  console.log(`refreshed ${n} reel(s)`);
+}
+
 async function release() {
   const n = Number(process.argv[3]);
   if (!Number.isInteger(n) || n < 1) throw new Error("usage: release <count>");
@@ -112,5 +139,6 @@ async function status() {
 const cmd = process.argv[2];
 if (cmd === "add") await add();
 else if (cmd === "release") await release();
+else if (cmd === "refresh") await refresh();
 else if (cmd === "status") await status();
 else console.log("usage: enqueue.mjs add|release <n>|status");
