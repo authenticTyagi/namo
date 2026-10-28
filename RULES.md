@@ -1,6 +1,6 @@
 # RULES — non-negotiable
 
-_Last updated: 2026-10-10. These are owner decisions. Change only on explicit owner instruction, and log the change in PROJECT_LOG.md. Fuller detail lives in GEMINI.md and `scripts/entries/*.md`._
+_Last updated: 2026-10-28. These are owner decisions. Change only on explicit owner instruction, and log the change in PROJECT_LOG.md. Fuller detail lives in GEMINI.md and `scripts/entries/*.md`._
 
 ## Editorial
 1. Every claim is cited. Entry: >=1 `official_primary` source or >=2 sources. Comparison: neutral international bodies only, never Indian government sources. Editorial: anchored to a published entry.
@@ -11,6 +11,7 @@ _Last updated: 2026-10-10. These are owner decisions. Change only on explicit ow
 6. Every item addresses a Micro lens and a Macro lens (capability/autonomy, never adversarial). Aggregates are paired with per-capita/normalized figures.
 7. Editorial voice: historical context, civilizational pride, never grievance; no communal or partisan framing.
 8. Never depict a person as a mascot or logo. The brand mark is the abstract checkmark seal.
+8a. **The site's main objective (owner, 2026-10-28):** show what India was between 1947 and 2014 and how it changed from 2014 to now. Every entry and every comparison carries an explicit before-2014 and since-2014 view (baseline year 2014 or the nearest with data; earlier point where available), for India and for peers. It describes change; it never credits or blames a government, party or scheme (rules 5 and 7 still apply). Write plainly for readers of every age, mostly young.
 
 ## Process
 9. The owner is the sole reviewer. Everything lands as `pending_review`. **Auto-publish is permanently disabled and must never be built.**

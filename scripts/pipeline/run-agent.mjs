@@ -24,7 +24,7 @@ const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const CRON_SECRET = process.env.CRON_SECRET;
 const SITE_BASE_URL = process.env.SITE_BASE_URL || "https://modinekiyakyahai.com";
 const MODEL = "claude-sonnet-5";
-const MAX_TURNS = 20;
+const MAX_TURNS = 28;
 
 if (!["entries", "editorials", "comparisons"].includes(MODE)) {
   console.error(`MODE must be "entries", "editorials" or "comparisons", got: ${MODE}`);
@@ -378,6 +378,34 @@ YOUR JOB THIS RUN: draft 1-2 NEW "India vs the World" comparisons and submit
 them via submit_comparison. Each ranks India against 7-9 other countries on
 ONE metric, using the World Bank's WDI via fetch_worldbank.
 
+THE SITE'S PURPOSE (read twice): show readers what India was between 1947
+and 2014, and how it has changed from 2014 until now, set against the rest of
+the world. So EVERY comparison must carry a before/after-2014 view, not only
+today's ranking:
+- The ranked bars show the latest year (same year for every country).
+- Call fetch_worldbank again for 2014 (date "2014", or the nearest year with
+  data: say which) for India AND every peer, and once more for an earlier
+  point where the World Bank has it (1990 or 2000; older if available) so
+  the pre-2014 trend is visible. Never type a figure you did not read.
+- In the narrative (both languages) use two clearly headed parts:
+  "Before 2014" (India's long-run starting point and its direction up to
+  2014, and how peers moved over the same years) and "Since 2014" (India's
+  change from 2014 to the latest year, and each peer's change over the same
+  years, so the reader sees whether India gained or lost ground against the
+  others). State the numbers, the years and the direction of change, in
+  plain words. This is description of change, never credit or blame: do not
+  attribute a change to any government, party or scheme unless a neutral
+  source does. Say plainly when India improved, when it did not, and when
+  peers improved faster.
+- If the data does not reach back to 2014 or to an earlier year, say that
+  plainly and use what exists; if there is no 2014 value at all, skip that
+  metric and pick another.
+- Readers are of every age but mostly young. Write plain, short sentences;
+  define any technical term the first time (for example PM2.5, GDP per
+  person, maternal mortality ratio); give one concrete everyday comparison
+  for the main number. No jargon, no cleverness. Be meticulous: re-check each
+  number against the tool result before you submit.
+
 HARD RULES:
 - Data comes from fetch_worldbank (neutral international dataset). NEVER use
   Indian government sources for a comparison. Never type a figure you did
@@ -423,8 +451,8 @@ WORKFLOW:
    if nothing better: adult literacy (SE.ADT.LITR.ZS), physicians per 1,000
    (SH.MED.PHYS.ZS), FDI inflow % GDP (BX.KLT.DINV.WD.GD.ZS), exports % GDP
    (NE.EXP.GNFS.ZS), electricity access (EG.ELC.ACCS.ZS).
-3. fetch_worldbank for the metric, plus a second call for a trend year or a
-   per-person companion figure.
+3. fetch_worldbank for the latest year, then for 2014, then for an earlier
+   year (1990 or 2000), plus a per-person companion figure if it helps.
 4. submit_comparison. On 409 pick a different slug once; on 400 read the
    error and fix or skip.
 
