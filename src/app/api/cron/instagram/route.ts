@@ -1,4 +1,4 @@
-import { and, asc, eq } from "drizzle-orm";
+import { and, asc, eq, inArray } from "drizzle-orm";
 import { db } from "@/db";
 import { reelPosts } from "@/db/schema";
 import { isAuthorizedPipelineRequest } from "@/lib/pipeline-auth";
@@ -7,10 +7,14 @@ import { publishReel } from "@/lib/instagram";
 // Videos take a while for Instagram to process; allow the function to wait.
 export const maxDuration = 300;
 
+const PER_RUN = Math.min(Math.max(Number(process.env.IG_POSTS_PER_RUN ?? 3), 1), 5);
+
 /**
- * Posts the next queued reel. Called once a day by Vercel Cron (vercel.json), which
- * sends `Authorization: Bearer $CRON_SECRET`. A reel is claimed (status -> posting)
- * before the API call so an overlapping run cannot post it twice.
+ * Posts the next queued reels (IG_POSTS_PER_RUN, default 3). Vercel Hobby only allows a
+ * daily cron, so each run posts a small burst. Called by Vercel Cron (vercel.json), which
+ * sends `Authorization: Bearer $CRON_SECRET`. Rows are claimed (status -> posting) before
+ * any API call so an overlapping run cannot post the same reel twice; the reels are
+ * processed in parallel so a burst stays inside the function time limit.
  */
 export async function GET(request: Request) {
   if (!isAuthorizedPipelineRequest(request)) {
@@ -20,31 +24,39 @@ export async function GET(request: Request) {
   const userId = process.env.IG_USER_ID;
   if (!token || !userId) return Response.json({ error: "Instagram is not configured" }, { status: 503 });
 
-  const [next] = await db
+  const next = await db
     .select()
     .from(reelPosts)
     .where(eq(reelPosts.status, "queued"))
     .orderBy(asc(reelPosts.position))
-    .limit(1);
-  if (!next) return Response.json({ posted: null, note: "queue empty" });
+    .limit(PER_RUN);
+  if (next.length === 0) return Response.json({ posted: [], note: "queue empty" });
 
   const claimed = await db
     .update(reelPosts)
     .set({ status: "posting" })
-    .where(and(eq(reelPosts.id, next.id), eq(reelPosts.status, "queued")))
+    .where(and(inArray(reelPosts.id, next.map((r) => r.id)), eq(reelPosts.status, "queued")))
     .returning({ id: reelPosts.id });
-  if (claimed.length === 0) return Response.json({ posted: null, note: "already claimed" });
+  const mine = new Set(claimed.map((c) => c.id));
+  const batch = next.filter((r) => mine.has(r.id));
 
-  try {
-    const mediaId = await publishReel({ userId, token, videoUrl: next.videoUrl, caption: next.caption });
-    await db
-      .update(reelPosts)
-      .set({ status: "posted", igMediaId: mediaId, postedAt: new Date(), error: null })
-      .where(eq(reelPosts.id, next.id));
-    return Response.json({ posted: next.slug, igMediaId: mediaId });
-  } catch (e) {
-    const message = e instanceof Error ? e.message : String(e);
-    await db.update(reelPosts).set({ status: "failed", error: message.slice(0, 500) }).where(eq(reelPosts.id, next.id));
-    return Response.json({ posted: null, failed: next.slug, error: message }, { status: 500 });
-  }
+  const results = await Promise.all(
+    batch.map(async (reel) => {
+      try {
+        const mediaId = await publishReel({ userId, token, videoUrl: reel.videoUrl, caption: reel.caption });
+        await db
+          .update(reelPosts)
+          .set({ status: "posted", igMediaId: mediaId, postedAt: new Date(), error: null })
+          .where(eq(reelPosts.id, reel.id));
+        return { slug: reel.slug, igMediaId: mediaId };
+      } catch (e) {
+        const message = e instanceof Error ? e.message : String(e);
+        await db.update(reelPosts).set({ status: "failed", error: message.slice(0, 500) }).where(eq(reelPosts.id, reel.id));
+        return { slug: reel.slug, error: message };
+      }
+    }),
+  );
+
+  const failed = results.filter((r) => "error" in r);
+  return Response.json({ posted: results.filter((r) => !("error" in r)), failed }, { status: failed.length ? 207 : 200 });
 }
