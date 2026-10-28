@@ -2,7 +2,7 @@ import { and, asc, eq, inArray } from "drizzle-orm";
 import { db } from "@/db";
 import { reelPosts } from "@/db/schema";
 import { isAuthorizedPipelineRequest } from "@/lib/pipeline-auth";
-import { publishReel } from "@/lib/instagram";
+import { getInstagramToken, publishReel } from "@/lib/instagram";
 
 // Videos take a while for Instagram to process; allow the function to wait.
 export const maxDuration = 300;
@@ -20,9 +20,15 @@ export async function GET(request: Request) {
   if (!isAuthorizedPipelineRequest(request)) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
-  const token = process.env.IG_ACCESS_TOKEN;
   const userId = process.env.IG_USER_ID;
-  if (!token || !userId) return Response.json({ error: "Instagram is not configured" }, { status: 503 });
+  if (!userId) return Response.json({ error: "Instagram is not configured" }, { status: 503 });
+  let auth: { token: string; note?: string };
+  try {
+    auth = await getInstagramToken();
+  } catch {
+    return Response.json({ error: "Instagram is not configured" }, { status: 503 });
+  }
+  const { token, note } = auth;
 
   const next = await db
     .select()
@@ -30,7 +36,7 @@ export async function GET(request: Request) {
     .where(eq(reelPosts.status, "queued"))
     .orderBy(asc(reelPosts.position))
     .limit(PER_RUN);
-  if (next.length === 0) return Response.json({ posted: [], note: "queue empty" });
+  if (next.length === 0) return Response.json({ posted: [], note: note ?? "queue empty" });
 
   const claimed = await db
     .update(reelPosts)
@@ -58,5 +64,5 @@ export async function GET(request: Request) {
   );
 
   const failed = results.filter((r) => "error" in r);
-  return Response.json({ posted: results.filter((r) => !("error" in r)), failed }, { status: failed.length ? 207 : 200 });
+  return Response.json({ posted: results.filter((r) => !("error" in r)), failed, note }, { status: failed.length ? 207 : 200 });
 }

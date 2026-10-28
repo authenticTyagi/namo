@@ -55,3 +55,56 @@ export async function publishReel(opts: {
   );
   return String(published.id);
 }
+
+// --- Token upkeep -----------------------------------------------------------------------
+// Instagram long-lived tokens last 60 days and can be refreshed once they are 24 hours old.
+// Vercel env vars cannot be changed from inside the site, so the refreshed token is kept in
+// pipeline_config; IG_ACCESS_TOKEN (env) is only the starting value. Refresh every 30 days.
+import { eq } from "drizzle-orm";
+import { db } from "@/db";
+import { pipelineConfig } from "@/db/schema";
+
+const TOKEN_KEY = "ig_access_token";
+const REFRESHED_KEY = "ig_token_refreshed_at";
+const REFRESH_EVERY_MS = 30 * 24 * 60 * 60 * 1000;
+
+async function getConfig(key: string): Promise<{ value: string; updatedAt: Date } | null> {
+  const [row] = await db.select().from(pipelineConfig).where(eq(pipelineConfig.key, key)).limit(1);
+  return row ? { value: row.value, updatedAt: row.updatedAt } : null;
+}
+
+async function setConfig(key: string, value: string) {
+  await db
+    .insert(pipelineConfig)
+    .values({ key, value })
+    .onConflictDoUpdate({ target: pipelineConfig.key, set: { value, updatedAt: new Date() } });
+}
+
+/** Returns the token to use now, refreshing it first when it is 30 or more days old. */
+export async function getInstagramToken(): Promise<{ token: string; note?: string }> {
+  const stored = await getConfig(TOKEN_KEY);
+  const refreshedAt = await getConfig(REFRESHED_KEY);
+  const token = stored?.value ?? process.env.IG_ACCESS_TOKEN;
+  if (!token) throw new Error("Instagram token is not configured");
+
+  if (!refreshedAt) {
+    // First run: the env token was generated recently, so start the 30-day clock now.
+    await setConfig(REFRESHED_KEY, new Date().toISOString());
+    return { token };
+  }
+  if (Date.now() - new Date(refreshedAt.value).getTime() < REFRESH_EVERY_MS) return { token };
+
+  try {
+    const res = await fetch(
+      `https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${encodeURIComponent(token)}`,
+    );
+    const body = (await res.json()) as { access_token?: string; error?: unknown };
+    if (!res.ok || !body.access_token) throw new Error(JSON.stringify(body.error ?? body));
+    await setConfig(TOKEN_KEY, body.access_token);
+    await setConfig(REFRESHED_KEY, new Date().toISOString());
+    return { token: body.access_token, note: "token refreshed" };
+  } catch (e) {
+    // Keep posting with the current token; surface the problem in the run response.
+    return { token, note: `token refresh failed: ${e instanceof Error ? e.message : String(e)}` };
+  }
+}
