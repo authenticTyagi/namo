@@ -43,6 +43,17 @@ def tone(m, dur, kind="saw", amp=0.2, **adsr):
     elif kind == "pluck":
         w = np.sin(2 * np.pi * f * t) + 0.4 * np.sin(2 * np.pi * 2 * f * t) * np.exp(-t * 9)
         w *= np.exp(-t * 5)
+    elif kind == "piano":
+        w = (np.sin(2 * np.pi * f * t) + 0.5 * np.sin(2 * np.pi * 2 * f * t) * np.exp(-t * 3)
+             + 0.25 * np.sin(2 * np.pi * 3 * f * t) * np.exp(-t * 5)) * np.exp(-t * 2.2)
+    elif kind == "marimba":
+        w = (np.sin(2 * np.pi * f * t) + 0.6 * np.sin(2 * np.pi * 4 * f * t) * np.exp(-t * 25)) * np.exp(-t * 7)
+    elif kind == "strings":
+        vib = 1 + 0.004 * np.sin(2 * np.pi * 5.2 * t)
+        w = sum(((t * f * vib * k) % 1.0 * 2 - 1) / k for k in (1, 1.006, 0.994)) / 3
+        w = np.convolve(w, np.ones(30) / 30, mode="same")
+    elif kind == "bell":
+        w = (np.sin(2 * np.pi * f * t) + 0.4 * np.sin(2 * np.pi * 2.76 * f * t)) * np.exp(-t * 3.5)
     elif kind == "bass":
         w = np.sin(2 * np.pi * f * t) + 0.25 * np.sin(2 * np.pi * 2 * f * t)
     else:
@@ -71,6 +82,19 @@ def snare(amp=0.22):
     return amp * (rng.standard_normal(n) * 0.7 + np.sin(2 * np.pi * 190 * t) * 0.5) * np.exp(-t * 24)
 
 
+def tabla_ga(amp=0.35):
+    n = int(0.28 * SR)
+    t = np.arange(n) / SR
+    f = 95 * np.exp(-t * 9) + 70
+    return amp * np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 11)
+
+
+def tabla_na(amp=0.16, f0=520):
+    n = int(0.12 * SR)
+    t = np.arange(n) / SR
+    return amp * (np.sin(2 * np.pi * f0 * t) + 0.5 * np.sin(2 * np.pi * f0 * 2.1 * t)) * np.exp(-t * 38)
+
+
 def place(buf, sig, start):
     i = int(start * SR)
     j = min(len(buf), i + len(sig))
@@ -90,6 +114,23 @@ TRACKS = {
     "market": dict(root=59, bpm=100, prog=[(0, "min"), (10, "maj"), (8, "maj"), (10, "maj")], groove="lofi", arp=[0, 2, 1, 0]),
     "rise": dict(root=64, bpm=108, prog=[(0, "maj"), (9, "min"), (5, "maj"), (7, "maj")], groove="four", arp=[0, 1, 2, 0]),
     "calm": dict(root=53, bpm=76, prog=[(0, "maj"), (4, "min"), (9, "min"), (7, "maj")], groove="soft", arp=[0, 2, 1, 2]),
+    # Added for mood matching: different instruments, no kick/snare on the quiet ones.
+    "ambient": dict(root=50, bpm=60, prog=[(0, "min"), (7, "min"), (3, "maj"), (10, "maj")], groove="none", arp=[0, 2, 1, 2],
+                    voice="bell", pad="strings", arp_every=4, drone=True, arp_amp=0.07),
+    "piano_calm": dict(root=57, bpm=72, prog=[(0, "maj"), (9, "min"), (5, "maj"), (7, "maj")], groove="none", arp=[0, 1, 2, 1],
+                       voice="piano", pad="soft", arp_every=2, arp_amp=0.16),
+    "strings_serious": dict(root=52, bpm=68, prog=[(0, "min"), (8, "maj"), (5, "min"), (7, "maj")], groove="heartbeat", arp=[0, 1, 2, 1],
+                            voice="piano", pad="strings", arp_every=4, drone=True, arp_amp=0.1),
+    "tabla_groove": dict(root=55, bpm=96, prog=[(0, "min"), (0, "min"), (10, "maj"), (7, "min")], groove="tabla", arp=[0, 2, 1, 2],
+                         voice="marimba", pad="soft", arp_every=1, drone=True, arp_amp=0.14),
+    "pulse_tech": dict(root=60, bpm=118, prog=[(0, "min"), (8, "maj"), (3, "maj"), (10, "maj")], groove="pulse", arp=[0, 2, 1, 2],
+                       voice="pluck", pad="none", arp_every=1, arp_amp=0.12),
+    "marimba_bright": dict(root=62, bpm=108, prog=[(0, "maj"), (7, "maj"), (5, "maj"), (9, "min")], groove="light", arp=[0, 2, 1, 2],
+                           voice="marimba", pad="soft", arp_every=1, arp_amp=0.17),
+    "wonder": dict(root=64, bpm=64, prog=[(0, "maj"), (4, "min"), (5, "maj"), (7, "maj")], groove="none", arp=[2, 1, 2, 0],
+                   voice="bell", pad="strings", arp_every=2, arp_amp=0.1),
+    "warm_folk": dict(root=58, bpm=92, prog=[(0, "maj"), (5, "maj"), (9, "min"), (7, "maj")], groove="soft", arp=[0, 1, 2, 1],
+                      voice="pluck", pad="soft", arp_every=1, arp_amp=0.15),
 }
 
 
@@ -108,16 +149,29 @@ def make(name, cfg, seconds):
         t0 = b * bar
         off, q = cfg["prog"][b % len(cfg["prog"])]
         notes = chord_notes(cfg["root"] + off, q)
-        # pad (low octave for warmth)
-        for m in notes:
-            place(mix, tone(m - 12, bar * 1.02, "saw", amp=0.055, a=0.25, d=0.4, s=0.8, r=0.35), t0)
-        # bass: root on 1 and the "and" of 3
-        place(mix, tone(notes[0] - 24, beat * 1.4, "bass", amp=0.30, a=0.01, d=0.2, s=0.6, r=0.2), t0)
-        place(mix, tone(notes[0] - 24 if b % 2 else notes[2] - 24, beat * 0.9, "bass", amp=0.24, a=0.01, d=0.15, s=0.5, r=0.15), t0 + beat * 2.5)
-        # arpeggio, eighth notes, up an octave
+        pad = cfg.get("pad", "saw")
+        if pad != "none":
+            kind = "strings" if pad == "strings" else "saw"
+            pad_amp = 0.06 if pad == "strings" else (0.035 if pad == "soft" else 0.055)
+            for m in notes:
+                place(mix, tone(m - 12, bar * 1.02, kind, amp=pad_amp, a=0.5 if pad == "strings" else 0.25, d=0.4, s=0.8, r=0.35), t0)
+        if cfg.get("drone"):
+            place(mix, tone(notes[0] - 24, bar * 1.02, "sine", amp=0.1, a=0.4, d=0.3, s=0.9, r=0.3), t0)
+            place(mix, tone(notes[0] - 17, bar * 1.02, "sine", amp=0.05, a=0.4, d=0.3, s=0.9, r=0.3), t0)
+        if cfg.get("groove") not in ("none",) and not cfg.get("drone"):
+            # bass: root on 1 and the "and" of 3
+            place(mix, tone(notes[0] - 24, beat * 1.4, "bass", amp=0.30, a=0.01, d=0.2, s=0.6, r=0.2), t0)
+            place(mix, tone(notes[0] - 24 if b % 2 else notes[2] - 24, beat * 0.9, "bass", amp=0.24, a=0.01, d=0.15, s=0.5, r=0.15), t0 + beat * 2.5)
+        # arpeggio (eighth notes by default; arp_every thins it out: 1 = all, 2 = every 2nd, 4 = every 4th)
+        every = cfg.get("arp_every", 1)
+        voice = cfg.get("voice", "pluck")
         for k in range(8):
+            if k % every:
+                continue
             m = notes[cfg["arp"][k % 4] % 3] + (12 if k % 4 else 24)
-            place(mix, tone(m, beat * 0.5, "pluck", amp=0.13, a=0.003, d=0.2, s=0.2, r=0.15), t0 + k * beat * 0.5)
+            if voice in ("bell", "piano"):
+                m += 12 if voice == "bell" else 0
+            place(mix, tone(m, beat * (0.5 if voice in ("pluck", "marimba") else 1.5), voice, amp=cfg.get("arp_amp", 0.13), a=0.003, d=0.2, s=0.2, r=0.15), t0 + k * beat * 0.5)
         g = cfg["groove"]
         for k in range(4):
             tb = t0 + k * beat
@@ -142,10 +196,30 @@ def make(name, cfg, seconds):
                     place(mix, snare(0.16), tb + 0.012)  # slightly late: lazy feel
                 place(mix, hat(0.045), tb + (0.02 if k % 2 else 0))
                 place(mix, hat(0.035), tb + beat * 0.5)
-            else:  # soft
+            elif g == "soft":
                 if k == 0:
                     place(mix, kick(0.35), tb)
                 place(mix, hat(0.03), tb + beat * 0.5)
+            elif g == "heartbeat":
+                if k == 0:
+                    place(mix, kick(0.32), tb)
+                    place(mix, kick(0.2), tb + beat * 0.35)
+            elif g == "tabla":
+                if k in (0, 2):
+                    place(mix, tabla_ga(), tb)
+                place(mix, tabla_na(0.14, 520 if k % 2 else 640), tb + beat * 0.5)
+                if k == 3:
+                    place(mix, tabla_na(0.12, 480), tb + beat * 0.75)
+            elif g == "pulse":
+                place(mix, kick(0.3), tb)
+                place(mix, hat(0.05), tb + beat * 0.5)
+                if k == 2:
+                    place(mix, snare(0.1), tb + beat * 0.5)
+            elif g == "light":
+                if k in (0, 2):
+                    place(mix, kick(0.25), tb)
+                place(mix, hat(0.04), tb + beat * 0.5)
+            # "none": no drums at all
     # simple soft clip then normalise to about -16 dBFS RMS-ish peak 0.5
     mix = np.tanh(mix * 1.3)
     mix *= 0.5 / max(np.abs(mix).max(), 1e-6)

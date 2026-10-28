@@ -133,7 +133,55 @@ def safe_id(*parts):
     return re.sub(r"[^a-zA-Z0-9-]+", "-", "-".join(parts)).strip("-")[:90]
 
 
+# Music by mood. The choice is stable (hash of the id) but only among tracks that suit the page:
+# sensitive topics get quiet, drum-free tracks; wins and space get brighter ones.
+import hashlib
+
+SENSITIVE = ("article-370", "ayodhya", "corruption", "sir-", "caste", "ncert", "keeladi", "riot", "digital-arrest",
+             "cyber-fraud", "tele-manas", "student-suicide", "paper-leak", "child-marriage", "gaming")
+CULTURE = ("bappa-rawal", "knowledge-systems", "indian-knowledge", "heritage", "statue")
+MOOD_TRACKS = {
+    "somber": ["ambient", "strings_serious", "piano_calm"],
+    "wonder": ["wonder", "ambient", "pulse_tech"],
+    "serious": ["serious", "strings_serious", "steady"],
+    "market": ["market", "pulse_tech", "focus"],
+    "warm": ["warm_folk", "piano_calm", "calm", "sunrise"],
+    "bright": ["marimba_bright", "bright", "rise", "sunrise"],
+    "learn": ["focus", "piano_calm", "marimba_bright"],
+    "culture": ["tabla_groove", "warm_folk"],
+    "diplomacy": ["steady", "strings_serious", "calm"],
+    "green": ["rise", "calm", "wonder"],
+    "civic": ["steady", "piano_calm", "focus"],
+}
+CAT_MOOD = {
+    "space-science": "wonder", "defense-security": "serious", "economy-infra-digital": "market",
+    "currency-prices-inflation": "market", "welfare-social-schemes": "warm", "agriculture-farmer-welfare": "warm",
+    "women-child-development": "warm", "health-infrastructure": "warm", "education-skill-development": "learn",
+    "foreign-policy-diplomacy": "diplomacy", "environment-renewable-energy": "green",
+    "governance-judiciary": "civic", "sports-youth-affairs": "bright",
+}
+
+
+def pick_music(spec_id, slug, category, kind, tone=None):
+    low = slug.lower()
+    if any(k in low for k in SENSITIVE) or tone == "negative":
+        mood = "somber"
+    elif any(k in low for k in CULTURE):
+        mood = "culture"
+    elif kind == "comparison":
+        mood = "market"
+    elif tone == "positive":
+        mood = "bright"
+    else:
+        mood = CAT_MOOD.get(category, "civic")
+    tracks = MOOD_TRACKS[mood]
+    return tracks[int(hashlib.md5(spec_id.encode()).hexdigest(), 16) % len(tracks)]
+
+
 def write(spec):
+    if "music" not in spec:
+        t = spec.get("tone") if spec.get("kind") == "editorial" else None
+        spec["music"] = pick_music(spec["id"], spec.get("slug", ""), spec.get("category", ""), spec.get("kind", ""), t)
     d = HERE / "specs"
     d.mkdir(exist_ok=True)
     (d / f"{spec['id']}.json").write_text(json.dumps(spec, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -217,7 +265,7 @@ for d in content["editorials"]:
         cat = e["category_slug"] if e else "default"
         url = f"{SITE}/{loc}/editorial/{d['slug']}"
         write({"id": safe_id("editorial", loc, d["slug"]), "locale": loc, "category": cat,
-               "tag": KICK[loc]["edit"], "kind": "editorial", "slug": d["slug"], "scenes": scenes,
+               "tag": KICK[loc]["edit"], "kind": "editorial", "tone": d["tone"], "slug": d["slug"], "scenes": scenes,
                "post": post_text(loc, head, concl or opening or "", url, (TAGS_EN if loc == "en" else TAGS_HI).get(cat, ""))})
         count["editorial"] += 1
 
