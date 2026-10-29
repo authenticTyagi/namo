@@ -56,7 +56,7 @@ const read = (p: string) => readFileSync(p, "utf8");
 
 test("approve and reject require an admin and only act on pending drafts", () => {
   const src = read("src/app/admin/(protected)/translations/actions.ts");
-  assert.equal((src.match(/await requireAdmin\(\)/g) ?? []).length, 2);
+  assert.equal((src.match(/await requireAdmin\(\)/g) ?? []).length, 4); // approve, reject, bulk approve, bulk reject
   assert.match(src, /eq\(translationDrafts\.status, "pending_review"\)/);
   assert.match(src, /session\?\.user\.role !== "admin"/);
 });
