@@ -9,9 +9,11 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { getDashboardCounts } from "@/db/queries/admin";
+import { getInstagramHealth } from "@/lib/instagram-health";
 
 export default async function AdminDashboardPage() {
   const counts = await getDashboardCounts();
+  const ig = await getInstagramHealth().catch(() => null);
   const needsReview = counts.pendingReview + counts.pendingReviewEditorials + counts.pendingReviewComparisons;
 
   const tiles: { label: string; value: number; href: string; icon: LucideIcon; needsAttention?: boolean }[] = [
@@ -47,6 +49,23 @@ export default async function AdminDashboardPage() {
   return (
     <div>
       <h1 className="text-2xl font-bold">Dashboard</h1>
+      {ig && (ig.problems.length > 0 || ig.warnings.length > 0) && (
+        <div
+          role="alert"
+          className={`mt-4 rounded-lg border p-4 text-sm ${
+            ig.problems.length > 0
+              ? "border-red-300 bg-red-50 text-red-900 dark:border-red-900 dark:bg-red-950/30 dark:text-red-200"
+              : "border-amber-200 bg-amber-50/50 dark:border-amber-900 dark:bg-amber-950/20"
+          }`}
+        >
+          <p className="font-semibold">Instagram posting</p>
+          <ul className="mt-1 list-disc pl-5">
+            {[...ig.problems, ...ig.warnings].map((m) => (
+              <li key={m}>{m}</li>
+            ))}
+          </ul>
+        </div>
+      )}
       <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {tiles.map((tile) => {
           const Icon = tile.icon;

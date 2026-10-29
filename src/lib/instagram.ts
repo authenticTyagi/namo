@@ -65,15 +65,15 @@ import { db } from "@/db";
 import { pipelineConfig } from "@/db/schema";
 
 const TOKEN_KEY = "ig_access_token";
-const REFRESHED_KEY = "ig_token_refreshed_at";
+export const REFRESHED_KEY = "ig_token_refreshed_at";
 const REFRESH_EVERY_MS = 30 * 24 * 60 * 60 * 1000;
 
-async function getConfig(key: string): Promise<{ value: string; updatedAt: Date } | null> {
+export async function getConfig(key: string): Promise<{ value: string; updatedAt: Date } | null> {
   const [row] = await db.select().from(pipelineConfig).where(eq(pipelineConfig.key, key)).limit(1);
   return row ? { value: row.value, updatedAt: row.updatedAt } : null;
 }
 
-async function setConfig(key: string, value: string) {
+export async function setConfig(key: string, value: string) {
   await db
     .insert(pipelineConfig)
     .values({ key, value })
