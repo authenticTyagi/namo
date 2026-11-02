@@ -12,6 +12,9 @@ import {
   Users,
   Landmark,
   Trophy,
+  Earth,
+  CloudSun,
+  Cpu,
   type LucideIcon,
 } from "lucide-react";
 
@@ -29,6 +32,9 @@ const CATEGORY_ICONS: Record<string, LucideIcon> = {
   "women-child-development": Users,
   "governance-judiciary": Landmark,
   "sports-youth-affairs": Trophy,
+  "world-global-affairs": Earth,
+  "climate-weather": CloudSun,
+  "technology-ai": Cpu,
 };
 
 export function getCategoryIcon(slug: string): LucideIcon {

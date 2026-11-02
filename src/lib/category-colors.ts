@@ -80,6 +80,19 @@ const CATEGORY_CLASSES: Record<string, CategoryClasses> = {
     text: "text-neutral-500 dark:text-neutral-400",
     border: "border-neutral-400 dark:border-neutral-600",
   },
+  // Categories 14-16 — same documented neutral-gray treatment as 9-13 above.
+  "world-global-affairs": {
+    text: "text-neutral-500 dark:text-neutral-400",
+    border: "border-neutral-400 dark:border-neutral-600",
+  },
+  "climate-weather": {
+    text: "text-neutral-500 dark:text-neutral-400",
+    border: "border-neutral-400 dark:border-neutral-600",
+  },
+  "technology-ai": {
+    text: "text-neutral-500 dark:text-neutral-400",
+    border: "border-neutral-400 dark:border-neutral-600",
+  },
 };
 
 const FALLBACK: CategoryClasses = CATEGORY_CLASSES["economy-infra-digital"];

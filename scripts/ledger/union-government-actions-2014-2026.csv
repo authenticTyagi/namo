@@ -1,0 +1,111 @@
+id,year,domain,action,type,status,neutral_note,verification,related_site_entry
+1,2014,Governance,Planning Commission abolished; NITI Aayog created (effective Jan 2015),institution,implemented,Replaced five-year-plan body with a think-tank; state-centre role debated,from_memory_needs_source,
+2,2014,Welfare/Finance,Pradhan Mantri Jan Dhan Yojana launched (Aug 2014),scheme,implemented,Bank accounts at scale; later debates on dormant accounts and overdraft use,from_memory_needs_source,jan-dhan-yojana-financial-inclusion
+3,2014,Sanitation,Swachh Bharat Mission launched (2 Oct 2014),scheme,implemented,Toilet construction at scale; usage and sustainability audited separately,from_memory_needs_source,swachh-bharat-sanitation-coverage
+4,2014,Industry,Make in India launched (Sep 2014),policy,ongoing,Manufacturing share of GDP stayed roughly flat; FDI and PLI followed,from_memory_needs_source,make-in-india-manufacturing-decade
+5,2014,Environment,Namami Gange programme approved (Jun 2014 budget; mission 2014-15),scheme,ongoing,Sewage capacity built; river-quality outcome mixed,from_memory_needs_source,namami-gange-sewage-capacity-built-vs-river-quality-record
+6,2014,Judiciary,Constitution (99th Amendment) and NJAC Act passed (Aug 2014),law,struck_down,Supreme Court struck down NJAC in Oct 2015; collegium system continued,from_memory_needs_source,
+7,2014,Economy,Coal block allocations cancelled after Supreme Court ruling; e-auction regime adopted,policy,implemented,Followed court cancellation of 204 blocks; commercial mining opened 2020,from_memory_needs_source,
+8,2014,Energy,Diesel price decontrolled (Oct 2014),policy,implemented,Retail diesel moved to market-linked pricing,from_memory_needs_source,
+9,2015,Agriculture/Land,Land Acquisition Act amendment ordinance (Dec 2014; re-promulgated twice) lapsed Aug 2015,law,withdrawn_lapsed,Contested by farmers' groups and parties; not enacted,from_memory_needs_source,
+10,2015,Finance,Black Money (Undisclosed Foreign Income and Assets) Act enacted,law,implemented,One-time compliance window in 2015; later enforcement data limited,from_memory_needs_source,
+11,2015,Digital,Digital India programme launched (Jul 2015),policy,ongoing,Broadband and services expansion; see digital entries,from_memory_needs_source,digital-india-billion-broadband-users
+12,2015,Urban,"Smart Cities Mission, AMRUT and HRIDAY launched (Jun 2015)",scheme,ongoing,Smart Cities audited by CAG in at least one state; mixed delivery,from_memory_needs_source,smart-cities-mission-tamil-nadu-cag-audit
+13,2015,Housing,Pradhan Mantri Awas Yojana (Urban) launched (Jun 2015),scheme,ongoing,Housing for all by 2022 target extended,from_memory_needs_source,pm-awas-yojana-housing
+14,2015,Skills,Skill India Mission and PMKVY launched (Jul 2015),scheme,ongoing,Placement outcomes questioned in evaluations,from_memory_needs_source,pmkvy-skill-india-training
+15,2015,Finance,"Mudra Yojana, Atal Pension Yojana, PM Suraksha Bima and PM Jeevan Jyoti Bima launched",scheme,ongoing,Small-loan and micro-insurance expansion,from_memory_needs_source,
+16,2015,Finance,Sovereign Gold Bond scheme and Gold Monetisation Scheme launched (Nov 2015),scheme,ongoing,Aimed to reduce physical gold imports,from_memory_needs_source,
+17,2015,Finance,Monetary policy framework agreement with RBI on inflation targeting (Feb 2015),policy,implemented,Statutory MPC created 2016,from_memory_needs_source,inflation-targeting-framework-success
+18,2015,Foreign,India-Bangladesh Land Boundary Agreement ratified (100th Constitutional Amendment),law,implemented,Enclave exchange completed 2015,from_memory_needs_source,
+19,2015,Energy,LED distribution scheme (UJALA) launched (Jan 2015),scheme,implemented,Large LED bulb distribution; energy-saving claims,from_memory_needs_source,
+20,2015,Energy,Paris Agreement NDC submitted (Oct 2015); International Solar Alliance co-launched (Nov 2015),international,ongoing,,from_memory_needs_source,international-solar-alliance
+21,2015,Foreign,Government announces Neighbourhood First and Act East policy emphasis,policy,ongoing,,from_memory_needs_source,
+22,2016,Economy,Demonetisation: ₹500 and ₹1000 notes withdrawn (8 Nov 2016),policy,implemented,RBI later reported most of the withdrawn notes returned; effects on growth and informal economy debated,from_memory_needs_source,
+23,2016,Finance,Insolvency and Bankruptcy Code enacted (May 2016),law,implemented,Recovery rates and delays debated; see site entry,from_memory_needs_source,ibc-insolvency-code-ten-years-recovery-haircuts-delays
+24,2016,Real estate,Real Estate (Regulation and Development) Act (RERA) enacted,law,implemented,State-level implementation uneven,from_memory_needs_source,
+25,2016,Finance,Benami Transactions (Prohibition) Amendment Act in force (Nov 2016),law,implemented,,from_memory_needs_source,
+26,2016,Governance,Aadhaar (Targeted Delivery of Financial and Other Subsidies) Act passed as a money bill (Mar 2016),law,upheld_in_part,Supreme Court upheld Aadhaar largely in Sep 2018 but limited private use,from_memory_needs_source,aadhaar-act-supreme-court-verdict
+27,2016,Payments,UPI launched by NPCI (Apr 2016); BHIM app (Dec 2016),digital,implemented,Now the main retail digital payment route,from_memory_needs_source,upi-worlds-largest-real-time-payments
+28,2016,Energy,PM Ujjwala Yojana launched (May 2016),scheme,ongoing,LPG connections at scale; refill usage a separate question,from_memory_needs_source,pm-ujjwala-lpg-access-refill-usage-subsidy-cut
+29,2016,Agriculture,Pradhan Mantri Fasal Bima Yojana launched (Jan 2016),scheme,ongoing,Insurer payouts and delays debated,from_memory_needs_source,pmfby-crop-insurance
+30,2016,Agriculture,e-NAM national agriculture market platform launched (Apr 2016),digital,ongoing,,from_memory_needs_source,
+31,2016,Industry,Startup India action plan launched (Jan 2016),scheme,ongoing,,from_memory_needs_source,startup-india-ecosystem-growth
+32,2016,Finance,Union Budget merged with Railway Budget from 2017; budget date advanced to 1 Feb,policy,implemented,,from_memory_needs_source,
+33,2016,Finance,Constitution (101st Amendment) Act for GST passed (Aug 2016),law,implemented,Enabled GST in 2017,from_memory_needs_source,
+34,2016,Defence,Defence procurement: first direct government-to-government Rafale deal (Sep 2016),procurement,implemented,Price and offsets questioned in public debate; Supreme Court declined to order a probe in 2018 and dismissed review pleas in 2019,from_memory_needs_source,
+35,2017,Tax,Goods and Services Tax in force (1 Jul 2017),law,implemented,Rate rationalisation in 2018-19 and Sep 2025,from_memory_needs_source,gst-nine-years-collections-and-gst-2-0-rate-cuts
+36,2017,Governance,Triple talaq (instant divorce) declared unconstitutional by Supreme Court (Aug 2017); Muslim Women (Protection of Rights on Marriage) Act enacted 2019,law,implemented,,from_memory_needs_source,
+37,2017,Finance,Recapitalisation of public sector banks announced (₹2.11 lakh crore),finance,implemented,Public cost not fully quantified,from_memory_needs_source,bank-bad-loans-gross-npa-peak-to-2025-writeoffs-caveat
+38,2017,Finance,Electoral bonds scheme announced (Budget 2017); operational 2018,law,struck_down,Supreme Court struck down the scheme in Feb 2024,from_memory_needs_source,
+39,2017,Electricity,Saubhagya scheme launched (Sep 2017),scheme,implemented,Household electrification; connection vs supply hours debated,from_memory_needs_source,
+40,2017,Transport,Bharatmala and Sagarmala projects approved,infrastructure,ongoing,,from_memory_needs_source,national-highways-construction-pace
+41,2018,Health,Ayushman Bharat launched: PM-JAY insurance (Sep 2018) and health and wellness centres,scheme,ongoing,Coverage and claim-rejection issues audited separately,from_memory_needs_source,ayushman-bharat-health-insurance
+42,2018,Agriculture,MSP set at 1.5 times cost (A2+FL) for kharif crops (Budget 2018),policy,implemented,Cost definition debated,from_memory_needs_source,msp-procurement-growth
+43,2018,Governance,Section 377 decriminalised by Supreme Court (Sep 2018),judicial,implemented,Court-led; the government left the question to the court,from_memory_needs_source,
+44,2018,Finance,Fugitive Economic Offenders Act enacted,law,implemented,,from_memory_needs_source,
+45,2018,Infrastructure,Statue of Unity inaugurated (Oct 2018),project,implemented,,from_memory_needs_source,
+46,2019,Agriculture,PM-KISAN launched (Feb 2019),scheme,ongoing,₹6000 a year in three instalments; coverage and exclusions debated,from_memory_needs_source,pm-kisan-samman-nidhi
+47,2019,Water,Jal Jeevan Mission launched (Aug 2019),scheme,ongoing,Tap connections up; water quality and functionality audited separately,from_memory_needs_source,jal-jeevan-mission-tap-water
+48,2019,Governance,Article 370 provisions revoked and J&K reorganised (Aug 2019),law,implemented,Supreme Court upheld the abrogation in Dec 2023; statehood restoration pending,from_memory_needs_source,article-370-abrogation-and-jk-reorganisation
+49,2019,Governance,Citizenship (Amendment) Act passed (Dec 2019); rules notified Mar 2024,law,implemented,Widely protested; challenges in court,from_memory_needs_source,
+50,2019,Governance,"UAPA amended to allow designation of individuals as terrorists; RTI Act amended (Jul 2019)",law,implemented,Both contested by civil society,from_memory_needs_source,
+51,2019,Finance,Corporate tax rate cut to 22% (25.17% effective) (Sep 2019),tax,implemented,Revenue cost of about ₹1.45 lakh crore estimated at the time,from_memory_needs_source,
+52,2019,Finance,Bank mergers announced (Aug 2019; effective Apr 2020),finance,implemented,Public sector banks consolidated from 27 (2017) to 12,from_memory_needs_source,
+53,2019,Governance,Ayodhya dispute decided by Supreme Court (Nov 2019); trust formed,judicial,implemented,Court-led; government role in trust and construction,from_memory_needs_source,ayodhya-verdict-ram-mandir-construction
+54,2019,Foreign,India declined to join RCEP at the Bangkok summit (Nov 2019),international,decided,Cited concerns over trade deficit and market access,from_memory_needs_source,
+55,2019,Health,National Medical Commission Act replaces Medical Council of India,law,implemented,,from_memory_needs_source,medical-college-mbbs-pg-seats-expansion
+56,2019,Transport,Motor Vehicles (Amendment) Act with higher penalties,law,implemented,Some states reduced fines,from_memory_needs_source,
+57,2019,Foreign,Kartarpur corridor opened (Nov 2019),international,implemented,,from_memory_needs_source,
+58,2019,Defence,Chief of Defence Staff post created (announced Aug 2019),institution,implemented,,from_memory_needs_source,
+59,2020,Health,Nationwide COVID-19 lockdown (from 24 Mar 2020); Atmanirbhar Bharat package announced (May 2020),policy,implemented,Large migrant movement; economy contracted in 2020-21,from_memory_needs_source,covid19-domestic-vaccination-pandemic-response
+60,2020,Industry,Production Linked Incentive schemes launched across sectors,scheme,ongoing,,from_memory_needs_source,pli-scheme-manufacturing-growth
+61,2020,Education,National Education Policy 2020 approved,policy,ongoing,Implementation by states uneven,from_memory_needs_source,
+62,2020,Agriculture,Three farm laws passed (Sep 2020),law,repealed,Protests followed; laws repealed in Nov-Dec 2021; MSP legal guarantee demand unresolved,from_memory_needs_source,
+63,2020,Labour,Four labour codes passed by Parliament (2019-20); brought into force 21 Nov 2025,law,implemented,Unions opposed; see gig-worker entry,from_memory_needs_source,gig-workers-social-security-code-in-force-21-nov-2025-12-then-15-aggre
+64,2020,Digital,Chinese apps blocked under IT Act (from Jun 2020),policy,implemented,,from_memory_needs_source,
+65,2020,Mining,Commercial coal mining opened to private sector; mining law amended,policy,implemented,,from_memory_needs_source,
+66,2020,Space,Space sector opened to private players; IN-SPACe created,policy,implemented,,from_memory_needs_source,space-sector-private-startups-growth
+67,2021,Health,World's largest COVID-19 vaccination drive begins (16 Jan 2021); CoWIN platform,health,implemented,Vaccine Maitri exports and later pause,from_memory_needs_source,vaccine-maitri-diplomacy
+68,2021,Infrastructure,PM Gati Shakti National Master Plan and National Infrastructure Pipeline,policy,ongoing,,from_memory_needs_source,
+69,2021,Finance,National Monetisation Pipeline announced (Aug 2021),policy,ongoing,,from_memory_needs_source,
+70,2021,Defence,Defence Corporatisation: Ordnance Factory Board dissolved into seven companies (Oct 2021),institution,implemented,,from_memory_needs_source,indigenous-defense-production-growth
+71,2021,Foreign,Quad leaders' summit first held (Sep 2021),international,ongoing,,from_memory_needs_source,
+72,2021,Finance,Retrospective tax provisions (2012) scrapped by amendment (Aug 2021),tax,implemented,,from_memory_needs_source,
+73,2021,Climate,Net-zero by 2070 and 500 GW non-fossil by 2030 announced at COP26 (Nov 2021),international,ongoing,,from_memory_needs_source,
+74,2022,Defence,Agnipath short-service recruitment scheme announced (Jun 2022),policy,implemented,Protests; retention reform under discussion,from_memory_needs_source,agnipath-agniveer-scheme-retention-reform
+75,2022,Trade,India-UAE CEPA (in force May 2022) and India-Australia ECTA (in force Dec 2022),international,implemented,,from_memory_needs_source,
+76,2022,Energy,Ethanol blending target of 10% reached (2022); E20 target advanced to 2025,policy,implemented,,from_memory_needs_source,e20-ethanol-blending
+77,2022,Telecom,5G spectrum auction and launch (Oct 2022),telecom,implemented,,from_memory_needs_source,
+78,2022,Economy,Export duty and curbs on wheat (May 2022) and rice (2022-23) to control prices,policy,withdrawn_in_part,Restrictions later eased,from_memory_needs_source,
+79,2023,International,G20 presidency; New Delhi Leaders' Declaration (Sep 2023),international,implemented,,from_memory_needs_source,g20-presidency-2023-consensus
+80,2023,Space,Chandrayaan-3 lands near the lunar south pole (23 Aug 2023),space,implemented,,from_memory_needs_source,chandrayaan-3-moon-landing
+81,2023,Governance,Women's Reservation Act (Nari Shakti Vandan Adhiniyam) passed (Sep 2023); effective after census and delimitation,law,pending_implementation,,from_memory_needs_source,
+82,2023,Privacy,Digital Personal Data Protection Act passed (Aug 2023),law,partly_implemented,Rules phased in,from_memory_needs_source,
+83,2023,Justice,"Bharatiya Nyaya Sanhita, BNSS and Bharatiya Sakshya Adhiniyam passed (Dec 2023); in force 1 Jul 2024",law,implemented,Replaced IPC; CrPC; Evidence Act,from_memory_needs_source,
+84,2024,Trade,India-EFTA TEPA signed (Mar 2024; in force 2025),international,implemented,,from_memory_needs_source,
+85,2023,Foreign,India-Middle East-Europe Economic Corridor announced at G20,international,announced,Progress slowed by regional conditions,from_memory_needs_source,
+86,2023,Energy,National Green Hydrogen Mission approved (Jan 2023),scheme,ongoing,,from_memory_needs_source,
+87,2024,Governance,Electoral bonds scheme struck down by Supreme Court (Feb 2024),judicial,reversed,Data disclosed under court order,from_memory_needs_source,
+89,2024,Governance,One Nation One Election bill introduced (Dec 2024); sent to a joint committee,law,pending,,from_memory_needs_source,
+90,2024,Housing,PMAY-Urban 2.0 and PMAY-Gramin extension approved,scheme,ongoing,,from_memory_needs_source,pm-awas-yojana-housing
+91,2024,Energy,PM Surya Ghar Muft Bijli Yojana launched (Feb 2024),scheme,ongoing,,from_memory_needs_source,pm-surya-ghar-rooftop-solar-scheme
+92,2024,Technology,IndiaAI Mission approved with ₹10372 crore outlay (Mar 2024),scheme,ongoing,,from_memory_needs_source,india-ai-impact-summit-february-2026-58000-gpus-planned-65-rupees-an-hour-and-200-billion-pledges
+93,2024,Technology,India Semiconductor Mission: first fabs and OSAT approved (Feb 2024),scheme,ongoing,,from_memory_needs_source,semicon-2-0-chip-programme-first-fab-timeline
+94,2024,Welfare,Unified Pension Scheme announced (Aug 2024) for central employees,scheme,implemented,Introduced alongside NPS,from_memory_needs_source,
+95,2024,Finance,Long-term capital gains tax changes and indexation removal (Jul 2024 Budget),tax,implemented,,from_memory_needs_source,
+96,2024,Welfare,"PM-JAY cover extended to all citizens aged 70 and above (Sep 2024)",scheme,implemented,,from_memory_needs_source,
+97,2025,Tax,Income-tax relief: no tax up to ₹12 lakh annual income under new regime (Budget Feb 2025),tax,implemented,Narrowed the tax base further; see tax entry,from_memory_needs_source,who-pays-india-tax-2025-26-40-lakh-crore-8-67-crore-filers-two-in-thre
+98,2025,Governance,Waqf (Amendment) Act enacted (Apr 2025),law,implemented,Protests and court challenges,from_memory_needs_source,
+99,2025,Trade,India-UK trade agreement (CETA) signed (Jul 2025),international,signed,Entry into force pending ratification,from_memory_needs_source,
+100,2025,Tax,GST rate rationalisation to two main slabs (from 22 Sep 2025),tax,implemented,,from_memory_needs_source,gst-nine-years-collections-and-gst-2-0-rate-cuts
+101,2025,Digital,Promotion and Regulation of Online Gaming Act 2025 bans real-money games,law,implemented,,from_memory_needs_source,online-gaming-act-2025-real-money-games-banned-esports-backed-jail-up-
+102,2025,Governance,Caste enumeration to be included in the next census (announced Apr 2025),policy,announced,,from_memory_needs_source,census-2027-houselisting-phase-april-september-2026-self-enumeration-over-1-44-crore-households-by-mid-may
+103,2025,Governance,Special Intensive Revision of electoral rolls begins (from Bihar),policy,ongoing,Court and public debate; see site entry,from_memory_needs_source,sir-electoral-roll-revision-before-2014-and-2025-26-process-results-co
+104,2025,Employment,PM Viksit Bharat Rozgar Yojana announced,scheme,ongoing,,from_memory_needs_source,pm-viksit-bharat-rozgar-yojana-13-lakh-first-jobs-paid-744-crore-again
+105,2026,Welfare,MGNREGA replaced by VB-G RAM G Act (in force 1 Jul 2026),law,implemented,Contested; early implementation reports limited,needs_source,
+106,2026,Trade,India-EU FTA concluded (27 Jan 2026),international,concluded,Signing and ratification pending,sourced_on_site,india-eu-fta-concluded-27-january-2026-formal-signing-targeted-16-december-entry-into-force-early-2027
+107,2026,Trade,India-US framework for interim trade agreement (7 Feb 2026),international,framework,No signed text found by Oct 2026,sourced_on_site,india-us-trade-framework-february-2026-tariff-cut-to-18-percent-no-signed-interim-agreement-found-by-october
+108,2026,Governance,Census 2027 houselisting phase held (Apr-Sep 2026),policy,implemented,Population count Feb 2027,sourced_on_site,census-2027-houselisting-phase-april-september-2026-self-enumeration-over-1-44-crore-households-by-mid-may
+109,2026,Technology,India AI Impact Summit hosted (Feb 2026),international,implemented,Pledges not yet verified as delivered,sourced_on_site,india-ai-impact-summit-february-2026-58000-gpus-planned-65-rupees-an-hour-and-200-billion-pledges
+110,2026,Education,Tougher paper-leak penalties and fast-track trials legislated after NEET-UG 2026 cancellation,law,implemented,Fast-track courts promised,sourced_on_site,paper-leak-law-2026-neet-cancelled-penalties-doubled-fast-track-courts
+111,2026,Monetary,Statutory MPC raised repo rate to 5.50% on 7 Oct 2026 (central bank decision; recorded as context not a Union action),context,context,RBI is autonomous,sourced_on_site,rbi-raises-repo-rate-to-5-50-percent-october-2026-first-hike-since-february-2023
