@@ -22,21 +22,24 @@ CAT_EN = {"economy-infra-digital": "Economy", "space-science": "Space", "foreign
           "defense-security": "Defence", "welfare-social-schemes": "Welfare", "agriculture-farmer-welfare": "Agriculture",
           "environment-renewable-energy": "Environment", "education-skill-development": "Education",
           "health-infrastructure": "Health", "women-child-development": "Women & child", "currency-prices-inflation": "Prices",
-          "governance-judiciary": "Governance", "sports-youth-affairs": "Sports"}
+          "governance-judiciary": "Governance", "sports-youth-affairs": "Sports",
+          "world-global-affairs": "World", "climate-weather": "Climate", "technology-ai": "Tech & AI"}
 CAT_HI = {"economy-infra-digital": "अर्थव्यवस्था", "space-science": "अंतरिक्ष", "foreign-policy-diplomacy": "विदेश नीति",
           "defense-security": "रक्षा", "welfare-social-schemes": "कल्याण", "agriculture-farmer-welfare": "कृषि",
           "environment-renewable-energy": "पर्यावरण", "education-skill-development": "शिक्षा",
           "health-infrastructure": "स्वास्थ्य", "women-child-development": "महिला-बाल", "currency-prices-inflation": "महँगाई",
-          "governance-judiciary": "शासन", "sports-youth-affairs": "खेल"}
+          "governance-judiciary": "शासन", "sports-youth-affairs": "खेल",
+          "world-global-affairs": "विश्व", "climate-weather": "जलवायु", "technology-ai": "तकनीक और AI"}
 TAGS_EN = {"economy-infra-digital": "#Economy #Infrastructure", "space-science": "#ISRO #Space", "foreign-policy-diplomacy": "#ForeignPolicy #Diplomacy",
            "defense-security": "#Defence #Security", "welfare-social-schemes": "#Welfare #Schemes", "agriculture-farmer-welfare": "#Agriculture #Farmers",
            "environment-renewable-energy": "#Environment #Energy", "education-skill-development": "#Education #Skills",
            "health-infrastructure": "#Health #Healthcare", "women-child-development": "#Women #ChildDevelopment",
-           "currency-prices-inflation": "#Inflation #Prices", "governance-judiciary": "#Governance #Law", "sports-youth-affairs": "#Sports #Youth"}
+           "currency-prices-inflation": "#Inflation #Prices", "governance-judiciary": "#Governance #Law", "sports-youth-affairs": "#Sports #Youth",
+           "world-global-affairs": "#World #Economy", "climate-weather": "#Climate #Weather", "technology-ai": "#AI #Technology"}
 TAGS_HI = {"economy-infra-digital": "#अर्थव्यवस्था", "space-science": "#इसरो #अंतरिक्ष", "foreign-policy-diplomacy": "#विदेशनीति",
            "defense-security": "#रक्षा", "welfare-social-schemes": "#योजनाएँ", "agriculture-farmer-welfare": "#किसान",
            "environment-renewable-energy": "#पर्यावरण", "education-skill-development": "#शिक्षा", "health-infrastructure": "#स्वास्थ्य",
-           "women-child-development": "#महिला", "currency-prices-inflation": "#महँगाई", "governance-judiciary": "#शासन", "sports-youth-affairs": "#खेल"}
+           "women-child-development": "#महिला", "currency-prices-inflation": "#महँगाई", "governance-judiciary": "#शासन", "world-global-affairs": "#विश्व", "climate-weather": "#जलवायु", "technology-ai": "#तकनीक", "sports-youth-affairs": "#खेल"}
 KICK = {"en": {"mixed": "The full picture", "other": "In short", "edit": "Our editorial", "world": "India vs the world", "take": "Our take"},
         "hi": {"mixed": "पूरी तस्वीर", "other": "संक्षेप में", "edit": "हमारा संपादकीय", "world": "भारत बनाम दुनिया", "take": "हमारा निष्कर्ष"}}
 CTA_CAP = {"en": "Every number sourced", "hi": "हर आँकड़े का स्रोत"}
