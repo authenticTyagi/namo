@@ -13,7 +13,7 @@ _Last updated: 2026-10-10. Newest priorities first. Move finished items to PROJE
 - [ ] Refresh README.md (still says Phase 0) and add a short CONTRIBUTING pointer to RUNBOOK.md.
 
 - [ ] **Review the 26 Nov-2026 entries + 26 editorials in /admin** (pending). Approve in confidence order; hold or fix the low-confidence ones (World Bank poverty, Surya Ghar, AI summit, Micron, US trade, protests, FAO). Then render reels from `hooks/entries-f.json`.
-- [ ] **Re-verify stale published entries** (forex, West Asia/energy, excise, Vande Bharat, mobile data, EU FTA, RBI/inflation) and update with the Oct 2026 numbers; editing resets them to pending_review.
+- [~] **Re-verify stale published entries**: 3 refreshed 2026-11-02 (inflation targeting, West Asia energy, forex/gold; now pending_review awaiting re-approval). Still stale, no fresh primary data found: Vande Bharat/bullet train, mobile data, excise duty. Forex/oil/RBI/EU FTA/renewables are covered by the Nov batch entries.
 - [ ] **Source the ledger** (`scripts/ledger/`): attach a primary source to each from-memory row, extend toward completeness, then decide on a /ledger page.
 
 ## Next (performance and architecture, from the 2026-10-10 audit)
